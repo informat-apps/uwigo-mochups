@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>UWIGO</title>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+
+  <!-- ================== BEGIN BASE CSS STYLE ================== -->
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+  <link href="../assets/plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
+  <link href="../assets/plugins/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="../assets/plugins/font-awesome/5.0/css/fontawesome-all.min.css" rel="stylesheet" />
+  <link href="../assets/plugins/animate/animate.min.css" rel="stylesheet" />
+  <link href="../assets/css/default/style.min.css" rel="stylesheet" />
+  <link href="../assets/css/default/style-responsive.min.css" rel="stylesheet" />
+  <link href="../assets/css/default/theme/default.css" rel="stylesheet" id="theme" />
+  <link href="../assets/style.css" rel="stylesheet" />
+  <!-- ================== END BASE CSS STYLE ================== -->
+
+  <!-- ================== BEGIN BASE JS ================== -->
+  <script src="../assets/plugins/pace/pace.min.js"></script>
+  <!-- ================== END BASE JS ================== -->
+
+  <!-- ================== BEGIN PAGE CSS ================== -->
+  <link href="../assets/plugins/nvd3/build/nv.d3.css" rel="stylesheet" />
+  <link href="../assets/plugins/DataTables/media/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+  <link href="../assets/plugins/DataTables/extensions/Responsive/css/responsive.bootstrap.min.css" rel="stylesheet" />
+  <link href="../assets/plugins/dropzone/min/dropzone.min.css" rel="stylesheet" />
+  <!-- ================== END PAGE CSS ================== -->
+</head>
+<body>
+  <!-- begin #page-loader -->
+  <div id="page-loader" class="fade show"><span class="spinner"></span></div>
+  <!-- end #page-loader -->
+
+  <!-- begin #page-container -->
+  <div id="page-container" class="page-container fade page-without-sidebar page-header-fixed page-with-top-menu">
+
+    <!-- begin #header -->
+    <div id="header" class="header navbar-default">
+      <!-- begin navbar-header -->
+      <div class="navbar-header">
+        <a href="dashboard.html" class="navbar-brand"><span class="navbar-logo"></span> <b>UWIGO</b> Nombre Empresa</a>
+        <button type="button" class="navbar-toggle" data-click="top-menu-toggled">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <!-- end navbar-header -->
+
+      <!-- begin header navigation right -->
+      <ul class="navbar-nav navbar-right">
+
+        <li class="dropdown navbar-user">
+          <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+            <img src="../assets/img/user/user-13.jpg" alt="">
+            <span class="d-none d-md-inline">Nombre Usuario</span> <b class="caret"></b>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a href="javascript:;" class="dropdown-item">Editar Perfil</a>
+            <a href="login.html" class="dropdown-item">Salir</a>
+            <div class="dropdown-divider"></div>
+            <a href="login.html" class="dropdown-item"><i class="far fa-star"></i> Cambiar Contraseña</a>
+          </div>
+        </li>
+
+        <li class="dropdown">
+          <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+            <i class="fa fa-cogs"></i><b class="caret"></b>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a href="empresa-lista.html" class="dropdown-item">Empresas</a>
+            <a href="usuario-lista.html" class="dropdown-item">Usuarios</a>
+            <div class="dropdown-divider"></div>
+            <a href="#m-change-empresa" class="dropdown-item" data-toggle="modal"><i class="far fa-star"></i> Cambiar de Empresa</a>
+          </div>
+        </li>
+      </ul>
+      <!-- end header navigation right -->
+    </div>
+    <!-- end #header -->
+
+    <!-- begin #top-menu -->
+    <div id="top-menu" class="top-menu">
+      <!-- begin top-menu nav -->
+      <ul class="nav">
+
+        <li class="active">
+          <a href="../index.html">
+            <i class="fa fa-th-large"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+
+        <li class="has-sub">
+          <a href="javascript:;">
+            <b class="caret"></b>
+            <span>Cuentas</span>
+          </a>
+
+          <ul class="sub-menu">
+            <li><a href="cuentas-bancos.html">Bancos</a></li>
+            <!-- <li class="divider"></li> -->
+            <li><a href="cuentas-ventas.html">Ventas</a></li>
+            <!-- <li class="divider"></li> -->
+            <li><a href="cuentas-compras.html">Compras</a></li>
+            <!-- <li class="divider"></li> -->
+            <li><a href="cuentas-remuneraciones.html">Remuneraciones</a></li>
+            <!-- <li class="divider"></li> -->
+            <li><a href="cuentas-inventario.html">Inventarios</a></li>
+            <!-- <li class="divider"></li> -->
+            <li><a href="cuentas-gastos.html">Gastos</a></li>
+            <!-- <li class="divider"></li> -->
+            <li><a href="cuentas-activos.html">Activo Fijo</a></li>
+          </ul>
+        </li>
+
+        <li class="has-sub">
+          <a href="javascript:;">
+            <b class="caret"></b>
+            <span>Reportes</span>
+          </a>
+
+          <ul class="sub-menu">
+            <li><a href="reporte-1.html">Reporte 1</a></li>
+            <li><a href="reporte-2.html">Reporte 2</a></li>
+          </ul>
+        </li>
+
+        <li class="has-sub">
+          <a href="javascript:;">
+            <b class="caret"></b>
+            <span>Contactos</span>
+          </a>
+          <ul class="sub-menu">
+            <li><a href="contactos-todos-lista.html">Todos los contactos</a></li>
+
+            <div class="dropdown-divider"></div>
+            <li><a href="#m-contacto" data-toggle="modal"><i class="far fa-star"></i> Proveedores</a></li>
+            <li><a href="#m-contacto" data-toggle="modal"><i class="far fa-star"></i> Clientes</a></li>
+          </ul>
+        </li>
+
+        <li class="has-sub">
+          <a href="javascript:;">
+            <b class="caret"></b>
+            <span>Configuración</span>
+          </a>
+          <ul class="sub-menu">
+            <li><a href="">...</a></li>
+          </ul>
+        </li>
+
+        <li class="menu-control menu-control-left">
+          <a href="javascript:;" data-click="prev-menu"><i class="fa fa-angle-left"></i></a>
+        </li>
+        <li class="menu-control menu-control-right">
+          <a href="javascript:;" data-click="next-menu"><i class="fa fa-angle-right"></i></a>
+        </li>
+      </ul>
+      <!-- end top-menu nav -->
+    </div>
+    <!-- end #top-menu -->
+
+    <!-- begin #breadcrumb -->
+    <div class="section-breadcrumb">
+      <div class="pull-right mt-2">
+        <div class="widget-list-action">
+          <a href="#" data-toggle="dropdown" class="text-muted pull-right" aria-expanded="false"><i class="fa fa-question-circle f-s-18 text-teal"></i></a>
+          <ul class="dropdown-menu dropdown-menu-right" x-placement="bottom-end">
+            <li><a href="#m-video" data-toggle="modal">Video</a></li>
+            <li><a href="#">Tour</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="javascript:;">Cuentas</a></li>
+        <li class="breadcrumb-item active"><a href="javascript:;">Bancos</a></li>
+      </ol>
+    </div>
+    <!-- end #breadcrumb -->
+
+    <!-- begin #content -->
+    <div id="content" class="content">
+
+      <div class="row m-b-30">
+        <div class="col-12">
+          <div class="btn-group">
+            <a href="javascript:;" class="btn btn-white btn-sm">Nuevo Documento</a>
+            <a href="javascript:;" data-toggle="dropdown" class="btn btn-white btn-sm dropdown-toggle" aria-expanded="false"></a>
+            <ul class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(86px, 34px, 0px);">
+              <li><a href="documento-nuevo.html">Factura</a></li>
+              <li><a href="documento-nuevo.html">Guía</a></li>
+              <li><a href="documento-nuevo.html">Nota de Crédito</a></li>
+              <li><a href="documento-nuevo.html">Nota de Debito</a></li>
+              <li><a href="documento-nuevo.html">Facturación Masiva</a></li>
+              <li><a href="documento-nuevo.html">Repetir Facturación</a></li>
+            </ul>
+          </div>
+          <a href="#filtrar" class="btn btn-white pull-right btn-sm" data-toggle="modal">Buscar</a>
+        </div>
+      </div>
+
+      <div class="row m-b-30">
+        <!-- begin col-3 -->
+        <div class="col">
+          <div class="widget widget-stats bg-teal-darker">
+            <div class="stats-icon stats-icon-lg"><i class="fa fa-cogs fa-fw"></i></div>
+            <div class="stats-content">
+              <div class="stats-title">EMITIDAS / MES</div>
+              <div class="stats-number">xxx.xxx</div>
+            </div>
+          </div>
+        </div>
+        <!-- end col-3 -->
+        <!-- begin col-3 -->
+        <div class="col">
+          <div class="widget widget-stats bg-teal-darker">
+            <div class="stats-icon stats-icon-lg"><i class="fa fa-dollar-sign fa-fw"></i></div>
+            <div class="stats-content">
+              <div class="stats-title">ACEPTADAS / MES</div>
+              <div class="stats-number">xxx.xxx</div>
+            </div>
+          </div>
+        </div>
+        <!-- end col-3 -->
+        <!-- begin col-3 -->
+        <div class="col">
+          <div class="widget widget-stats bg-teal-darker">
+            <div class="stats-icon stats-icon-lg"><i class="fa fa-archive fa-fw"></i></div>
+            <div class="stats-content">
+              <div class="stats-title">RECHAZADAS / MES</div>
+              <div class="stats-number">xxx.xxx</div>
+            </div>
+          </div>
+        </div>
+        <!-- end col-3 -->
+        <!-- begin col-3 -->
+        <div class="col">
+          <div class="widget widget-stats bg-teal-darker">
+            <div class="stats-icon stats-icon-lg"><i class="fa fa-comment-alt fa-fw"></i></div>
+            <div class="stats-content">
+              <div class="stats-title">POR COBRAR / MES</div>
+              <div class="stats-number text-right">$xxx.xxx.xxx</div>
+            </div>
+          </div>
+        </div>
+        <!-- end col-3 -->
+        <!-- begin col-3 -->
+        <div class="col">
+          <div class="widget widget-stats bg-teal-darker m-b-10">
+            <div class="stats-icon stats-icon-lg"><i class="fa fa-file-alt fa-fw"></i></div>
+            <div class="stats-content">
+              <div class="stats-title">VENCIDAS / MES</div>
+              <div class="stats-number text-right">$xxx.xxx.xxx</div>
+            </div>
+          </div>
+        </div>
+        <!-- end col-3 -->
+      </div>
+
+      <div class="row m-b-30">
+
+        <div class="col-lg-8">
+
+          <!-- begin panel -->
+          <div class="panel panel-default" data-sortable-id="index-1">
+            <div class="panel-heading">
+              <h4 class="panel-title">Montos a pagar de facturas</h4>
+            </div>
+            <div class="panel-body">
+              <div id="nv-bar-chart" class="height-sm"></div>
+            </div>
+          </div>
+          <!-- end panel -->
+        </div>
+        <div class="col-lg-4">
+          <!-- begin panel -->
+          <div class="panel panel-default" data-sortable-id="index-6">
+            <div class="panel-heading">
+              <h4 class="panel-title">Deuda por Clientes</h4>
+            </div>
+            <div class="panel-body">
+              <div class="table-responsive">
+                <table class="table table-bordered table-striped m-t-10 m-t-10">
+                  <thead>
+                    <tr>
+                      <th>Nombre</th>
+                      <th>Vencimiento</th>
+                      <th>Monto</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Cliente 1</td>
+                      <td class="text-right">28/03/2018</td>
+                      <td class="text-right">$80.600</td>
+                    </tr>
+                    <tr>
+                      <td>Cliente 2</td>
+                      <td class="text-right">23/04/2018</td>
+                      <td class="text-right">$798.000</td>
+                    </tr>
+                    <tr>
+                      <td>Cliente 3</td>
+                      <td class="text-right">09/05/2018</td>
+                      <td class="text-right">$187.300</td>
+                    </tr>
+                    <tr>
+                      <td>Cliente 4</td>
+                      <td class="text-right">11/06/2018</td>
+                      <td class="text-right">$987.600</td>
+                    </tr>
+                    <tr>
+                      <td>Cliente 5</td>
+                      <td class="text-right">01/06/2018</td>
+                      <td class="text-right">$1.345.900</td>
+                    </tr>
+                    <tr>
+                      <td>Cliente 6</td>
+                      <td class="text-right">10/05/2018</td>
+                      <td class="text-right">$1.234.600</td>
+                    </tr>
+                    <tr>
+                      <td>Cliente 7</td>
+                      <td class="text-right">12/03/2018</td>
+                      <td class="text-right">$244.700</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end panel -->
+
+      </div>
+
+      <div class="panel panel-default">
+
+        <div class="panel-body">
+
+          <div class="row mb-3">
+            <div class="col-12">
+              <a href="#" class="btn btn-white btn-sm">Imprimir</a>
+              <a href="#" class="btn btn-white btn-sm">Email</a>
+              <a href="#" class="btn btn-white btn-sm">Pago Recibido</a>
+              <div class="btn-group pull-right">
+                <a href="javascript:;" class="btn btn-white btn-sm">Filtrar</a>
+                <a href="javascript:;" data-toggle="dropdown" class="btn btn-white btn-sm dropdown-toggle" aria-expanded="false"></a>
+                <ul class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(86px, 34px, 0px);">
+                  <li><a href="javascript:;">Aceptadas</a></li>
+                  <li><a href="javascript:;">Rechazadas</a></li>
+                  <li><a href="javascript:;">Sin Pago</a></li>
+                  <li><a href="javascript:;">Vencidas</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="table-responsive">
+                <table id="data-table-default" class="table table-striped table-bordered">
+                  <thead>
+                    <tr>
+                      <th>Folio</th>
+                      <th>Tipo Documento</th>
+                      <th>Estado</th>
+                      <th>Fecha Documento</th>
+                      <th>Cliente</th>
+                      <th>Nombre</th>
+                      <th>Comprobante</th>
+                      <th>Tipo</th>
+                      <th>opciones</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>20</td>
+                      <td>Boleta de Servicios Elect Pendiente</td>
+                      <td class="text-right">20/12/2017</td>
+                      <td>17.409.714-3</td>
+                      <td>Pedro Hernández</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <th>
+                        <a href="/documento/editar" class="btn btn-white btn-xs">Editar</a>
+                      </th>
+                    </tr>
+                    <tr>
+                      <td>19</td>
+                      <td>Boleta de Servicios Elect Pendiente</td>
+                      <td class="text-right">20/12/2017</td>
+                      <td>17.409.714-3</td>
+                      <td>Pedro Hernández</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <th>
+                        <a href="/documento/editar" class="btn btn-white btn-xs">Editar</a>
+                      </th>
+                    </tr>
+                    <tr>
+                      <td>18</td>
+                      <td>Boleta de Servicios Elect Pendiente</td>
+                      <td class="text-right">20/12/2017</td>
+                      <td>17.409.714-3</td>
+                      <td>Pedro Hernández</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <th>
+                        <a href="/documento/editar" class="btn btn-white btn-xs">Editar</a>
+                      </th>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- end #content -->
+
+    <!-- begin scroll to top btn -->
+    <a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
+    <!-- end scroll to top btn -->
+
+    <!-- begin modal -->
+    <div class="modal fade" id="m-video" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Video de Ayuda</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-6">
+                <div class="post-video">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe src="https://player.vimeo.com/video/252920310?title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+
+                <blockquote>
+                  <p>Descripción:</p>
+                  <p class="f-s-12">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  </p>
+                </blockquote>
+
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-sm btn-white" data-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="m-change-empresa" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Empresas</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+            <div class="col-sm-12 col-lg-12">
+
+              <!-- begin widget-list -->
+              <div class="widget-list widget-list-rounded m-b-30" data-id="widget">
+                <!-- begin widget-list-item -->
+                <div class="widget-list-item">
+                  <div class="widget-list-media">
+                    <!-- <img src="../assets/img/user/user-12.jpg" alt="" class="rounded"> -->
+                    <div class="widget-icon widget-icon-lg user rounded bg-grey pull-left m-r-5 m-b-5 text-white" data-id="widget-elm" data-light-class="widget-icon widget-icon-lg user rounded bg-grey pull-left m-r-5 m-b-5 text-white" data-dark-class="widget-icon widget-icon-lg user rounded bg-inverse pull-left m-r-5 m-b-5 text-white-transparent-5">
+                      <i class="fa fa-building"></i>
+                    </div>
+                  </div>
+
+                  <div class="widget-list-content">
+                    <h4 class="widget-list-title">Nombre Empresa</h4>
+                    <p class="widget-list-desc">Descripción de la empresa</p>
+                  </div>
+                  <div class="widget-list-action">
+                    <a href="../index.html" class="btn btn-xs btn-primary">Go UWIGO <i class="fa fa-arrow-right m-l-5"></i></a>
+                </div>
+              </div>
+              <!-- end widget-list-item -->
+              <!-- begin widget-list-item -->
+              <div class="widget-list-item">
+                <div class="widget-list-media">
+                  <!-- <img src="../assets/img/user/user-13.jpg" alt="" class="rounded"> -->
+                  <div class="widget-icon widget-icon-lg user rounded bg-grey pull-left m-r-5 m-b-5 text-white" data-id="widget-elm" data-light-class="widget-icon widget-icon-lg user rounded bg-grey pull-left m-r-5 m-b-5 text-white" data-dark-class="widget-icon widget-icon-lg user rounded bg-inverse pull-left m-r-5 m-b-5 text-white-transparent-5">
+                    <i class="fa fa-building"></i>
+                  </div>
+                </div>
+                <div class="widget-list-content">
+                  <h4 class="widget-list-title">Nombre Empresa</h4>
+                  <p class="widget-list-desc">Descripción de la empresa</p>
+                </div>
+                <div class="widget-list-action">
+                  <a href="../index.html" class="btn btn-xs btn-primary">Go UWIGO <i class="fa fa-arrow-right m-l-5"></i></a>
+              </div>
+            </div>
+            <!-- end widget-list-item -->
+            <!-- begin widget-list-item -->
+            <div class="widget-list-item">
+              <div class="widget-list-media">
+
+                <div class="widget-img widget-img-lg rounded bg-inverse pull-left m-r-5 m-b-5" style="background-image: url(../assets/img/user/user-12.jpg)"></div>
+              </div>
+              <div class="widget-list-content">
+                <h4 class="widget-list-title">Nombre Empresa</h4>
+                <p class="widget-list-desc">Descripción de la empresa</p>
+              </div>
+              <div class="widget-list-action">
+                <a href="../index.html" class="btn btn-xs btn-primary">Go UWIGO <i class="fa fa-arrow-right m-l-5"></i></a>
+            </div>
+          </div>
+          <!-- end widget-list-item -->
+        </div>
+        <!-- end widget-list -->
+
+      </div>
+
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<!-- end page container -->
+
+<!-- ================== BEGIN BASE JS ================== -->
+<script src="../assets/plugins/jquery/jquery-3.2.1.min.js"></script>
+<script src="../assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+<script src="../assets/plugins/bootstrap/4.1.0/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="../assets/plugins/js-cookie/js.cookie.js"></script>
+<script src="../assets/js/theme/default.min.js"></script>
+<script src="../assets/js/apps.js"></script>
+<script src="../assets/script.js"></script>
+<!-- ================== END BASE JS ================== -->
+
+<!-- ================== BEGIN PAGE LEVEL JS ================== -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.2/d3.min.js"></script>
+<script src="../assets/plugins/nvd3/build/nv.d3.js"></script>
+<script src="../assets/js/demo/chart-d3.demo.min.js"></script>
+<script src="../assets/plugins/DataTables/media/js/jquery.dataTables.js"></script>
+<script src="../assets/plugins/DataTables/media/js/dataTables.bootstrap.min.js"></script>
+<script src="../assets/plugins/DataTables/extensions/Responsive/js/dataTables.responsive.min.js"></script>
+<script src="../assets/js/demo/table-manage-default.demo.js"></script>
+<script src="../assets/plugins/dropzone/min/dropzone.min.js"></script>
+<script src="../assets/plugins/highlight/highlight.common.js"></script>
+<script src="../assets/js/demo/render.highlight.js"></script>
+<!-- ================== END PAGE LEVEL JS ================== -->
+
+<script>
+$(document).ready(function() {
+  App.init();
+  ChartNvd3.init();
+  TableManageDefault.init();
+  Highlight.init();
+});
+</script>
+
+</body>
+</html>

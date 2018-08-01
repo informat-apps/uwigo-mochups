@@ -1,0 +1,2437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>UWIGO</title>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+
+  <!-- ================== BEGIN BASE CSS STYLE ================== -->
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+  <link href="../assets/plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
+  <link href="../assets/plugins/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="../assets/plugins/font-awesome/5.0/css/fontawesome-all.min.css" rel="stylesheet" />
+  <link href="../assets/plugins/animate/animate.min.css" rel="stylesheet" />
+  <link href="../assets/css/default/style.min.css" rel="stylesheet" />
+  <link href="../assets/css/default/style-responsive.min.css" rel="stylesheet" />
+  <link href="../assets/css/default/theme/default.css" rel="stylesheet" id="theme" />
+  <link href="../assets/style.css" rel="stylesheet" />
+  <!-- ================== END BASE CSS STYLE ================== -->
+
+  <!-- ================== BEGIN BASE JS ================== -->
+  <script src="../assets/plugins/pace/pace.min.js"></script>
+  <!-- ================== END BASE JS ================== -->
+
+  <!-- ================== BEGIN PAGE CSS ================== -->
+  <link href="../assets/plugins/nvd3/build/nv.d3.css" rel="stylesheet" />
+  <link href="../assets/plugins/DataTables/media/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+  <link href="../assets/plugins/DataTables/extensions/Responsive/css/responsive.bootstrap.min.css" rel="stylesheet" />
+  <link href="../assets/plugins/dropzone/min/dropzone.min.css" rel="stylesheet" />
+  <link href="../assets/plugins/switchery/switchery.min.css" rel="stylesheet" />
+  <link href="../assets/plugins/powerange/powerange.min.css" rel="stylesheet" />
+  <link href="../assets/plugins/select2/dist/css/select2.min.css" rel="stylesheet" />
+  <link href="../assets/plugins/jstree/dist/themes/default/style.min.css" rel="stylesheet" />
+  <!-- ================== END PAGE CSS ================== -->
+</head>
+<body>
+  <!-- begin #page-loader -->
+  <div id="page-loader" class="fade show"><span class="spinner"></span></div>
+  <!-- end #page-loader -->
+
+  <!-- begin #page-container -->
+  <div id="page-container" class="page-container fade page-without-sidebar page-header-fixed page-with-top-menu">
+
+    <!-- begin #header -->
+    <div id="header" class="header navbar-default">
+      <!-- begin navbar-header -->
+      <div class="navbar-header">
+        <a href="dashboard.html" class="navbar-brand"><span class="navbar-logo"></span> <b>UWIGO</b> Nombre Empresa</a>
+        <button type="button" class="navbar-toggle" data-click="top-menu-toggled">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <!-- end navbar-header -->
+
+      <!-- begin header navigation right -->
+      <ul class="navbar-nav navbar-right">
+
+        <li class="dropdown navbar-user">
+          <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+            <img src="../assets/img/user/user-13.jpg" alt="">
+            <span class="d-none d-md-inline">Nombre Usuario</span> <b class="caret"></b>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a href="javascript:;" class="dropdown-item">Editar Perfil</a>
+            <a href="login.html" class="dropdown-item">Salir</a>
+            <div class="dropdown-divider"></div>
+            <a href="login.html" class="dropdown-item"><i class="far fa-star"></i> Cambiar Contraseña</a>
+          </div>
+        </li>
+
+        <li class="dropdown">
+          <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+            <i class="fa fa-cogs"></i><b class="caret"></b>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a href="empresa-lista.html" class="dropdown-item">Empresas</a>
+            <a href="usuario-lista.html" class="dropdown-item">Usuarios</a>
+            <div class="dropdown-divider"></div>
+            <a href="#m-change-empresa" class="dropdown-item" data-toggle="modal"><i class="far fa-star"></i> Cambiar de Empresa</a>
+          </div>
+        </li>
+      </ul>
+      <!-- end header navigation right -->
+    </div>
+    <!-- end #header -->
+
+    <!-- begin #top-menu -->
+    <div id="top-menu" class="top-menu">
+      <!-- begin top-menu nav -->
+      <ul class="nav">
+
+        <li class="active">
+          <a href="../index.html">
+            <i class="fa fa-th-large"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+
+        <li class="has-sub">
+          <a href="javascript:;">
+            <b class="caret"></b>
+            <span>Cuentas</span>
+          </a>
+
+          <ul class="sub-menu">
+            <li><a href="cuentas-bancos.html">Bancos</a></li>
+            <!-- <li class="divider"></li> -->
+            <li><a href="cuentas-ventas.html">Ventas</a></li>
+            <!-- <li class="divider"></li> -->
+            <li><a href="cuentas-compras.html">Compras</a></li>
+            <!-- <li class="divider"></li> -->
+            <li><a href="cuentas-remuneraciones.html">Remuneraciones</a></li>
+            <!-- <li class="divider"></li> -->
+            <li><a href="cuentas-inventario.html">Inventarios</a></li>
+            <!-- <li class="divider"></li> -->
+            <li><a href="cuentas-gastos.html">Gastos</a></li>
+            <!-- <li class="divider"></li> -->
+            <li><a href="cuentas-activos.html">Activo Fijo</a></li>
+          </ul>
+        </li>
+
+        <li class="has-sub">
+          <a href="javascript:;">
+            <b class="caret"></b>
+            <span>Reportes</span>
+          </a>
+
+          <ul class="sub-menu">
+            <li><a href="reporte-1.html">Reporte 1</a></li>
+            <li><a href="reporte-2.html">Reporte 2</a></li>
+          </ul>
+        </li>
+
+        <li class="has-sub">
+          <a href="javascript:;">
+            <b class="caret"></b>
+            <span>Contactos</span>
+          </a>
+          <ul class="sub-menu">
+            <li><a href="contactos-todos-lista.html">Todos los contactos</a></li>
+            <div class="dropdown-divider"></div>
+            <li><a href="#m-contacto" data-toggle="modal"><i class="far fa-star"></i> Proveedores</a></li>
+            <li><a href="#m-contacto" data-toggle="modal"><i class="far fa-star"></i> Clientes</a></li>
+          </ul>
+        </li>
+
+        <li class="has-sub">
+          <a href="javascript:;">
+            <b class="caret"></b>
+            <span>Configuración</span>
+          </a>
+          <ul class="sub-menu">
+            <li><a href="">...</a></li>
+          </ul>
+        </li>
+
+        <li class="menu-control menu-control-left">
+          <a href="javascript:;" data-click="prev-menu"><i class="fa fa-angle-left"></i></a>
+        </li>
+        <li class="menu-control menu-control-right">
+          <a href="javascript:;" data-click="next-menu"><i class="fa fa-angle-right"></i></a>
+        </li>
+      </ul>
+      <!-- end top-menu nav -->
+    </div>
+    <!-- end #top-menu -->
+
+    <!-- begin #breadcrumb -->
+    <div class="section-breadcrumb">
+      <div class="pull-right">
+        <div class="mt-2">
+          <a href="#m-video" class="btn btn-primary btn-icon btn-circle btn-sm" data-toggle="modal"><i class="fa fa-video"></i></a>
+          <a class="btn btn-primary btn-icon btn-circle btn-sm" href="javascript:void(0);" onclick="javascript:introJs().start();"><i class="fa fa-comment-dots"></i></a>
+        </div>
+      </div>
+
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="usuario-lista.html">Usuario</a></li>
+        <li class="breadcrumb-item"><a href="perfil-lista.html">Perfil</a></li>
+        <li class="breadcrumb-item active"><a href="javascript:;">Nuevo</a></li>
+      </ol>
+    </div>
+    <!-- end #breadcrumb -->
+
+    <!-- begin #content -->
+    <div id="content" class="content">
+      <div class="panel panel-default" data-sortable-id="index-1">
+        <div class="panel-body">
+
+          <fieldset class="mb-4">
+
+            <legend class="m-b-15">Información General</legend>
+
+            <div class="row">
+
+              <div class="form-group col-md-3">
+                <label for="">Nombre (*)</label>
+                <input type="text" class="form-control form-control-sm" placeholder="Nombre Perfil">
+              </div>
+            </div>
+
+          </fieldset>
+
+          <fieldset class="mb-4">
+
+            <legend class="m-b-15">Permisos</legend>
+
+            <div class="row">
+
+              <div class="form-group col-md-3">
+                <label for="">Buscar</label>
+                <select id="s-modulo" class="multiple-select2 form-control form-control-sm" multiple="multiple" data-placeholder="Seleccionar Modulos">
+                  <option value="1">Módulo 1</option>
+                  <option value="2">Módulo 2</option>
+                  <option value="3">Módulo 3</option>
+                  <option value="4">Módulo 4</option>
+                  <option value="5">Módulo 5</option>
+                  <option value="6">Módulo 6</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-4">
+                <label for="">Buscar</label>
+                <input type="text" class="form-control form-control-sm">
+              </div>
+
+              <div class="form-group col-md-2">
+                <label for="">Cambiar Vista</label>
+                <div class="mt-1"></div>
+                <input id="c-change" class="form-control" type="checkbox" data-render="switchery" data-theme="blue" />
+              </div>
+
+              <div class="col-md-12">
+
+                <div id="collapseOne" class="collapse show" data-parent="#accordion">
+
+
+                  <div id="app-permiso">
+                    <form @submit.prevent="submit" action="" method="get">
+
+                      <table id="t-permisos" class="table table-striped table-bordered">
+                        <thead>
+                          <tr>
+                            <th>Módulo</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <!-- <tr data-module="modulo1">
+                            <td>Nombre Módulo 1</td>
+                            <td></td>
+                            <td>
+                              <input type="checkbox" class="check-permission">&nbsp;&nbsp;&nbsp;
+                              <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="Crear"><i class="fa fa-plus"></i></a>
+                              <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="Editar"><i class="far fa-edit"></i></a>
+                              <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="Eliminar"><i class="fa fa-trash-alt"></i></a>
+                            </td>
+                            <td>
+                              <input type="checkbox" class="check-permission">&nbsp;&nbsp;&nbsp;
+                              <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripcion permiso"><i class="fa fa-check"></i></a>
+                              <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripcion permiso"><i class="far fa-edit"></i></a>
+                              <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripcion permiso"><i class="fa fa-trash-alt"></i></a>
+                              <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripcion permiso"><i class="fa fa-key"></i></a>
+                              <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripcion permiso"><i class="fa fa-trash-alt"></i></a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Nombre Módulo 2</td>
+                            <td></td>
+                            <td>
+                              <input type="checkbox" class="check-permission">&nbsp;&nbsp;&nbsp;
+                              <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripcion permiso"><i class="fa fa-plus"></i></a>
+                              <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripcion permiso"><i class="far fa-edit"></i></a>
+                              <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripcion permiso"><i class="fa fa-trash-alt"></i></a>
+                            </td>
+                            <td>
+                              <input type="checkbox" class="check-permission">&nbsp;&nbsp;&nbsp;
+                              <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripcion permiso"><i class="fa fa-balance-scale"></i></a>
+                              <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripcion permiso"><i class="far fa-eye"></i></a>
+                              <a href="javascript:;" class="btn btn-xs btn-permission btn-grey"><i class="fa fa-trash-alt"></i></a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Nombre Módulo 3</td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                              <input type="checkbox" class="check-permission">&nbsp;&nbsp;&nbsp;
+                              <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripcion permiso"><i class="fa fa-id-card"></i></a>
+                              <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripcion permiso"><i class="far fa-edit"></i></a>
+                              <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripcion permiso"><i class="fa fa-trash-alt"></i></a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Nombre Módulo 4</td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                              <input type="checkbox" class="check-permission">&nbsp;&nbsp;&nbsp;
+                              <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripcion permiso"><i class="fa fa-sync-alt"></i></a>
+                              <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripción permiso"><i class="far fa-eye"></i></a>
+                              <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripción permiso"><i class="fa fa-address-book"></i></a>
+                              <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripción permiso"><i class="fa fa-key"></i></a>
+                              <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripcion permiso"><i class="fa fa-check"></i></a>
+                              <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripción permiso"><i class="far fa-edit"></i></a>
+                              <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripción permiso"><i class="fa fa-trash-alt"></i></a>
+                              <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripción permiso"><i class="fa fa-key"></i></a>
+                            </td>
+                          </tr>
+                          <tr class="modulo-5">
+                            <td>Nombre Módulo 5</td>
+                            <td></td>
+                            <td>
+                              <input type="checkbox" class="check-permission">&nbsp;&nbsp;&nbsp;
+                              <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripcion permiso"><i class="fa fa-plus"></i></a>
+                              <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripcion permiso"><i class="far fa-edit"></i></a>
+                              <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripcion permiso"><i class="fa fa-trash-alt"></i></a>
+                            </td>
+                            <td>
+                              <input type="checkbox" class="check-permission">&nbsp;&nbsp;&nbsp;
+                              <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripción permiso"><i class="fa fa-filter"></i></a>
+                              <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripción permiso"><i class="far fa-edit"></i></a>
+                              <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripción permiso"><i class="fa fa-address-book"></i></a>
+                              <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripción permiso"><i class="fa fa-key"></i></a>
+                            </td>
+                          </tr>
+                          <tr class="modulo-6">
+                            <td>Nombre Módulo 6</td>
+                            <td></td>
+                            <td>
+                              <input type="checkbox" class="check-permission">&nbsp;&nbsp;&nbsp;
+                              <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripcion permiso"><i class="fa fa-plus"></i></a>
+                              <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripcion permiso"><i class="far fa-edit"></i></a>
+                              <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripcion permiso"><i class="fa fa-trash-alt"></i></a>
+                            </td>
+                            <td>
+                              <input type="checkbox" class="check-permission">&nbsp;&nbsp;&nbsp;
+                              <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripción permiso"><i class="fa fa-check"></i></a>
+                              <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripción permiso"><i class="far fa-address-book"></i></a>
+                              <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripción permiso"><i class="fa fa-trash-alt"></i></a>
+                              <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripción permiso"><i class="fa fa-angle-double-right"></i></a>
+                            </td>
+                          </tr> -->
+                        </tbody>
+                      </table>
+
+
+
+
+
+
+
+
+                    </form>
+                  </div>
+
+
+                <!-- <table id="t-permisos" class="table table-striped table-bordered">
+                  <tbody>
+                    <tr class="modulo-1">
+                      <td>Nombre Módulo 1</td>
+                      <td>
+                        <input type="checkbox" class="check-permission">&nbsp;&nbsp;&nbsp;
+                        <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="Crear"><i class="fa fa-plus"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="Editar"><i class="far fa-edit"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="Eliminar"><i class="fa fa-trash-alt"></i></a>
+                      </td>
+                      <td>
+                        <input type="checkbox" class="check-permission">&nbsp;&nbsp;&nbsp;
+                        <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripcion permiso"><i class="fa fa-check"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripcion permiso"><i class="far fa-edit"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripcion permiso"><i class="fa fa-trash-alt"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripcion permiso"><i class="fa fa-key"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripcion permiso"><i class="fa fa-trash-alt"></i></a>
+                      </td>
+                    </tr>
+                    <tr class="modulo-2 hide">
+                      <td>Nombre Módulo 2</td>
+                      <td>
+                        <input type="checkbox" class="check-permission">&nbsp;&nbsp;&nbsp;
+                        <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripcion permiso"><i class="fa fa-plus"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripcion permiso"><i class="far fa-edit"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripcion permiso"><i class="fa fa-trash-alt"></i></a>
+                      </td>
+                      <td>
+                        <input type="checkbox" class="check-permission">&nbsp;&nbsp;&nbsp;
+                        <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripcion permiso"><i class="fa fa-balance-scale"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripcion permiso"><i class="far fa-eye"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-permission btn-grey"><i class="fa fa-trash-alt"></i></a>
+                      </td>
+                    </tr>
+                    <tr class="modulo-3 hide">
+                      <td>Nombre Módulo 3</td>
+                      <td></td>
+                      <td>
+                        <input type="checkbox" class="check-permission">&nbsp;&nbsp;&nbsp;
+                        <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripcion permiso"><i class="fa fa-id-card"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripcion permiso"><i class="far fa-edit"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripcion permiso"><i class="fa fa-trash-alt"></i></a>
+                      </td>
+                    </tr>
+                    <tr class="modulo-4 hide">
+                      <td>Nombre Módulo 4</td>
+                      <td></td>
+                      <td>
+                        <input type="checkbox" class="check-permission">&nbsp;&nbsp;&nbsp;
+                        <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripcion permiso"><i class="fa fa-sync-alt"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripción permiso"><i class="far fa-eye"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripción permiso"><i class="fa fa-address-book"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripción permiso"><i class="fa fa-key"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripcion permiso"><i class="fa fa-check"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripción permiso"><i class="far fa-edit"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripción permiso"><i class="fa fa-trash-alt"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripción permiso"><i class="fa fa-key"></i></a>
+                      </td>
+                    </tr>
+                    <tr class="modulo-5 hide">
+                      <td>Nombre Módulo 5</td>
+                      <td>
+                        <input type="checkbox" class="check-permission">&nbsp;&nbsp;&nbsp;
+                        <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripcion permiso"><i class="fa fa-plus"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripcion permiso"><i class="far fa-edit"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripcion permiso"><i class="fa fa-trash-alt"></i></a>
+                      </td>
+                      <td>
+                        <input type="checkbox" class="check-permission">&nbsp;&nbsp;&nbsp;
+                        <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripción permiso"><i class="fa fa-filter"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripción permiso"><i class="far fa-edit"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripción permiso"><i class="fa fa-address-book"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripción permiso"><i class="fa fa-key"></i></a>
+                      </td>
+                    </tr>
+                    <tr class="modulo-6 hide">
+                      <td>Nombre Módulo 6</td>
+                      <td>
+                        <input type="checkbox" class="check-permission">&nbsp;&nbsp;&nbsp;
+                        <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripcion permiso"><i class="fa fa-plus"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripcion permiso"><i class="far fa-edit"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripcion permiso"><i class="fa fa-trash-alt"></i></a>
+                      </td>
+                      <td>
+                        <input type="checkbox" class="check-permission">&nbsp;&nbsp;&nbsp;
+                        <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripción permiso"><i class="fa fa-check"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripción permiso"><i class="far fa-address-book"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripción permiso"><i class="fa fa-trash-alt"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-permission btn-grey" data-toggle="tooltip" data-placement="top" title="descripción permiso"><i class="fa fa-angle-double-right"></i></a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table> -->
+                </div>
+              </div>
+
+              <div class="col-md-12">
+                <div id="collapseTwo" class="collapse pt-2" data-parent="#accordion">
+                  <div class="rounded-corner">
+                <div id="jstree-checkable" style="border: 1px solid #dbe0e9; padding: 5px;"></div>
+                </div>
+                </div>
+              </div>
+            </div>
+
+          </fieldset>
+
+          <div class="pull-right">
+            <a href="perfil-lista.html" class="btn btn-sm btn-white m-r-5">Cancelar</a>
+            <a href="perfil-lista.html" class="btn btn-sm btn-primary">Aceptar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end #content -->
+
+    <!-- begin scroll to top btn -->
+    <a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
+    <!-- end scroll to top btn -->
+
+    <!-- begin modal -->
+    <div class="modal fade" id="m-video" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Video de Ayuda</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-6">
+                <div class="post-video">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe src="https://player.vimeo.com/video/252920310?title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+
+                <blockquote>
+                  <p>Descripción:</p>
+                  <p class="f-s-12">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  </p>
+                </blockquote>
+
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-sm btn-white" data-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="m-change-empresa" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Empresas</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+            <div class="col-sm-12 col-lg-12">
+
+              <!-- begin widget-list -->
+              <div class="widget-list widget-list-rounded m-b-30" data-id="widget">
+                <!-- begin widget-list-item -->
+                <div class="widget-list-item">
+                  <div class="widget-list-media">
+                    <!-- <img src="../assets/img/user/user-12.jpg" alt="" class="rounded"> -->
+                    <div class="widget-icon widget-icon-lg user rounded bg-grey pull-left m-r-5 m-b-5 text-white" data-id="widget-elm" data-light-class="widget-icon widget-icon-lg user rounded bg-grey pull-left m-r-5 m-b-5 text-white" data-dark-class="widget-icon widget-icon-lg user rounded bg-inverse pull-left m-r-5 m-b-5 text-white-transparent-5">
+                      <i class="fa fa-building"></i>
+                    </div>
+                  </div>
+
+                  <div class="widget-list-content">
+                    <h4 class="widget-list-title">Nombre Empresa</h4>
+                    <p class="widget-list-desc">Descripción de la empresa</p>
+                  </div>
+                  <div class="widget-list-action">
+                    <a href="../index.html" class="btn btn-xs btn-primary">Go UWIGO <i class="fa fa-arrow-right m-l-5"></i></a>
+                    <!-- <a href="#" data-toggle="dropdown" class="text-muted pull-right" aria-expanded="false"><i class="fa fa-ellipsis-h f-s-14"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(646px, 72px, 0px);">
+                    <li><a href="#">Option 1</a></li>
+                    <li><a href="#">Option 2</a></li>
+                    <li><a href="#">Option 3</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Option 4</a></li>
+                  </ul> -->
+                </div>
+              </div>
+              <!-- end widget-list-item -->
+              <!-- begin widget-list-item -->
+              <div class="widget-list-item">
+                <div class="widget-list-media">
+                  <!-- <img src="../assets/img/user/user-13.jpg" alt="" class="rounded"> -->
+                  <div class="widget-icon widget-icon-lg user rounded bg-grey pull-left m-r-5 m-b-5 text-white" data-id="widget-elm" data-light-class="widget-icon widget-icon-lg user rounded bg-grey pull-left m-r-5 m-b-5 text-white" data-dark-class="widget-icon widget-icon-lg user rounded bg-inverse pull-left m-r-5 m-b-5 text-white-transparent-5">
+                    <i class="fa fa-building"></i>
+                  </div>
+                </div>
+                <div class="widget-list-content">
+                  <h4 class="widget-list-title">Nombre Empresa</h4>
+                  <p class="widget-list-desc">Descripción de la empresa</p>
+                </div>
+                <div class="widget-list-action">
+                  <a href="../index.html" class="btn btn-xs btn-primary">Go UWIGO <i class="fa fa-arrow-right m-l-5"></i></a>
+                  <!-- <a href="#" data-toggle="dropdown" class="text-muted pull-right"><i class="fa fa-ellipsis-h f-s-14"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-right">
+                  <li><a href="#">Option 1</a></li>
+                  <li><a href="#">Option 2</a></li>
+                  <li><a href="#">Option 3</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">Option 4</a></li>
+                </ul> -->
+              </div>
+            </div>
+            <!-- end widget-list-item -->
+            <!-- begin widget-list-item -->
+            <div class="widget-list-item">
+              <div class="widget-list-media">
+
+                <div class="widget-img widget-img-lg rounded bg-inverse pull-left m-r-5 m-b-5" style="background-image: url(../assets/img/user/user-12.jpg)"></div>
+              </div>
+              <div class="widget-list-content">
+                <h4 class="widget-list-title">Nombre Empresa</h4>
+                <p class="widget-list-desc">Descripción de la empresa</p>
+              </div>
+              <div class="widget-list-action">
+                <a href="../index.html" class="btn btn-xs btn-primary">Go UWIGO <i class="fa fa-arrow-right m-l-5"></i></a>
+                <!-- <a href="#" data-toggle="dropdown" class="text-muted pull-right"><i class="fa fa-ellipsis-h f-s-14"></i></a>
+                <ul class="dropdown-menu dropdown-menu-right">
+                <li><a href="#">Option 1</a></li>
+                <li><a href="#">Option 2</a></li>
+                <li><a href="#">Option 3</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Option 4</a></li>
+              </ul> -->
+            </div>
+          </div>
+          <!-- end widget-list-item -->
+        </div>
+        <!-- end widget-list -->
+
+      </div>
+
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="modal fade" id="m-upload-file" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Subir Archivo</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="dropzone">
+          <form action="/upload" class="dropzone needsclick" id="demo-upload">
+            <div class="dz-message needsclick">
+              Suelta los archivos <b>aquí</b> o <b>haz clic</b> para subirlos. <br />
+              <span class="dz-note needsclick">
+              </span>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-sm btn-white" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-sm btn-primary" data-dismiss="modal">Aceptar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="m-articulo" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nuevo Articulo</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <form action="/" method="POST">
+
+
+          <div class="row">
+
+            <div class="form-group col-md-3">
+              <label for="">Producto Rastreable</label>
+              <input type="checkbox" class="form-control">
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="">Código</label>
+              <input type="text" class="form-control form-control-sm" placeholder="">
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="">Nombre</label>
+              <input type="text" class="form-control form-control-sm" placeholder="">
+            </div>
+          </div>
+
+          <div class="dropdown-divider"></div>
+
+          <div class="row">
+
+            <div class="form-group col-md-3">
+              <label for="">Producto de Compra</label>
+              <input type="checkbox" class="form-control">
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="">Precio Unitario</label>
+              <input type="text" class="form-control form-control-sm" placeholder="">
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="">Cuenta Contable</label>
+              <select class="form-control form-control-sm">
+                <option> seleccionar</option>
+                <option>Cuenta Contable 1</option>
+                <option>Cuenta Contable 2</option>
+                <option>Cuenta Contable 3</option>
+                <option>Cuenta Contable 4</option>
+                <option>Cuenta Contable 5</option>
+              </select>
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="">Tasa Impuesto</label>
+              <select class="form-control form-control-sm">
+                <option> seleccionar</option>
+                <option>Tasa Impuesto 1</option>
+                <option>Tasa Impuesto 2</option>
+                <option>Tasa Impuesto 3</option>
+                <option>Tasa Impuesto 4</option>
+                <option>Tasa Impuesto 5</option>
+              </select>
+            </div>
+
+          </div>
+
+          <div class="dropdown-divider"></div>
+
+          <div class="row">
+            <div class="form-group col-md-3">
+              <label for="">Producto de Venta</label>
+              <input type="checkbox" class="form-control">
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="">Precio Unitario</label>
+              <input type="text" class="form-control form-control-sm" placeholder="">
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="">Cuenta Contable</label>
+              <select class="form-control form-control-sm">
+                <option> seleccionar</option>
+                <option>Cuenta Contable 1</option>
+                <option>Cuenta Contable 2</option>
+                <option>Cuenta Contable 3</option>
+                <option>Cuenta Contable 4</option>
+                <option>Cuenta Contable 5</option>
+              </select>
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="">Tasa Impuesto</label>
+              <select class="form-control form-control-sm">
+                <option> seleccionar</option>
+                <option>Tasa Impuesto 1</option>
+                <option>Tasa Impuesto 2</option>
+                <option>Tasa Impuesto 3</option>
+                <option>Tasa Impuesto 4</option>
+                <option>Tasa Impuesto 5</option>
+              </select>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-sm btn-white" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-sm btn-primary" data-dismiss="modal">Aceptar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="m-permisos" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Permisos</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <table id="t-permisos" class="table table-striped table-bordered">
+          <tbody>
+            <tr>
+              <td>Nombre Módulo</td>
+              <td class="text-center">
+                <input type="checkbox" class="form-control">
+              </td>
+              <td>
+                <a href="javascript:;" class="btn btn-xs btn-primary"><i class="fa fa-plus"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-primary"><i class="far fa-edit"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-primary"><i class="fa fa-trash-alt"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-primary"><i class="fa fa-key"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-primary"><i class="fa fa-trash-alt"></i></a>
+              </td>
+            </tr>
+            <tr>
+              <td>Nombre Módulo</td>
+              <td class="text-center">
+                <input type="checkbox" class="form-control">
+              </td>
+              <td>
+                <a href="javascript:;" class="btn btn-xs btn-primary"><i class="fa fa-plus"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-primary"><i class="far fa-edit"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-grey"><i class="fa fa-trash-alt"></i></a>
+              </td>
+            </tr>
+            <tr>
+              <td>Nombre Módulo</td>
+              <td class="text-center">
+                <input type="checkbox" class="form-control">
+              </td>
+              <td>
+                <a href="javascript:;" class="btn btn-xs btn-primary"><i class="fa fa-plus"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-primary"><i class="far fa-edit"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-primary"><i class="fa fa-trash-alt"></i></a>
+              </td>
+            </tr>
+            <tr>
+              <td>Nombre Módulo</td>
+              <td class="text-center">
+                <input type="checkbox" class="form-control">
+              </td>
+              <td>
+                <input type="checkbox" class="form-control">
+                <a href="javascript:;" class="btn btn-xs btn-primary"><i class="fa fa-plus"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-grey"><i class="far fa-edit"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-grey"><i class="fa fa-trash-alt"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-grey"><i class="fa fa-key"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-primary"><i class="fa fa-plus"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-grey"><i class="far fa-edit"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-grey"><i class="fa fa-trash-alt"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-grey"><i class="fa fa-key"></i></a>
+              </td>
+            </tr>
+            <tr>
+              <td>Nombre Módulo</td>
+              <td class="text-center">
+                <input type="checkbox" class="form-control">
+              </td>
+              <td>
+                <a href="javascript:;" class="btn btn-xs btn-grey"><i class="fa fa-plus"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-grey"><i class="far fa-edit"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-grey"><i class="fa fa-trash-alt"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-grey"><i class="fa fa-key"></i></a>
+              </td>
+            </tr>
+            <tr>
+              <td>Nombre Módulo</td>
+              <td class="text-center">
+                <input type="checkbox" class="form-control">
+              </td>
+              <td>
+                <a href="javascript:;" class="btn btn-xs btn-grey"><i class="fa fa-plus"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-grey"><i class="far fa-edit"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-grey"><i class="fa fa-trash-alt"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-grey"><i class="fa fa-key"></i></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-sm btn-white" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-sm btn-primary" data-dismiss="modal">Aceptar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end modal -->
+
+</div>
+<!-- end page container -->
+
+<!-- ================== BEGIN BASE JS ================== -->
+<script src="../assets/plugins/jquery/jquery-3.2.1.min.js"></script>
+<script src="../assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+<script src="../assets/plugins/bootstrap/4.1.0/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="../assets/plugins/js-cookie/js.cookie.js"></script>
+<script src="../assets/js/theme/default.min.js"></script>
+<script src="../assets/js/apps.min.js"></script>
+<script src="../assets/script.js"></script>
+<!-- ================== END BASE JS ================== -->
+
+<!-- ================== BEGIN PAGE LEVEL JS ================== -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.2/d3.min.js"></script>
+<script src="../assets/plugins/nvd3/build/nv.d3.js"></script>
+<script src="../assets/js/demo/chart-d3.demo.min.js"></script>
+<script src="../assets/plugins/DataTables/media/js/jquery.dataTables.js"></script>
+<script src="../assets/plugins/DataTables/media/js/dataTables.bootstrap.min.js"></script>
+<script src="../assets/plugins/DataTables/extensions/Responsive/js/dataTables.responsive.min.js"></script>
+<script src="../assets/js/demo/table-manage-default.demo.js"></script>
+<script src="../assets/plugins/dropzone/min/dropzone.min.js"></script>
+<script src="../assets/plugins/highlight/highlight.common.js"></script>
+<script src="../assets/js/demo/render.highlight.js"></script>
+<script src="../assets/plugins/switchery/switchery.min.js"></script>
+<script src="../assets/plugins/powerange/powerange.min.js"></script>
+<script src="../assets/js/demo/form-slider-switcher.demo.min.js"></script>
+<script src="../assets/plugins/select2/dist/js/select2.min.js"></script>
+<script src="../assets/plugins/jstree/dist/jstree.min.js"></script>
+<script src="../assets/js/demo/ui-tree.demo.js"></script>
+<!-- ================== END PAGE LEVEL JS ================== -->
+
+<script src="https://unpkg.com/vue"></script>
+<script>
+
+let app_permiso = new Vue({
+  el: '#app-permiso',
+  data: {
+    permisos: [
+      {
+        'id': 1,
+        'permiso': 'Contabilidad|Transacciones|Comprobante|Listar',
+        'nombre': 'Contabilidad|Transacciones|Comprobante|Listar',
+        'icono': 'fa fa-list-ol',
+        'tipo': 'basic',
+      },
+      {
+        'id': 2,
+        'permiso': 'Contabilidad|Transacciones|Comprobante|Procesar',
+        'nombre': 'Contabilidad|Transacciones|Comprobante|Procesar',
+        'icono': 'fa fa-list',
+        'tipo': 'extra',
+      },
+      {
+        'id': 3,
+        'permiso': 'Contabilidad|Transacciones|Comprobante|Editar',
+        'nombre': 'Contabilidad|Transacciones|Comprobante|Editar',
+        'icono': 'fa fa-edit',
+        'tipo': 'basic',
+      },
+      {
+        'id': 4,
+        'permiso': 'Contabilidad|Transacciones|Comprobante|Anular',
+        'nombre': 'Contabilidad|Transacciones|Comprobante|Anular',
+        'icono': 'fa fa-list',
+        'tipo': 'extra',
+      },
+      {
+        'id': 5,
+        'permiso': 'Contabilidad|Transacciones|Comprobante|Visualizar',
+        'nombre': 'Contabilidad|Transacciones|Comprobante|Visualizar',
+        'icono': 'fa fa-eye',
+        'tipo': 'basic',
+      },
+      {
+        'id': 6,
+        'permiso': 'Contabilidad|Transacciones|Comprobante|Imprimir',
+        'nombre': 'Contabilidad|Transacciones|Comprobante|Imprimir',
+        'icono': 'fa fa-print',
+        'tipo': 'basic',
+      },
+      {
+        'id': 7,
+        'permiso': 'Contabilidad|Transacciones|Comprobante|Nuevo',
+        'nombre': 'Contabilidad|Transacciones|Comprobante|Nuevo',
+        'icono': 'fa fa-plus',
+        'tipo': 'basic',
+      },
+      {
+        'id': 8,
+        'permiso': 'Contabilidad|Transacciones|Proceso Masivo|Nuevo',
+        'nombre': 'Contabilidad|Transacciones|Proceso Masivo|Nuevo',
+        'icono': 'fa fa-plus',
+        'tipo': 'basic',
+      },
+      {
+        'id': 9,
+        'permiso': 'Contabilidad|Transacciones|Cambio Referencia|Nuevo',
+        'nombre': 'Contabilidad|Transacciones|Cambio Referencia|Nuevo',
+        'icono': 'fa fa-plus',
+        'tipo': 'basic',
+      },
+      {
+        'id': 10,
+        'permiso': 'Contabilidad|Transacciones|Diferencia Cambio|Nuevo',
+        'nombre': 'Contabilidad|Transacciones|Diferencia Cambio|Nuevo',
+        'icono': 'fa fa-plus',
+        'tipo': 'basic',
+      },
+      {
+        'id': 11,
+        'permiso': 'Contabilidad|Transacciones|Proceso Cierre|Nuevo',
+        'nombre': 'Contabilidad|Transacciones|Proceso Cierre|Nuevo',
+        'icono': 'fa fa-plus',
+        'tipo': 'basic',
+      },
+      {
+        'id': 12,
+        'permiso': 'Tesorería|Ingresos|Cancelacion|Nueva',
+        'nombre': 'Tesorería|Ingresos|Cancelacion|Nueva',
+        'icono': 'fa fa-plus',
+        'tipo': 'basic',
+      },
+      {
+        'id': 13,
+        'permiso': 'Tesorería|Ingresos|Cancelacion|Eliminar',
+        'nombre': 'Tesorería|Ingresos|Cancelacion|Eliminar',
+        'icono': 'fa fa-trash-alt',
+        'tipo': 'basic',
+      },
+      {
+        'id': 14,
+        'permiso': 'Tesorería|Ingresos|Cancelacion|Imprimir',
+        'nombre': 'Tesorería|Ingresos|Cancelacion|Imprimir',
+        'icono': 'fa fa-print',
+        'tipo': 'basic',
+      },
+      {
+        'id': 15,
+        'permiso': 'Tesorería|Ingresos|Cancelacion|Visualizar',
+        'nombre': 'Tesorería|Ingresos|Cancelacion|Visualizar',
+        'icono': 'fa fa-eye',
+        'tipo': 'basic',
+      },
+      {
+        'id': 16,
+        'permiso': 'Tesorería|Ingresos|Deposito de Cajas|Nuevo',
+        'nombre': 'Tesorería|Ingresos|Deposito de Cajas|Nuevo',
+        'icono': 'fa fa-plus',
+        'tipo': 'basic',
+      },
+      {
+        'id': 17,
+        'permiso': 'Tesorería|Ingresos|Deposito de Cajas|Eliminar',
+        'nombre': 'Tesorería|Ingresos|Deposito de Cajas|Eliminar',
+        'icono': 'fa fa-trash-alt',
+        'tipo': 'basic',
+      },
+      {
+        'id': 18,
+        'permiso': 'Tesorería|Ingresos|Deposito de Cajas|Imprimir',
+        'nombre': 'Tesorería|Ingresos|Deposito de Cajas|Imprimir',
+        'icono': 'fa fa-print',
+        'tipo': 'basic',
+      },
+      {
+        'id': 19,
+        'permiso': 'Tesorería|Ingresos|Deposito de Cajas|Visualizar',
+        'nombre': 'Tesorería|Ingresos|Deposito de Cajas|Visualizar',
+        'icono': 'fa fa-eye',
+        'tipo': 'basic',
+      },
+      {
+        'id': 20,
+        'permiso': 'Tesorería|Ingresos|Deposito de Documentos|Nuevo',
+        'nombre': 'Tesorería|Ingresos|Deposito de Documentos|Nuevo',
+        'icono': 'fa fa-plus',
+        'tipo': 'basic',
+      },
+      {
+        'id': 21,
+        'permiso': 'Tesorería|Ingresos|Deposito de Documentos|Eliminar',
+        'nombre': 'Tesorería|Ingresos|Deposito de Documentos|Eliminar',
+        'icono': 'fa fa-trash-alt',
+        'tipo': 'basic',
+      },
+      {
+        'id': 22,
+        'permiso': 'Tesorería|Ingresos|Deposito de Documentos|Imprimir',
+        'nombre': 'Tesorería|Ingresos|Deposito de Documentos|Imprimir',
+        'icono': 'fa fa-print',
+        'tipo': 'basic',
+      },
+      {
+        'id': 23,
+        'permiso': 'Tesorería|Ingresos|Deposito de Documentos|Visualizar',
+        'nombre': 'Tesorería|Ingresos|Deposito de Documentos|Visualizar',
+        'icono': 'fa fa-eye',
+        'tipo': 'basic',
+      },
+      {
+        'id': 24,
+        'permiso': 'Tesorería|Ingresos|Prorroga|Nueva',
+        'nombre': 'Tesorería|Ingresos|Prorroga|Nueva',
+        'icono': 'fa fa-plus',
+        'tipo': 'basic',
+      },
+      {
+        'id': 25,
+        'permiso': 'Tesorería|Egresos|Programación Pagos|Nueva',
+        'nombre': 'Tesorería|Egresos|Programación Pagos|Nueva',
+        'icono': 'fa fa-plus',
+        'tipo': 'basic',
+      },
+      {
+        'id': 26,
+        'permiso': 'Tesorería|Egresos|Programación Pagos|Eliminar',
+        'nombre': 'Tesorería|Egresos|Programación Pagos|Eliminar',
+        'icono': 'fa fa-trash-alt',
+        'tipo': 'basic',
+      },
+      {
+        'id': 27,
+        'permiso': 'Tesorería|Egresos|Programación Pagos|Imprimir',
+        'nombre': 'Tesorería|Egresos|Programación Pagos|Imprimir',
+        'icono': 'fa fa-print',
+        'tipo': 'basic',
+      },
+      {
+        'id': 28,
+        'permiso': 'Tesorería|Egresos|Programación Pagos|Visualizar',
+        'nombre': 'Tesorería|Egresos|Programación Pagos|Visualizar',
+        'icono': 'fa fa-eye',
+        'tipo': 'basic',
+      },
+      {
+        'id': 29,
+        'permiso': 'Tesorería|Egresos|Autorización Pago|Nueva',
+        'nombre': 'Tesorería|Egresos|Autorización Pago|Nueva',
+        'icono': 'fa fa-plus',
+        'tipo': 'basic',
+      },
+      {
+        'id': 30,
+        'permiso': 'Tesorería|Egresos|Autorización Pago|Eliminar',
+        'nombre': 'Tesorería|Egresos|Autorización Pago|Eliminar',
+        'icono': 'fa fa-trash-alt',
+        'tipo': 'basic',
+      },
+      {
+        'id': 31,
+        'permiso': 'Tesorería|Egresos|Autorización Pago|Imprimir',
+        'nombre': 'Tesorería|Egresos|Autorización Pago|Imprimir',
+        'icono': 'fa fa-print',
+        'tipo': 'basic',
+      },
+      {
+        'id': 32,
+        'permiso': 'Tesorería|Egresos|Autorización Pago|Visualizar',
+        'nombre': 'Tesorería|Egresos|Autorización Pago|Visualizar',
+        'icono': 'fa fa-eye',
+        'tipo': 'basic',
+      },
+      {
+        'id': 33,
+        'permiso': 'Tesorería|Egresos|Emisión|Nueva',
+        'nombre': 'Tesorería|Egresos|Emisión|Nueva',
+        'icono': 'fa fa-plus',
+        'tipo': 'basic',
+      },
+      {
+        'id': 34,
+        'permiso': 'Tesorería|Egresos|Emisión|Visualizar',
+        'nombre': 'Tesorería|Egresos|Emisión|Visualizar',
+        'icono': 'fa fa-eye',
+        'tipo': 'basic',
+      },
+      {
+        'id': 35,
+        'permiso': 'Tesorería|Egresos|Emisión|Anular',
+        'nombre': 'Tesorería|Egresos|Emisión|Anular',
+        'icono': 'fa fa-list',
+        'tipo': 'extra',
+      },
+      {
+        'id': 36,
+        'permiso': 'Tesorería|Egresos|Emisión|Reemitir',
+        'nombre': 'Tesorería|Egresos|Emisión|Reemitir',
+        'icono': 'fa fa-list',
+        'tipo': 'extra',
+      },
+      {
+        'id': 37,
+        'permiso': 'Tesorería|Egresos|Emisión|Imprimir',
+        'nombre': 'Tesorería|Egresos|Emisión|Imprimir',
+        'icono': 'fa fa-print',
+        'tipo': 'basic',
+      },
+      {
+        'id': 38,
+        'permiso': 'Tesorería|Egresos|Egreso Directo|Nuevo',
+        'nombre': 'Tesorería|Egresos|Egreso Directo|Nuevo',
+        'icono': 'fa fa-plus',
+        'tipo': 'basic',
+      },
+      {
+        'id': 39,
+        'permiso': 'Tesorería|Bancos|Cartolas|Nueva',
+        'nombre': 'Tesorería|Bancos|Cartolas|Nueva',
+        'icono': 'fa fa-plus',
+        'tipo': 'basic',
+      },
+      {
+        'id': 40,
+        'permiso': 'Tesorería|Bancos|Cartolas|Editar',
+        'nombre': 'Tesorería|Bancos|Cartolas|Editar',
+        'icono': 'fa fa-edit',
+        'tipo': 'basic',
+      },
+      {
+        'id': 41,
+        'permiso': 'Tesorería|Bancos|Cartolas|Eliminar',
+        'nombre': 'Tesorería|Bancos|Cartolas|Eliminar',
+        'icono': 'fa fa-trash-alt',
+        'tipo': 'basic',
+      },
+      {
+        'id': 42,
+        'permiso': 'Tesorería|Bancos|Cartolas|Imprimir',
+        'nombre': 'Tesorería|Bancos|Cartolas|Imprimir',
+        'icono': 'fa fa-print',
+        'tipo': 'basic',
+      },
+      {
+        'id': 43,
+        'permiso': 'Tesorería|Bancos|Cartola Electrónica|Subir',
+        'nombre': 'Tesorería|Bancos|Cartola Electrónica|Subir',
+        'icono': 'fa fa-list',
+        'tipo': 'extra',
+      },
+      {
+        'id': 44,
+        'permiso': 'Tesorería|Bancos|Calce Automático|--',
+        'nombre': 'Tesorería|Bancos|Calce Automático|--',
+        'icono': 'fa fa-list',
+        'tipo': 'extra',
+      },
+      {
+        'id': 45,
+        'permiso': 'Tesorería|Bancos|Calce Manual|Nuevo',
+        'nombre': 'Tesorería|Bancos|Calce Manual|Nuevo',
+        'icono': 'fa fa-plus',
+        'tipo': 'basic',
+      },
+      {
+        'id': 46,
+        'permiso': 'Tesorería|Bancos|Calce Manual|Visualizar',
+        'nombre': 'Tesorería|Bancos|Calce Manual|Visualizar',
+        'icono': 'fa fa-eye',
+        'tipo': 'basic',
+      },
+      {
+        'id': 47,
+        'permiso': 'Tesorería|Bancos|Calce Manual|Editar',
+        'nombre': 'Tesorería|Bancos|Calce Manual|Editar',
+        'icono': 'fa fa-edit',
+        'tipo': 'basic',
+      },
+      {
+        'id': 48,
+        'permiso': 'Tesorería|Bancos|Calce Manual|Eliminar',
+        'nombre': 'Tesorería|Bancos|Calce Manual|Eliminar',
+        'icono': 'fa fa-trash-alt',
+        'tipo': 'basic',
+      },
+      {
+        'id': 49,
+        'permiso': 'Tesorería|Bancos|Descalce|Nuevo',
+        'nombre': 'Tesorería|Bancos|Descalce|Nuevo',
+        'icono': 'fa fa-plus',
+        'tipo': 'basic',
+      },
+      {
+        'id': 50,
+        'permiso': 'Tesorería|Bancos|Anular Partidas Bancarias|Nuevo',
+        'nombre': 'Tesorería|Bancos|Anular Partidas Bancarias|Nuevo',
+        'icono': 'fa fa-plus',
+        'tipo': 'basic',
+      },
+      {
+        'id': 51,
+        'permiso': 'Tesorería|Bancos|Anular Partidas Contables|Nuevo',
+        'nombre': 'Tesorería|Bancos|Anular Partidas Contables|Nuevo',
+        'icono': 'fa fa-plus',
+        'tipo': 'basic',
+      },
+      {
+        'id': 52,
+        'permiso': 'Tesorería|Bancos|Documentos Caducos|Nuevo',
+        'nombre': 'Tesorería|Bancos|Documentos Caducos|Nuevo',
+        'icono': 'fa fa-plus',
+        'tipo': 'basic',
+      },
+      {
+        'id': 53,
+        'permiso': 'Tesorería|Bancos|Documentos Caducos|Eliminar',
+        'nombre': 'Tesorería|Bancos|Documentos Caducos|Eliminar',
+        'icono': 'fa fa-trash-alt',
+        'tipo': 'basic',
+      },
+      {
+        'id': 54,
+        'permiso': 'Documentos|Transacciones|Documento|Nuevo',
+        'nombre': 'Documentos|Transacciones|Documento|Nuevo',
+        'icono': 'fa fa-plus',
+        'tipo': 'basic',
+      },
+      {
+        'id': 55,
+        'permiso': 'Documentos|Transacciones|Documento|Editar',
+        'nombre': 'Documentos|Transacciones|Documento|Editar',
+        'icono': 'fa fa-edit',
+        'tipo': 'basic',
+      },
+      {
+        'id': 56,
+        'permiso': 'Documentos|Transacciones|Documento|Eliminar',
+        'nombre': 'Documentos|Transacciones|Documento|Eliminar',
+        'icono': 'fa fa-trash-alt',
+        'tipo': 'basic',
+      },
+      {
+        'id': 57,
+        'permiso': 'Documentos|Transacciones|Documento|Anular',
+        'nombre': 'Documentos|Transacciones|Documento|Anular',
+        'icono': 'fa fa-list',
+        'tipo': 'extra',
+      },
+      {
+        'id': 58,
+        'permiso': 'Documentos|Transacciones|Documento|Emitir',
+        'nombre': 'Documentos|Transacciones|Documento|Emitir',
+        'icono': 'fa fa-list',
+        'tipo': 'extra',
+      },
+      {
+        'id': 59,
+        'permiso': 'Documentos|Transacciones|Documento|Centralizar',
+        'nombre': 'Documentos|Transacciones|Documento|Centralizar',
+        'icono': 'fa fa-list',
+        'tipo': 'extra',
+      },
+      {
+        'id': 60,
+        'permiso': 'Documentos|Transacciones|Documento|Visualizar',
+        'nombre': 'Documentos|Transacciones|Documento|Visualizar',
+        'icono': 'fa fa-eye',
+        'tipo': 'basic',
+      },
+      {
+        'id': 61,
+        'permiso': 'Documentos|Transacciones|Documento|Visalizar DTE',
+        'nombre': 'Documentos|Transacciones|Documento|Visalizar DTE',
+        'icono': 'fa fa-list',
+        'tipo': 'extra',
+      },
+      {
+        'id': 62,
+        'permiso': 'Documentos|Transacciones|Documentos Proveedores|Descargar',
+        'nombre': 'Documentos|Transacciones|Documentos Proveedores|Descargar',
+        'icono': 'fa fa-list',
+        'tipo': 'extra',
+      },
+      {
+        'id': 63,
+        'permiso': 'Documentos|Transacciones|Documentos Proveedores|Aceptar',
+        'nombre': 'Documentos|Transacciones|Documentos Proveedores|Aceptar',
+        'icono': 'fa fa-list',
+        'tipo': 'extra',
+      },
+      {
+        'id': 64,
+        'permiso': 'Documentos|Transacciones|Documentos Proveedores|Rechazar',
+        'nombre': 'Documentos|Transacciones|Documentos Proveedores|Rechazar',
+        'icono': 'fa fa-list',
+        'tipo': 'extra',
+      },
+      {
+        'id': 65,
+        'permiso': 'Documentos|Transacciones|Documentos Proveedores|Centralizar',
+        'nombre': 'Documentos|Transacciones|Documentos Proveedores|Centralizar',
+        'icono': 'fa fa-list',
+        'tipo': 'extra',
+      },
+      {
+        'id': 66,
+        'permiso': 'Documentos|Transacciones|Documentos Proveedores|Visualizar',
+        'nombre': 'Documentos|Transacciones|Documentos Proveedores|Visualizar',
+        'icono': 'fa fa-eye',
+        'tipo': 'basic',
+      },
+      {
+        'id': 67,
+        'permiso': 'Contactos|Transacciones|Contacto|Nuevo',
+        'nombre': 'Contactos|Transacciones|Contacto|Nuevo',
+        'icono': 'fa fa-plus',
+        'tipo': 'basic',
+      },
+      {
+        'id': 68,
+        'permiso': 'Contactos|Transacciones|Contacto|Editar',
+        'nombre': 'Contactos|Transacciones|Contacto|Editar',
+        'icono': 'fa fa-edit',
+        'tipo': 'basic',
+      },
+      {
+        'id': 69,
+        'permiso': 'Contactos|Transacciones|Contacto|Visualizar',
+        'nombre': 'Contactos|Transacciones|Contacto|Visualizar',
+        'icono': 'fa fa-eye',
+        'tipo': 'basic',
+      },
+      {
+        'id': 70,
+        'permiso': 'Contactos|Transacciones|Contacto|Eliminar',
+        'nombre': 'Contactos|Transacciones|Contacto|Eliminar',
+        'icono': 'fa fa-trash-alt',
+        'tipo': 'basic',
+      },
+      {
+        'id': 71,
+        'permiso': 'Reportes|Contabilidad|Libros|Ver libros contables',
+        'nombre': 'Reportes|Contabilidad|Libros|Ver libros contables',
+        'icono': 'fa fa-list',
+        'tipo': 'extra',
+      },
+      {
+        'id': 72,
+        'permiso': 'Reportes|Contabilidad|Libros|Ver libro mayor',
+        'nombre': 'Reportes|Contabilidad|Libros|Ver libro mayor',
+        'icono': 'fa fa-list',
+        'tipo': 'extra',
+      },
+      {
+        'id': 73,
+        'permiso': 'Reportes|Contabilidad|Libros|Ver libro diario',
+        'nombre': 'Reportes|Contabilidad|Libros|Ver libro diario',
+        'icono': 'fa fa-list',
+        'tipo': 'extra',
+      },
+      {
+        'id': 74,
+        'permiso': 'Reportes|Contabilidad|Libros|Hojas timbradas',
+        'nombre': 'Reportes|Contabilidad|Libros|Hojas timbradas',
+        'icono': 'fa fa-list',
+        'tipo': 'extra',
+      },
+      {
+        'id': 75,
+        'permiso': 'Reportes|Contabilidad|Balances|Ocho Columnas',
+        'nombre': 'Reportes|Contabilidad|Balances|Ocho Columnas',
+        'icono': 'fa fa-list',
+        'tipo': 'extra',
+      },
+      {
+        'id': 76,
+        'permiso': 'Reportes|Contabilidad|Balances|Comprobacion y Saldo',
+        'nombre': 'Reportes|Contabilidad|Balances|Comprobacion y Saldo',
+        'icono': 'fa fa-list',
+        'tipo': 'extra',
+      },
+      {
+        'id': 77,
+        'permiso': 'Reportes|Contabilidad|Balances|Inventario Balance',
+        'nombre': 'Reportes|Contabilidad|Balances|Inventario Balance',
+        'icono': 'fa fa-list',
+        'tipo': 'extra',
+      },
+      {
+        'id': 78,
+        'permiso': 'Reportes|Contabilidad|Estados Financieros|Mes Acumulado',
+        'nombre': 'Reportes|Contabilidad|Estados Financieros|Mes Acumulado',
+        'icono': 'fa fa-list',
+        'tipo': 'extra',
+      },
+      {
+        'id': 79,
+        'permiso': 'Reportes|Contabilidad|Estados Financieros|Doce Periodos',
+        'nombre': 'Reportes|Contabilidad|Estados Financieros|Doce Periodos',
+        'icono': 'fa fa-list',
+        'tipo': 'extra',
+      },
+      {
+        'id': 80,
+        'permiso': 'Reportes|Contabilidad|Cuentas Corrientes|Por Análsis',
+        'nombre': 'Reportes|Contabilidad|Cuentas Corrientes|Por Análsis',
+        'icono': 'fa fa-list',
+        'tipo': 'extra',
+      },
+      {
+        'id': 81,
+        'permiso': 'Reportes|Contabilidad|Cuentas Corrientes|Por Cuenta',
+        'nombre': 'Reportes|Contabilidad|Cuentas Corrientes|Por Cuenta',
+        'icono': 'fa fa-list',
+        'tipo': 'extra',
+      },
+      {
+        'id': 82,
+        'permiso': 'Reportes|Contabilidad|Cuentas Corrientes|Cuenta Selectiva',
+        'nombre': 'Reportes|Contabilidad|Cuentas Corrientes|Cuenta Selectiva',
+        'icono': 'fa fa-list',
+        'tipo': 'extra',
+      },
+      {
+        'id': 83,
+        'permiso': 'Reportes|Contabilidad|Cuentas Corrientes|Análisis de Vencimiento',
+        'nombre': 'Reportes|Contabilidad|Cuentas Corrientes|Análisis de Vencimiento',
+        'icono': 'fa fa-list',
+        'tipo': 'extra',
+      },
+      {
+        'id': 84,
+        'permiso': 'Reportes|Contabilidad|Cuentas Corrientes|Cartolas',
+        'nombre': 'Reportes|Contabilidad|Cuentas Corrientes|Cartolas',
+        'icono': 'fa fa-list',
+        'tipo': 'extra',
+      },
+      {
+        'id': 85,
+        'permiso': 'Reportes|Contabilidad|Cuentas Corrientes|Consulta Saldos',
+        'nombre': 'Reportes|Contabilidad|Cuentas Corrientes|Consulta Saldos',
+        'icono': 'fa fa-list',
+        'tipo': 'extra',
+      },
+      {
+        'id': 86,
+        'permiso': 'Reportes|Tesorería|Bancos|Demostrativo Conciliación',
+        'nombre': 'Reportes|Tesorería|Bancos|Demostrativo Conciliación',
+        'icono': 'fa fa-list',
+        'tipo': 'extra',
+      },
+      {
+        'id': 87,
+        'permiso': 'Reportes|Tesorería|Bancos|Demostrativo Conciliación Automática',
+        'nombre': 'Reportes|Tesorería|Bancos|Demostrativo Conciliación Automática',
+        'icono': 'fa fa-list',
+        'tipo': 'extra',
+      },
+      {
+        'id': 88,
+        'permiso': 'Reportes|Tesorería|Bancos|Demostrativo Conciliación Manual',
+        'nombre': 'Reportes|Tesorería|Bancos|Demostrativo Conciliación Manual',
+        'icono': 'fa fa-list',
+        'tipo': 'extra',
+      },
+      {
+        'id': 89,
+        'permiso': 'Reportes|Tesorería|Bancos|Partidas Bancarias Nulas',
+        'nombre': 'Reportes|Tesorería|Bancos|Partidas Bancarias Nulas',
+        'icono': 'fa fa-list',
+        'tipo': 'extra',
+      },
+      {
+        'id': 90,
+        'permiso': 'Reportes|Tesorería|Bancos|Partidas Contables Nulas',
+        'nombre': 'Reportes|Tesorería|Bancos|Partidas Contables Nulas',
+        'icono': 'fa fa-list',
+        'tipo': 'extra',
+      },
+      {
+        'id': 91,
+        'permiso': 'Reportes|Tesorería|Bancos|Documentos Caducos',
+        'nombre': 'Reportes|Tesorería|Bancos|Documentos Caducos',
+        'icono': 'fa fa-list',
+        'tipo': 'extra',
+      },
+      {
+        'id': 92,
+        'permiso': 'Reportes|Tesorería|Ingresos|Consulta Ingresos ',
+        'nombre': 'Reportes|Tesorería|Ingresos|Consulta Ingresos ',
+        'icono': 'fa fa-list',
+        'tipo': 'extra',
+      },
+      {
+        'id': 93,
+        'permiso': 'Reportes|Tesorería|Ingresos|Consulta Ingresos Cancelación',
+        'nombre': 'Reportes|Tesorería|Ingresos|Consulta Ingresos Cancelación',
+        'icono': 'fa fa-list',
+        'tipo': 'extra',
+      },
+      {
+        'id': 94,
+        'permiso': 'Reportes|Tesorería|Ingresos|Consulta Ingresos Bancos',
+        'nombre': 'Reportes|Tesorería|Ingresos|Consulta Ingresos Bancos',
+        'icono': 'fa fa-list',
+        'tipo': 'extra',
+      },
+      {
+        'id': 95,
+        'permiso': 'Reportes|Tesorería|Ingresos|Consulta Ingresos Cliente',
+        'nombre': 'Reportes|Tesorería|Ingresos|Consulta Ingresos Cliente',
+        'icono': 'fa fa-list',
+        'tipo': 'extra',
+      },
+      {
+        'id': 96,
+        'permiso': 'Reportes|Tesorería|Ingresos|Aviso de Cobranza',
+        'nombre': 'Reportes|Tesorería|Ingresos|Aviso de Cobranza',
+        'icono': 'fa fa-list',
+        'tipo': 'extra',
+      },
+      {
+        'id': 97,
+        'permiso': 'Reportes|Tesorería|Ingresos|Circularización Saldos',
+        'nombre': 'Reportes|Tesorería|Ingresos|Circularización Saldos',
+        'icono': 'fa fa-list',
+        'tipo': 'extra',
+      },
+      {
+        'id': 98,
+        'permiso': 'Reportes|Tesorería|Egresos|Cuentas por pagar',
+        'nombre': 'Reportes|Tesorería|Egresos|Cuentas por pagar',
+        'icono': 'fa fa-list',
+        'tipo': 'extra',
+      },
+      {
+        'id': 99,
+        'permiso': 'Reportes|Tesorería|Egresos|Cuentas Bancos',
+        'nombre': 'Reportes|Tesorería|Egresos|Cuentas Bancos',
+        'icono': 'fa fa-list',
+        'tipo': 'extra',
+      },
+      {
+        'id': 100,
+        'permiso': 'Configuración|Contabilidad|Parámetro de proceso|Nuevo',
+        'nombre': 'Configuración|Contabilidad|Parámetro de proceso|Nuevo',
+        'icono': 'fa fa-plus',
+        'tipo': 'basic',
+      },
+      {
+        'id': 101,
+        'permiso': 'Configuración|Contabilidad|Agrupación de Cuentas|Nuevo',
+        'nombre': 'Configuración|Contabilidad|Agrupación de Cuentas|Nuevo',
+        'icono': 'fa fa-plus',
+        'tipo': 'basic',
+      },
+      {
+        'id': 102,
+        'permiso': 'Configuración|Contabilidad|Agrupación de Cuentas|Editar',
+        'nombre': 'Configuración|Contabilidad|Agrupación de Cuentas|Editar',
+        'icono': 'fa fa-edit',
+        'tipo': 'basic',
+      },
+      {
+        'id': 103,
+        'permiso': 'Configuración|Contabilidad|Agrupación de Cuentas|Eliminar',
+        'nombre': 'Configuración|Contabilidad|Agrupación de Cuentas|Eliminar',
+        'icono': 'fa fa-trash-alt',
+        'tipo': 'basic',
+      },
+      {
+        'id': 104,
+        'permiso': 'Configuración|Contabilidad|Tipo Comprobante |Nuevo',
+        'nombre': 'Configuración|Contabilidad|Tipo Comprobante |Nuevo',
+        'icono': 'fa fa-plus',
+        'tipo': 'basic',
+      },
+      {
+        'id': 105,
+        'permiso': 'Configuración|Contabilidad|Tipo Comprobante |Editar',
+        'nombre': 'Configuración|Contabilidad|Tipo Comprobante |Editar',
+        'icono': 'fa fa-edit',
+        'tipo': 'basic',
+      },
+      {
+        'id': 106,
+        'permiso': 'Configuración|Contabilidad|Tipo Comprobante |Eliminar',
+        'nombre': 'Configuración|Contabilidad|Tipo Comprobante |Eliminar',
+        'icono': 'fa fa-trash-alt',
+        'tipo': 'basic',
+      },
+      {
+        'id': 107,
+        'permiso': 'Configuración|Contabilidad|Tipo Atributos|Nuevo',
+        'nombre': 'Configuración|Contabilidad|Tipo Atributos|Nuevo',
+        'icono': 'fa fa-plus',
+        'tipo': 'basic',
+      },
+      {
+        'id': 108,
+        'permiso': 'Configuración|Contabilidad|Tipo Atributos|Editar',
+        'nombre': 'Configuración|Contabilidad|Tipo Atributos|Editar',
+        'icono': 'fa fa-edit',
+        'tipo': 'basic',
+      },
+      {
+        'id': 109,
+        'permiso': 'Configuración|Contabilidad|Tipo Atributos|Eliminar',
+        'nombre': 'Configuración|Contabilidad|Tipo Atributos|Eliminar',
+        'icono': 'fa fa-trash-alt',
+        'tipo': 'basic',
+      },
+      {
+        'id': 110,
+        'permiso': 'Configuración|Contabilidad|Atributos|Nuevo',
+        'nombre': 'Configuración|Contabilidad|Atributos|Nuevo',
+        'icono': 'fa fa-plus',
+        'tipo': 'basic',
+      },
+      {
+        'id': 111,
+        'permiso': 'Configuración|Contabilidad|Atributos|Editar',
+        'nombre': 'Configuración|Contabilidad|Atributos|Editar',
+        'icono': 'fa fa-edit',
+        'tipo': 'basic',
+      },
+      {
+        'id': 112,
+        'permiso': 'Configuración|Contabilidad|Atributos|Eliminar',
+        'nombre': 'Configuración|Contabilidad|Atributos|Eliminar',
+        'icono': 'fa fa-trash-alt',
+        'tipo': 'basic',
+      },
+      {
+        'id': 113,
+        'permiso': 'Configuración|Contabilidad|Ejercicios|Nuevo',
+        'nombre': 'Configuración|Contabilidad|Ejercicios|Nuevo',
+        'icono': 'fa fa-plus',
+        'tipo': 'basic',
+      },
+      {
+        'id': 114,
+        'permiso': 'Configuración|Contabilidad|Ejercicios|Editar',
+        'nombre': 'Configuración|Contabilidad|Ejercicios|Editar',
+        'icono': 'fa fa-edit',
+        'tipo': 'basic',
+      },
+      {
+        'id': 115,
+        'permiso': 'Configuración|Contabilidad|Ejercicios|Eliminar',
+        'nombre': 'Configuración|Contabilidad|Ejercicios|Eliminar',
+        'icono': 'fa fa-trash-alt',
+        'tipo': 'basic',
+      },
+      {
+        'id': 116,
+        'permiso': 'Configuración|Contabilidad|Ejercicios|Visualizar',
+        'nombre': 'Configuración|Contabilidad|Ejercicios|Visualizar',
+        'icono': 'fa fa-eye',
+        'tipo': 'basic',
+      },
+      {
+        'id': 117,
+        'permiso': 'Configuración|Contabilidad|Libros Contables|Nuevo',
+        'nombre': 'Configuración|Contabilidad|Libros Contables|Nuevo',
+        'icono': 'fa fa-plus',
+        'tipo': 'basic',
+      },
+      {
+        'id': 118,
+        'permiso': 'Configuración|Contabilidad|Libros Contables|Eliminar',
+        'nombre': 'Configuración|Contabilidad|Libros Contables|Eliminar',
+        'icono': 'fa fa-trash-alt',
+        'tipo': 'basic',
+      },
+      {
+        'id': 119,
+        'permiso': 'Configuración|Contabilidad|Libros Contables|Editar',
+        'nombre': 'Configuración|Contabilidad|Libros Contables|Editar',
+        'icono': 'fa fa-edit',
+        'tipo': 'basic',
+      },
+      {
+        'id': 120,
+        'permiso': 'Configuración|Contabilidad|Plan de Cuenta|Nuevo',
+        'nombre': 'Configuración|Contabilidad|Plan de Cuenta|Nuevo',
+        'icono': 'fa fa-plus',
+        'tipo': 'basic',
+      },
+      {
+        'id': 121,
+        'permiso': 'Configuración|Contabilidad|Plan de Cuenta|Editar',
+        'nombre': 'Configuración|Contabilidad|Plan de Cuenta|Editar',
+        'icono': 'fa fa-edit',
+        'tipo': 'basic',
+      },
+      {
+        'id': 122,
+        'permiso': 'Configuración|Contabilidad|Plan de Cuenta|Eliminar',
+        'nombre': 'Configuración|Contabilidad|Plan de Cuenta|Eliminar',
+        'icono': 'fa fa-trash-alt',
+        'tipo': 'basic',
+      },
+      {
+        'id': 123,
+        'permiso': 'Configuración|Contabilidad|Definicion Libros|Nuevo',
+        'nombre': 'Configuración|Contabilidad|Definicion Libros|Nuevo',
+        'icono': 'fa fa-plus',
+        'tipo': 'basic',
+      },
+      {
+        'id': 124,
+        'permiso': 'Configuración|Contabilidad|Definicion Libros|Editar',
+        'nombre': 'Configuración|Contabilidad|Definicion Libros|Editar',
+        'icono': 'fa fa-edit',
+        'tipo': 'basic',
+      },
+      {
+        'id': 125,
+        'permiso': 'Configuración|Contabilidad|Definicion Libros|Eliminar',
+        'nombre': 'Configuración|Contabilidad|Definicion Libros|Eliminar',
+        'icono': 'fa fa-trash-alt',
+        'tipo': 'basic',
+      },
+      {
+        'id': 126,
+        'permiso': 'Configuración|Contabilidad|Definicion Libros|Visualizar',
+        'nombre': 'Configuración|Contabilidad|Definicion Libros|Visualizar',
+        'icono': 'fa fa-eye',
+        'tipo': 'basic',
+      },
+      {
+        'id': 127,
+        'permiso': 'Configuración|Contabilidad|Definicion Libros|Imprimir',
+        'nombre': 'Configuración|Contabilidad|Definicion Libros|Imprimir',
+        'icono': 'fa fa-print',
+        'tipo': 'basic',
+      },
+      {
+        'id': 128,
+        'permiso': 'Configuración|Contabilidad|Setup Proveedores|Nuevo',
+        'nombre': 'Configuración|Contabilidad|Setup Proveedores|Nuevo',
+        'icono': 'fa fa-plus',
+        'tipo': 'basic',
+      },
+      {
+        'id': 129,
+        'permiso': 'Configuración|Contabilidad|Setup Proveedores|Editar',
+        'nombre': 'Configuración|Contabilidad|Setup Proveedores|Editar',
+        'icono': 'fa fa-edit',
+        'tipo': 'basic',
+      },
+      {
+        'id': 130,
+        'permiso': 'Configuración|Contabilidad|Setup Proveedores|Eliminar',
+        'nombre': 'Configuración|Contabilidad|Setup Proveedores|Eliminar',
+        'icono': 'fa fa-trash-alt',
+        'tipo': 'basic',
+      },
+      {
+        'id': 131,
+        'permiso': 'Configuración|Contabilidad|Setup Proveedores|Imprimir',
+        'nombre': 'Configuración|Contabilidad|Setup Proveedores|Imprimir',
+        'icono': 'fa fa-print',
+        'tipo': 'basic',
+      },
+      {
+        'id': 132,
+        'permiso': 'Configuración|Contabilidad|Estados Financieros|Nuevo',
+        'nombre': 'Configuración|Contabilidad|Estados Financieros|Nuevo',
+        'icono': 'fa fa-plus',
+        'tipo': 'basic',
+      },
+      {
+        'id': 133,
+        'permiso': 'Configuración|Contabilidad|Estados Financieros|Eliminar',
+        'nombre': 'Configuración|Contabilidad|Estados Financieros|Eliminar',
+        'icono': 'fa fa-trash-alt',
+        'tipo': 'basic',
+      },
+      {
+        'id': 134,
+        'permiso': 'Configuración|Contabilidad|Estados Financieros|Editar',
+        'nombre': 'Configuración|Contabilidad|Estados Financieros|Editar',
+        'icono': 'fa fa-edit',
+        'tipo': 'basic',
+      },
+      {
+        'id': 135,
+        'permiso': 'Configuración|Contabilidad|Estados Financieros|Imprimir',
+        'nombre': 'Configuración|Contabilidad|Estados Financieros|Imprimir',
+        'icono': 'fa fa-print',
+        'tipo': 'basic',
+      },
+      {
+        'id': 136,
+        'permiso': 'Configuración|Contabilidad|Tasas de Cambio|Ver',
+        'nombre': 'Configuración|Contabilidad|Tasas de Cambio|Ver',
+        'icono': 'fa fa-list',
+        'tipo': 'extra',
+      },
+      {
+        'id': 137,
+        'permiso': 'Configuración|Contabilidad|Cierres Logico|Nuevo',
+        'nombre': 'Configuración|Contabilidad|Cierres Logico|Nuevo',
+        'icono': 'fa fa-plus',
+        'tipo': 'basic',
+      },
+      {
+        'id': 138,
+        'permiso': 'Configuración|Contabilidad|Cierres Logico|Editar',
+        'nombre': 'Configuración|Contabilidad|Cierres Logico|Editar',
+        'icono': 'fa fa-edit',
+        'tipo': 'basic',
+      },
+      {
+        'id': 139,
+        'permiso': 'Configuración|Tesorería|Párametros Bancos|Nuevo',
+        'nombre': 'Configuración|Tesorería|Párametros Bancos|Nuevo',
+        'icono': 'fa fa-plus',
+        'tipo': 'basic',
+      },
+      {
+        'id': 140,
+        'permiso': 'Configuración|Tesorería|Párametros Ingresos|Nuevo',
+        'nombre': 'Configuración|Tesorería|Párametros Ingresos|Nuevo',
+        'icono': 'fa fa-plus',
+        'tipo': 'basic',
+      },
+      {
+        'id': 141,
+        'permiso': 'Configuración|Tesorería|Párametros Egresos|Nuevo',
+        'nombre': 'Configuración|Tesorería|Párametros Egresos|Nuevo',
+        'icono': 'fa fa-plus',
+        'tipo': 'basic',
+      },
+      {
+        'id': 142,
+        'permiso': 'Configuración|Tesorería|Párametros Egresos|Eliminar',
+        'nombre': 'Configuración|Tesorería|Párametros Egresos|Eliminar',
+        'icono': 'fa fa-trash-alt',
+        'tipo': 'basic',
+      },
+      {
+        'id': 143,
+        'permiso': 'Configuración|Tesorería|Párametros Egresos|Editar',
+        'nombre': 'Configuración|Tesorería|Párametros Egresos|Editar',
+        'icono': 'fa fa-edit',
+        'tipo': 'basic',
+      },
+      {
+        'id': 144,
+        'permiso': 'Configuración|Tesorería|Bancos|Nuevo',
+        'nombre': 'Configuración|Tesorería|Bancos|Nuevo',
+        'icono': 'fa fa-plus',
+        'tipo': 'basic',
+      },
+      {
+        'id': 145,
+        'permiso': 'Configuración|Tesorería|Bancos|Eliminar',
+        'nombre': 'Configuración|Tesorería|Bancos|Eliminar',
+        'icono': 'fa fa-trash-alt',
+        'tipo': 'basic',
+      },
+      {
+        'id': 146,
+        'permiso': 'Configuración|Tesorería|Bancos|Editar',
+        'nombre': 'Configuración|Tesorería|Bancos|Editar',
+        'icono': 'fa fa-edit',
+        'tipo': 'basic',
+      },
+      {
+        'id': 147,
+        'permiso': 'Configuración|Tesorería|Cuentas Bancarias|Nuevo',
+        'nombre': 'Configuración|Tesorería|Cuentas Bancarias|Nuevo',
+        'icono': 'fa fa-plus',
+        'tipo': 'basic',
+      },
+      {
+        'id': 148,
+        'permiso': 'Configuración|Tesorería|Cuentas Bancarias|Eliminar',
+        'nombre': 'Configuración|Tesorería|Cuentas Bancarias|Eliminar',
+        'icono': 'fa fa-trash-alt',
+        'tipo': 'basic',
+      },
+      {
+        'id': 149,
+        'permiso': 'Configuración|Tesorería|Cuentas Bancarias|Editar',
+        'nombre': 'Configuración|Tesorería|Cuentas Bancarias|Editar',
+        'icono': 'fa fa-edit',
+        'tipo': 'basic',
+      },
+      {
+        'id': 150,
+        'permiso': 'Configuración|Tesorería|Formato Cartas|Nuevo',
+        'nombre': 'Configuración|Tesorería|Formato Cartas|Nuevo',
+        'icono': 'fa fa-plus',
+        'tipo': 'basic',
+      },
+      {
+        'id': 151,
+        'permiso': 'Configuración|Tesorería|Formato Cartas|Eliminar',
+        'nombre': 'Configuración|Tesorería|Formato Cartas|Eliminar',
+        'icono': 'fa fa-trash-alt',
+        'tipo': 'basic',
+      },
+      {
+        'id': 152,
+        'permiso': 'Configuración|Tesorería|Formato Cartas|Editar',
+        'nombre': 'Configuración|Tesorería|Formato Cartas|Editar',
+        'icono': 'fa fa-edit',
+        'tipo': 'basic',
+      },
+      {
+        'id': 153,
+        'permiso': 'Configuración|Documentos|Grupo Documentos|Nuevo',
+        'nombre': 'Configuración|Documentos|Grupo Documentos|Nuevo',
+        'icono': 'fa fa-plus',
+        'tipo': 'basic',
+      },
+      {
+        'id': 154,
+        'permiso': 'Configuración|Documentos|Grupo Documentos|Eliminar',
+        'nombre': 'Configuración|Documentos|Grupo Documentos|Eliminar',
+        'icono': 'fa fa-trash-alt',
+        'tipo': 'basic',
+      },
+      {
+        'id': 155,
+        'permiso': 'Configuración|Documentos|Grupo Documentos|Editar',
+        'nombre': 'Configuración|Documentos|Grupo Documentos|Editar',
+        'icono': 'fa fa-edit',
+        'tipo': 'basic',
+      },
+      {
+        'id': 156,
+        'permiso': 'Configuración|Documentos|Unidades de medida|Nuevo',
+        'nombre': 'Configuración|Documentos|Unidades de medida|Nuevo',
+        'icono': 'fa fa-plus',
+        'tipo': 'basic',
+      },
+      {
+        'id': 157,
+        'permiso': 'Configuración|Documentos|Unidades de medida|Eliminar',
+        'nombre': 'Configuración|Documentos|Unidades de medida|Eliminar',
+        'icono': 'fa fa-trash-alt',
+        'tipo': 'basic',
+      },
+      {
+        'id': 158,
+        'permiso': 'Configuración|Documentos|Unidades de medida|Editar',
+        'nombre': 'Configuración|Documentos|Unidades de medida|Editar',
+        'icono': 'fa fa-edit',
+        'tipo': 'basic',
+      },
+      {
+        'id': 159,
+        'permiso': 'Configuración|Documentos|Impuestos Especificos|Nuevo',
+        'nombre': 'Configuración|Documentos|Impuestos Especificos|Nuevo',
+        'icono': 'fa fa-plus',
+        'tipo': 'basic',
+      },
+      {
+        'id': 160,
+        'permiso': 'Configuración|Documentos|Impuestos Especificos|Eliminar',
+        'nombre': 'Configuración|Documentos|Impuestos Especificos|Eliminar',
+        'icono': 'fa fa-trash-alt',
+        'tipo': 'basic',
+      },
+      {
+        'id': 161,
+        'permiso': 'Configuración|Documentos|Impuestos Especificos|Editar',
+        'nombre': 'Configuración|Documentos|Impuestos Especificos|Editar',
+        'icono': 'fa fa-edit',
+        'tipo': 'basic',
+      },
+      {
+        'id': 162,
+        'permiso': 'Configuración|Documentos|Definicion Documentos|Nuevo',
+        'nombre': 'Configuración|Documentos|Definicion Documentos|Nuevo',
+        'icono': 'fa fa-plus',
+        'tipo': 'basic',
+      },
+      {
+        'id': 163,
+        'permiso': 'Configuración|Documentos|Definicion Documentos|Eliminar',
+        'nombre': 'Configuración|Documentos|Definicion Documentos|Eliminar',
+        'icono': 'fa fa-trash-alt',
+        'tipo': 'basic',
+      },
+      {
+        'id': 164,
+        'permiso': 'Configuración|Documentos|Definicion Documentos|Editar',
+        'nombre': 'Configuración|Documentos|Definicion Documentos|Editar',
+        'icono': 'fa fa-edit',
+        'tipo': 'basic',
+      },
+      {
+        'id': 165,
+        'permiso': 'Configuración|Documentos|Definicion Documentos|Visualizar',
+        'nombre': 'Configuración|Documentos|Definicion Documentos|Visualizar',
+        'icono': 'fa fa-eye',
+        'tipo': 'basic',
+      },
+      {
+        'id': 166,
+        'permiso': 'Configuración|Documentos|Definicion Documentos|Imprimir',
+        'nombre': 'Configuración|Documentos|Definicion Documentos|Imprimir',
+        'icono': 'fa fa-print',
+        'tipo': 'basic',
+      },
+      {
+        'id': 167,
+        'permiso': 'Configuración|Documentos|Formateador Documetos|Nuevo',
+        'nombre': 'Configuración|Documentos|Formateador Documetos|Nuevo',
+        'icono': 'fa fa-plus',
+        'tipo': 'basic',
+      },
+      {
+        'id': 168,
+        'permiso': 'Configuración|Documentos|Formateador Documetos|Eliminar',
+        'nombre': 'Configuración|Documentos|Formateador Documetos|Eliminar',
+        'icono': 'fa fa-trash-alt',
+        'tipo': 'basic',
+      },
+      {
+        'id': 169,
+        'permiso': 'Configuración|Documentos|Formateador Documetos|Editar',
+        'nombre': 'Configuración|Documentos|Formateador Documetos|Editar',
+        'icono': 'fa fa-edit',
+        'tipo': 'basic',
+      },
+      {
+        'id': 170,
+        'permiso': 'Configuración|Documentos|Productos|Nuevo',
+        'nombre': 'Configuración|Documentos|Productos|Nuevo',
+        'icono': 'fa fa-plus',
+        'tipo': 'basic',
+      },
+      {
+        'id': 171,
+        'permiso': 'Configuración|Documentos|Productos|Eliminar',
+        'nombre': 'Configuración|Documentos|Productos|Eliminar',
+        'icono': 'fa fa-trash-alt',
+        'tipo': 'basic',
+      },
+      {
+        'id': 172,
+        'permiso': 'Configuración|Documentos|Productos|Editar',
+        'nombre': 'Configuración|Documentos|Productos|Editar',
+        'icono': 'fa fa-edit',
+        'tipo': 'basic',
+      },
+      {
+        'id': 173,
+        'permiso': 'Configuración|Documentos|Productos|Visualizar',
+        'nombre': 'Configuración|Documentos|Productos|Visualizar',
+        'icono': 'fa fa-eye',
+        'tipo': 'basic',
+      },
+      {
+        'id': 174,
+        'permiso': 'Configuración|Documentos|Condicion Compra/Venta|Nuevo',
+        'nombre': 'Configuración|Documentos|Condicion Compra/Venta|Nuevo',
+        'icono': 'fa fa-plus',
+        'tipo': 'basic',
+      },
+      {
+        'id': 175,
+        'permiso': 'Configuración|Documentos|Condicion Compra/Venta|Eliminar',
+        'nombre': 'Configuración|Documentos|Condicion Compra/Venta|Eliminar',
+        'icono': 'fa fa-trash-alt',
+        'tipo': 'basic',
+      },
+      {
+        'id': 176,
+        'permiso': 'Configuración|Documentos|Condicion Compra/Venta|Editar',
+        'nombre': 'Configuración|Documentos|Condicion Compra/Venta|Editar',
+        'icono': 'fa fa-edit',
+        'tipo': 'basic',
+      },
+      {
+        'id': 177,
+        'permiso': 'Configuración|Documentos|Carga Folio|Nuevo',
+        'nombre': 'Configuración|Documentos|Carga Folio|Nuevo',
+        'icono': 'fa fa-plus',
+        'tipo': 'basic',
+      },
+      {
+        'id': 178,
+        'permiso': 'Configuración|Documentos|Carga Folio|Eliminar',
+        'nombre': 'Configuración|Documentos|Carga Folio|Eliminar',
+        'icono': 'fa fa-trash-alt',
+        'tipo': 'basic',
+      },
+      {
+        'id': 179,
+        'permiso': 'Configuración|Documentos|Carga Caf|Nuevo',
+        'nombre': 'Configuración|Documentos|Carga Caf|Nuevo',
+        'icono': 'fa fa-plus',
+        'tipo': 'basic',
+      },
+      {
+        'id': 180,
+        'permiso': 'Configuración|Documentos|Carga Caf|Autorizar',
+        'nombre': 'Configuración|Documentos|Carga Caf|Autorizar',
+        'icono': 'fa fa-check',
+        'tipo': 'extra',
+      },
+      {
+        'id': 181,
+        'permiso': 'Configuración|Documentos|Carga Caf|Eliminar',
+        'nombre': 'Configuración|Documentos|Carga Caf|Eliminar',
+        'icono': 'fa fa-trash-alt',
+        'tipo': 'basic',
+      },
+      {
+        'id': 182,
+        'permiso': 'Configuración|Documentos|Conexion IDTE|Nueva',
+        'nombre': 'Configuración|Documentos|Conexion IDTE|Nueva',
+        'icono': 'fa fa-plus',
+        'tipo': 'basic',
+      },
+      {
+        'id': 183,
+        'permiso': 'Configuración|Documentos|Conexion IDTE|Editar',
+        'nombre': 'Configuración|Documentos|Conexion IDTE|Editar',
+        'icono': 'fa fa-edit',
+        'tipo': 'basic',
+      },
+      {
+        'id': 184,
+        'permiso': 'Configuración|Documentos|Conexion IDTE|Eliminar',
+        'nombre': 'Configuración|Documentos|Conexion IDTE|Eliminar',
+        'icono': 'fa fa-trash-alt',
+        'tipo': 'basic',
+      },
+      {
+        'id': 185,
+        'permiso': 'Configuración|Documentos|Conexion IDTE|Desactivar',
+        'nombre': 'Configuración|Documentos|Conexion IDTE|Desactivar',
+        'icono': 'fa fa-ban',
+        'tipo': 'extra',
+      },
+      {
+        'id': 186,
+        'permiso': 'Configuración|Importador Datos|Carga Masiva|Listar',
+        'nombre': 'Configuración|Importador Datos|Carga Masiva|Listar',
+        'icono': 'fa fa-list',
+        'tipo': 'basic',
+      }
+    ],
+  },
+  created: function () {
+    for (var i = 0; i < this.permisos.length; i++) {
+
+      permiso = this.permisos[i].permiso.split('|')
+
+      d_module     = permiso[0].toLowerCase()
+      d_submodule  = permiso[2].toLowerCase()
+      table_tr     = $('#t-permisos tr[data-module="'+d_module+'"][data-submodule="'+d_submodule+'"]')
+
+      if (table_tr.length == 0) {
+
+          var temp = '';
+          temp += '<tr data-module="@module-name" data-submodule="@submodule-name">'
+          temp += '<td>@module-name</td>'
+          temp += '<td>@submodule-name</td>'
+          temp += '<td data-permission="basic">'
+          temp += '<input type="checkbox" class="check-permission-basic">'
+          temp += '</td>'
+          temp += '<td data-permission="extra">'
+          temp += '<input type="checkbox" class="check-permission-extras">'
+          temp += '</td>'
+          temp += '</tr>'
+
+          temp = temp.replace(/@module-name/g, d_module);
+          temp = temp.replace(/@submodule-name/g, d_submodule);
+
+          $('#t-permisos tbody').append(temp)
+
+      }
+
+      icono = ''
+      icono += '<a href="javascript:;" class="btn btn-xs btn-permission btn-grey ml-1" data-toggle="tooltip" data-placement="top" title="@permission-name">'
+      icono += '<i class="@permission-icon"></i>'
+      icono += '</a>'
+
+      icono = icono.replace(/@permission-icon/g, this.permisos[i].icono);
+      icono = icono.replace(/@permission-name/g, this.permisos[i].nombre);
+
+      $('#t-permisos tr[data-module="'+d_module+'"][data-submodule="'+d_submodule+'"]').find('td[data-permission="'+this.permisos[i].tipo.toLowerCase()+'"]').append(icono)
+
+    }
+  },
+  methods: {
+    submit: function () {
+      console.log('Se ejecuta el método submit')
+    }
+  }
+})
+
+
+$(document).ready(function() {
+  App.init();
+  ChartNvd3.init();
+  TableManageDefault.init();
+  Highlight.init();
+  FormSliderSwitcher.init();
+  TreeView.init();
+
+  $(function () {
+
+    $('[data-toggle="tooltip"]').tooltip()
+
+    $('.btn-permission').click(function(){
+      if ($(this).hasClass("btn-primary")){
+          $(this).removeClass("btn-primary")
+          $(this).addClass("btn-grey")
+      } else{
+        $(this).addClass("btn-primary")
+        $(this).removeClass("btn-grey")
+      }
+    })
+
+    $('.check-permission').click(function(){
+      if($(this).is(':checked')){
+        $(this).parent().find('.btn-permission').addClass("btn-primary")
+        $(this).parent().find('.btn-permission').removeClass("btn-grey")
+      } else{
+        $(this).parent().find('.btn-permission').removeClass("btn-primary")
+        $(this).parent().find('.btn-permission').addClass("btn-grey")
+      }
+    })
+  })
+
+
+  $(".multiple-select2").select2({});
+
+  $('#c-change').change(function() {
+    $('#collapseOne').collapse('toggle')
+    $('#collapseTwo').collapse('toggle')
+  })
+
+  var table_language = {
+    "decimal": "-",
+    "thousands": ".",
+    'emptyTable': 'Sin Datos',
+    'info': 'mostranto _END_ de _TOTAL_ registros',
+    'infoEmpty': '0-0 de 0',
+    'infoFiltered': '',
+    'infoPostFix': '',
+    'lengthMenu': '_MENU_',
+    'loadingRecords': 'Cargando...',
+    'processing': 'Procesando...',
+    'search': '',
+    'searchPlaceholder': 'Buscar',
+    'zeroRecords': 'No se encontraron registros',
+    'paginate': {
+      'first': 'Primero',
+      'last': 'Último',
+      'next': 'Próximo',
+      'previous': 'Anterior'
+    }
+  };
+
+  $('#s-modulo').on("change", function (e) {
+    $('#t-permisos tbody tr').addClass('hide')
+    var modulos = $('#s-modulo').val()
+    for (var i = 0; i < modulos.length; i++) {
+      $('#t-permisos tbody tr.modulo-'+modulos[i]).removeClass('hide')
+    }
+  });
+
+  if ($('#t-default').length !== 0) {
+    $('#t-default').DataTable({
+      language: table_language,
+      order: [[1, 'asc']],
+      columns: [
+        {
+          'data': 'avatar',
+          'orderable': false,
+        },
+        {
+          'data': 'nombre',
+          'title': 'Nombre',
+        },
+        {
+          'data': 'correo',
+          'title': 'Correo',
+        },
+        {
+          'data': 'telefono',
+          'title': 'Telífono',
+        },
+        {
+          'data': 'cargo',
+          'title': 'Cargo',
+        },
+        {
+          'data': 'empresas',
+          'title': 'Empresas',
+          'orderable': false,
+        },
+        {
+          'data': 'opciones',
+          'title': 'opciones',
+          'class': 'text-center',
+          'orderable': false,
+        }
+      ],
+      responsive: true,
+      searching: false,
+      bLengthChange: false,
+    });
+  }
+
+  // if ($('#t-permisos').length !== 0) {
+  //   $('#t-permisos').DataTable({
+  //     language: table_language,
+  //     order: [[0, 'asc']],
+  //     columns: [
+  //       {
+  //         'data': 'modulo',
+  //         'title': 'Módulo',
+  //       },
+  //       {
+  //         'data': 'permisos_basicos',
+  //         'title': 'Permisos Básicos',
+  //         'orderable': false,
+  //       },
+  //       {
+  //         'data': 'permisos_extra',
+  //         'title': 'Permisos Extras',
+  //         'orderable': false,
+  //       }
+  //     ],
+  //     responsive: true,
+  //     searching: false,
+  //     bLengthChange: false,
+  //     paginate: false,
+  //     bInfo: false,
+  //   });
+  // }
+
+});
+</script>
+
+<style>
+
+.widget-icon.widget-icon-sm, .widget-icon.widget-icon-sm i{
+  width: 26px;
+  height: 26px;
+  line-height: 27px;
+}
+
+.widget-img.widget-img-sm{
+  width: 26px;
+  height: 26px;
+  line-height: 26px;
+}
+
+.select2-container .select2-selection--multiple{
+  min-height: 30px !important;
+}
+
+.select2-container .select2-selection--single, .select2-container--default .select2-selection--multiple{
+  min-height: 30px!important;
+}
+
+.select2-container .select2-search--inline .select2-search__field{
+  margin-top: 2px;
+}
+
+</style>
+
+</body>
+</html>
