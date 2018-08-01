@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>UWIGO</title>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+
+  <!-- ================== BEGIN BASE CSS STYLE ================== -->
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+  <link href="https://informat-apps.github.io/uwigo-mochups/assets/plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
+  <link href="https://informat-apps.github.io/uwigo-mochups/assets/plugins/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://informat-apps.github.io/uwigo-mochups/assets/plugins/font-awesome/5.0/css/fontawesome-all.min.css" rel="stylesheet" />
+  <link href="https://informat-apps.github.io/uwigo-mochups/assets/plugins/animate/animate.min.css" rel="stylesheet" />
+  <link href="https://informat-apps.github.io/uwigo-mochups/assets/css/default/style.min.css" rel="stylesheet" />
+  <link href="https://informat-apps.github.io/uwigo-mochups/assets/css/default/style-responsive.min.css" rel="stylesheet" />
+  <link href="https://informat-apps.github.io/uwigo-mochups/assets/css/default/theme/default.css" rel="stylesheet" id="theme" />
+  <link href="https://informat-apps.github.io/uwigo-mochups/assets/style.css" rel="stylesheet" />
+  <!-- ================== END BASE CSS STYLE ================== -->
+
+  <!-- ================== BEGIN BASE JS ================== -->
+  <script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/pace/pace.min.js"></script>
+  <!-- ================== END BASE JS ================== -->
+
+  <!-- ================== BEGIN PAGE CSS ================== -->
+  <link href="https://informat-apps.github.io/uwigo-mochups/assets/plugins/nvd3/build/nv.d3.css" rel="stylesheet" />
+  <link href="https://informat-apps.github.io/uwigo-mochups/assets/plugins/DataTables/media/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+  <link href="https://informat-apps.github.io/uwigo-mochups/assets/plugins/DataTables/extensions/Responsive/css/responsive.bootstrap.min.css" rel="stylesheet" />
+  <link href="https://informat-apps.github.io/uwigo-mochups/assets/plugins/dropzone/min/dropzone.min.css" rel="stylesheet" />
+  <link href="https://informat-apps.github.io/uwigo-mochups/assets/plugins/gritter/css/jquery.gritter.css" rel="stylesheet" />
+  <!-- ================== END PAGE CSS ================== -->
+</head>
+<body>
+  <!-- begin #page-loader -->
+  <div id="page-loader" class="fade show"><span class="spinner"></span></div>
+  <!-- end #page-loader -->
+
+  <!-- begin #page-container -->
+  <div id="page-container" class="page-container fade page-without-sidebar page-header-fixed page-with-top-menu">
+
+    <!-- begin #header -->
+    <div id="header" class="header navbar-default">
+      <!-- begin navbar-header -->
+      <div class="navbar-header">
+        <a href="dashboard.html" class="navbar-brand"><span class="navbar-logo"></span> <b>UWIGO</b> Nombre Empresa</a>
+        <button type="button" class="navbar-toggle" data-click="top-menu-toggled">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <!-- end navbar-header -->
+
+      <!-- begin header navigation right -->
+      <ul class="navbar-nav navbar-right">
+
+        <li class="dropdown navbar-user">
+          <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+            <img src="../assets/img/user/user-13.jpg" alt="">
+            <span class="d-none d-md-inline">Nombre Usuario</span> <b class="caret"></b>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a href="javascript:;" class="dropdown-item">Editar Perfil</a>
+            <a href="login.html" class="dropdown-item">Salir</a>
+            <div class="dropdown-divider"></div>
+            <a href="login.html" class="dropdown-item"><i class="far fa-star"></i> Cambiar Contraseña</a>
+          </div>
+        </li>
+
+        <li class="dropdown">
+          <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+            <i class="fa fa-cogs"></i><b class="caret"></b>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a href="empresa-lista.html" class="dropdown-item">Empresas</a>
+            <a href="usuario-lista.html" class="dropdown-item">Usuarios</a>
+            <div class="dropdown-divider"></div>
+            <a href="#m-change-empresa" class="dropdown-item" data-toggle="modal"><i class="far fa-star"></i> Cambiar de Empresa</a>
+          </div>
+        </li>
+      </ul>
+      <!-- end header navigation right -->
+    </div>
+    <!-- end #header -->
+
+    <!-- begin #top-menu -->
+    <div id="top-menu" class="top-menu">
+      <!-- begin top-menu nav -->
+      <ul class="nav">
+
+        <li class="active">
+          <a href="../index.html">
+            <i class="fa fa-th-large"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+
+        <li class="has-sub">
+          <a href="javascript:;">
+            <b class="caret"></b>
+            <span>Cuentas</span>
+          </a>
+
+          <ul class="sub-menu">
+            <li><a href="cuentas-bancos.html">Bancos</a></li>
+            <!-- <li class="divider"></li> -->
+            <li><a href="cuentas-ventas.html">Ventas</a></li>
+            <!-- <li class="divider"></li> -->
+            <li><a href="cuentas-compras.html">Compras</a></li>
+            <!-- <li class="divider"></li> -->
+            <li><a href="cuentas-remuneraciones.html">Remuneraciones</a></li>
+            <!-- <li class="divider"></li> -->
+            <li><a href="cuentas-inventario.html">Inventarios</a></li>
+            <!-- <li class="divider"></li> -->
+            <li><a href="cuentas-gastos.html">Gastos</a></li>
+            <!-- <li class="divider"></li> -->
+            <li><a href="cuentas-activos.html">Activo Fijo</a></li>
+          </ul>
+        </li>
+
+        <li class="has-sub">
+          <a href="javascript:;">
+            <b class="caret"></b>
+            <span>Reportes</span>
+          </a>
+
+          <ul class="sub-menu">
+            <li><a href="reporte-1.html">Reporte 1</a></li>
+            <li><a href="reporte-2.html">Reporte 2</a></li>
+          </ul>
+        </li>
+
+        <li class="has-sub">
+          <a href="javascript:;">
+            <b class="caret"></b>
+            <span>Contactos</span>
+          </a>
+          <ul class="sub-menu">
+            <li><a href="contactos-todos-lista.html">Todos los contactos</a></li>
+
+            <div class="dropdown-divider"></div>
+            <li><a href="#m-contacto" data-toggle="modal"><i class="far fa-star"></i> Proveedores</a></li>
+            <li><a href="#m-contacto" data-toggle="modal"><i class="far fa-star"></i> Clientes</a></li>
+          </ul>
+        </li>
+
+        <li class="has-sub">
+          <a href="javascript:;">
+            <b class="caret"></b>
+            <span>Configuración</span>
+          </a>
+          <ul class="sub-menu">
+            <li><a href="">...</a></li>
+          </ul>
+        </li>
+
+        <li class="menu-control menu-control-left">
+          <a href="javascript:;" data-click="prev-menu"><i class="fa fa-angle-left"></i></a>
+        </li>
+        <li class="menu-control menu-control-right">
+          <a href="javascript:;" data-click="next-menu"><i class="fa fa-angle-right"></i></a>
+        </li>
+      </ul>
+      <!-- end top-menu nav -->
+    </div>
+    <!-- end #top-menu -->
+
+    <!-- begin #breadcrumb -->
+    <div class="section-breadcrumb">
+      <div class="pull-right mt-2">
+        <div class="widget-list-action">
+          <a href="#" data-toggle="dropdown" class="text-muted pull-right" aria-expanded="false"><i class="fa fa-question-circle f-s-18 text-teal"></i></a>
+          <ul class="dropdown-menu dropdown-menu-right" x-placement="bottom-end">
+            <li><a href="#m-video" data-toggle="modal">Video</a></li>
+            <li><a href="#">Tour</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="javascript:;">Cuentas</a></li>
+        <li class="breadcrumb-item active"><a href="javascript:;">Bancos</a></li>
+      </ol>
+    </div>
+    <!-- end #breadcrumb -->
+
+    <!-- begin #content -->
+    <div id="content" class="content">
+
+      <div class="row m-b-30">
+        <div class="col-12">
+          <a href="cuentas-activo-nuevo.html" class="btn btn-white btn-sm">Nuevo Activo Fijo</a>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="row mb-3">
+            <div class="col-12">
+              <input type="text" class="form-control form-control-sm" placeholder="Buscar" style="width:200px; display:inline-block;">
+              <div class="btn-group pull-right ml-2">
+                <a href="javascript:;" class="btn btn-white btn-sm">Exportar</a>
+                <a href="javascript:;" data-toggle="dropdown" class="btn btn-white btn-sm dropdown-toggle" aria-expanded="false"></a>
+                <ul class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(86px, 34px, 0px);">
+                  <li><a href="../assets/download/file.xls" download>EXCEL</a></li>
+                  <li><a href="../assets/download/file.csv" download>CSV</a></li>
+                </ul>
+              </div>
+              <a href="javascript:;" class="btn btn-white btn-sm pull-right ml-2" data-toggle="modal" data-target="#m-upload-file">Importar</a>
+            </div>
+          </div>
+
+          <div class="row">
+
+            <div class="col-lg-12">
+              <!-- begin nav-pills -->
+              <ul class="nav nav-pills">
+                <li class="nav-items">
+                  <a href="#nav-pills-tab-1" data-toggle="tab" class="nav-link active">
+                    <span class="d-sm-none">Pills 1</span>
+                    <span class="d-sm-block d-none">Borradores</span>
+                  </a>
+                </li>
+                <li class="nav-items">
+                  <a href="#nav-pills-tab-2" data-toggle="tab" class="nav-link">
+                    <span class="d-sm-none">Pills 2</span>
+                    <span class="d-sm-block d-none">Registrados</span>
+                  </a>
+                </li>
+                <li class="nav-items">
+                  <a href="#nav-pills-tab-3" data-toggle="tab" class="nav-link">
+                    <span class="d-sm-none">Pills 3</span>
+                    <span class="d-sm-block d-none">Vendido y Dispuesto</span>
+                  </a>
+                </li>
+              </ul>
+              <!-- end nav-pills -->
+              <!-- begin tab-content -->
+              <div class="tab-content">
+                <!-- begin tab-pane -->
+                <div class="tab-pane fade active show" id="nav-pills-tab-1">
+                  <div class="table-responsive">
+                    <table class="table table-striped table-bordered data-table-default">
+                      <thead>
+                        <tr>
+                          <th>Nombre</th>
+                          <th>Numero</th>
+                          <th>F.Compra</th>
+                          <th>Precio Compra</th>
+                          <th>Nº Serial</th>
+                          <th>Tipo</th>
+                          <th class="text-center">opciones</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Nombre Activo Fijo #1</td>
+                          <td class="text-right">xxx</td>
+                          <td class="text-right">xx/xx/xxxx</td>
+                          <td>$xxx.xxx.xxx</td>
+                          <td>xxx.xxx</td>
+                          <td>Tipo #1</td>
+                          <th class="text-center">
+                            <a href="cuentas-activo-nuevo.html" class="btn btn-white btn-xs">Editar</a>
+                            <a href="javascript:;" data-click="swal-danger" class="btn btn-white btn-xs">Eliminar</a>
+                          </th>
+                        </tr>
+                        <tr>
+                          <td>Nombre Activo Fijo #2</td>
+                          <td class="text-right">xxx</td>
+                          <td class="text-right">xx/xx/xxxx</td>
+                          <td>$xxx.xxx.xxx</td>
+                          <td>xxx.xxx</td>
+                          <td>Tipo #2</td>
+                          <th class="text-center">
+                            <a href="cuentas-activo-nuevo.html" class="btn btn-white btn-xs">Editar</a>
+                            <a href="javascript:;" data-click="swal-danger" class="btn btn-white btn-xs">Eliminar</a>
+                          </th>
+                        </tr>
+                        <tr>
+                          <td>Nombre Activo Fijo #3</td>
+                          <td class="text-right">xxx</td>
+                          <td class="text-right">xx/xx/xxxx</td>
+                          <td>$xxx.xxx.xxx</td>
+                          <td>xxx.xxx</td>
+                          <td>Tipo #3</td>
+                          <th class="text-center">
+                            <a href="cuentas-activo-nuevo.html" class="btn btn-white btn-xs">Editar</a>
+                            <a href="javascript:;" data-click="swal-danger" class="btn btn-white btn-xs">Eliminar</a>
+                          </th>
+                        </tr>
+                        <tr>
+                          <td>Nombre Activo Fijo #4</td>
+                          <td class="text-right">xxx</td>
+                          <td class="text-right">xx/xx/xxxx</td>
+                          <td>$xxx.xxx.xxx</td>
+                          <td>xxx.xxx</td>
+                          <td>Tipo #4</td>
+                          <th class="text-center">
+                            <a href="cuentas-activo-nuevo.html" class="btn btn-white btn-xs">Editar</a>
+                            <a href="javascript:;" data-click="swal-danger" class="btn btn-white btn-xs">Eliminar</a>
+                          </th>
+                        </tr>
+                        <tr>
+                          <td>Nombre Activo Fijo #5</td>
+                          <td class="text-right">xxx</td>
+                          <td class="text-right">xx/xx/xxxx</td>
+                          <td>$xxx.xxx.xxx</td>
+                          <td>xxx.xxx</td>
+                          <td>Tipo #5</td>
+                          <th class="text-center">
+                            <a href="cuentas-activo-nuevo.html" class="btn btn-white btn-xs">Editar</a>
+                            <a href="javascript:;" data-click="swal-danger" class="btn btn-white btn-xs">Eliminar</a>
+                          </th>
+                        </tr>
+                        <tr>
+                          <td>Nombre Activo Fijo #6</td>
+                          <td class="text-right">xxx</td>
+                          <td class="text-right">xx/xx/xxxx</td>
+                          <td>$xxx.xxx.xxx</td>
+                          <td>xxx.xxx</td>
+                          <td>Tipo #6</td>
+                          <th class="text-center">
+                            <a href="cuentas-activo-nuevo.html" class="btn btn-white btn-xs">Editar</a>
+                            <a href="javascript:;" data-click="swal-danger" class="btn btn-white btn-xs">Eliminar</a>
+                          </th>
+                        </tr>
+                        <tr>
+                          <td>Nombre Activo Fijo #7</td>
+                          <td class="text-right">xxx</td>
+                          <td class="text-right">xx/xx/xxxx</td>
+                          <td>$xxx.xxx.xxx</td>
+                          <td>xxx.xxx</td>
+                          <td>Tipo #7</td>
+                          <th class="text-center">
+                            <a href="cuentas-activo-nuevo.html" class="btn btn-white btn-xs">Editar</a>
+                            <a href="javascript:;" data-click="swal-danger" class="btn btn-white btn-xs">Eliminar</a>
+                          </th>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <!-- end tab-pane -->
+                <!-- begin tab-pane -->
+                <div class="tab-pane fade" id="nav-pills-tab-2">
+                  <div class="table-responsive">
+                    <table class="table table-striped table-bordered data-table-default">
+                      <thead>
+                        <tr>
+                          <th>Nombre</th>
+                          <th>Numero</th>
+                          <th>F.Compra</th>
+                          <th>Precio Compra</th>
+                          <th>Nº Serial</th>
+                          <th>Tipo</th>
+                          <th class="text-center">opciones</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Nombre Activo Fijo #1</td>
+                          <td class="text-right">xxx</td>
+                          <td class="text-right">xx/xx/xxxx</td>
+                          <td>$xxx.xxx.xxx</td>
+                          <td>xxx.xxx</td>
+                          <td>Tipo #1</td>
+                          <th class="text-center">
+                            <a href="cuentas-activo-nuevo.html" class="btn btn-white btn-xs">Editar</a>
+                            <a href="javascript:;" data-click="swal-danger" class="btn btn-white btn-xs">Eliminar</a>
+                          </th>
+                        </tr>
+                        <tr>
+                          <td>Nombre Activo Fijo #2</td>
+                          <td class="text-right">xxx</td>
+                          <td class="text-right">xx/xx/xxxx</td>
+                          <td>$xxx.xxx.xxx</td>
+                          <td>xxx.xxx</td>
+                          <td>Tipo #2</td>
+                          <th class="text-center">
+                            <a href="cuentas-activo-nuevo.html" class="btn btn-white btn-xs">Editar</a>
+                            <a href="javascript:;" data-click="swal-danger" class="btn btn-white btn-xs">Eliminar</a>
+                          </th>
+                        </tr>
+                        <tr>
+                          <td>Nombre Activo Fijo #3</td>
+                          <td class="text-right">xxx</td>
+                          <td class="text-right">xx/xx/xxxx</td>
+                          <td>$xxx.xxx.xxx</td>
+                          <td>xxx.xxx</td>
+                          <td>Tipo #3</td>
+                          <th class="text-center">
+                            <a href="cuentas-activo-nuevo.html" class="btn btn-white btn-xs">Editar</a>
+                            <a href="javascript:;" data-click="swal-danger" class="btn btn-white btn-xs">Eliminar</a>
+                          </th>
+                        </tr>
+                        <tr>
+                          <td>Nombre Activo Fijo #4</td>
+                          <td class="text-right">xxx</td>
+                          <td class="text-right">xx/xx/xxxx</td>
+                          <td>$xxx.xxx.xxx</td>
+                          <td>xxx.xxx</td>
+                          <td>Tipo #4</td>
+                          <th class="text-center">
+                            <a href="cuentas-activo-nuevo.html" class="btn btn-white btn-xs">Editar</a>
+                            <a href="javascript:;" data-click="swal-danger" class="btn btn-white btn-xs">Eliminar</a>
+                          </th>
+                        </tr>
+                        <tr>
+                          <td>Nombre Activo Fijo #5</td>
+                          <td class="text-right">xxx</td>
+                          <td class="text-right">xx/xx/xxxx</td>
+                          <td>$xxx.xxx.xxx</td>
+                          <td>xxx.xxx</td>
+                          <td>Tipo #5</td>
+                          <th class="text-center">
+                            <a href="cuentas-activo-nuevo.html" class="btn btn-white btn-xs">Editar</a>
+                            <a href="javascript:;" data-click="swal-danger" class="btn btn-white btn-xs">Eliminar</a>
+                          </th>
+                        </tr>
+                        <tr>
+                          <td>Nombre Activo Fijo #6</td>
+                          <td class="text-right">xxx</td>
+                          <td class="text-right">xx/xx/xxxx</td>
+                          <td>$xxx.xxx.xxx</td>
+                          <td>xxx.xxx</td>
+                          <td>Tipo #6</td>
+                          <th class="text-center">
+                            <a href="cuentas-activo-nuevo.html" class="btn btn-white btn-xs">Editar</a>
+                            <a href="javascript:;" data-click="swal-danger" class="btn btn-white btn-xs">Eliminar</a>
+                          </th>
+                        </tr>
+                        <tr>
+                          <td>Nombre Activo Fijo #7</td>
+                          <td class="text-right">xxx</td>
+                          <td class="text-right">xx/xx/xxxx</td>
+                          <td>$xxx.xxx.xxx</td>
+                          <td>xxx.xxx</td>
+                          <td>Tipo #7</td>
+                          <th class="text-center">
+                            <a href="cuentas-activo-nuevo.html" class="btn btn-white btn-xs">Editar</a>
+                            <a href="javascript:;" data-click="swal-danger" class="btn btn-white btn-xs">Eliminar</a>
+                          </th>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <!-- end tab-pane -->
+                <!-- begin tab-pane -->
+                <div class="tab-pane fade" id="nav-pills-tab-3">
+                  <div class="table-responsive">
+                    <table class="table table-striped table-bordered data-table-default">
+                      <thead>
+                        <tr>
+                          <th>Nombre</th>
+                          <th>Numero</th>
+                          <th>F.Compra</th>
+                          <th>Precio Compra</th>
+                          <th>Nº Serial</th>
+                          <th>Tipo</th>
+                          <th class="text-center">opciones</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Nombre Activo Fijo #1</td>
+                          <td class="text-right">xxx</td>
+                          <td class="text-right">xx/xx/xxxx</td>
+                          <td>$xxx.xxx.xxx</td>
+                          <td>xxx.xxx</td>
+                          <td>Tipo #1</td>
+                          <th class="text-center">
+                            <a href="cuentas-activo-nuevo.html" class="btn btn-white btn-xs">Editar</a>
+                            <a href="javascript:;" data-click="swal-danger" class="btn btn-white btn-xs">Eliminar</a>
+                          </th>
+                        </tr>
+                        <tr>
+                          <td>Nombre Activo Fijo #2</td>
+                          <td class="text-right">xxx</td>
+                          <td class="text-right">xx/xx/xxxx</td>
+                          <td>$xxx.xxx.xxx</td>
+                          <td>xxx.xxx</td>
+                          <td>Tipo #2</td>
+                          <th class="text-center">
+                            <a href="cuentas-activo-nuevo.html" class="btn btn-white btn-xs">Editar</a>
+                            <a href="javascript:;" data-click="swal-danger" class="btn btn-white btn-xs">Eliminar</a>
+                          </th>
+                        </tr>
+                        <tr>
+                          <td>Nombre Activo Fijo #3</td>
+                          <td class="text-right">xxx</td>
+                          <td class="text-right">xx/xx/xxxx</td>
+                          <td>$xxx.xxx.xxx</td>
+                          <td>xxx.xxx</td>
+                          <td>Tipo #3</td>
+                          <th class="text-center">
+                            <a href="cuentas-activo-nuevo.html" class="btn btn-white btn-xs">Editar</a>
+                            <a href="javascript:;" data-click="swal-danger" class="btn btn-white btn-xs">Eliminar</a>
+                          </th>
+                        </tr>
+                        <tr>
+                          <td>Nombre Activo Fijo #4</td>
+                          <td class="text-right">xxx</td>
+                          <td class="text-right">xx/xx/xxxx</td>
+                          <td>$xxx.xxx.xxx</td>
+                          <td>xxx.xxx</td>
+                          <td>Tipo #4</td>
+                          <th class="text-center">
+                            <a href="cuentas-activo-nuevo.html" class="btn btn-white btn-xs">Editar</a>
+                            <a href="javascript:;" data-click="swal-danger" class="btn btn-white btn-xs">Eliminar</a>
+                          </th>
+                        </tr>
+                        <tr>
+                          <td>Nombre Activo Fijo #5</td>
+                          <td class="text-right">xxx</td>
+                          <td class="text-right">xx/xx/xxxx</td>
+                          <td>$xxx.xxx.xxx</td>
+                          <td>xxx.xxx</td>
+                          <td>Tipo #5</td>
+                          <th class="text-center">
+                            <a href="cuentas-activo-nuevo.html" class="btn btn-white btn-xs">Editar</a>
+                            <a href="javascript:;" data-click="swal-danger" class="btn btn-white btn-xs">Eliminar</a>
+                          </th>
+                        </tr>
+                        <tr>
+                          <td>Nombre Activo Fijo #6</td>
+                          <td class="text-right">xxx</td>
+                          <td class="text-right">xx/xx/xxxx</td>
+                          <td>$xxx.xxx.xxx</td>
+                          <td>xxx.xxx</td>
+                          <td>Tipo #6</td>
+                          <th class="text-center">
+                            <a href="cuentas-activo-nuevo.html" class="btn btn-white btn-xs">Editar</a>
+                            <a href="javascript:;" data-click="swal-danger" class="btn btn-white btn-xs">Eliminar</a>
+                          </th>
+                        </tr>
+                        <tr>
+                          <td>Nombre Activo Fijo #7</td>
+                          <td class="text-right">xxx</td>
+                          <td class="text-right">xx/xx/xxxx</td>
+                          <td>$xxx.xxx.xxx</td>
+                          <td>xxx.xxx</td>
+                          <td>Tipo #7</td>
+                          <th class="text-center">
+                            <a href="cuentas-activo-nuevo.html" class="btn btn-white btn-xs">Editar</a>
+                            <a href="javascript:;" data-click="swal-danger" class="btn btn-white btn-xs">Eliminar</a>
+                          </th>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <!-- end tab-pane -->
+              </div>
+              <!-- end tab-content -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- end #content -->
+
+    <!-- begin scroll to top btn -->
+    <a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
+    <!-- end scroll to top btn -->
+
+    <!-- begin modal -->
+<div class="modal fade" id="m-video" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Video de Ayuda</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-6">
+            <div class="post-video">
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe src="https://player.vimeo.com/video/252920310?title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+
+            <blockquote>
+              <p>Descripción:</p>
+              <p class="f-s-12">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </blockquote>
+
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-sm btn-white" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="modal fade" id="m-change-empresa" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Empresas</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+            <div class="col-sm-12 col-lg-12">
+
+              <!-- begin widget-list -->
+              <div class="widget-list widget-list-rounded m-b-30" data-id="widget">
+                <!-- begin widget-list-item -->
+                <div class="widget-list-item">
+                  <div class="widget-list-media">
+                    <!-- <img src="../assets/img/user/user-12.jpg" alt="" class="rounded"> -->
+                    <div class="widget-icon widget-icon-lg user rounded bg-grey pull-left m-r-5 m-b-5 text-white" data-id="widget-elm" data-light-class="widget-icon widget-icon-lg user rounded bg-grey pull-left m-r-5 m-b-5 text-white" data-dark-class="widget-icon widget-icon-lg user rounded bg-inverse pull-left m-r-5 m-b-5 text-white-transparent-5">
+                      <i class="fa fa-building"></i>
+                    </div>
+                  </div>
+
+                  <div class="widget-list-content">
+                    <h4 class="widget-list-title">Nombre Empresa</h4>
+                    <p class="widget-list-desc">Descripción de la empresa</p>
+                  </div>
+                  <div class="widget-list-action">
+                    <a href="../index.html" class="btn btn-xs btn-primary">Go UWIGO <i class="fa fa-arrow-right m-l-5"></i></a>
+                    <!-- <a href="#" data-toggle="dropdown" class="text-muted pull-right" aria-expanded="false"><i class="fa fa-ellipsis-h f-s-14"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(646px, 72px, 0px);">
+                    <li><a href="#">Option 1</a></li>
+                    <li><a href="#">Option 2</a></li>
+                    <li><a href="#">Option 3</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Option 4</a></li>
+                  </ul> -->
+                </div>
+              </div>
+              <!-- end widget-list-item -->
+              <!-- begin widget-list-item -->
+              <div class="widget-list-item">
+                <div class="widget-list-media">
+                  <!-- <img src="../assets/img/user/user-13.jpg" alt="" class="rounded"> -->
+                  <div class="widget-icon widget-icon-lg user rounded bg-grey pull-left m-r-5 m-b-5 text-white" data-id="widget-elm" data-light-class="widget-icon widget-icon-lg user rounded bg-grey pull-left m-r-5 m-b-5 text-white" data-dark-class="widget-icon widget-icon-lg user rounded bg-inverse pull-left m-r-5 m-b-5 text-white-transparent-5">
+                    <i class="fa fa-building"></i>
+                  </div>
+                </div>
+                <div class="widget-list-content">
+                  <h4 class="widget-list-title">Nombre Empresa</h4>
+                  <p class="widget-list-desc">Descripción de la empresa</p>
+                </div>
+                <div class="widget-list-action">
+                  <a href="../index.html" class="btn btn-xs btn-primary">Go UWIGO <i class="fa fa-arrow-right m-l-5"></i></a>
+                  <!-- <a href="#" data-toggle="dropdown" class="text-muted pull-right"><i class="fa fa-ellipsis-h f-s-14"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-right">
+                  <li><a href="#">Option 1</a></li>
+                  <li><a href="#">Option 2</a></li>
+                  <li><a href="#">Option 3</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">Option 4</a></li>
+                </ul> -->
+              </div>
+            </div>
+            <!-- end widget-list-item -->
+            <!-- begin widget-list-item -->
+            <div class="widget-list-item">
+              <div class="widget-list-media">
+
+                <div class="widget-img widget-img-lg rounded bg-inverse pull-left m-r-5 m-b-5" style="background-image: url(../assets/img/user/user-12.jpg)"></div>
+              </div>
+              <div class="widget-list-content">
+                <h4 class="widget-list-title">Nombre Empresa</h4>
+                <p class="widget-list-desc">Descripción de la empresa</p>
+              </div>
+              <div class="widget-list-action">
+                <a href="../index.html" class="btn btn-xs btn-primary">Go UWIGO <i class="fa fa-arrow-right m-l-5"></i></a>
+                <!-- <a href="#" data-toggle="dropdown" class="text-muted pull-right"><i class="fa fa-ellipsis-h f-s-14"></i></a>
+                <ul class="dropdown-menu dropdown-menu-right">
+                <li><a href="#">Option 1</a></li>
+                <li><a href="#">Option 2</a></li>
+                <li><a href="#">Option 3</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Option 4</a></li>
+              </ul> -->
+            </div>
+          </div>
+          <!-- end widget-list-item -->
+        </div>
+        <!-- end widget-list -->
+
+      </div>
+
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="modal fade" id="m-upload-file" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Subir Archivo</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="dropzone">
+          <form action="/upload" class="dropzone needsclick" id="demo-upload">
+            <div class="dz-message needsclick">
+              Suelta los archivos <b>aquí</b> o <b>haz clic</b> para subirlos. <br />
+              <span class="dz-note needsclick">
+              </span>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-sm btn-white" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-sm btn-primary" data-dismiss="modal">Aceptar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="m-articulo" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nuevo Articulo</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <form action="/" method="POST">
+
+
+          <div class="row">
+
+            <div class="form-group col-md-3">
+              <label for="">Producto Rastreable</label>
+              <input type="checkbox" class="form-control">
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="">Código</label>
+              <input type="text" class="form-control form-control-sm" placeholder="">
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="">Nombre</label>
+              <input type="text" class="form-control form-control-sm" placeholder="">
+            </div>
+          </div>
+
+          <div class="dropdown-divider"></div>
+
+          <div class="row">
+
+            <div class="form-group col-md-3">
+              <label for="">Producto de Compra</label>
+              <input type="checkbox" class="form-control">
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="">Precio Unitario</label>
+              <input type="text" class="form-control form-control-sm" placeholder="">
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="">Cuenta Contable</label>
+              <select class="form-control form-control-sm">
+                <option> seleccionar</option>
+                <option>Cuenta Contable 1</option>
+                <option>Cuenta Contable 2</option>
+                <option>Cuenta Contable 3</option>
+                <option>Cuenta Contable 4</option>
+                <option>Cuenta Contable 5</option>
+              </select>
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="">Tasa Impuesto</label>
+              <select class="form-control form-control-sm">
+                <option> seleccionar</option>
+                <option>Tasa Impuesto 1</option>
+                <option>Tasa Impuesto 2</option>
+                <option>Tasa Impuesto 3</option>
+                <option>Tasa Impuesto 4</option>
+                <option>Tasa Impuesto 5</option>
+              </select>
+            </div>
+
+          </div>
+
+          <div class="dropdown-divider"></div>
+
+          <div class="row">
+            <div class="form-group col-md-3">
+              <label for="">Producto de Venta</label>
+              <input type="checkbox" class="form-control">
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="">Precio Unitario</label>
+              <input type="text" class="form-control form-control-sm" placeholder="">
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="">Cuenta Contable</label>
+              <select class="form-control form-control-sm">
+                <option> seleccionar</option>
+                <option>Cuenta Contable 1</option>
+                <option>Cuenta Contable 2</option>
+                <option>Cuenta Contable 3</option>
+                <option>Cuenta Contable 4</option>
+                <option>Cuenta Contable 5</option>
+              </select>
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="">Tasa Impuesto</label>
+              <select class="form-control form-control-sm">
+                <option> seleccionar</option>
+                <option>Tasa Impuesto 1</option>
+                <option>Tasa Impuesto 2</option>
+                <option>Tasa Impuesto 3</option>
+                <option>Tasa Impuesto 4</option>
+                <option>Tasa Impuesto 5</option>
+              </select>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-sm btn-white" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-sm btn-primary" data-dismiss="modal">Aceptar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end modal -->
+
+</div>
+<!-- end page container -->
+
+<!-- ================== BEGIN BASE JS ================== -->
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/jquery/jquery-3.2.1.min.js"></script>
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/bootstrap/4.1.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/js-cookie/js.cookie.js"></script>
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/js/theme/default.min.js"></script>
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/js/apps.js"></script>
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/script.js"></script>
+<!-- ================== END BASE JS ================== -->
+
+<!-- ================== BEGIN PAGE LEVEL JS ================== -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.2/d3.min.js"></script>
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/nvd3/build/nv.d3.js"></script>
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/js/demo/chart-d3.demo.min.js"></script>
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/DataTables/media/js/jquery.dataTables.js"></script>
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/DataTables/media/js/dataTables.bootstrap.min.js"></script>
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/DataTables/extensions/Responsive/js/dataTables.responsive.min.js"></script>
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/js/demo/table-manage-default.demo.js"></script>
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/dropzone/min/dropzone.min.js"></script>
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/highlight/highlight.common.js"></script>
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/js/demo/render.highlight.js"></script>
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/gritter/js/jquery.gritter.js"></script>
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/bootstrap-sweetalert/sweetalert.min.js"></script>
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/js/demo/ui-modal-notification.demo.js"></script>
+<!-- ================== END PAGE LEVEL JS ================== -->
+
+<script>
+$(document).ready(function() {
+  App.init();
+  ChartNvd3.init();
+  TableManageDefault.init();
+  Highlight.init();
+  Notification.init();
+});
+</script>
+
+</body>
+</html>
