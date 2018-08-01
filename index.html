@@ -3,8 +3,694 @@
 <head>
   <meta charset="utf-8" />
   <title>UWIGO</title>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+
+  <!-- ================== BEGIN BASE CSS STYLE ================== -->
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+  <link href="assets/plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
+  <link href="assets/plugins/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/plugins/font-awesome/5.0/css/fontawesome-all.min.css" rel="stylesheet" />
+  <link href="assets/plugins/animate/animate.min.css" rel="stylesheet" />
+  <link href="assets/css/default/style.min.css" rel="stylesheet" />
+  <link href="assets/css/default/style-responsive.min.css" rel="stylesheet" />
+  <link href="assets/css/default/theme/default.css" rel="stylesheet" id="theme" />
+  <link href="assets/style.css" rel="stylesheet" />
+  <!-- ================== END BASE CSS STYLE ================== -->
+
+  <!-- ================== BEGIN BASE JS ================== -->
+  <script src="assets/plugins/pace/pace.min.js"></script>
+
+  <!-- ================== BEGIN PAGE CSS ================== -->
+  <link href="assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker.css" rel="stylesheet" />
+	<link href="assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.css" rel="stylesheet" />''
+  <link href="assets/plugins/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet" />
+  <!-- ================== END PAGE CSS ================== -->
 </head>
 <body>
-  <h1>PRUEBA</h1>
+  <!-- begin #page-loader -->
+  <div id="page-loader" class="fade show"><span class="spinner"></span></div>
+  <!-- end #page-loader -->
+
+  <!-- begin #page-container -->
+  <div id="page-container" class="page-container fade page-without-sidebar page-header-fixed page-with-top-menu">
+
+    <!-- begin #header -->
+    <div id="header" class="header navbar-default">
+      <!-- begin navbar-header -->
+      <div class="navbar-header">
+        <a href="index.html" class="navbar-brand"><span class="navbar-logo"></span> <b>UWIGO</b> Nombre Empresa</a>
+        <button type="button" class="navbar-toggle" data-click="top-menu-toggled">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <!-- end navbar-header -->
+
+      <!-- begin header navigation right -->
+      <ul class="navbar-nav navbar-right">
+
+        <li class="dropdown navbar-user">
+          <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+            <img src="../assets/img/user/user-13.jpg" alt="">
+            <span class="d-none d-md-inline">Nombre Usuario</span> <b class="caret"></b>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a href="javascript:;" class="dropdown-item">Editar Perfil</a>
+            <a href="login.html" class="dropdown-item">Salir</a>
+            <div class="dropdown-divider"></div>
+            <a href="login.html" class="dropdown-item"><i class="far fa-star"></i> Cambiar Contraseña</a>
+          </div>
+        </li>
+
+        <li class="dropdown">
+          <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+            <i class="fa fa-cogs"></i><b class="caret"></b>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a href="empresa-lista.html" class="dropdown-item">Empresas</a>
+            <a href="usuario-lista.html" class="dropdown-item">Usuarios</a>
+            <div class="dropdown-divider"></div>
+            <a href="#m-change-empresa" class="dropdown-item" data-toggle="modal"><i class="far fa-star"></i> Cambiar de Empresa</a>
+          </div>
+        </li>
+      </ul>
+      <!-- end header navigation right -->
+    </div>
+    <!-- end #header -->
+
+    <!-- begin #top-menu -->
+    <div id="top-menu" class="top-menu">
+      <!-- begin top-menu nav -->
+      <ul class="nav">
+
+        <li class="active">
+          <a href="index.html">
+            <i class="fa fa-th-large"></i>
+            <span>Panel</span>
+          </a>
+        </li>
+
+        <li class="has-sub">
+          <a href="javascript:;">
+            <b class="caret"></b>
+            <span>Cuentas</span>
+          </a>
+
+          <ul class="sub-menu">
+            <li><a href="pages/cuentas-bancos.html">Bancos</a></li>
+            <!-- <li class="divider"></li> -->
+            <li><a href="pages/cuentas-ventas.html">Ventas</a></li>
+            <!-- <li class="divider"></li> -->
+            <li><a href="pages/cuentas-compras.html">Compras</a></li>
+            <!-- <li class="divider"></li> -->
+            <li><a href="pages/cuentas-remuneraciones.html">Remuneraciones</a></li>
+            <!-- <li class="divider"></li> -->
+            <li><a href="pages/cuentas-inventario.html">Inventarios</a></li>
+            <!-- <li class="divider"></li> -->
+            <li><a href="pages/cuentas-gastos.html">Gastos</a></li>
+            <!-- <li class="divider"></li> -->
+            <li><a href="pages/cuentas-activos.html">Activo Fijo</a></li>
+          </ul>
+        </li>
+
+        <li class="has-sub">
+          <a href="javascript:;">
+            <b class="caret"></b>
+            <span>Reportes</span>
+          </a>
+
+          <ul class="sub-menu">
+            <li><a href="pages/reporte-1.html">Reporte 1</a></li>
+            <li><a href="pages/reporte-2.html">Reporte 2</a></li>
+          </ul>
+        </li>
+
+        <li class="has-sub">
+          <a href="javascript:;">
+            <b class="caret"></b>
+            <span>Contactos</span>
+          </a>
+          <ul class="sub-menu">
+            <li><a href="pages/contactos-todos-lista.html">Todos los contactos</a></li>
+
+            <div class="dropdown-divider"></div>
+            <li><a href="#m-contacto" data-toggle="modal"><i class="far fa-star"></i> Proveedores</a></li>
+            <li><a href="#m-contacto" data-toggle="modal"><i class="far fa-star"></i> Clientes</a></li>
+          </ul>
+        </li>
+
+        <li class="has-sub">
+          <a href="javascript:;">
+            <b class="caret"></b>
+            <span>Configuración</span>
+          </a>
+          <ul class="sub-menu">
+            <li><a href="">...</a></li>
+          </ul>
+        </li>
+
+        <li class="menu-control menu-control-left">
+          <a href="javascript:;" data-click="prev-menu"><i class="fa fa-angle-left"></i></a>
+        </li>
+        <li class="menu-control menu-control-right">
+          <a href="javascript:;" data-click="next-menu"><i class="fa fa-angle-right"></i></a>
+        </li>
+      </ul>
+      <!-- end top-menu nav -->
+    </div>
+    <!-- end #top-menu -->
+
+    <!-- begin #content -->
+    <div id="content" class="content">
+      <div class="row justify-content-md-center">
+
+        <div class="col-lg-10">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">Flujo de Caja</h4>
+            </div>
+            <div class="panel-body">
+
+              <div class="row">
+                <div class="col mb-4">
+
+                  <div class="btn-group pull-right">
+                    <button type="button" class="btn btn-white btn-sm">Meses</button>
+                    <button type="button" class="btn btn-white btn-sm dropdown-toggle" data-toggle="dropdown">
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="javascript:;">6 Meses</a></li>
+                      <li><a href="javascript:;">9 Meses</a></li>
+                      <li><a href="javascript:;">12 Meses</a></li>
+                    </ul>
+                  </div>
+
+                  <div class="btn-group btn-group-toggle pull-right  mr-2" data-toggle="buttons">
+                    <label class="btn btn-white btn-sm active">
+                      <input type="radio" name="options" id="option1" > Diario
+                    </label>
+                    <label class="btn btn-white btn-sm">
+                      <input type="radio" name="options" id="option2"> Semanal
+                    </label>
+                    <label class="btn btn-white btn-sm">
+                      <input type="radio" name="options" id="option3" checked="checked"> Mensual
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="chart-container height-300">
+                <canvas id="chart-flujo-caja"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-lg-5">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">Cuentas por Pagar</h4>
+            </div>
+            <div class="panel-body">
+              <div class="table-responsive">
+                <table class="table table-bordered table-striped m-t-10 m-t-10">
+                  <thead>
+                    <tr>
+                      <th>Fecha Pago</th>
+                      <th>Proveedor</th>
+                      <th>Monto</th>
+                      <th>Días Vencido</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="text-red text-right">28/03/2018</td>
+                      <td class="text-red">Proveedor 1</td>
+                      <td class="text-red text-right">$80.600</td>
+                      <td class="text-red text-right">16</td>
+                    </tr>
+                    <tr>
+                      <td class="text-red text-right">23/04/2018</td>
+                      <td class="text-red">Proveedor 2</td>
+                      <td class="text-red text-right">$798.000</td>
+                      <td class="text-red text-right">9</td>
+                    </tr>
+                    <tr>
+                      <td class="text-red text-right">09/05/2018</td>
+                      <td class="text-red">Proveedor 3</td>
+                      <td class="text-red text-right">$187.300</td>
+                      <td class="text-red text-right">7</td>
+                    </tr>
+                    <tr>
+                      <td class="text-red text-right">11/06/2018</td>
+                      <td class="text-red">Proveedor 4</td>
+                      <td class="text-red text-right">$987.600</td>
+                      <td class="text-red text-right">6</td>
+                    </tr>
+                    <tr>
+                      <td class="text-right">01/06/2018</td>
+                      <td>Proveedor 5</td>
+                      <td class="text-right">$1.345.900</td>
+                      <td class="text-right">0</td>
+                    </tr>
+                    <tr>
+                      <td class="text-right">10/05/2018</td>
+                      <td>Proveedor 6</td>
+                      <td class="text-right">$1.234.600</td>
+                      <td class="text-right">0</td>
+                    </tr>
+                    <tr>
+                      <td class="text-right">12/03/2018</td>
+                      <td>Proveedor 7</td>
+                      <td class="text-right">$244.700</td>
+                      <td class="text-right">0</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">Cuentas por Cobrar</h4>
+            </div>
+            <div class="panel-body">
+              <div class="table-responsive">
+                <table class="table table-bordered table-striped m-t-10 m-t-10">
+                  <thead>
+                    <tr>
+                      <th>Fecha Pago</th>
+                      <th>Cliente</th>
+                      <th>Monto</th>
+                      <th>Días Vencido</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="text-red text-right">28/03/2018</td>
+                      <td class="text-red">Cliente 1</td>
+                      <td class="text-red text-right">$80.600</td>
+                      <td class="text-red text-right">16</td>
+                    </tr>
+                    <tr>
+                      <td class="text-red text-right">23/04/2018</td>
+                      <td class="text-red">Cliente 2</td>
+                      <td class="text-red text-right">$798.000</td>
+                      <td class="text-red text-right">9</td>
+                    </tr>
+                    <tr>
+                      <td class="text-red text-right">09/05/2018</td>
+                      <td class="text-red">Cliente 3</td>
+                      <td class="text-red text-right">$187.300</td>
+                      <td class="text-red text-right">7</td>
+                    </tr>
+                    <tr>
+                      <td class="text-red text-right">11/06/2018</td>
+                      <td class="text-red">Cliente 4</td>
+                      <td class="text-red text-right">$987.600</td>
+                      <td class="text-red text-right">6</td>
+                    </tr>
+                    <tr>
+                      <td class="text-right">01/06/2018</td>
+                      <td>Cliente 5</td>
+                      <td class="text-right">$1.345.900</td>
+                      <td class="text-right">0</td>
+                    </tr>
+                    <tr>
+                      <td class="text-right">10/05/2018</td>
+                      <td>Cliente 6</td>
+                      <td class="text-right">$1.234.600</td>
+                      <td class="text-right">0</td>
+                    </tr>
+                    <tr>
+                      <td class="text-right">12/03/2018</td>
+                      <td>Cliente 7</td>
+                      <td class="text-right">$244.700</td>
+                      <td class="text-right">0</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-10 ui-sortable">
+
+          <div class="row justify-content-md-center">
+
+            <div class="col-md-3">
+              <div class="widget widget-stats bg-gradient-blue">
+                <div class="stats-icon stats-icon-lg"><i class="fa fa-arrow-circle-up fa-fw"></i></div>
+                <div class="stats-content">
+                  <div class="stats-title">PROMEDIO PAGO FACTURAS</div>
+                  <div class="stats-number">999 Días</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="widget widget-stats bg-gradient-blue">
+                <div class="stats-icon stats-icon-lg"><i class="fa fa-arrow-circle-down fa-fw"></i></div>
+                <div class="stats-content">
+                  <div class="stats-title">PROMEDIO COBRO FACTURAS</div>
+                  <div class="stats-number">999  Días</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="widget widget-stats bg-gradient-blue">
+                <div class="stats-icon stats-icon-lg"><i class="fa fa-dollar-sign fa-fw"></i></div>
+                <div class="stats-content">
+                  <div class="stats-title">VENTA PROMEDIO</div>
+                  <div class="stats-number">$999.999.999</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-lg-5">
+          <div class="panel panel-default" >
+            <div class="panel-heading">
+              <a href="documento-nuevo.html" class="btn btn-white btn-xs pull-right"><i class="fa fa-plus"></i> Factura</a>
+              <h4 class="panel-title">Ventas</h4>
+            </div>
+            <div class="panel-body">
+              <div class="input-group input-daterange ventas mb-4">
+                <input type="text" class="form-control form-control-sm" name="start" placeholder="Fecha Inicio"/>
+                <span class="input-group-addon">a</span>
+                <input type="text" class="form-control form-control-sm" name="end" placeholder="Fecha Término" />
+              </div>
+              <div class="chart-container height-300">
+                <canvas id="chart-ventas"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="panel panel-default" >
+            <div class="panel-heading">
+              <a href="documento-nuevo.html" class="btn btn-white btn-xs pull-right"><i class="fa fa-plus"></i> Factura</a>
+              <h4 class="panel-title">Compras</h4>
+            </div>
+            <div class="panel-body">
+              <div class="input-group input-daterange compras mb-4">
+                <input type="text" class="form-control form-control-sm" name="start" placeholder="Fecha Inicio"/>
+                <span class="input-group-addon">a</span>
+                <input type="text" class="form-control form-control-sm" name="end" placeholder="Fecha Término" />
+              </div>
+              <div class="chart-container height-300">
+                <canvas id="chart-compras"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-5">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <a href="#" class="btn btn-white btn-xs pull-right"><i class="fa fa-plus"></i> Gasto</a>
+              <h4 class="panel-title">Ventas por Producto</h4>
+            </div>
+            <div class="panel-body">
+              <div class="input-group input-daterange ventas-productos mb-4">
+                <input type="text" class="form-control form-control-sm" name="start" placeholder="Fecha Inicio"/>
+                <span class="input-group-addon">a</span>
+                <input type="text" class="form-control form-control-sm" name="end" placeholder="Fecha Término" />
+              </div>
+              <div class="chart-container height-300">
+                <canvas id="chart-ventas-productos"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-md-5">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">Editar Dashboard</h4>
+            </div>
+            <div class="panel-body">
+              <div class="input-group input-daterange ventas-productos mb-4">
+                <input type="text" class="form-control form-control-sm" name="start" placeholder="Fecha Inicio"/>
+                <span class="input-group-addon">a</span>
+                <input type="text" class="form-control form-control-sm" name="end" placeholder="Fecha Término" />
+              </div>
+              <div class="chart-container height-300">
+                <canvas id="chart-ventas-productos"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- end #content -->
+
+  </div>
+  <!-- end #page-container -->
+
+  <!-- begin scroll to top btn -->
+  <a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
+  <!-- end scroll to top btn -->
+
+  <!-- begin modal -->
+  <div class="modal fade" id="m-video" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Video de Ayuda</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-6">
+              <div class="post-video">
+                <div class="embed-responsive embed-responsive-16by9">
+                  <!-- <iframe src="https://player.vimeo.com/video/252920310?title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+
+              <blockquote>
+                <p>Descripción:</p>
+                <p class="f-s-12">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+              </blockquote>
+
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-sm btn-white" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="m-change-empresa" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Empresas</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+          <div class="col-sm-12 col-lg-12">
+
+            <div class="widget-list widget-list-rounded m-b-30" data-id="widget">
+              <div class="widget-list-item">
+                <div class="widget-list-media">
+
+                  <div class="widget-icon widget-icon-lg user rounded bg-grey pull-left m-r-5 m-b-5 text-white" data-id="widget-elm" data-light-class="widget-icon widget-icon-lg user rounded bg-grey pull-left m-r-5 m-b-5 text-white" data-dark-class="widget-icon widget-icon-lg user rounded bg-inverse pull-left m-r-5 m-b-5 text-white-transparent-5">
+                    <i class="fa fa-building"></i>
+                  </div>
+                </div>
+
+                <div class="widget-list-content">
+                  <h4 class="widget-list-title">Nombre Empresa</h4>
+                  <p class="widget-list-desc">Descripción de la empresa</p>
+                </div>
+                <div class="widget-list-action">
+                  <a href="index.html" class="btn btn-xs btn-primary">Go UWIGO <i class="fa fa-arrow-right m-l-5"></i></a>
+                </div>
+              </div>
+              <div class="widget-list-item">
+                <div class="widget-list-media">
+                  <div class="widget-icon widget-icon-lg user rounded bg-grey pull-left m-r-5 m-b-5 text-white" data-id="widget-elm" data-light-class="widget-icon widget-icon-lg user rounded bg-grey pull-left m-r-5 m-b-5 text-white" data-dark-class="widget-icon widget-icon-lg user rounded bg-inverse pull-left m-r-5 m-b-5 text-white-transparent-5">
+                    <i class="fa fa-building"></i>
+                  </div>
+                </div>
+                <div class="widget-list-content">
+                  <h4 class="widget-list-title">Nombre Empresa</h4>
+                  <p class="widget-list-desc">Descripción de la empresa</p>
+                </div>
+                <div class="widget-list-action">
+                  <a href="index.html" class="btn btn-xs btn-primary">Go UWIGO <i class="fa fa-arrow-right m-l-5"></i></a>
+                </div>
+              </div>
+              <!-- end widget-list-item -->
+              <!-- begin widget-list-item -->
+              <div class="widget-list-item">
+                <div class="widget-list-media">
+
+                  <div class="widget-img widget-img-lg rounded bg-inverse pull-left m-r-5 m-b-5" style="background-image: url(assets/img/user/user-12.jpg)"></div>
+                </div>
+                <div class="widget-list-content">
+                  <h4 class="widget-list-title">Nombre Empresa</h4>
+                  <p class="widget-list-desc">Descripción de la empresa</p>
+                </div>
+                <div class="widget-list-action">
+                  <a href="index.html" class="btn btn-xs btn-primary">Go UWIGO <i class="fa fa-arrow-right m-l-5"></i></a>
+                </div>
+              </div>
+              <!-- end widget-list-item -->
+            </div>
+            <!-- end widget-list -->
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end modal -->
+
+  <!-- ================== BEGIN BASE JS ================== -->
+  <script src="assets/plugins/jquery/jquery-3.2.1.min.js"></script>
+  <script src="assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+  <script src="assets/plugins/bootstrap/4.1.0/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+  <script src="assets/plugins/js-cookie/js.cookie.js"></script>
+  <script src="assets/js/theme/default.min.js"></script>
+  <script src="assets/js/apps.min.js"></script>
+
+  <!-- ================== END BASE JS ================== -->
+
+  <!-- ================== BEGIN PAGE LEVEL JS ================== -->
+  <script src="assets/plugins/highlight/highlight.common.js"></script>
+  <script src="assets/js/demo/render.highlight.js"></script>
+  <script src="assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+  <script src="assets/plugins/bootstrap-daterangepicker/moment.js"></script>
+  <script src="assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+  <script src="assets/js/demo/chart-js.demo.js"></script>
+  <script src="assets/js/demo/form-plugins.demo.js"></script>
+  <!-- ================== END PAGE LEVEL JS ================== -->
+
+  <script>
+  $(document).ready(function() {
+    App.init();
+    Highlight.init();
+    ChartJs.init();
+    handleDatepicker();
+
+    $('.input-daterange.ventas').on('changeDate', function() {
+      var barChartDataVentas = {
+          labels: ['Enero', 'Febreo', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+          datasets: [{
+              label: 'Ventas',
+              borderWidth: 2,
+              borderColor: COLOR_BLUE,
+              backgroundColor: COLOR_BLACK_TRANSPARENT_2,
+              data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+          }]
+      };
+      var ctx2 = document.getElementById('chart-ventas').getContext('2d');
+      var Chart2 = new Chart(ctx2, {
+          type: 'bar',
+          data: barChartDataVentas,
+          options: {
+            maintainAspectRatio: false,
+          }
+      });
+    });
+
+    $('.input-daterange.compras').on('changeDate', function() {
+      var barChartDataCompras = {
+          labels: ['Enero', 'Febreo', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+          datasets: [{
+              label: 'Compras',
+              borderWidth: 2,
+              borderColor: COLOR_RED,
+              backgroundColor: COLOR_RED_TRANSPARENT_2,
+              data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+          }]
+      };
+      var ctx3 = document.getElementById('chart-compras').getContext('2d');
+      var Chart3 = new Chart(ctx3, {
+          type: 'bar',
+          data: barChartDataCompras,
+          options: {
+            maintainAspectRatio: false,
+          }
+      });
+    });
+
+    $('.input-daterange.ventas-productos').on('changeDate', function() {
+      var pieChartDataProductos = {
+          labels: ['Producto 1', 'Producto 2', 'Producto 3', 'Producto 4', 'Producto 5'],
+          datasets: [{
+              data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()],
+              backgroundColor: [COLOR_RED_TRANSPARENT_7, COLOR_ORANGE_TRANSPARENT_7, COLOR_SILVER_TRANSPARENT_7, COLOR_GREY_TRANSPARENT_7, COLOR_BLACK_TRANSPARENT_7],
+              borderColor: [COLOR_RED, COLOR_ORANGE, COLOR_SILVER_DARKER, COLOR_GREY, COLOR_BLACK],
+              borderWidth: 2,
+              label: 'My dataset'
+          }]
+      };
+
+      var ctx4 = document.getElementById('chart-ventas-productos').getContext('2d');
+      var Chart4 = new Chart(ctx4, {
+          type: 'pie',
+          data: pieChartDataProductos,
+          options: {
+            maintainAspectRatio: false,
+          }
+      });
+    });
+
+
+  });
+</script>
+
+<style>
+
+.chart-container {
+  position: relative;
+  margin: auto;
+  height: 80vh;
+  width: 100%;
+}
+
+.height-300{
+  max-height: 300px;
+}
+
+.input-group-addon, .input-group-text {
+  font-size: 13px;
+}
+</style>
+
 </body>
 </html>
