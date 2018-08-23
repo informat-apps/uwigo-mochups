@@ -218,19 +218,19 @@ var handleSweetNotification = function() {
 	$('[data-click="swal-danger"]').click(function(e) {
 		e.preventDefault();
 		swal({
-			title: '¿ Eliminar registro ?',
-			text: '',
+			title: 'Are you sure?',
+			text: 'You will not be able to recover this imaginary file!',
 			icon: 'error',
 			buttons: {
 				cancel: {
-					text: 'Cancelar',
+					text: 'Cancel',
 					value: null,
 					visible: true,
 					className: 'btn btn-default',
 					closeModal: true,
 				},
 				confirm: {
-					text: 'Eliminar',
+					text: 'Warning',
 					value: true,
 					visible: true,
 					className: 'btn btn-danger',

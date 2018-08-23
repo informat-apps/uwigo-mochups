@@ -7,19 +7,19 @@ Website: http://www.seantheme.com/color-admin-v4.1/admin/
 
 var handleLineChart = function() {
     "use strict";
-    
+
     nv.addGraph(function() {
-        
+
         var sin = [], cos = [];
         for (var i = 0; i < 100; i++) {
             sin.push({x: i, y:  Math.sin(i/10) });
             cos.push({x: i, y: .5 * Math.cos(i/10)});
         }
         var lineChartData = [
-            { values: sin, key: 'Sine Wave', color: COLOR_GREEN }, 
+            { values: sin, key: 'Sine Wave', color: COLOR_GREEN },
             { values: cos, key: 'Cosine Wave', color: COLOR_BLUE }
         ];
-        
+
         var lineChart = nv.models.lineChart()
             .options({
                 transitionDuration: 300,
@@ -52,17 +52,17 @@ var handleLineChart = function() {
 
 var handleBarChart = function() {
     "use strict";
-    
+
     var barChartData = [{
         key: 'Cumulative Return',
         values: [
-            { 'label' : 'A', 'value' : 29, 'color' : COLOR_RED }, 
-            { 'label' : 'B', 'value' : 15, 'color' : COLOR_ORANGE }, 
-            { 'label' : 'C', 'value' : 32, 'color' : COLOR_GREEN }, 
-            { 'label' : 'D', 'value' : 196, 'color' : COLOR_AQUA },  
-            { 'label' : 'E', 'value' : 44, 'color' : COLOR_BLUE },  
-            { 'label' : 'F', 'value' : 98, 'color' : COLOR_PURPLE },  
-            { 'label' : 'G', 'value' : 13, 'color' : COLOR_GREY },  
+            { 'label' : 'A', 'value' : 29, 'color' : COLOR_RED },
+            { 'label' : 'B', 'value' : 15, 'color' : COLOR_ORANGE },
+            { 'label' : 'C', 'value' : 32, 'color' : COLOR_GREEN },
+            { 'label' : 'D', 'value' : 196, 'color' : COLOR_AQUA },
+            { 'label' : 'E', 'value' : 44, 'color' : COLOR_BLUE },
+            { 'label' : 'F', 'value' : 98, 'color' : COLOR_PURPLE },
+            { 'label' : 'G', 'value' : 13, 'color' : COLOR_GREY },
             { 'label' : 'H', 'value' : 5, 'color' : COLOR_BLACK }
         ]
     }];
@@ -73,13 +73,13 @@ var handleBarChart = function() {
             .y(function(d) { return d.value })
             .showValues(true)
             .duration(250);
-        
+
         barChart.yAxis.axisLabel("Total Sales");
         barChart.xAxis.axisLabel('Product');
-    
+
         d3.select('#nv-bar-chart').append('svg').datum(barChartData).call(barChart);
         nv.utils.windowResize(barChart.update);
-    
+
         return barChart;
     });
 }
@@ -87,15 +87,15 @@ var handleBarChart = function() {
 
 var handlePieAndDonutChart = function() {
     "use strict";
-    
+
     var pieChartData = [
-        { 'label': 'One', 'value' : 29, 'color': COLOR_RED }, 
-        { 'label': 'Two', 'value' : 12, 'color': COLOR_ORANGE }, 
-        { 'label': 'Three', 'value' : 32, 'color': COLOR_GREEN }, 
-        { 'label': 'Four', 'value' : 196, 'color': COLOR_AQUA }, 
-        { 'label': 'Five', 'value' : 17, 'color': COLOR_BLUE }, 
-        { 'label': 'Six', 'value' : 98, 'color': COLOR_PURPLE }, 
-        { 'label': 'Seven', 'value' : 13, 'color': COLOR_GREY }, 
+        { 'label': 'One', 'value' : 29, 'color': COLOR_RED },
+        { 'label': 'Two', 'value' : 12, 'color': COLOR_ORANGE },
+        { 'label': 'Three', 'value' : 32, 'color': COLOR_GREEN },
+        { 'label': 'Four', 'value' : 196, 'color': COLOR_AQUA },
+        { 'label': 'Five', 'value' : 17, 'color': COLOR_BLUE },
+        { 'label': 'Six', 'value' : 98, 'color': COLOR_PURPLE },
+        { 'label': 'Seven', 'value' : 13, 'color': COLOR_GREY },
         { 'label': 'Eight', 'value' : 5, 'color': COLOR_BLACK }
     ];
 
@@ -122,7 +122,7 @@ var handlePieAndDonutChart = function() {
           .showLabels(true)
           .labelThreshold(.05)
           .labelType("percent")
-          .donut(true) 
+          .donut(true)
           .donutRatio(0.35);
 
         d3.select('#nv-donut-chart').append('svg')
@@ -137,7 +137,7 @@ var handlePieAndDonutChart = function() {
 
 var handleStackedAreaChart = function() {
     "use strict";
-    
+
     var stackedAreaChartData = [{
         'key' : 'Financials',
         'color' : COLOR_RED,
@@ -151,7 +151,7 @@ var handleStackedAreaChart = function() {
         'color' : COLOR_BLACK,
         'values' : [ [ 1138683600000 , 13.242301508051] , [ 1141102800000 , 12.863536342042] , [ 1143781200000 , 21.034044171629] , [ 1146369600000 , 21.419084618803] , [ 1149048000000 , 21.142678863691] , [ 1151640000000 , 26.568489677529] , [ 1154318400000 , 24.839144939905] , [ 1156996800000 , 25.456187462167] , [ 1159588800000 , 26.350164502826] , [ 1162270800000 , 26.47833320519] , [ 1164862800000 , 26.425979547847] , [ 1167541200000 , 28.191461582256] , [ 1170219600000 , 28.930307448808] , [ 1172638800000 , 29.521413891117] , [ 1175313600000 , 28.188285966466] , [ 1177905600000 , 27.704619625832] , [ 1180584000000 , 27.490862424829] , [ 1183176000000 , 28.770679721286] , [ 1185854400000 , 29.060480671449] , [ 1188532800000 , 28.240998844973] , [ 1191124800000 , 33.004893194127] , [ 1193803200000 , 34.075180359928] , [ 1196398800000 , 32.548560664833] , [ 1199077200000 , 30.629727432728] , [ 1201755600000 , 28.642858788159] , [ 1204261200000 , 27.973575227842] , [ 1206936000000 , 27.393351882726] , [ 1209528000000 , 28.476095288523] , [ 1212206400000 , 29.29667866426] , [ 1214798400000 , 29.222333802896] , [ 1217476800000 , 28.092966093843] , [ 1220155200000 , 28.107159262922] , [ 1222747200000 , 25.482974832098] , [ 1225425600000 , 21.208115993834] , [ 1228021200000 , 20.295043095268] , [ 1230699600000 , 15.925754618401] , [ 1233378000000 , 17.162864628346] , [ 1235797200000 , 17.084345773174] , [ 1238472000000 , 22.246007102281] , [ 1241064000000 , 24.530543998509] , [ 1243742400000 , 25.084184918242] , [ 1246334400000 , 16.606166527358] , [ 1249012800000 , 17.239620011628] , [ 1251691200000 , 17.336739127379] , [ 1254283200000 , 25.478492475753] , [ 1256961600000 , 23.017152085245] , [ 1259557200000 , 25.617745423683] , [ 1262235600000 , 24.061133998642] , [ 1264914000000 , 23.223933318644] , [ 1267333200000 , 24.425887263937] , [ 1270008000000 , 35.501471156693] , [ 1272600000000 , 33.775013878676] , [ 1275278400000 , 30.417993630285] , [ 1277870400000 , 30.023598978467] , [ 1280548800000 , 33.327519522436] , [ 1283227200000 , 31.963388450371] , [ 1285819200000 , 30.498967232092] , [ 1288497600000 , 32.403696817912] , [ 1291093200000 , 31.47736071922] , [ 1293771600000 , 31.53259666241] , [ 1296450000000 , 41.760282761548] , [ 1298869200000 , 45.605771243237] , [ 1301544000000 , 39.986557966215] , [ 1304136000000 , 43.846330510051] , [ 1306814400000 , 39.857316881857] , [ 1309406400000 , 37.675127768208] , [ 1312084800000 , 35.775077970313] , [ 1314763200000 , 48.631009702577] , [ 1317355200000 , 42.830831754505] , [ 1320033600000 , 35.611502589362] , [ 1322629200000 , 35.320136981738] , [ 1325307600000 , 31.564136901516] , [ 1327986000000 , 32.074407502433] , [ 1330491600000 , 35.053013769976] , [ 1333166400000 , 26.434568573937] , [ 1335758400000 , 25.305617871002] , [ 1338436800000 , 24.520919418236]]
     }];
-    
+
     nv.addGraph(function() {
         var stackedAreaChart = nv.models.stackedAreaChart()
             .useInteractiveGuideline(true)
@@ -186,26 +186,26 @@ var handleStackedAreaChart = function() {
 
 var handleStackedBarChart = function() {
     "use strict";
-    
+
     var stackedBarChartData = [{
-        key: 'Stream 1',
+        key: 'Stream 11',
         'color' : COLOR_RED,
         values: [
-            { x:1, y: 10}, { x:2, y: 15}, { x:3, y: 16}, { x:4, y: 20}, { x:5, y: 57}, { x:6, y: 42}, { x:7, y: 12}, { x:8, y: 65}, { x:9, y: 34}, { x:10, y: 52}, 
+            { x:1, y: 10}, { x:2, y: 15}, { x:3, y: 16}, { x:4, y: 20}, { x:5, y: 57}, { x:6, y: 42}, { x:7, y: 12}, { x:8, y: 65}, { x:9, y: 34}, { x:10, y: 52},
             { x:11, y: 23}, { x:12, y: 12}, { x:13, y: 22}, { x:14, y: 22}, { x:15, y: 48}, { x:16, y: 54}, { x:17, y: 32}, { x:18, y: 13}, { x:19, y: 21}, { x:20, y: 12}
         ]
     },{
         key: 'Stream 2',
         'color' : COLOR_ORANGE,
         values: [
-            { x:1, y: 10}, { x:2, y: 15}, { x:3, y: 16}, { x:4, y: 45}, { x:5, y: 67}, { x:6, y: 34}, { x:7, y: 43}, { x:8, y: 65}, { x:9, y: 32}, { x:10, y: 12}, 
+            { x:1, y: 10}, { x:2, y: 15}, { x:3, y: 16}, { x:4, y: 45}, { x:5, y: 67}, { x:6, y: 34}, { x:7, y: 43}, { x:8, y: 65}, { x:9, y: 32}, { x:10, y: 12},
             { x:11, y: 43}, { x:12, y: 45}, { x:13, y: 32}, { x:14, y: 32}, { x:15, y: 38}, { x:16, y: 64}, { x:17, y: 42}, { x:18, y: 23}, { x:19, y: 31}, { x:20, y: 22}
         ]
     },{
         key: 'Stream 2',
         'color' : COLOR_BLACK,
         values: [
-            { x:1, y: 20}, { x:2, y: 25}, { x:3, y: 26}, { x:4, y: 30}, { x:5, y: 57}, { x:6, y: 52}, { x:7, y: 22}, { x:8, y: 75}, { x:9, y: 44}, { x:10, y: 62}, 
+            { x:1, y: 20}, { x:2, y: 25}, { x:3, y: 26}, { x:4, y: 30}, { x:5, y: 57}, { x:6, y: 52}, { x:7, y: 22}, { x:8, y: 75}, { x:9, y: 44}, { x:10, y: 62},
             { x:11, y: 35}, { x:12, y: 15}, { x:13, y: 25}, { x:14, y: 25}, { x:15, y: 45}, { x:16, y: 55}, { x:17, y: 35}, { x:18, y: 15}, { x:19, y: 25}, { x:20, y: 15}
         ]
     }];
@@ -215,7 +215,7 @@ var handleStackedBarChart = function() {
             var stackedBarChart = nv.models.multiBarChart()
                 .stacked(true)
                 .showControls(false);
-            
+
             var svg = d3.select('#nv-stacked-bar-chart').append('svg').datum(stackedBarChartData);
             svg.transition().duration(0).call(stackedBarChart);
             return stackedBarChart;

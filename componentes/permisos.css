@@ -1,0 +1,35 @@
+table.table-permisos thead tr th{
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  text-align: center;
+  color: #404E67;
+
+}
+
+table.table-permisos tbody tr td{
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  color: #404E67;
+
+}
+
+table.table-permisos tbody tr td .btn{
+  padding: 0.2rem 0.4rem !important;
+}
+
+table.table-permisos tbody tr td .btn.btn-primary{
+  color: white;
+  background: #31b5b9;
+  border: 1px solid #c1c1c1;
+
+}
+
+table.table-permisos tbody tr td .btn.btn-grey{
+  color: #45b5ba;
+  background: #fafbfc;
+  border: 1px solid #c1c1c1;
+}
+
+.container-permisos .form-group {
+  margin-bottom: 0px !important;
+}

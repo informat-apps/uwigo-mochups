@@ -37,61 +37,111 @@ var handleJstreeDefault = function() {
 
 
 var handleJstreeCheckable = function() {
-    $('#jstree-checkable').jstree({
+
+  $('.jstree-checkable-1').jstree({
+      'plugins': ["wholerow", "checkbox", "types"],
+      'core': {
+          "themes": {
+              "responsive": false
+          },
+          'data': [{
+              "text": "Contabilidad",
+              "children": [{
+                  "text": "initially selected",
+                  "state": { "selected": true }
+              }, {
+                  "text": "Crear"
+              }, {
+                  "text": "Leer"
+              }, {
+                  "text": "Editar"
+              }, {
+                  "text": "Otras opciones",
+                  "icon": "fa fa-lg",
+                  "state": {
+                      "opened": true
+                  },
+                  "children": [{
+                      "text": "sub opción 1"
+                  }, {
+                      "text": "sub opción 2",
+                      "state": {
+                          "disabled": true
+                      }
+                  }]
+              },
+              // {
+              //     "text": "custom icon",
+              //     "icon": "fa fa-cloud-download fa-lg text-inverse"
+              // },
+              {
+                  "text": "Eliminar",
+                  "state": {
+                      "disabled": true
+                  }
+              }
+          ]},
+          "Ventas"
+      ]},
+      "types": {
+          "default": {
+              "icon": "fa text-primary fa-lg"
+          },
+          "file": {
+              "icon": "fa fa-file text-success fa-lg"
+          }
+      }
+  });
+
+
+    $('.jstree-checkable-2').jstree({
         'plugins': ["wholerow", "checkbox", "types"],
         'core': {
             "themes": {
                 "responsive": false
             },
-            'data': [
-              {
-                "text": "Módulo 1",
-                "icon": "fa",
-                "children": [
-                  {
-                    "text": "Permiso 1",
-                    "icon": "fa fa-plus",
+            'data': [{
+                "text": "Contabilidad",
+                "children": [{
+                    "text": "initially selected",
                     "state": { "selected": true }
-                  }, {
-                    "text": "Permiso 2",
-                    "icon": "fa fa-edit fa-lg",
-                  }, {
-                    "text": "Permiso 3",
-                    "icon": "fa fa-trash-alt",
-                  }, {
-                    "text": "Permiso 4",
-                    "icon": "fa fa-filter",
-                  }, {
-                    "text": "Permiso 5",
-                    "icon": "fa fa-check",
-                    "state": { "opened": true },
-                  }, {
-                    "text": "Permiso 6",
-                    "icon": "far fa-address-book"
-                  }
-                ]
-              },
-              {
-                "text": "Módulo 2",
-                "icon": "fa",
-                "children": [
-                  {
-                    "text": "Permiso 1",
-                    "icon": "fa fa-plus",
-                    "state": { "selected": true }
-                  }, {
-                    "text": "Permiso 2",
-                    "icon": "fa fa-edit fa-lg",
-                  }, {
-                    "text": "Permiso 3",
-                    "icon": "fa fa-trash-alt",
-                  }
-                ]
-              },
+                }, {
+                    "text": "Crear"
+                }, {
+                    "text": "Leer"
+                }, {
+                    "text": "Editar"
+                }, {
+                    "text": "Otras opciones",
+                    "icon": "fa fa-lg",
+                    "state": {
+                        "opened": true
+                    },
+                    "children": [{
+                        "text": "sub opción 1"
+                    }, {
+                        "text": "sub opción 2",
+                        "state": {
+                            "disabled": true
+                        }
+                    }]
+                },
+                // {
+                //     "text": "custom icon",
+                //     "icon": "fa fa-cloud-download fa-lg text-inverse"
+                // },
+                {
+                    "text": "Eliminar",
+                    "state": {
+                        "disabled": true
+                    }
+                }
+            ]},
+            "Ventas"
         ]},
         "types": {
             "default": {
-                "icon": "fa fa-folder text-primary fa-lg"
+                "icon": "fa text-primary fa-lg"
             },
             "file": {
                 "icon": "fa fa-file text-success fa-lg"
@@ -197,10 +247,10 @@ var TreeView = function () {
     return {
         //main function
         init: function () {
-            handleJstreeDefault();
+            // handleJstreeDefault();
             handleJstreeCheckable();
-            handleJstreeDragAndDrop();
-            handleJstreeAjax();
+            // handleJstreeDragAndDrop();
+            // handleJstreeAjax();
         }
     };
 }();

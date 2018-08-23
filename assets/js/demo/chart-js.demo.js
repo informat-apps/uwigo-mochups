@@ -38,7 +38,7 @@ var lineChartDataFlujo = {
       ]
     },
     {
-    label: 'Actual Cash In',
+    label: 'Ingresos',
     borderWidth: 2,
     borderColor: COLOR_GREEN,
     backgroundColor: COLOR_GREEN_TRANSPARENT_2,
@@ -58,7 +58,7 @@ var lineChartDataFlujo = {
       randomScalingFactor(),
     ]
   }, {
-    label: 'Invoice Due',
+    label: 'Facturas emitidas por cobrar',
     borderWidth: 2,
     borderColor: COLOR_GREEN,
     backgroundColor: COLOR_GREEN_TRANSPARENT_7,
@@ -78,7 +78,7 @@ var lineChartDataFlujo = {
       randomScalingFactor(),
     ]
   }, {
-    label: 'Actual Cash Out',
+    label: 'Egresos',
     borderWidth: 2,
     borderColor: COLOR_RED,
     backgroundColor: COLOR_RED_TRANSPARENT_7,
@@ -98,7 +98,7 @@ var lineChartDataFlujo = {
       randomScalingFactor(),
     ]
   },{
-    label: 'Bills Due',
+    label: 'Facturas recibidas por pagar',
     borderWidth: 2,
     borderColor: COLOR_RED,
     backgroundColor: COLOR_RED_TRANSPARENT_2,
@@ -177,32 +177,32 @@ var handleChartJs = function() {
 				}
       });
 
-    var ctx2 = document.getElementById('chart-ventas').getContext('2d');
-    var Chart2 = new Chart(ctx2, {
-        type: 'bar',
-        data: barChartDataVentas,
-        options: {
-          maintainAspectRatio: false,
-        }
-    });
-
-    var ctx3 = document.getElementById('chart-compras').getContext('2d');
-    var Chart3 = new Chart(ctx3, {
-        type: 'bar',
-        data: barChartDataCompras,
-        options: {
-          maintainAspectRatio: false,
-        }
-    });
-
-    var ctx4 = document.getElementById('chart-ventas-productos').getContext('2d');
-    var Chart4 = new Chart(ctx4, {
-        type: 'pie',
-        data: pieChartDataProductos,
-        options: {
-          maintainAspectRatio: false,
-        }
-    });
+    // var ctx2 = document.getElementById('chart-ventas').getContext('2d');
+    // var Chart2 = new Chart(ctx2, {
+    //     type: 'bar',
+    //     data: barChartDataVentas,
+    //     options: {
+    //       maintainAspectRatio: false,
+    //     }
+    // });
+    //
+    // var ctx3 = document.getElementById('chart-compras').getContext('2d');
+    // var Chart3 = new Chart(ctx3, {
+    //     type: 'bar',
+    //     data: barChartDataCompras,
+    //     options: {
+    //       maintainAspectRatio: false,
+    //     }
+    // });
+    //
+    // var ctx4 = document.getElementById('chart-ventas-productos').getContext('2d');
+    // var Chart4 = new Chart(ctx4, {
+    //     type: 'pie',
+    //     data: pieChartDataProductos,
+    //     options: {
+    //       maintainAspectRatio: false,
+    //     }
+    // });
 
 };
 

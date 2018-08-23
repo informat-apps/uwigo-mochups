@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>UWIGO</title>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+
+  <!-- ================== BEGIN BASE CSS STYLE ================== -->
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+  <link href="https://github.com/informat-apps/uwigo-mochups/assets/plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
+  <link href="https://github.com/informat-apps/uwigo-mochups/assets/plugins/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://github.com/informat-apps/uwigo-mochups/assets/plugins/font-awesome/5.0/css/fontawesome-all.min.css" rel="stylesheet" />
+  <link href="https://github.com/informat-apps/uwigo-mochups/assets/plugins/animate/animate.min.css" rel="stylesheet" />
+  <link href="https://github.com/informat-apps/uwigo-mochups/assets/css/default/style.min.css" rel="stylesheet" />
+  <link href="https://github.com/informat-apps/uwigo-mochups/assets/css/default/style-responsive.min.css" rel="stylesheet" />
+  <link href="https://github.com/informat-apps/uwigo-mochups/assets/css/default/theme/default.css" rel="stylesheet" id="theme" />
+  <link href="https://github.com/informat-apps/uwigo-mochups/assets/style.css" rel="stylesheet" />
+  <!-- ================== END BASE CSS STYLE ================== -->
+
+  <!-- ================== BEGIN BASE JS ================== -->
+  <script src="https://github.com/informat-apps/uwigo-mochups/assets/plugins/pace/pace.min.js"></script>
+  <!-- ================== END BASE JS ================== -->
+
+  <!-- ================== BEGIN PAGE CSS ================== -->
+  <link href="https://github.com/informat-apps/uwigo-mochups/assets/plugins/nvd3/build/nv.d3.css" rel="stylesheet" />
+  <link href="https://github.com/informat-apps/uwigo-mochups/assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker.css" rel="stylesheet" />
+  <link href="https://github.com/informat-apps/uwigo-mochups/assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.css" rel="stylesheet" />
+  <link href="https://github.com/informat-apps/uwigo-mochups/assets/plugins/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet" />
+  <link href="https://github.com/informat-apps/uwigo-mochups/assets/plugins/DataTables/media/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+  <link href="https://github.com/informat-apps/uwigo-mochups/assets/plugins/DataTables/extensions/Responsive/css/responsive.bootstrap.min.css" rel="stylesheet" />
+  <link href="https://github.com/informat-apps/uwigo-mochups/assets/plugins/dropzone/min/dropzone.min.css" rel="stylesheet" />
+  <link href="https://github.com/informat-apps/uwigo-mochups/assets/plugins/switchery/switchery.min.css" rel="stylesheet" />
+  <link href="https://github.com/informat-apps/uwigo-mochups/assets/plugins/powerange/powerange.min.css" rel="stylesheet" />
+  <link href="https://github.com/informat-apps/uwigo-mochups/assets/plugins/select2/dist/css/select2.min.css" rel="stylesheet" />
+  <link href="https://github.com/informat-apps/uwigo-mochups/assets/plugins/jstree/dist/themes/default/style.min.css" rel="stylesheet" />
+  <!-- ================== END PAGE CSS ================== -->
+</head>
+<body>
+  <!-- begin #page-loader -->
+  <div id="page-loader" class="fade show"><span class="spinner"></span></div>
+  <!-- end #page-loader -->
+
+  <!-- begin #page-container -->
+  <div id="page-container" class="page-container fade page-without-sidebar page-header-fixed page-with-top-menu">
+
+    <!-- begin #header -->
+    <div id="header" class="header navbar-default">
+      <!-- begin navbar-header -->
+      <div class="navbar-header">
+        <a href="dashboard.html" class="navbar-brand"><span class="navbar-logo"></span> <b>UWIGO</b> Nombre Empresa</a>
+        <button type="button" class="navbar-toggle" data-click="top-menu-toggled">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <!-- end navbar-header -->
+
+      <!-- begin header navigation right -->
+      <ul class="navbar-nav navbar-right">
+
+        <li class="dropdown navbar-user">
+          <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+            <img src="https://github.com/informat-apps/uwigo-mochups/assets/img/user/user-13.jpg" alt="">
+            <span class="d-none d-md-inline">Nombre Usuario</span> <b class="caret"></b>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a href="perfil-usuario.html" class="dropdown-item">Editar Perfil</a>
+            <a href="login.html" class="dropdown-item">Salir</a>
+            <div class="dropdown-divider"></div>
+            <a href="#m-cambiar-contrasena" class="dropdown-item" data-toggle="modal"><i class="far fa-star"></i> Cambiar Contraseña</a>
+          </div>
+        </li>
+
+        <li class="dropdown">
+          <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+            <i class="fa fa-cogs"></i><b class="caret"></b>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a href="empresa-lista.html" class="dropdown-item">Empresas</a>
+            <a href="usuarios.html" class="dropdown-item">Usuarios</a>
+            <div class="dropdown-divider"></div>
+            <a href="#m-cambiar-empresa" class="dropdown-item" data-toggle="modal"><i class="far fa-star"></i> Cambiar de Empresa</a>
+          </div>
+        </li>
+      </ul>
+      <!-- end header navigation right -->
+    </div>
+    <!-- end #header -->
+
+    <!-- begin #top-menu -->
+    <div id="top-menu" class="top-menu">
+      <!-- begin top-menu nav -->
+      <ul class="nav">
+        <li class="active">
+          <a href="dashboard.html">
+            <i class="fa fa-th-large"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li class="has-sub">
+          <a href="javascript:;">
+            <b class="caret"></b>
+            <span>Cuentas</span>
+          </a>
+          <ul class="sub-menu">
+            <li><a href="bancos.html">Bancos</a></li>
+            <li><a href="ventas.html">Ventas</a></li>
+            <li><a href="compras.html">Compras</a></li>
+            <li><a href="remuneraciones-lista.html">Remuneraciones</a></li>
+            <li><a href="inventario.html">Inventario</a></li>
+            <li><a href="gastos.html">Gastos</a></li>
+            <li><a href="activos-fijos.html">Activo Fijo</a></li>
+          </ul>
+        </li>
+        <li class="has-sub">
+          <a href="javascript:;">
+            <b class="caret"></b>
+            <span>Reportes</span>
+          </a>
+          <ul class="sub-menu">
+            <li><a href="reporte.html">Reporte 1</a></li>
+            <li><a href="reporte.html">Reporte 2</a></li>
+          </ul>
+        </li>
+        <li class="has-sub">
+          <a href="javascript:;">
+            <b class="caret"></b>
+            <span>Contactos</span>
+          </a>
+          <ul class="sub-menu">
+            <li><a href="contactos.html">Todos los contactos</a></li>
+            <div class="dropdown-divider"></div>
+            <li><a href="proveedores-lista.html"><i class="far fa-star"></i> Proveedores</a></li>
+            <li><a href="clientes-lista.html"><i class="far fa-star"></i> Clientes</a></li>
+          </ul>
+        </li>
+        <li class="has-sub">
+          <a href="configuracion.html">
+            <span>Configuración</span>
+          </a>
+        </li>
+      </ul>
+      <!-- end top-menu nav -->
+    </div>
+    <!-- end #top-menu -->
+
+    <!-- begin #breadcrumb -->
+    <div class="section-breadcrumb">
+      <div class="pull-right">
+        <div class="mt-2">
+          <a href="#m-video" class="btn btn-primary btn-icon btn-circle btn-sm" data-toggle="modal"><i class="fa fa-video"></i></a>
+          <a class="btn btn-primary btn-icon btn-circle btn-sm" href="javascript:void(0);" onclick="javascript:introJs().start();"><i class="fa fa-comment-dots"></i></a>
+        </div>
+      </div>
+
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="javascript:;">Módulo</a></li>
+        <li class="breadcrumb-item active"><a href="javascript:;">Sub-Módulo</a></li>
+      </ol>
+    </div>
+    <!-- end #breadcrumb -->
+
+    <!-- begin #content -->
+    <div id="content" class="content">
+      <div class="panel panel-default" data-sortable-id="index-1">
+        <div class="panel-body">
+
+          <fieldset class="mb-4">
+
+            <legend class="m-b-15">Información General</legend>
+
+            <div class="row">
+
+              <div class="form-group col-md-1">
+                <label for="">P.Juridica</label>
+                <input type="checkbox" class="form-control">
+              </div>
+
+              <div class="form-group col-md-1">
+                <label for="">P.Extranjera</label>
+                <input type="checkbox" class="form-control">
+              </div>
+
+              <div class="form-group col-md-2">
+                <label for="">R.U.T. (*)</label>
+                <input type="text" class="form-control form-control-sm" placeholder="XX.XXX.XXX-X">
+              </div>
+
+              <div class="form-group col-md-4">
+                <label for="">Razon Social (*)</label>
+                <input type="text" class="form-control form-control-sm" placeholder="Nombre Usuario">
+              </div>
+
+              <div class="form-group col-md-4">
+                <label for="">Nombre (*)</label>
+                <input type="text" class="form-control form-control-sm" placeholder="Nombre Usuario">
+              </div>
+
+              <div class="form-group col-md-3">
+                <label for="">Giro (*)</label>
+                <select class="form-control form-control-sm">
+                  <option> seleccionar</option>
+                  <option>Giro 1</option>
+                  <option>Giro 2</option>
+                  <option>Giro 3</option>
+                  <option>Giro 4</option>
+                  <option>Giro 5</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-3">
+                <label for="">Email (*)</label>
+                <input type="text" class="form-control form-control-sm" placeholder="usuario@email.com">
+              </div>
+
+              <div class="form-group col-md-4">
+                <label for="">Dirección</label>
+                <input type="text" class="form-control form-control-sm" placeholder="Dirección Usuario">
+              </div>
+
+              <div class="form-group col-md-2">
+                <label for="">Teléfono</label>
+                <input type="text" class="form-control form-control-sm" placeholder="XX-XX-XXXX-XXXX">
+              </div>
+
+              <div class="form-group col-md-2">
+                <label for="">País (*)</label>
+                <select class="form-control form-control-sm">
+                  <option> seleccionar</option>
+                  <option>País 1</option>
+                  <option>País 2</option>
+                  <option>País 3</option>
+                  <option>País 4</option>
+                  <option>País 5</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-2">
+                <label for="">Región (*)</label>
+                <select class="form-control form-control-sm">
+                  <option> seleccionar</option>
+                  <option>Región 1</option>
+                  <option>Región 2</option>
+                  <option>Región 3</option>
+                  <option>Región 4</option>
+                  <option>Región 5</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-2">
+                <label for="">Ciudad (*)</label>
+                <select class="form-control form-control-sm">
+                  <option> seleccionar</option>
+                  <option>Ciudad 1</option>
+                  <option>Ciudad 2</option>
+                  <option>Ciudad 3</option>
+                  <option>Ciudad 4</option>
+                  <option>Ciudad 5</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-2">
+                <label for="">Comuna (*)</label>
+                <select class="form-control form-control-sm">
+                  <option> seleccionar</option>
+                  <option>Comuna 1</option>
+                  <option>Comuna 2</option>
+                  <option>Comuna 3</option>
+                  <option>Comuna 4</option>
+                  <option>Comuna 5</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-2">
+                <label for="">Tipo (*)</label>
+                <select class="form-control form-control-sm">
+                  <option> seleccionar</option>
+                  <option>Tipo 1</option>
+                  <option>Tipo 2</option>
+                  <option>Tipo 3</option>
+                  <option>Tipo 4</option>
+                  <option>Tipo 5</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-1">
+                <label for="">Estado</label>
+                <input type="checkbox" class="form-control">
+              </div>
+
+            </div>
+
+          </fieldset>
+
+          <div class="pull-right">
+            <a href="contactos.html" class="btn btn-sm btn-white m-r-5">Cancelar</a>
+            <a href="contactos.html" class="btn btn-sm btn-primary">Aceptar</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- end #content -->
+
+  </div>
+  <!-- end #page-container -->
+
+  <!-- begin scroll to top btn -->
+  <a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
+  <!-- end scroll to top btn -->
+
+  <!-- begin modal -->
+  <div class="modal fade" id="m-video" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <!-- header -->
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Video de Ayuda</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <!-- body -->
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-6">
+              <div class="post-video">
+                <div class="embed-responsive embed-responsive-16by9">
+                  <iframe src="https://player.vimeo.com/video/252920310?title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <blockquote>
+                <p>Descripción:</p>
+                <p class="f-s-12">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-sm btn-white" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="m-cambiar-contrasena" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <!-- header -->
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Cambiar Contraseña</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <!-- body -->
+        <div class="modal-body">
+          <div class="col-sm-12 col-lg-12">
+            <div class="widget-list widget-list-rounded m-b-30" data-id="widget">
+              <div class="widget-list-item">
+                <div class="widget-list-media">
+                  <div class="widget-icon widget-icon-lg user rounded bg-grey pull-left m-r-5 m-b-5 text-white" data-id="widget-elm" data-light-class="widget-icon widget-icon-lg user rounded bg-grey pull-left m-r-5 m-b-5 text-white" data-dark-class="widget-icon widget-icon-lg user rounded bg-inverse pull-left m-r-5 m-b-5 text-white-transparent-5">
+                    <i class="fa fa-building"></i>
+                  </div>
+                </div>
+                <div class="widget-list-content">
+                  <h4 class="widget-list-title">Nombre Empresa</h4>
+                  <p class="widget-list-desc">Descripción de la empresa</p>
+                </div>
+                <div class="widget-list-action">
+                  <a href="dashboard.html" class="btn btn-xs btn-primary">Go UWIGO <i class="fa fa-arrow-right m-l-5"></i></a>
+                </div>
+              </div>
+              <div class="widget-list-item">
+                <div class="widget-list-media">
+                  <div class="widget-icon widget-icon-lg user rounded bg-grey pull-left m-r-5 m-b-5 text-white" data-id="widget-elm" data-light-class="widget-icon widget-icon-lg user rounded bg-grey pull-left m-r-5 m-b-5 text-white" data-dark-class="widget-icon widget-icon-lg user rounded bg-inverse pull-left m-r-5 m-b-5 text-white-transparent-5">
+                    <i class="fa fa-building"></i>
+                  </div>
+                </div>
+                <div class="widget-list-content">
+                  <h4 class="widget-list-title">Nombre Empresa</h4>
+                  <p class="widget-list-desc">Descripción de la empresa</p>
+                </div>
+                <div class="widget-list-action">
+                  <a href="dashboard.html" class="btn btn-xs btn-primary">Go UWIGO <i class="fa fa-arrow-right m-l-5"></i></a>
+                </div>
+              </div>
+              <div class="widget-list-item">
+                <div class="widget-list-media">
+                  <div class="widget-img widget-img-lg rounded bg-inverse pull-left m-r-5 m-b-5" style="background-image: url(assets/img/user/user-12.jpg)"></div>
+                </div>
+                <div class="widget-list-content">
+                  <h4 class="widget-list-title">Nombre Empresa</h4>
+                  <p class="widget-list-desc">Descripción de la empresa</p>
+                </div>
+                <div class="widget-list-action">
+                  <a href="dashboard.html" class="btn btn-xs btn-primary">Go UWIGO <i class="fa fa-arrow-right m-l-5"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="m-cambiar-empresa" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <!-- header -->
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Empresas</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <!-- body -->
+        <div class="modal-body">
+          <div class="col-sm-12 col-lg-12">
+            <div class="widget-list widget-list-rounded m-b-30" data-id="widget">
+              <div class="widget-list-item">
+                <div class="widget-list-media">
+                  <div class="widget-icon widget-icon-lg user rounded bg-grey pull-left m-r-5 m-b-5 text-white" data-id="widget-elm" data-light-class="widget-icon widget-icon-lg user rounded bg-grey pull-left m-r-5 m-b-5 text-white" data-dark-class="widget-icon widget-icon-lg user rounded bg-inverse pull-left m-r-5 m-b-5 text-white-transparent-5">
+                    <i class="fa fa-building"></i>
+                  </div>
+                </div>
+                <div class="widget-list-content">
+                  <h4 class="widget-list-title">Nombre Empresa</h4>
+                  <p class="widget-list-desc">Descripción de la empresa</p>
+                </div>
+                <div class="widget-list-action">
+                  <a href="dashboard.html" class="btn btn-xs btn-primary">Go UWIGO <i class="fa fa-arrow-right m-l-5"></i></a>
+                </div>
+              </div>
+              <div class="widget-list-item">
+                <div class="widget-list-media">
+                  <div class="widget-icon widget-icon-lg user rounded bg-grey pull-left m-r-5 m-b-5 text-white" data-id="widget-elm" data-light-class="widget-icon widget-icon-lg user rounded bg-grey pull-left m-r-5 m-b-5 text-white" data-dark-class="widget-icon widget-icon-lg user rounded bg-inverse pull-left m-r-5 m-b-5 text-white-transparent-5">
+                    <i class="fa fa-building"></i>
+                  </div>
+                </div>
+                <div class="widget-list-content">
+                  <h4 class="widget-list-title">Nombre Empresa</h4>
+                  <p class="widget-list-desc">Descripción de la empresa</p>
+                </div>
+                <div class="widget-list-action">
+                  <a href="dashboard.html" class="btn btn-xs btn-primary">Go UWIGO <i class="fa fa-arrow-right m-l-5"></i></a>
+                </div>
+              </div>
+              <div class="widget-list-item">
+                <div class="widget-list-media">
+                  <div class="widget-img widget-img-lg rounded bg-inverse pull-left m-r-5 m-b-5" style="background-image: url(assets/img/user/user-12.jpg)"></div>
+                </div>
+                <div class="widget-list-content">
+                  <h4 class="widget-list-title">Nombre Empresa</h4>
+                  <p class="widget-list-desc">Descripción de la empresa</p>
+                </div>
+                <div class="widget-list-action">
+                  <a href="dashboard.html" class="btn btn-xs btn-primary">Go UWIGO <i class="fa fa-arrow-right m-l-5"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="m-subir-archivo" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Subir Archivo</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div id="dropzone">
+            <form action="/upload" class="dropzone needsclick" id="demo-upload">
+              <div class="dz-message needsclick">
+                Suelta los archivos <b>aquí</b> o <b>haz clic</b> para subirlos. <br />
+                <span class="dz-note needsclick">
+                </span>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-sm btn-white" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-sm btn-primary" data-dismiss="modal">Aceptar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="m-articulo" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Nuevo Articulo</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+          <form action="/" method="POST">
+
+
+            <div class="row">
+
+              <div class="form-group col-md-3">
+                <label for="">Producto Rastreable</label>
+                <input type="checkbox" class="form-control">
+              </div>
+
+              <div class="form-group col-md-3">
+                <label for="">Código</label>
+                <input type="text" class="form-control" placeholder="">
+              </div>
+
+              <div class="form-group col-md-3">
+                <label for="">Nombre</label>
+                <input type="text" class="form-control" placeholder="">
+              </div>
+            </div>
+
+            <div class="dropdown-divider"></div>
+
+            <div class="row">
+
+              <div class="form-group col-md-3">
+                <label for="">Producto de Compra</label>
+                <input type="checkbox" class="form-control">
+              </div>
+
+              <div class="form-group col-md-3">
+                <label for="">Precio Unitario</label>
+                <input type="text" class="form-control" placeholder="">
+              </div>
+
+              <div class="form-group col-md-3">
+                <label for="">Cuenta Contable</label>
+                <select class="form-control">
+                  <option> seleccionar</option>
+                  <option>Cuenta Contable 1</option>
+                  <option>Cuenta Contable 2</option>
+                  <option>Cuenta Contable 3</option>
+                  <option>Cuenta Contable 4</option>
+                  <option>Cuenta Contable 5</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-3">
+                <label for="">Tasa Impuesto</label>
+                <select class="form-control">
+                  <option> seleccionar</option>
+                  <option>Tasa Impuesto 1</option>
+                  <option>Tasa Impuesto 2</option>
+                  <option>Tasa Impuesto 3</option>
+                  <option>Tasa Impuesto 4</option>
+                  <option>Tasa Impuesto 5</option>
+                </select>
+              </div>
+
+            </div>
+
+            <div class="dropdown-divider"></div>
+
+            <div class="row">
+              <div class="form-group col-md-3">
+                <label for="">Producto de Venta</label>
+                <input type="checkbox" class="form-control">
+              </div>
+
+              <div class="form-group col-md-3">
+                <label for="">Precio Unitario</label>
+                <input type="text" class="form-control" placeholder="">
+              </div>
+
+              <div class="form-group col-md-3">
+                <label for="">Cuenta Contable</label>
+                <select class="form-control">
+                  <option> seleccionar</option>
+                  <option>Cuenta Contable 1</option>
+                  <option>Cuenta Contable 2</option>
+                  <option>Cuenta Contable 3</option>
+                  <option>Cuenta Contable 4</option>
+                  <option>Cuenta Contable 5</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-3">
+                <label for="">Tasa Impuesto</label>
+                <select class="form-control">
+                  <option> seleccionar</option>
+                  <option>Tasa Impuesto 1</option>
+                  <option>Tasa Impuesto 2</option>
+                  <option>Tasa Impuesto 3</option>
+                  <option>Tasa Impuesto 4</option>
+                  <option>Tasa Impuesto 5</option>
+                </select>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-sm btn-white" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-sm btn-primary" data-dismiss="modal">Aceptar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="m-cta-corriente" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Nuevo Cuenta Corriente</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+          <form action="/" method="POST">
+
+            <div class="row">
+
+              <div class="form-group col-md-3">
+                <label for="">Banco</label>
+                <select class="form-control form-control-sm">
+                  <option> seleccionar</option>
+                  <option>Banco #1</option>
+                  <option>Banco #2</option>
+                  <option>Banco #3</option>
+                  <option>Banco #4</option>
+                  <option>Banco #5</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-3">
+                <label for="">Nombre Cuenta</label>
+                <input type="text" class="form-control form-control-sm">
+              </div>
+
+              <div class="form-group col-md-3">
+                <label for="">Número Cuenta</label>
+                <input type="text" class="form-control form-control-sm">
+              </div>
+
+              <div class="form-group col-md-3">
+                <label for="">Moneda</label>
+                <select class="form-control form-control-sm">
+                  <option> seleccionar</option>
+                  <option>Moneda #1</option>
+                  <option>Moneda #2</option>
+                  <option>Moneda #3</option>
+                  <option>Moneda #4</option>
+                  <option>Moneda #5</option>
+                </select>
+              </div>
+            </div>
+
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-sm btn-white" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-sm btn-primary" data-dismiss="modal">Aceptar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end modal -->
+
+  <!-- ================== BEGIN BASE JS ================== -->
+  <script src="https://github.com/informat-apps/uwigo-mochups/assets/plugins/jquery/jquery-3.2.1.min.js"></script>
+  <script src="https://github.com/informat-apps/uwigo-mochups/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+  <script src="https://github.com/informat-apps/uwigo-mochups/assets/plugins/bootstrap/4.1.0/js/bootstrap.bundle.min.js"></script>
+  <script src="https://github.com/informat-apps/uwigo-mochups/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+  <script src="https://github.com/informat-apps/uwigo-mochups/assets/plugins/js-cookie/js.cookie.js"></script>
+  <script src="https://github.com/informat-apps/uwigo-mochups/assets/js/theme/default.min.js"></script>
+  <script src="https://github.com/informat-apps/uwigo-mochups/assets/js/apps.min.js"></script>
+
+  <!-- ================== END BASE JS ================== -->
+
+  <!-- ================== BEGIN PAGE LEVEL JS ================== -->
+  <script src="https://github.com/informat-apps/uwigo-mochups/assets/plugins/highlight/highlight.common.js"></script>
+  <script src="https://github.com/informat-apps/uwigo-mochups/assets/js/demo/render.highlight.js"></script>
+  <script src="https://github.com/informat-apps/uwigo-mochups/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+  <script src="https://github.com/informat-apps/uwigo-mochups/assets/plugins/bootstrap-daterangepicker/moment.js"></script>
+  <script src="https://github.com/informat-apps/uwigo-mochups/assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.2/d3.min.js"></script>
+  <script src="https://github.com/informat-apps/uwigo-mochups/assets/plugins/nvd3/build/nv.d3.js"></script>
+  <script src="https://github.com/informat-apps/uwigo-mochups/assets/plugins/DataTables/media/js/jquery.dataTables.js"></script>
+  <script src="https://github.com/informat-apps/uwigo-mochups/assets/plugins/DataTables/media/js/dataTables.bootstrap.min.js"></script>
+  <script src="https://github.com/informat-apps/uwigo-mochups/assets/plugins/DataTables/extensions/Responsive/js/dataTables.responsive.min.js"></script>
+  <script src="https://github.com/informat-apps/uwigo-mochups/assets/plugins/dropzone/min/dropzone.min.js"></script>
+  <script src="https://github.com/informat-apps/uwigo-mochups/assets/plugins/switchery/switchery.min.js"></script>
+  <script src="https://github.com/informat-apps/uwigo-mochups/assets/plugins/powerange/powerange.min.js"></script>
+  <script src="https://github.com/informat-apps/uwigo-mochups/assets/js/demo/table-manage-default.demo.js"></script>
+  <script src="https://github.com/informat-apps/uwigo-mochups/assets/js/demo/chart-d3.demo.min.js"></script>
+  <script src="https://github.com/informat-apps/uwigo-mochups/assets/js/demo/chart-js.demo.js"></script>
+  <script src="https://github.com/informat-apps/uwigo-mochups/assets/js/demo/form-plugins.demo.js"></script>
+  <script src="https://github.com/informat-apps/uwigo-mochups/assets/js/demo/form-slider-switcher.demo.min.js"></script>
+  <script src="https://github.com/informat-apps/uwigo-mochups/assets/plugins/select2/dist/js/select2.min.js"></script>
+  <script src="https://github.com/informat-apps/uwigo-mochups/assets/plugins/jstree/dist/jstree.min.js"></script>
+  <script src="https://github.com/informat-apps/uwigo-mochups/assets/js/demo/ui-tree.demo.js"></script>
+  <!-- ================== END PAGE LEVEL JS ================== -->
+
+  <script>
+  $(document).ready(function() {
+    App.init();
+    ChartNvd3.init();
+    TableManageDefault.init();
+    Highlight.init();
+    FormSliderSwitcher.init();
+    TreeView.init();
+
+    $(function () {
+
+      $('[data-toggle="tooltip"]').tooltip()
+
+      $('.btn-permission').click(function(){
+        if ($(this).hasClass("btn-primary")){
+          $(this).removeClass("btn-primary")
+          $(this).addClass("btn-grey")
+        } else{
+          $(this).addClass("btn-primary")
+          $(this).removeClass("btn-grey")
+        }
+      })
+
+      $('.check-permission').click(function(){
+        if($(this).is(':checked')){
+          $(this).parent().find('.btn-permission').addClass("btn-primary")
+          $(this).parent().find('.btn-permission').removeClass("btn-grey")
+        } else{
+          $(this).parent().find('.btn-permission').removeClass("btn-primary")
+          $(this).parent().find('.btn-permission').addClass("btn-grey")
+        }
+      })
+    })
+
+
+    $(".multiple-select2").select2({});
+
+    $('#c-change').change(function() {
+      $('#collapseOne').collapse('toggle')
+      $('#collapseTwo').collapse('toggle')
+    })
+
+    var table_language = {
+      "decimal": "-",
+      "thousands": ".",
+      'emptyTable': 'Sin Datos',
+      'info': 'mostranto _END_ de _TOTAL_ registros',
+      'infoEmpty': '0-0 de 0',
+      'infoFiltered': '',
+      'infoPostFix': '',
+      'lengthMenu': '_MENU_',
+      'loadingRecords': 'Cargando...',
+      'processing': 'Procesando...',
+      'search': '',
+      'searchPlaceholder': 'Buscar',
+      'zeroRecords': 'No se encontraron registros',
+      'paginate': {
+        'first': 'Primero',
+        'last': 'Último',
+        'next': 'Próximo',
+        'previous': 'Anterior'
+      }
+    };
+
+    $('#s-modulo').on("change", function (e) {
+      $('#t-permisos tbody tr').addClass('hide')
+      var modulos = $('#s-modulo').val()
+      for (var i = 0; i < modulos.length; i++) {
+        $('#t-permisos tbody tr.modulo-'+modulos[i]).removeClass('hide')
+      }
+    });
+
+    $('#s-perfil').on("change", function (e) {
+      $('#t-permisos tbody tr').addClass('hide')
+      $('#t-permisos tbody tr.modulo-1').removeClass('hide')
+      $('#t-permisos tbody tr.modulo-4').removeClass('hide')
+      $('#t-permisos tbody tr.modulo-6').removeClass('hide')
+    });
+
+    if ($('#t-default').length !== 0) {
+      $('#t-default').DataTable({
+        language: table_language,
+        order: [[1, 'asc']],
+        columns: [
+          {
+            'data': 'avatar',
+            'orderable': false,
+          },
+          {
+            'data': 'nombre',
+            'title': 'Nombre',
+          },
+          {
+            'data': 'correo',
+            'title': 'Correo',
+          },
+          {
+            'data': 'telefono',
+            'title': 'Telífono',
+          },
+          {
+            'data': 'cargo',
+            'title': 'Cargo',
+          },
+          {
+            'data': 'empresas',
+            'title': 'Empresas',
+            'orderable': false,
+          },
+          {
+            'data': 'opciones',
+            'title': 'opciones',
+            'class': 'text-center',
+            'orderable': false,
+          }
+        ],
+        responsive: true,
+        searching: false,
+        bLengthChange: false,
+      });
+    }
+
+    if ($('#t-permisos').length !== 0) {
+      $('#t-permisos').DataTable({
+        language: table_language,
+        order: [[0, 'asc']],
+        columns: [
+          {
+            'data': 'modulo',
+            'title': 'Módulo',
+          },
+          {
+            'data': 'submodulo',
+            'title': 'Sub-Módulo',
+          },
+          {
+            'data': 'permisos_basicos',
+            'title': 'Permisos Básicos',
+            'orderable': false,
+          },
+          {
+            'data': 'permisos_extra',
+            'title': 'Permisos Extras',
+            'orderable': false,
+          }
+        ],
+        responsive: true,
+        searching: false,
+        bLengthChange: false,
+        paginate: false,
+        bInfo: false,
+      });
+    }
+
+  });
+  </script>
+
+  <style>
+
+  .widget-icon.widget-icon-sm, .widget-icon.widget-icon-sm i{
+  width: 26px;
+  height: 26px;
+  line-height: 27px;
+  }
+
+  .widget-img.widget-img-sm{
+  width: 26px;
+  height: 26px;
+  line-height: 26px;
+  }
+
+  .select2-container .select2-selection--multiple{
+  min-height: 30px !important;
+  }
+
+  .select2-container .select2-selection--single, .select2-container--default .select2-selection--multiple{
+  min-height: 30px!important;
+  }
+
+  .select2-container .select2-search--inline .select2-search__field{
+  margin-top: 2px;
+  }
+
+  .select2-container--default .select2-selection--single .select2-selection__rendered {
+  color: #444;
+  line-height: 28px;
+  }
+  .select2-container .select2-selection--single .select2-selection__rendered {
+  display: block;
+  padding-left: 8px;
+  padding-right: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  }
+  .select2-container--default .select2-selection--single .select2-selection__rendered {
+  line-height: 28px!important;
+  }
+
+  </style>
+</body>
+</html>

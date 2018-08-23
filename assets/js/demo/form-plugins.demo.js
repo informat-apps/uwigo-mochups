@@ -79,76 +79,76 @@ var handleIonRangeSlider = function() {
     });
 };
 
-var handleFormMaskedInput = function() {
-    "use strict";
-    $("#masked-input-date").mask("99/99/9999");
-    $("#masked-input-phone").mask("(999) 999-9999");
-    $("#masked-input-tid").mask("99-9999999");
-    $("#masked-input-ssn").mask("999-99-9999");
-    $("#masked-input-pno").mask("aaa-9999-a");
-    $("#masked-input-pkey").mask("a*-999-a999");
-};
+// var handleFormMaskedInput = function() {
+//     "use strict";
+//     $("#masked-input-date").mask("99/99/9999");
+//     $("#masked-input-phone").mask("(999) 999-9999");
+//     $("#masked-input-tid").mask("99-9999999");
+//     $("#masked-input-ssn").mask("999-99-9999");
+//     $("#masked-input-pno").mask("aaa-9999-a");
+//     $("#masked-input-pkey").mask("a*-999-a999");
+// };
 
-var handleFormColorPicker = function () {
-    "use strict";
-    $('#colorpicker').colorpicker({format: 'hex'});
-    $('#colorpicker-prepend').colorpicker({format: 'hex'});
-    $('#colorpicker-rgba').colorpicker();
-};
+// var handleFormColorPicker = function () {
+//     "use strict";
+//     $('#colorpicker').colorpicker({format: 'hex'});
+//     $('#colorpicker-prepend').colorpicker({format: 'hex'});
+//     $('#colorpicker-rgba').colorpicker();
+// };
 
 var handleFormTimePicker = function () {
     "use strict";
     $('#timepicker').timepicker();
 };
 
-var handleFormPasswordIndicator = function() {
-    "use strict";
-    $('#password-indicator-default').passwordStrength();
-    $('#password-indicator-visible').passwordStrength({targetDiv: '#passwordStrengthDiv2'});
-};
+// var handleFormPasswordIndicator = function() {
+//     "use strict";
+//     $('#password-indicator-default').passwordStrength();
+//     $('#password-indicator-visible').passwordStrength({targetDiv: '#passwordStrengthDiv2'});
+// };
 
-var handleJqueryAutocomplete = function() {
-    var availableTags = [
-        'ActionScript',
-        'AppleScript',
-        'Asp',
-        'BASIC',
-        'C',
-        'C++',
-        'Clojure',
-        'COBOL',
-        'ColdFusion',
-        'Erlang',
-        'Fortran',
-        'Groovy',
-        'Haskell',
-        'Java',
-        'JavaScript',
-        'Lisp',
-        'Perl',
-        'PHP',
-        'Python',
-        'Ruby',
-        'Scala',
-        'Scheme'
-    ];
-    $('#jquery-autocomplete').autocomplete({
-        source: availableTags
-    });
-};
+// var handleJqueryAutocomplete = function() {
+//     var availableTags = [
+//         'ActionScript',
+//         'AppleScript',
+//         'Asp',
+//         'BASIC',
+//         'C',
+//         'C++',
+//         'Clojure',
+//         'COBOL',
+//         'ColdFusion',
+//         'Erlang',
+//         'Fortran',
+//         'Groovy',
+//         'Haskell',
+//         'Java',
+//         'JavaScript',
+//         'Lisp',
+//         'Perl',
+//         'PHP',
+//         'Python',
+//         'Ruby',
+//         'Scala',
+//         'Scheme'
+//     ];
+//     $('#jquery-autocomplete').autocomplete({
+//         source: availableTags
+//     });
+// };
 
-var handleBootstrapCombobox = function() {
-    $('.combobox').combobox();
-};
+// var handleBootstrapCombobox = function() {
+//     $('.combobox').combobox();
+// };
 
-var handleTagsInput = function() {
-    $('.bootstrap-tagsinput input').focus(function() {
-        $(this).closest('.bootstrap-tagsinput').addClass('bootstrap-tagsinput-focus');
-    });
-    $('.bootstrap-tagsinput input').focusout(function() {
-        $(this).closest('.bootstrap-tagsinput').removeClass('bootstrap-tagsinput-focus');
-    });
-};
+// var handleTagsInput = function() {
+//     $('.bootstrap-tagsinput input').focus(function() {
+//         $(this).closest('.bootstrap-tagsinput').addClass('bootstrap-tagsinput-focus');
+//     });
+//     $('.bootstrap-tagsinput input').focusout(function() {
+//         $(this).closest('.bootstrap-tagsinput').removeClass('bootstrap-tagsinput-focus');
+//     });
+// };
 
 var handleSelectpicker = function() {
     $('.selectpicker').selectpicker('render');
@@ -258,38 +258,38 @@ var handleDateTimePicker = function() {
     });
 };
 
-var handleBootstrapColorPalette = function() {
-    $('#color-palette-1').colorPalette().on('selectColor', function(e) {
-        $('[data-id="color-palette-1"]').val(e.color);
-    });
-    var options = {
-      colors:[['#000000', '#424242', '#636363', '#9C9C94', '#CEC6CE', '#EFEFEF', '#EFF7F7', '#FFFFFF']]
-    }
-    $('#color-palette-custom').colorPalette(options).on('selectColor', function(e) {
-        $('[data-id="color-palette-custom"]').val(e.color);
-    });
-};
+// var handleBootstrapColorPalette = function() {
+//     $('#color-palette-1').colorPalette().on('selectColor', function(e) {
+//         $('[data-id="color-palette-1"]').val(e.color);
+//     });
+//     var options = {
+//       colors:[['#000000', '#424242', '#636363', '#9C9C94', '#CEC6CE', '#EFEFEF', '#EFF7F7', '#FFFFFF']]
+//     }
+//     $('#color-palette-custom').colorPalette(options).on('selectColor', function(e) {
+//         $('[data-id="color-palette-custom"]').val(e.color);
+//     });
+// };
 
-var handleSimpleColorpicker = function() {
-    $('select[name="jquery-simplecolorpicker"]').simplecolorpicker('selectColor', '#2d353c');
-    $('select[name="jquery-simplecolorpicker-fa"]').simplecolorpicker({theme: 'fontawesome'});
-    $('select[name="colorpicker-picker-longlist"]').simplecolorpicker({picker: true, theme: 'glyphicons'});
-};
+// var handleSimpleColorpicker = function() {
+//     $('select[name="jquery-simplecolorpicker"]').simplecolorpicker('selectColor', '#2d353c');
+//     $('select[name="jquery-simplecolorpicker-fa"]').simplecolorpicker({theme: 'fontawesome'});
+//     $('select[name="colorpicker-picker-longlist"]').simplecolorpicker({picker: true, theme: 'glyphicons'});
+// };
 
-var handleClipboard = function() {
-	var clipboard = new Clipboard('.btn');
-
-	clipboard.on('success', function(e) {
-		$(e.trigger).tooltip({
-			title: 'Copied',
-			placement: 'top'
-		});
-		$(e.trigger).tooltip('show');
-		setTimeout(function() {
-			$(e.trigger).tooltip('destroy');
-		}, 500);
-	});
-};
+// var handleClipboard = function() {
+// 	var clipboard = new Clipboard('.btn');
+//
+// 	clipboard.on('success', function(e) {
+// 		$(e.trigger).tooltip({
+// 			title: 'Copied',
+// 			placement: 'top'
+// 		});
+// 		$(e.trigger).tooltip('show');
+// 		setTimeout(function() {
+// 			$(e.trigger).tooltip('destroy');
+// 		}, 500);
+// 	});
+// };
 
 
 var FormPlugins = function () {
@@ -299,21 +299,21 @@ var FormPlugins = function () {
         init: function () {
 			handleDatepicker();
 			handleIonRangeSlider();
-			handleFormMaskedInput();
-			handleFormColorPicker();
+			// handleFormMaskedInput();
+			// handleFormColorPicker();
 			handleFormTimePicker();
-			handleFormPasswordIndicator();
-			handleJqueryAutocomplete();
-			handleBootstrapCombobox();
+			// handleFormPasswordIndicator();
+			// handleJqueryAutocomplete();
+			// handleBootstrapCombobox();
 			handleSelectpicker();
-			handleTagsInput();
-			handleJqueryTagIt();
+			// handleTagsInput();
+			// handleJqueryTagIt();
 			handleDateRangePicker();
 			handleSelect2();
 			handleDateTimePicker();
-			handleBootstrapColorPalette();
-			handleSimpleColorpicker();
-			handleClipboard();
+			// handleBootstrapColorPalette();
+			// handleSimpleColorpicker();
+			// handleClipboard();
         }
     };
 }();
