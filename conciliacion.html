@@ -6,7 +6,7 @@
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
 
   <!-- ================== BEGIN BASE CSS STYLE ================== -->
-  
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
   <link href="https://informat-apps.github.io/uwigo-mochups/assets/plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
   <link href="https://informat-apps.github.io/uwigo-mochups/assets/plugins/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://informat-apps.github.io/uwigo-mochups/assets/plugins/font-awesome/5.0/css/fontawesome-all.min.css" rel="stylesheet" />
@@ -51,14 +51,14 @@
 
         <li class="dropdown navbar-user">
           <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
-            <img src="../assets/img/user/user-13.jpg" alt="">
+            <img src="https://informat-apps.github.io/uwigo-mochups/assets/img/user/user-13.jpg" alt="">
             <span class="d-none d-md-inline">Nombre Usuario</span> <b class="caret"></b>
           </a>
           <div class="dropdown-menu dropdown-menu-right">
-            <a href="javascript:;" class="dropdown-item">Editar Perfil</a>
+            <a href="perfil-usuario.html" class="dropdown-item">Editar Perfil</a>
             <a href="login.html" class="dropdown-item">Salir</a>
             <div class="dropdown-divider"></div>
-            <a href="login.html" class="dropdown-item"><i class="far fa-star"></i> Cambiar Contraseña</a>
+            <a href="#m-cambiar-contrasena" class="dropdown-item" data-toggle="modal"><i class="far fa-star"></i> Cambiar Contraseña</a>
           </div>
         </li>
 
@@ -68,9 +68,9 @@
           </a>
           <div class="dropdown-menu dropdown-menu-right">
             <a href="empresa-lista.html" class="dropdown-item">Empresas</a>
-            <a href="usuario-lista.html" class="dropdown-item">Usuarios</a>
+            <a href="usuarios.html" class="dropdown-item">Usuarios</a>
             <div class="dropdown-divider"></div>
-            <a href="#m-change-empresa" class="dropdown-item" data-toggle="modal"><i class="far fa-star"></i> Cambiar de Empresa</a>
+            <a href="#m-cambiar-empresa" class="dropdown-item" data-toggle="modal"><i class="far fa-star"></i> Cambiar de Empresa</a>
           </div>
         </li>
       </ul>
@@ -82,78 +82,53 @@
     <div id="top-menu" class="top-menu">
       <!-- begin top-menu nav -->
       <ul class="nav">
-
         <li class="active">
-          <a href="../index.html">
+          <a href="dashboard.html">
             <i class="fa fa-th-large"></i>
             <span>Dashboard</span>
           </a>
         </li>
-
         <li class="has-sub">
           <a href="javascript:;">
             <b class="caret"></b>
             <span>Cuentas</span>
           </a>
-
           <ul class="sub-menu">
-            <li><a href="cuentas-bancos.html">Bancos</a></li>
-            <!-- <li class="divider"></li> -->
-            <li><a href="cuentas-ventas.html">Ventas</a></li>
-            <!-- <li class="divider"></li> -->
-            <li><a href="cuentas-compras.html">Compras</a></li>
-            <!-- <li class="divider"></li> -->
-            <li><a href="cuentas-remuneraciones.html">Remuneraciones</a></li>
-            <!-- <li class="divider"></li> -->
-            <li><a href="cuentas-inventario.html">Inventarios</a></li>
-            <!-- <li class="divider"></li> -->
-            <li><a href="cuentas-gastos.html">Gastos</a></li>
-            <!-- <li class="divider"></li> -->
-            <li><a href="cuentas-activos.html">Activo Fijo</a></li>
+            <li><a href="bancos.html">Bancos</a></li>
+            <li><a href="ventas.html">Ventas</a></li>
+            <li><a href="compras.html">Compras</a></li>
+            <li><a href="remuneraciones-lista.html">Remuneraciones</a></li>
+            <li><a href="inventario.html">Inventario</a></li>
+            <li><a href="gastos.html">Gastos</a></li>
+            <li><a href="activos-fijos.html">Activo Fijo</a></li>
           </ul>
         </li>
-
         <li class="has-sub">
           <a href="javascript:;">
             <b class="caret"></b>
             <span>Reportes</span>
           </a>
-
           <ul class="sub-menu">
-            <li><a href="reporte-1.html">Reporte 1</a></li>
-            <li><a href="reporte-2.html">Reporte 2</a></li>
+            <li><a href="reporte.html">Reporte 1</a></li>
+            <li><a href="reporte.html">Reporte 2</a></li>
           </ul>
         </li>
-
         <li class="has-sub">
           <a href="javascript:;">
             <b class="caret"></b>
             <span>Contactos</span>
           </a>
           <ul class="sub-menu">
-            <li><a href="contactos-todos-lista.html">Todos los contactos</a></li>
-
+            <li><a href="contactos.html">Todos los contactos</a></li>
             <div class="dropdown-divider"></div>
-            <li><a href="#m-contacto" data-toggle="modal"><i class="far fa-star"></i> Proveedores</a></li>
-            <li><a href="#m-contacto" data-toggle="modal"><i class="far fa-star"></i> Clientes</a></li>
+            <li><a href="proveedores-lista.html"><i class="far fa-star"></i> Proveedores</a></li>
+            <li><a href="clientes-lista.html"><i class="far fa-star"></i> Clientes</a></li>
           </ul>
         </li>
-
         <li class="has-sub">
-          <a href="javascript:;">
-            <b class="caret"></b>
+          <a href="configuracion.html">
             <span>Configuración</span>
           </a>
-          <ul class="sub-menu">
-            <li><a href="">...</a></li>
-          </ul>
-        </li>
-
-        <li class="menu-control menu-control-left">
-          <a href="javascript:;" data-click="prev-menu"><i class="fa fa-angle-left"></i></a>
-        </li>
-        <li class="menu-control menu-control-right">
-          <a href="javascript:;" data-click="next-menu"><i class="fa fa-angle-right"></i></a>
         </li>
       </ul>
       <!-- end top-menu nav -->
@@ -162,21 +137,15 @@
 
     <!-- begin #breadcrumb -->
     <div class="section-breadcrumb">
-      <div class="pull-right mt-2">
-        <div class="widget-list-action">
-          <a href="javascript:;" data-toggle="dropdown" class="text-muted pull-right" aria-expanded="false">
-            <i class="fa fa-question-circle f-s-18 text-teal"></i>
-            <!-- <b class="caret f-s-18 text-teal"></b> -->
-          </a>
-          <ul class="dropdown-menu dropdown-menu-right" x-placement="bottom-end">
-            <li><a href="#m-video" data-toggle="modal">Video</a></li>
-            <li><a href="#">Tour</a></li>
-          </ul>
+      <div class="pull-right">
+        <div class="mt-2">
+          <a href="#m-video" class="btn btn-primary btn-icon btn-circle btn-sm" data-toggle="modal"><i class="fa fa-video"></i></a>
+          <a class="btn btn-primary btn-icon btn-circle btn-sm" href="javascript:void(0);" onclick="javascript:introJs().start();"><i class="fa fa-comment-dots"></i></a>
         </div>
       </div>
 
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="cuentas-bancos.html">Bancos</a></li>
+        <li class="breadcrumb-item"><a href="bancos.html">Bancos</a></li>
         <li class="breadcrumb-item active"><a href="javascript:;">Conciliación</a></li>
       </ol>
     </div>
@@ -187,24 +156,25 @@
 
       <div class="row m-b-30">
         <div class="col-12">
-          <a href="#m-cta-corriente" class="btn btn-white btn-sm m-r-5" data-toggle="modal"><i class="fa fa-plus"></i> Cargar Cartola</a>
+          <a href="#m-upload-file" class="btn btn-white btn-sm m-r-5" data-toggle="modal"><i class="fa fa-plus"></i> Cargar Cartola</a>
         </div>
       </div>
 
-      <div class="row m-b-30">
-        <div class="col-xs-12 col">
-          <div class="panel panel-default">
-            <div class="panel-heading">Cartola</div>
-            <div class="panel-body">
+
+      <div class="panel panel-default">
+        <div class="panel-heading">Conciliación</div>
+        <div class="panel-body">
+
+          <div class="row mt-1 mb-1">
+            <div class="col">
               <div class="table-responsive">
-                <table class="table table-bordered table-striped m-t-10 m-t-10">
+                <table class="table table-bordered table-striped">
                   <thead>
                     <tr>
                       <th>Cartola</th>
                       <th>Fecha</th>
                       <th>Referencia</th>
                       <th>Monto</th>
-                      <th></th>
                     </tr>
                   </thead>
                   <tbody>
@@ -213,139 +183,382 @@
                       <td class="text-right">28/03/2018</td>
                       <td>Referencia</td>
                       <td class="text-right">$80.600</td>
-                      <td class="text-center"><input type="checkbox"></td>
-                    </tr>
-                    <tr>
-                      <td>XXXXXXX</td>
-                      <td class="text-right">23/04/2018</td>
-                      <td>Referencia</td>
-                      <td class="text-right">$798.000</td>
-                      <td class="text-center"><input type="checkbox"></td>
-                    </tr>
-                    <tr>
-                      <td>XXXXXXX</td>
-                      <td class="text-right">09/05/2018</td>
-                      <td>Referencia</td>
-                      <td class="text-right">$187.300</td>
-                      <td class="text-center"><input type="checkbox"></td>
-                    </tr>
-                    <tr>
-                      <td>XXXXXXX</td>
-                      <td class="text-right">11/06/2018</td>
-                      <td>Referencia</td>
-                      <td class="text-right">$987.600</td>
-                      <td class="text-center"><input type="checkbox"></td>
-                    </tr>
-                    <tr>
-                      <td>XXXXXXX</td>
-                      <td class="text-right">01/06/2018</td>
-                      <td>Referencia</td>
-                      <td class="text-right">$1.345.900</td>
-                      <td class="text-center"><input type="checkbox"></td>
-                    </tr>
-                    <tr>
-                      <td>XXXXXXX</td>
-                      <td class="text-right">10/05/2018</td>
-                      <td>Referencia</td>
-                      <td class="text-right">$1.234.600</td>
-                      <td class="text-center"><input type="checkbox"></td>
-                    </tr>
-                    <tr>
-                      <td>XXXXXXX</td>
-                      <td class="text-right">12/03/2018</td>
-                      <td>Referencia</td>
-                      <td class="text-right">$244.700</td>
-                      <td class="text-center"><input type="checkbox"></td>
                     </tr>
                   </tbody>
                 </table>
               </div>
             </div>
+            <div class="col-md-1 text-center">
+              <a href="#filtrar" class="btn btn-white btn-sm" data-toggle="modal"><i class="fa fa-sync-alt"></i> Conciliar</a>
+            </div>
+            <div class="col">
+
+              <div class="pull-right">
+                <button type="button" class="btn btn-link p-t-1 p-r-0" href="#m-search-conciliacion" data-toggle="modal">
+                  <i class="fa fa-search"></i>
+                  Buscar
+                </button>
+              </div>
+
+              <ul class="nav nav-pills">
+                <li class="nav-items">
+                  <a href="#nav-pills-tab-1" data-toggle="tab" class="nav-link active">
+                    <span class="d-sm-block d-none">Emparejado</span>
+                  </a>
+                </li>
+                <li class="nav-items">
+                  <a href="#nav-pills-tab-2" data-toggle="tab" class="nav-link">
+                    <span class="d-sm-block d-none">Crear</span>
+                  </a>
+                </li>
+                <li class="nav-items">
+                  <a href="#nav-pills-tab-3" data-toggle="tab" class="nav-link">
+                    <span class="d-sm-block d-none">Transferir</span>
+                  </a>
+                </li>
+                <li class="nav-items">
+                  <a href="#nav-pills-tab-4" data-toggle="tab" class="nav-link">
+                    <span class="d-sm-block d-none">Comentario</span>
+                  </a>
+                </li>
+              </ul>
+
+              <div class="tab-content">
+                <div class="tab-pane fade active show" id="nav-pills-tab-1">
+                  <div class="row">
+                    <div class="col">
+                      <div class="table-responsive">
+                        <table class="table table-bordered m-t-10 m-t-10">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <p class="m-b-5">XX/XX/XXXX</p>
+                                <p class="m-b-5">descripción</p>
+                                <p class="m-b-5">Ref. XXX-XX</p>
+                              </td>
+                              <td class="text-right">$XXX.XXX.XXX</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#collapse1">X posible emparejamiento</button>
+
+                      <div class="">
+          							<div id="collapse1" class="collapse" data-parent="#accordion">
+          								<div class="">
+                            <div class="table-responsive">
+                              <table class="table table-bordered table-striped m-t-10 m-t-10">
+                                <thead>
+                                  <tr>
+                                    <th>Documento</th>
+                                    <th>Fecha</th>
+                                    <th>Referencia</th>
+                                    <th>Monto</th>
+                                    <th>opción</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>XXXXXXX</td>
+                                    <td class="text-right">XX/XX/XXXX</td>
+                                    <td>Ref. XXX-XX</td>
+                                    <td class="text-right">$XXX.XXX.XXX</td>
+                                    <td class="text-center"><a href="javascript:;" class="btn btn-white btn-xs" data-toggle="collapse" data-target="#collapse1"><i class="fa fa-check"></i></a></td>
+                                  </tr>
+                                  <tr>
+                                    <td>XXXXXXX</td>
+                                    <td class="text-right">XX/XX/XXXX</td>
+                                    <td>Ref. XXX-XX</td>
+                                    <td class="text-right">$XXX.XXX.XXX</td>
+                                    <td class="text-center"><a href="javascript:;" class="btn btn-white btn-xs" data-toggle="collapse" data-target="#collapse1"><i class="fa fa-check"></i></a></td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+          								</div>
+          							</div>
+          						</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tab-pane fade" id="nav-pills-tab-2">
+                  <div class="row">
+
+                    <div class="form-group col-md-4">
+                      <label for="">Campo</label>
+                      <input type="text" class="form-control form-control-sm" placeholder="Precio Unitario">
+                    </div>
+
+                    <div class="form-group col-md-4">
+                      <label for="">Cuenta Contable</label>
+                      <select class="form-control">
+                        <option> seleccionar</option>
+                        <option>Cuenta Contable 1</option>
+                        <option>Cuenta Contable 2</option>
+                        <option>Cuenta Contable 3</option>
+                        <option>Cuenta Contable 4</option>
+                        <option>Cuenta Contable 5</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                      <label for="">Campo</label>
+                      <input type="text" class="form-control form-control-sm" placeholder="">
+                    </div>
+
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="nav-pills-tab-3">
+                  <div class="row">
+
+                    <div class="form-group col-md-4">
+                      <label for="">Campo</label>
+                      <input type="text" class="form-control form-control-sm" placeholder="Precio Unitario">
+                    </div>
+
+                    <div class="form-group col-md-4">
+                      <label for="">Cuenta Contable</label>
+                      <select class="form-control">
+                        <option> seleccionar</option>
+                        <option>Cuenta Contable 1</option>
+                        <option>Cuenta Contable 2</option>
+                        <option>Cuenta Contable 3</option>
+                        <option>Cuenta Contable 4</option>
+                        <option>Cuenta Contable 5</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                      <label for="">Campo</label>
+                      <input type="text" class="form-control form-control-sm" placeholder="">
+                    </div>
+
+                    <div class="form-group col-md-4">
+                      <label for="">Campo</label>
+                      <input type="text" class="form-control form-control-sm" placeholder="">
+                    </div>
+
+                    <div class="form-group col-md-4">
+                      <label for="">Campo</label>
+                      <select class="form-control">
+                        <option> seleccionar</option>
+                        <option>Cuenta Contable 1</option>
+                        <option>Cuenta Contable 2</option>
+                        <option>Cuenta Contable 3</option>
+                        <option>Cuenta Contable 4</option>
+                        <option>Cuenta Contable 5</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="nav-pills-tab-4">
+                  <textarea class="form-control" rows="3"></textarea>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
 
-        <div class="col-xs-12 col-md-1 text-center">
-          <a href="#filtrar" class="btn btn-white btn-sm" data-toggle="modal"><i class="fa fa-sync-alt"></i> Conciliar</a>
-        </div>
+          <div class="dropdown-divider"></div>
 
-        <div class="col-xs-12 col">
-          <div class="panel panel-default">
-            <div class="panel-heading">Comprobantes</div>
-            <div class="panel-body">
+
+          <div class="row mt-1 mb-1">
+            <div class="col">
               <div class="table-responsive">
-                <table class="table table-bordered table-striped m-t-10 m-t-10">
+                <table class="table table-bordered table-striped">
                   <thead>
                     <tr>
-                      <th></th>
-                      <th>Comprobante</th>
+                      <th>Cartola</th>
                       <th>Fecha</th>
                       <th>Referencia</th>
-                      <th>Glosa</th>
                       <th>Monto</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td class="text-center"><input type="checkbox"></td>
-                      <td>Comprobante</td>
+                      <td>XXXXXXX</td>
                       <td class="text-right">28/03/2018</td>
                       <td>Referencia</td>
-                      <td>Glosa</td>
                       <td class="text-right">$80.600</td>
-                    </tr>
-                    <tr>
-                      <td class="text-center"><input type="checkbox"></td>
-                      <td>Comprobante</td>
-                      <td class="text-right">23/04/2018</td>
-                      <td>Referencia</td>
-                      <td>Glosa</td>
-                      <td class="text-right">$798.000</td>
-                    </tr>
-                    <tr>
-                      <td class="text-center"><input type="checkbox"></td>
-                      <td>Comprobante</td>
-                      <td class="text-right">09/05/2018</td>
-                      <td>Referencia</td>
-                      <td>Glosa</td>
-                      <td class="text-right">$187.300</td>
-                    </tr>
-                    <tr>
-                      <td class="text-center"><input type="checkbox"></td>
-                      <td>Comprobante</td>
-                      <td class="text-right">11/06/2018</td>
-                      <td>Referencia</td>
-                      <td>Glosa</td>
-                      <td class="text-right">$987.600</td>
-                    </tr>
-                    <tr>
-                      <td class="text-center"><input type="checkbox"></td>
-                      <td>Comprobante</td>
-                      <td class="text-right">01/06/2018</td>
-                      <td>Referencia</td>
-                      <td>Glosa</td>
-                      <td class="text-right">$1.345.900</td>
-                    </tr>
-                    <tr>
-                      <td class="text-center"><input type="checkbox"></td>
-                      <td>Comprobante</td>
-                      <td class="text-right">10/05/2018</td>
-                      <td>Referencia</td>
-                      <td>Glosa</td>
-                      <td class="text-right">$1.234.600</td>
-                    </tr>
-                    <tr>
-                      <td class="text-center"><input type="checkbox"></td>
-                      <td>Comprobante</td>
-                      <td class="text-right">12/03/2018</td>
-                      <td>Referencia</td>
-                      <td>Glosa</td>
-                      <td class="text-right">$244.700</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
             </div>
+            <div class="col-md-1 text-center">
+              <a href="#filtrar" class="btn btn-white btn-sm" data-toggle="modal"><i class="fa fa-sync-alt"></i> Conciliar</a>
+            </div>
+            <div class="col">
+
+              <div class="pull-right">
+                <button type="button" class="btn btn-link p-t-1 p-r-0" href="#m-search-conciliacion" data-toggle="modal">
+                  <i class="fa fa-search"></i>
+                  Buscar
+                </button>
+              </div>
+
+              <ul class="nav nav-pills">
+                <li class="nav-items">
+                  <a href="#nav-pills-tab-1" data-toggle="tab" class="nav-link active">
+                    <span class="d-sm-block d-none">Emparejado</span>
+                  </a>
+                </li>
+                <li class="nav-items">
+                  <a href="#nav-pills-tab-2" data-toggle="tab" class="nav-link">
+                    <span class="d-sm-block d-none">Crear</span>
+                  </a>
+                </li>
+                <li class="nav-items">
+                  <a href="#nav-pills-tab-3" data-toggle="tab" class="nav-link">
+                    <span class="d-sm-block d-none">Transferir</span>
+                  </a>
+                </li>
+                <li class="nav-items">
+                  <a href="#nav-pills-tab-4" data-toggle="tab" class="nav-link">
+                    <span class="d-sm-block d-none">Comentario</span>
+                  </a>
+                </li>
+              </ul>
+
+              <div class="tab-content">
+                <div class="tab-pane fade active show" id="nav-pills-tab-1">
+                  <div class="row">
+                    <div class="col">
+                      <div class="table-responsive">
+                        <table class="table table-bordered m-t-10 m-t-10">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <p class="m-b-5">XX/XX/XXXX</p>
+                                <p class="m-b-5">descripción</p>
+                                <p class="m-b-5">Ref. XXX-XX</p>
+                              </td>
+                              <td class="text-right">$XXX.XXX.XXX</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#collapse2">X posible emparejamiento</button>
+
+                      <div class="">
+          							<div id="collapse2" class="collapse" data-parent="#accordion">
+          								<div class="">
+                            <div class="table-responsive">
+                              <table class="table table-bordered table-striped m-t-10 m-t-10">
+                                <thead>
+                                  <tr>
+                                    <th>Documento</th>
+                                    <th>Fecha</th>
+                                    <th>Referencia</th>
+                                    <th>Monto</th>
+                                    <th>opción</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>XXXXXXX</td>
+                                    <td class="text-right">XX/XX/XXXX</td>
+                                    <td>Ref. XXX-XX</td>
+                                    <td class="text-right">$XXX.XXX.XXX</td>
+                                    <td class="text-center"><a href="javascript:;" class="btn btn-white btn-xs" data-toggle="collapse" data-target="#collapse2"><i class="fa fa-check"></i></a></td>
+                                  </tr>
+                                  <tr>
+                                    <td>XXXXXXX</td>
+                                    <td class="text-right">XX/XX/XXXX</td>
+                                    <td>Ref. XXX-XX</td>
+                                    <td class="text-right">$XXX.XXX.XXX</td>
+                                    <td class="text-center"><a href="javascript:;" class="btn btn-white btn-xs" data-toggle="collapse" data-target="#collapse2"><i class="fa fa-check"></i></a></td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+          								</div>
+          							</div>
+          						</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tab-pane fade" id="nav-pills-tab-2">
+                  <div class="row">
+
+                    <div class="form-group col-md-4">
+                      <label for="">Campo</label>
+                      <input type="text" class="form-control form-control-sm" placeholder="Precio Unitario">
+                    </div>
+
+                    <div class="form-group col-md-4">
+                      <label for="">Cuenta Contable</label>
+                      <select class="form-control">
+                        <option> seleccionar</option>
+                        <option>Cuenta Contable 1</option>
+                        <option>Cuenta Contable 2</option>
+                        <option>Cuenta Contable 3</option>
+                        <option>Cuenta Contable 4</option>
+                        <option>Cuenta Contable 5</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                      <label for="">Campo</label>
+                      <input type="text" class="form-control form-control-sm" placeholder="">
+                    </div>
+
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="nav-pills-tab-3">
+                  <div class="row">
+
+                    <div class="form-group col-md-4">
+                      <label for="">Campo</label>
+                      <input type="text" class="form-control form-control-sm" placeholder="Precio Unitario">
+                    </div>
+
+                    <div class="form-group col-md-4">
+                      <label for="">Cuenta Contable</label>
+                      <select class="form-control">
+                        <option> seleccionar</option>
+                        <option>Cuenta Contable 1</option>
+                        <option>Cuenta Contable 2</option>
+                        <option>Cuenta Contable 3</option>
+                        <option>Cuenta Contable 4</option>
+                        <option>Cuenta Contable 5</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                      <label for="">Campo</label>
+                      <input type="text" class="form-control form-control-sm" placeholder="">
+                    </div>
+
+                    <div class="form-group col-md-4">
+                      <label for="">Campo</label>
+                      <input type="text" class="form-control form-control-sm" placeholder="">
+                    </div>
+
+                    <div class="form-group col-md-4">
+                      <label for="">Campo</label>
+                      <select class="form-control">
+                        <option> seleccionar</option>
+                        <option>Cuenta Contable 1</option>
+                        <option>Cuenta Contable 2</option>
+                        <option>Cuenta Contable 3</option>
+                        <option>Cuenta Contable 4</option>
+                        <option>Cuenta Contable 5</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="nav-pills-tab-4">
+                  <textarea class="form-control" rows="3"></textarea>
+                </div>
+              </div>
+            </div>
           </div>
+
+          <div class="dropdown-divider"></div>
+
+
         </div>
       </div>
 
@@ -678,6 +891,91 @@
         </div>
       </div>
     </div>
+
+    <div class="modal fade" id="m-search-conciliacion" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Nuevo Cuenta Corriente</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="/" method="POST">
+              <div class="row">
+
+                <div class="table-responsive">
+                  <table class="table table-bordered table-striped m-t-10 m-t-10">
+                    <thead>
+                      <tr>
+                        <th>Documento</th>
+                        <th>Fecha</th>
+                        <th>Referencia</th>
+                        <th>Monto</th>
+                        <th class="text-center">opción</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>XXXXXXX</td>
+                        <td class="text-right">XX/XX/XXXX</td>
+                        <td>Ref. XXX-XX</td>
+                        <td class="text-right">$XXX.XXX.XXX</td>
+                        <td class="text-center">
+                          <input type="checkbox" />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>XXXXXXX</td>
+                        <td class="text-right">XX/XX/XXXX</td>
+                        <td>Ref. XXX-XX</td>
+                        <td class="text-right">$XXX.XXX.XXX</td>
+                        <td class="text-center">
+                          <input type="checkbox" />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>XXXXXXX</td>
+                        <td class="text-right">XX/XX/XXXX</td>
+                        <td>Ref. XXX-XX</td>
+                        <td class="text-right">$XXX.XXX.XXX</td>
+                        <td class="text-center">
+                          <input type="checkbox" />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>XXXXXXX</td>
+                        <td class="text-right">XX/XX/XXXX</td>
+                        <td>Ref. XXX-XX</td>
+                        <td class="text-right">$XXX.XXX.XXX</td>
+                        <td class="text-center">
+                          <input type="checkbox" />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>XXXXXXX</td>
+                        <td class="text-right">XX/XX/XXXX</td>
+                        <td>Ref. XXX-XX</td>
+                        <td class="text-right">$XXX.XXX.XXX</td>
+                        <td class="text-center">
+                          <input type="checkbox" />
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-sm btn-white" data-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-sm btn-primary" data-dismiss="modal">Aceptar</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- end modal -->
 
   </div>
@@ -705,7 +1003,19 @@
     App.init();
     ChartNvd3.init();
   });
-</script>
+  </script>
+
+  <style>
+  .panel .tab-content {
+    /* background: #f2f3f4; */
+    border: 1px solid #e2e7eb;
+    padding: 5px;
+  }
+
+  .nav-pills .nav-link, .nav-pills>li>a {
+    padding: 4px 10px !important;
+  }
+  </style>
 
 </body>
 </html>

@@ -6,7 +6,7 @@
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
 
   <!-- ================== BEGIN BASE CSS STYLE ================== -->
-  
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
   <link href="https://informat-apps.github.io/uwigo-mochups/assets/plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
   <link href="https://informat-apps.github.io/uwigo-mochups/assets/plugins/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://informat-apps.github.io/uwigo-mochups/assets/plugins/font-awesome/5.0/css/fontawesome-all.min.css" rel="stylesheet" />
@@ -152,7 +152,7 @@
       <div id="app" class="app">
         <div class="row justify-content-md-center">
 
-          <div class="col-lg-10">
+          <div class="col-lg-8">
             <div class="panel panel-default">
               <div class="panel-heading">
                 <h4 class="panel-title">Flujo de Caja</h4>
@@ -192,13 +192,112 @@
                 </div>
 
 
-                <div class="chart-container height-300">
-                  <canvas id="chart-flujo-caja"></canvas>
+                <div class="chart-container height-200">
+                  <canvas class="chart-bancos"></canvas>
                 </div>
               </div>
             </div>
           </div>
 
+          <div class="col-lg-2">
+
+            <div class="row justify-content-md-center">
+
+
+              <div class="col-12">
+                <div class="widget widget-stats bg-teal-darker" style="padding: 10px !important;">
+                  <div class="stats-icon stats-icon-lg" style="font-size: 100px; top: -27px; right: -41px;">
+                    <i class="fa fa-dollar-sign fa-fw"></i>
+                  </div>
+                  <div class="stats-content">
+                    <div class="stats-title" style="font-size: 11px; color: #fff;">PROMEDIO PAGO FACTURAS</div>
+                    <div class="stats-number" style="font-size: 23px;">XXX Días</div>
+                  </div>
+                  <div class="stats-link">
+                    <a href="javascript:;">Ver detalle <i class="fa fa-arrow-alt-circle-right"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="widget widget-stats bg-teal-darker" style="padding: 10px !important;">
+                  <div class="stats-icon stats-icon-lg" style="font-size: 100px; top: -27px; right: -41px;">
+                    <i class="fa fa-dollar-sign fa-fw"></i>
+                  </div>
+                  <div class="stats-content">
+                    <div class="stats-title" style="font-size: 11px; color: #fff;">PROMEDIO COBRO FACTURAS</div>
+                    <div class="stats-number" style="font-size: 23px;">XXX Días</div>
+                  </div>
+                  <div class="stats-link">
+                    <a href="javascript:;">Ver detalle <i class="fa fa-arrow-alt-circle-right"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="widget widget-stats bg-teal-darker" style="padding: 10px !important;">
+                  <div class="stats-icon stats-icon-lg" style="font-size: 100px; top: -27px; right: -41px;">
+                    <i class="fa fa-dollar-sign fa-fw"></i>
+                  </div>
+                  <div class="stats-content">
+                    <div class="stats-title" style="font-size: 11px; color: #fff;">VENTA PROMEDIO</div>
+                    <div class="stats-number" style="font-size: 23px;">$XXX.XXX.XXX</div>
+                  </div>
+                  <div class="stats-link">
+                    <a href="javascript:;">Ver detalle <i class="fa fa-arrow-alt-circle-right"></i></a>
+                  </div>
+                </div>
+              </div>
+
+
+              <!-- <div class="col-lg-12">
+                <div class="widget widget-stats bg-red">
+                  <div class="stats-icon"><i class="fa fa-desktop"></i></div>
+                  <div class="stats-info">
+                    <h4>PROMEDIO PAGO FACTURAS</h4>
+                    <p>XXX Días</p>
+                  </div>
+                  <div class="stats-link">
+                    <a href="javascript:;">Ver detalle <i class="fa fa-arrow-alt-circle-right"></i></a>
+                  </div>
+                </div>
+              </div> -->
+
+              <!-- <div class="col-md-12">
+                <div class="widget widget-stats bg-gradient-blue">
+                  <div class="stats-icon stats-icon-lg"><i class="fa fa-arrow-circle-up fa-fw"></i></div>
+                  <div class="stats-content">
+                    <div class="stats-title">PROMEDIO PAGO FACTURAS</div>
+                    <div class="stats-number">999 Días</div>
+                  </div>
+                  <div class="stats-link">
+                    <a href="javascript:;">Ver detalle <i class="fa fa-arrow-alt-circle-right"></i></a>
+                  </div>
+                </div>
+              </div> -->
+
+              <!-- <div class="col-md-12">
+                <div class="widget widget-stats bg-gradient-blue">
+                  <div class="stats-icon stats-icon-lg"><i class="fa fa-arrow-circle-down fa-fw"></i></div>
+                  <div class="stats-content">
+                    <div class="stats-title">PROMEDIO COBRO FACTURAS</div>
+                    <div class="stats-number">999  Días</div>
+                  </div>
+                </div>
+              </div> -->
+
+              <!-- <div class="col-md-12">
+                <div class="widget widget-stats bg-gradient-blue">
+                  <div class="stats-icon stats-icon-lg"><i class="fa fa-dollar-sign fa-fw"></i></div>
+                  <div class="stats-content">
+                    <div class="stats-title">VENTA PROMEDIO</div>
+                    <div class="stats-number">$999.999.999</div>
+                  </div>
+                </div>
+              </div> -->
+            </div>
+
+          </div>
 
           <div class="col-lg-5">
             <div class="panel panel-default">
@@ -349,307 +448,272 @@
             </div>
           </div>
 
-          <div class="col-md-10 ui-sortable">
-
-            <div class="row justify-content-md-center">
-
-              <div class="col-md-3">
-                <div class="widget widget-stats bg-gradient-blue">
-                  <div class="stats-icon stats-icon-lg"><i class="fa fa-arrow-circle-up fa-fw"></i></div>
-                  <div class="stats-content">
-                    <div class="stats-title">PROMEDIO PAGO FACTURAS</div>
-                    <div class="stats-number">999 Días</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-3">
-                <div class="widget widget-stats bg-gradient-blue">
-                  <div class="stats-icon stats-icon-lg"><i class="fa fa-arrow-circle-down fa-fw"></i></div>
-                  <div class="stats-content">
-                    <div class="stats-title">PROMEDIO COBRO FACTURAS</div>
-                    <div class="stats-number">999  Días</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-3">
-                <div class="widget widget-stats bg-gradient-blue">
-                  <div class="stats-icon stats-icon-lg"><i class="fa fa-dollar-sign fa-fw"></i></div>
-                  <div class="stats-content">
-                    <div class="stats-title">VENTA PROMEDIO</div>
-                    <div class="stats-number">$999.999.999</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
 
           <!-- <div class="col-lg-5">
-            <div class="panel panel-default" >
-              <div class="panel-heading">
-                <a href="documento-nuevo.html" class="btn btn-white btn-xs pull-right"><i class="fa fa-plus"></i> Factura</a>
-                <h4 class="panel-title">Ventas</h4>
-              </div>
-              <div class="panel-body">
-                <div class="input-group input-daterange ventas mb-4">
-                  <input type="text" class="form-control form-control-sm" name="start" placeholder="Fecha Inicio"/>
-                  <span class="input-group-addon">a</span>
-                  <input type="text" class="form-control form-control-sm" name="end" placeholder="Fecha Término" />
-                </div>
-                <div class="chart-container height-300">
-                  <canvas id="chart-ventas"></canvas>
-                </div>
-              </div>
-            </div>
-          </div> -->
-
-          <div class="col-lg-5">
-            <div class="panel panel-default" >
-              <div class="panel-heading">
-                <a href="documento-nuevo.html" class="btn btn-white btn-xs pull-right"><i class="fa fa-plus"></i> Factura</a>
-                <h4 class="panel-title">Ventas</h4>
-              </div>
-              <div class="panel-body">
-                <div>
-                  <div class="input-group input-daterange ventas mb-2">
-                    <input type="text" class="form-control form-control-sm" name="start" placeholder="Fecha Inicio"/>
-                    <span class="input-group-addon">a</span>
-                    <input type="text" class="form-control form-control-sm" name="end" placeholder="Fecha Término"/>
-                    <button class="btn btn-white btn-sm ml-3" v-on:click="changeDataVentas">Actualizar</button>
-                  </div>
-                  <input type="checkbox"> Órdenes de Compras
-                  <br>
-                  <input type="checkbox"> Órdenes de Pedidos
-                </div>
-                <chart-ventas class="chart-container height-300" :data="dataChartVentas" :labels="dataLabelsVentas" :options="{responsive: true, maintainAspectRatio: false}"></chart-ventas>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-5">
-            <div class="panel panel-default" >
-              <div class="panel-heading">
-                <a href="documento-nuevo.html" class="btn btn-white btn-xs pull-right"><i class="fa fa-plus"></i> Factura</a>
-                <h4 class="panel-title">Compras</h4>
-              </div>
-              <div class="panel-body">
-
-                <div>
-                <div class="input-group input-daterange compras mb-2">
-                  <input type="text" class="form-control form-control-sm" name="start" placeholder="Fecha Inicio"/>
-                  <span class="input-group-addon">a</span>
-                  <input type="text" class="form-control form-control-sm" name="end" placeholder="Fecha Término" />
-                  <button class="btn btn-white btn-sm ml-3" v-on:click="changeDataCompras">Actualizar</button>
-                </div>
-                <input type="checkbox"> Órdenes de Compras
-                <br>
-                <input type="checkbox"> Órdenes de Pedidos
-                </div>
-
-
-                <chart-compras class="chart-container height-300" :data="dataChartCompras" :labels="dataLabelsCompras" :options="{responsive: true, maintainAspectRatio: false}"></chart-compras>
-
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-5">
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <a href="#" class="btn btn-white btn-xs pull-right"><i class="fa fa-plus"></i> Gasto</a>
-                <h4 class="panel-title">Ventas por Producto</h4>
-              </div>
-              <div class="panel-body">
-                <div class="input-group input-daterange ventas-productos mb-4">
-                  <input type="text" class="form-control form-control-sm" name="start" placeholder="Fecha Inicio"/>
-                  <span class="input-group-addon">a</span>
-                  <input type="text" class="form-control form-control-sm" name="end" placeholder="Fecha Término" />
-                  <button class="btn btn-white btn-sm ml-3" v-on:click="changeDataProductos">Actualizar</button>
-                </div>
-
-                <chart-productos class="chart-container height-300" :data="dataChartProductos" :labels="dataLabelsProductos" :options="{responsive: true, maintainAspectRatio: false}"></chart-productos>
-              </div>
-            </div>
-          </div>
-
+          <div class="panel panel-default" >
+          <div class="panel-heading">
+          <a href="documento-nuevo.html" class="btn btn-white btn-xs pull-right"><i class="fa fa-plus"></i> Factura</a>
+          <h4 class="panel-title">Ventas</h4>
         </div>
+        <div class="panel-body">
+        <div class="input-group input-daterange ventas mb-4">
+        <input type="text" class="form-control form-control-sm" name="start" placeholder="Fecha Inicio"/>
+        <span class="input-group-addon">a</span>
+        <input type="text" class="form-control form-control-sm" name="end" placeholder="Fecha Término" />
       </div>
-    </div>
-    <!-- end #content -->
-
-  </div>
-  <!-- end #page-container -->
-
-  <!-- begin scroll to top btn -->
-  <a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
-  <!-- end scroll to top btn -->
-
-  <!-- begin modal -->
-  <div class="modal fade" id="m-video" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-      <div class="modal-content">
-        <!-- header -->
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Video de Ayuda</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <!-- body -->
-        <div class="modal-body">
-          <div class="row">
-            <div class="col-6">
-              <div class="post-video">
-                <div class="embed-responsive embed-responsive-16by9">
-                  <iframe src="https://player.vimeo.com/video/252920310?title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-                </div>
-              </div>
-            </div>
-            <div class="col-6">
-              <blockquote>
-                <p>Descripción:</p>
-                <p class="f-s-12">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-              </blockquote>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-sm btn-white" data-dismiss="modal">Cerrar</button>
-        </div>
-      </div>
+      <div class="chart-container height-300">
+      <canvas id="chart-ventas"></canvas>
     </div>
   </div>
+</div>
+</div> -->
 
-  <div class="modal fade" id="m-cambiar-empresa" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <!-- header -->
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Empresas</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+<div class="col-lg-5">
+  <div class="panel panel-default" >
+    <div class="panel-heading">
+      <a href="documento-nuevo.html" class="btn btn-white btn-xs pull-right"><i class="fa fa-plus"></i> Factura</a>
+      <h4 class="panel-title">Ventas</h4>
+    </div>
+    <div class="panel-body">
+      <div>
+        <div class="input-group input-daterange ventas mb-2">
+          <input type="text" class="form-control form-control-sm" name="start" placeholder="Fecha Inicio"/>
+          <span class="input-group-addon">a</span>
+          <input type="text" class="form-control form-control-sm" name="end" placeholder="Fecha Término"/>
+          <button class="btn btn-white btn-sm ml-3" v-on:click="changeDataVentas">Actualizar</button>
         </div>
-        <!-- body -->
-        <div class="modal-body">
-          <div class="col-sm-12 col-lg-12">
-            <div class="widget-list widget-list-rounded m-b-30" data-id="widget">
-              <div class="widget-list-item">
-                <div class="widget-list-media">
-                  <div class="widget-icon widget-icon-lg user rounded bg-grey pull-left m-r-5 m-b-5 text-white" data-id="widget-elm" data-light-class="widget-icon widget-icon-lg user rounded bg-grey pull-left m-r-5 m-b-5 text-white" data-dark-class="widget-icon widget-icon-lg user rounded bg-inverse pull-left m-r-5 m-b-5 text-white-transparent-5">
-                    <i class="fa fa-building"></i>
-                  </div>
-                </div>
-                <div class="widget-list-content">
-                  <h4 class="widget-list-title">Nombre Empresa</h4>
-                  <p class="widget-list-desc">Descripción de la empresa</p>
-                </div>
-                <div class="widget-list-action">
-                  <a href="dashboard.html" class="btn btn-xs btn-primary">Go UWIGO <i class="fa fa-arrow-right m-l-5"></i></a>
-                </div>
-              </div>
-              <div class="widget-list-item">
-                <div class="widget-list-media">
-                  <div class="widget-icon widget-icon-lg user rounded bg-grey pull-left m-r-5 m-b-5 text-white" data-id="widget-elm" data-light-class="widget-icon widget-icon-lg user rounded bg-grey pull-left m-r-5 m-b-5 text-white" data-dark-class="widget-icon widget-icon-lg user rounded bg-inverse pull-left m-r-5 m-b-5 text-white-transparent-5">
-                    <i class="fa fa-building"></i>
-                  </div>
-                </div>
-                <div class="widget-list-content">
-                  <h4 class="widget-list-title">Nombre Empresa</h4>
-                  <p class="widget-list-desc">Descripción de la empresa</p>
-                </div>
-                <div class="widget-list-action">
-                  <a href="dashboard.html" class="btn btn-xs btn-primary">Go UWIGO <i class="fa fa-arrow-right m-l-5"></i></a>
-                </div>
-              </div>
-              <div class="widget-list-item">
-                <div class="widget-list-media">
-                  <div class="widget-img widget-img-lg rounded bg-inverse pull-left m-r-5 m-b-5" style="background-image: url(assets/img/user/user-12.jpg)"></div>
-                </div>
-                <div class="widget-list-content">
-                  <h4 class="widget-list-title">Nombre Empresa</h4>
-                  <p class="widget-list-desc">Descripción de la empresa</p>
-                </div>
-                <div class="widget-list-action">
-                  <a href="dashboard.html" class="btn btn-xs btn-primary">Go UWIGO <i class="fa fa-arrow-right m-l-5"></i></a>
-                </div>
+        <input type="checkbox"> Órdenes de Compras
+        <br>
+        <input type="checkbox"> Órdenes de Pedidos
+      </div>
+      <chart-ventas class="chart-container height-300" :data="dataChartVentas" :labels="dataLabelsVentas" :options="{responsive: true, maintainAspectRatio: false}"></chart-ventas>
+    </div>
+  </div>
+</div>
+
+<div class="col-lg-5">
+  <div class="panel panel-default" >
+    <div class="panel-heading">
+      <a href="documento-nuevo.html" class="btn btn-white btn-xs pull-right"><i class="fa fa-plus"></i> Factura</a>
+      <h4 class="panel-title">Compras</h4>
+    </div>
+    <div class="panel-body">
+
+      <div>
+        <div class="input-group input-daterange compras mb-2">
+          <input type="text" class="form-control form-control-sm" name="start" placeholder="Fecha Inicio"/>
+          <span class="input-group-addon">a</span>
+          <input type="text" class="form-control form-control-sm" name="end" placeholder="Fecha Término" />
+          <button class="btn btn-white btn-sm ml-3" v-on:click="changeDataCompras">Actualizar</button>
+        </div>
+        <input type="checkbox"> Órdenes de Compras
+        <br>
+        <input type="checkbox"> Órdenes de Pedidos
+      </div>
+
+
+      <chart-compras class="chart-container height-300" :data="dataChartCompras" :labels="dataLabelsCompras" :options="{responsive: true, maintainAspectRatio: false}"></chart-compras>
+
+    </div>
+  </div>
+</div>
+
+<div class="col-md-5">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <a href="#" class="btn btn-white btn-xs pull-right"><i class="fa fa-plus"></i> Gasto</a>
+      <h4 class="panel-title">Ventas por Producto</h4>
+    </div>
+    <div class="panel-body">
+      <div class="input-group input-daterange ventas-productos mb-4">
+        <input type="text" class="form-control form-control-sm" name="start" placeholder="Fecha Inicio"/>
+        <span class="input-group-addon">a</span>
+        <input type="text" class="form-control form-control-sm" name="end" placeholder="Fecha Término" />
+        <button class="btn btn-white btn-sm ml-3" v-on:click="changeDataProductos">Actualizar</button>
+      </div>
+
+      <chart-productos class="chart-container height-300" :data="dataChartProductos" :labels="dataLabelsProductos" :options="{responsive: true, maintainAspectRatio: false}"></chart-productos>
+    </div>
+  </div>
+</div>
+
+</div>
+</div>
+</div>
+<!-- end #content -->
+
+</div>
+<!-- end #page-container -->
+
+<!-- begin scroll to top btn -->
+<a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
+<!-- end scroll to top btn -->
+
+<!-- begin modal -->
+<div class="modal fade" id="m-video" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <!-- header -->
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Video de Ayuda</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <!-- body -->
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-6">
+            <div class="post-video">
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe src="https://player.vimeo.com/video/252920310?title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
               </div>
             </div>
+          </div>
+          <div class="col-6">
+            <blockquote>
+              <p>Descripción:</p>
+              <p class="f-s-12">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </blockquote>
           </div>
         </div>
       </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-sm btn-white" data-dismiss="modal">Cerrar</button>
+      </div>
     </div>
   </div>
-  <!-- end modal -->
+</div>
 
-  <!-- ================== BEGIN BASE JS ================== -->
-  <script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/jquery/jquery-3.2.1.min.js"></script>
-  <script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
-  <script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/bootstrap/4.1.0/js/bootstrap.bundle.min.js"></script>
-  <script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-  <script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/js-cookie/js.cookie.js"></script>
-  <script src="https://informat-apps.github.io/uwigo-mochups/assets/js/theme/default.min.js"></script>
-  <script src="https://informat-apps.github.io/uwigo-mochups/assets/js/apps.min.js"></script>
+<div class="modal fade" id="m-cambiar-empresa" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <!-- header -->
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Empresas</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <!-- body -->
+      <div class="modal-body">
+        <div class="col-sm-12 col-lg-12">
+          <div class="widget-list widget-list-rounded m-b-30" data-id="widget">
+            <div class="widget-list-item">
+              <div class="widget-list-media">
+                <div class="widget-icon widget-icon-lg user rounded bg-grey pull-left m-r-5 m-b-5 text-white" data-id="widget-elm" data-light-class="widget-icon widget-icon-lg user rounded bg-grey pull-left m-r-5 m-b-5 text-white" data-dark-class="widget-icon widget-icon-lg user rounded bg-inverse pull-left m-r-5 m-b-5 text-white-transparent-5">
+                  <i class="fa fa-building"></i>
+                </div>
+              </div>
+              <div class="widget-list-content">
+                <h4 class="widget-list-title">Nombre Empresa</h4>
+                <p class="widget-list-desc">Descripción de la empresa</p>
+              </div>
+              <div class="widget-list-action">
+                <a href="dashboard.html" class="btn btn-xs btn-primary">Go UWIGO <i class="fa fa-arrow-right m-l-5"></i></a>
+              </div>
+            </div>
+            <div class="widget-list-item">
+              <div class="widget-list-media">
+                <div class="widget-icon widget-icon-lg user rounded bg-grey pull-left m-r-5 m-b-5 text-white" data-id="widget-elm" data-light-class="widget-icon widget-icon-lg user rounded bg-grey pull-left m-r-5 m-b-5 text-white" data-dark-class="widget-icon widget-icon-lg user rounded bg-inverse pull-left m-r-5 m-b-5 text-white-transparent-5">
+                  <i class="fa fa-building"></i>
+                </div>
+              </div>
+              <div class="widget-list-content">
+                <h4 class="widget-list-title">Nombre Empresa</h4>
+                <p class="widget-list-desc">Descripción de la empresa</p>
+              </div>
+              <div class="widget-list-action">
+                <a href="dashboard.html" class="btn btn-xs btn-primary">Go UWIGO <i class="fa fa-arrow-right m-l-5"></i></a>
+              </div>
+            </div>
+            <div class="widget-list-item">
+              <div class="widget-list-media">
+                <div class="widget-img widget-img-lg rounded bg-inverse pull-left m-r-5 m-b-5" style="background-image: url(assets/img/user/user-12.jpg)"></div>
+              </div>
+              <div class="widget-list-content">
+                <h4 class="widget-list-title">Nombre Empresa</h4>
+                <p class="widget-list-desc">Descripción de la empresa</p>
+              </div>
+              <div class="widget-list-action">
+                <a href="dashboard.html" class="btn btn-xs btn-primary">Go UWIGO <i class="fa fa-arrow-right m-l-5"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end modal -->
 
-  <!-- ================== END BASE JS ================== -->
+<!-- ================== BEGIN BASE JS ================== -->
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/jquery/jquery-3.2.1.min.js"></script>
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/bootstrap/4.1.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/js-cookie/js.cookie.js"></script>
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/js/theme/default.min.js"></script>
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/js/apps.min.js"></script>
 
-  <!-- ================== BEGIN PAGE LEVEL JS ================== -->
-  <script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/highlight/highlight.common.js"></script>
-  <script src="https://informat-apps.github.io/uwigo-mochups/assets/js/demo/render.highlight.js"></script>
-  <script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
-  <script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/bootstrap-daterangepicker/moment.js"></script>
-  <script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.2/d3.min.js"></script>
-  <script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/nvd3/build/nv.d3.js"></script>
-  <script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/DataTables/media/js/jquery.dataTables.js"></script>
-  <script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/DataTables/media/js/dataTables.bootstrap.min.js"></script>
-  <script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/DataTables/extensions/Responsive/js/dataTables.responsive.min.js"></script>
-  <script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/dropzone/min/dropzone.min.js"></script>
-  <script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/switchery/switchery.min.js"></script>
-  <script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/powerange/powerange.min.js"></script>
-  <script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/select2/dist/js/select2.min.js"></script>
-  <script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/bootstrap-sweetalert/sweetalert.min.js"></script>
-  <script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/jstree/dist/jstree.min.js"></script>
-  <script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/bootstrap-select/bootstrap-select.min.js"></script>
-  <script src="https://unpkg.com/vue"></script>
-  <script src="https://informat-apps.github.io/uwigo-mochups/assets/js/demo/table-manage-default.demo.js"></script>
-  <script src="https://informat-apps.github.io/uwigo-mochups/assets/js/demo/chart-d3.demo.min.js"></script>
-  <script src="https://informat-apps.github.io/uwigo-mochups/assets/js/demo/chart-js.demo.js"></script>
-  <script src="https://informat-apps.github.io/uwigo-mochups/assets/js/demo/form-plugins.demo.js"></script>
-  <script src="https://informat-apps.github.io/uwigo-mochups/assets/js/demo/form-slider-switcher.demo.min.js"></script>
-  <script src="https://informat-apps.github.io/uwigo-mochups/assets/js/demo/ui-tree.demo.js"></script>
-  <script src="https://informat-apps.github.io/uwigo-mochups/assets/js/demo/ui-modal-notification.demo.js"></script>
-  <script src="https://unpkg.com/vue-chartjs/dist/vue-chartjs.min.js"></script>
+<!-- ================== END BASE JS ================== -->
+
+<!-- ================== BEGIN PAGE LEVEL JS ================== -->
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/highlight/highlight.common.js"></script>
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/js/demo/render.highlight.js"></script>
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/bootstrap-daterangepicker/moment.js"></script>
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.2/d3.min.js"></script>
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/nvd3/build/nv.d3.js"></script>
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/DataTables/media/js/jquery.dataTables.js"></script>
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/DataTables/media/js/dataTables.bootstrap.min.js"></script>
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/DataTables/extensions/Responsive/js/dataTables.responsive.min.js"></script>
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/dropzone/min/dropzone.min.js"></script>
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/switchery/switchery.min.js"></script>
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/powerange/powerange.min.js"></script>
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/select2/dist/js/select2.min.js"></script>
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/bootstrap-sweetalert/sweetalert.min.js"></script>
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/jstree/dist/jstree.min.js"></script>
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/bootstrap-select/bootstrap-select.min.js"></script>
+<script src="https://unpkg.com/vue"></script>
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/js/demo/table-manage-default.demo.js"></script>
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/js/demo/chart-d3.demo.min.js"></script>
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/js/demo/chart-js.demo.js"></script>
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/js/demo/form-plugins.demo.js"></script>
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/js/demo/form-slider-switcher.demo.min.js"></script>
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/js/demo/ui-tree.demo.js"></script>
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/js/demo/ui-modal-notification.demo.js"></script>
+<script src="https://unpkg.com/vue-chartjs/dist/vue-chartjs.min.js"></script>
 
 
-  <script src="https://informat-apps.github.io/uwigo-mochups/assets/script.js"></script>
-  <!-- ================== END PAGE LEVEL JS ================== -->
+<script src="https://informat-apps.github.io/uwigo-mochups/assets/script.js"></script>
+<!-- ================== END PAGE LEVEL JS ================== -->
 
-  <script>
+<script>
 
-  Vue.component("chart-ventas", {
-    extends: VueChartJs.Bar,
-    props: ["data", "options", "labels"],
-    mounted() {
-      this.renderLineChart();
+Vue.component("chart-ventas", {
+  extends: VueChartJs.Bar,
+  props: ["data", "options", "labels"],
+  mounted() {
+    this.renderLineChart();
+  },
+  computed: {
+    chartData: function() {
+      return this.data;
     },
-    computed: {
-      chartData: function() {
-        return this.data;
-      },
-      labelsData: function() {
-        return this.labels;
-      }
-    },
-    methods: {
-      renderLineChart: function() {
+    labelsData: function() {
+      return this.labels;
+    }
+  },
+  methods: {
+    renderLineChart: function() {
       this.renderChart(
         {
           labels: this.labelsData,
@@ -665,31 +729,31 @@
         },
         { responsive: true, maintainAspectRatio: false }
       );
-      }
-    },
-    watch: {
-      data: function() {
-        this.renderLineChart();
-      }
     }
-  });
-
-  Vue.component("chart-compras", {
-    extends: VueChartJs.Bar,
-    props: ["data", "options", "labels"],
-    mounted() {
+  },
+  watch: {
+    data: function() {
       this.renderLineChart();
+    }
+  }
+});
+
+Vue.component("chart-compras", {
+  extends: VueChartJs.Bar,
+  props: ["data", "options", "labels"],
+  mounted() {
+    this.renderLineChart();
+  },
+  computed: {
+    chartData: function() {
+      return this.data;
     },
-    computed: {
-      chartData: function() {
-        return this.data;
-      },
-      labelsData: function() {
-        return this.labels;
-      }
-    },
-    methods: {
-      renderLineChart: function() {
+    labelsData: function() {
+      return this.labels;
+    }
+  },
+  methods: {
+    renderLineChart: function() {
       this.renderChart(
         {
           labels: this.labelsData,
@@ -705,31 +769,31 @@
         },
         { responsive: true, maintainAspectRatio: false }
       );
-      }
-    },
-    watch: {
-      data: function() {
-        this.renderLineChart();
-      }
     }
-  });
-
-  Vue.component("chart-productos", {
-    extends: VueChartJs.Pie,
-    props: ["data", "options", "labels"],
-    mounted() {
+  },
+  watch: {
+    data: function() {
       this.renderLineChart();
+    }
+  }
+});
+
+Vue.component("chart-productos", {
+  extends: VueChartJs.Pie,
+  props: ["data", "options", "labels"],
+  mounted() {
+    this.renderLineChart();
+  },
+  computed: {
+    chartData: function() {
+      return this.data;
     },
-    computed: {
-      chartData: function() {
-        return this.data;
-      },
-      labelsData: function() {
-        return this.labels;
-      }
-    },
-    methods: {
-      renderLineChart: function() {
+    labelsData: function() {
+      return this.labels;
+    }
+  },
+  methods: {
+    renderLineChart: function() {
       this.renderChart(
         {
           labels: this.labelsData,
@@ -745,195 +809,197 @@
         },
         { responsive: true, maintainAspectRatio: false }
       );
-      }
-    },
-    watch: {
-      data: function() {
-        this.renderLineChart();
-      }
     }
-  });
+  },
+  watch: {
+    data: function() {
+      this.renderLineChart();
+    }
+  }
+});
 
-  var vm = new Vue({
-    el: ".app",
-    data: {
-      dataChartVentas: [
-        Math.round(Math.random()*10000000),
-        Math.round(Math.random()*10000000),
-        Math.round(Math.random()*10000000),
-        Math.round(Math.random()*10000000),
-        Math.round(Math.random()*10000000),
-        Math.round(Math.random()*10000000),
-        Math.round(Math.random()*10000000),
-        Math.round(Math.random()*10000000),
-        Math.round(Math.random()*10000000),
-        Math.round(Math.random()*10000000),
-        Math.round(Math.random()*10000000),
-        Math.round(Math.random()*10000000),
-      ],
-      dataChartCompras: [
-        Math.round(Math.random()*10000000),
-        Math.round(Math.random()*10000000),
-        Math.round(Math.random()*10000000),
-        Math.round(Math.random()*10000000),
-        Math.round(Math.random()*10000000),
-        Math.round(Math.random()*10000000),
-        Math.round(Math.random()*10000000),
-        Math.round(Math.random()*10000000),
-        Math.round(Math.random()*10000000),
-        Math.round(Math.random()*10000000),
-        Math.round(Math.random()*10000000),
-        Math.round(Math.random()*10000000),
-      ],
-      dataChartProductos: [
-        Math.round(Math.random()*10000000),
-        Math.round(Math.random()*10000000),
-        Math.round(Math.random()*10000000),
-        Math.round(Math.random()*10000000),
-        Math.round(Math.random()*10000000),
-      ],
-      dataLabelsVentas: [
+var vm = new Vue({
+  el: ".app",
+  data: {
+    dataChartVentas: [
+      Math.round(Math.random()*10000000),
+      Math.round(Math.random()*10000000),
+      Math.round(Math.random()*10000000),
+      Math.round(Math.random()*10000000),
+      Math.round(Math.random()*10000000),
+      Math.round(Math.random()*10000000),
+      Math.round(Math.random()*10000000),
+      Math.round(Math.random()*10000000),
+      Math.round(Math.random()*10000000),
+      Math.round(Math.random()*10000000),
+      Math.round(Math.random()*10000000),
+      Math.round(Math.random()*10000000),
+    ],
+    dataChartCompras: [
+      Math.round(Math.random()*10000000),
+      Math.round(Math.random()*10000000),
+      Math.round(Math.random()*10000000),
+      Math.round(Math.random()*10000000),
+      Math.round(Math.random()*10000000),
+      Math.round(Math.random()*10000000),
+      Math.round(Math.random()*10000000),
+      Math.round(Math.random()*10000000),
+      Math.round(Math.random()*10000000),
+      Math.round(Math.random()*10000000),
+      Math.round(Math.random()*10000000),
+      Math.round(Math.random()*10000000),
+    ],
+    dataChartProductos: [
+      Math.round(Math.random()*10000000),
+      Math.round(Math.random()*10000000),
+      Math.round(Math.random()*10000000),
+      Math.round(Math.random()*10000000),
+      Math.round(Math.random()*10000000),
+    ],
+    dataLabelsVentas: [
+      'Periodo 1',
+      'Periodo 2',
+      'Periodo 3',
+      'Periodo 4',
+      'Periodo 5',
+      'Periodo 6',
+      'Periodo 7',
+      'Periodo 8',
+      'Periodo 9',
+      'Periodo 10',
+      'Periodo 11',
+      'Periodo 12',
+    ],
+    dataLabelsCompras: [
+      'Periodo 1',
+      'Periodo 2',
+      'Periodo 3',
+      'Periodo 4',
+      'Periodo 5',
+      'Periodo 6',
+      'Periodo 7',
+      'Periodo 8',
+      'Periodo 9',
+      'Periodo 10',
+      'Periodo 11',
+      'Periodo 12',
+    ],
+    dataLabelsProductos: [
+      'Producto 1',
+      'Producto 2',
+      'Producto 3',
+      'Producto 4',
+      'Producto 5',
+    ],
+  },
+  methods: {
+    changeDataVentas: function() {
+      this.dataLabelsVentas = [
         'Periodo 1',
         'Periodo 2',
         'Periodo 3',
         'Periodo 4',
         'Periodo 5',
         'Periodo 6',
-        'Periodo 7',
-        'Periodo 8',
-        'Periodo 9',
-        'Periodo 10',
-        'Periodo 11',
-        'Periodo 12',
-      ],
-      dataLabelsCompras: [
+      ];
+
+      this.dataChartVentas = [
+        Math.round(Math.random()*10000000),
+        Math.round(Math.random()*10000000),
+        Math.round(Math.random()*10000000),
+        Math.round(Math.random()*10000000),
+        Math.round(Math.random()*10000000),
+        Math.round(Math.random()*10000000),
+      ];
+    },
+    changeDataCompras: function() {
+      this.dataLabelsCompras = [
         'Periodo 1',
         'Periodo 2',
         'Periodo 3',
         'Periodo 4',
         'Periodo 5',
         'Periodo 6',
-        'Periodo 7',
-        'Periodo 8',
-        'Periodo 9',
-        'Periodo 10',
-        'Periodo 11',
-        'Periodo 12',
-      ],
-      dataLabelsProductos: [
+      ];
+
+      this.dataChartCompras = [
+        Math.round(Math.random()*10000000),
+        Math.round(Math.random()*10000000),
+        Math.round(Math.random()*10000000),
+        Math.round(Math.random()*10000000),
+        Math.round(Math.random()*10000000),
+        Math.round(Math.random()*10000000),
+      ];
+    },
+    changeDataProductos: function() {
+      this.dataLabelsProductos = [
         'Producto 1',
         'Producto 2',
         'Producto 3',
-        'Producto 4',
-        'Producto 5',
-      ],
+      ];
+
+      this.dataChartProductos = [
+        Math.round(Math.random()*10000000),
+        Math.round(Math.random()*10000000),
+        Math.round(Math.random()*10000000),
+      ];
     },
-    methods: {
-      changeDataVentas: function() {
-        this.dataLabelsVentas = [
-          'Periodo 1',
-          'Periodo 2',
-          'Periodo 3',
-          'Periodo 4',
-          'Periodo 5',
-          'Periodo 6',
-        ];
+  },
+});
 
-        this.dataChartVentas = [
-          Math.round(Math.random()*10000000),
-          Math.round(Math.random()*10000000),
-          Math.round(Math.random()*10000000),
-          Math.round(Math.random()*10000000),
-          Math.round(Math.random()*10000000),
-          Math.round(Math.random()*10000000),
-        ];
-      },
-      changeDataCompras: function() {
-        this.dataLabelsCompras = [
-          'Periodo 1',
-          'Periodo 2',
-          'Periodo 3',
-          'Periodo 4',
-          'Periodo 5',
-          'Periodo 6',
-        ];
+$(document).ready(function() {
 
-        this.dataChartCompras = [
-          Math.round(Math.random()*10000000),
-          Math.round(Math.random()*10000000),
-          Math.round(Math.random()*10000000),
-          Math.round(Math.random()*10000000),
-          Math.round(Math.random()*10000000),
-          Math.round(Math.random()*10000000),
-        ];
-      },
-      changeDataProductos: function() {
-        this.dataLabelsProductos = [
-          'Producto 1',
-          'Producto 2',
-          'Producto 3',
-        ];
+  App.init();
+  Highlight.init();
+  ChartJs.init();
+  handleDatepicker();
 
-        this.dataChartProductos = [
-          Math.round(Math.random()*10000000),
-          Math.round(Math.random()*10000000),
-          Math.round(Math.random()*10000000),
-        ];
-      },
-    },
+  $('.input-daterange.compras').on('changeDate', function() {
+    var barChartDataCompras = {
+      labels: ['Enero', 'Febreo', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+      datasets: [{
+        label: 'Compras',
+        borderWidth: 2,
+        borderColor: [COLOR_RED],
+        backgroundColor: [COLOR_RED_TRANSPARENT_2],
+        data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+      }]
+    };
+    var ctx3 = document.getElementById('chart-compras').getContext('2d');
+    var Chart3 = new Chart(ctx3, {
+      type: 'bar',
+      data: barChartDataCompras,
+      options: {
+        maintainAspectRatio: false,
+      }
+    });
   });
 
-  $(document).ready(function() {
+  $('.input-daterange.ventas-productos').on('changeDate', function() {
+    var pieChartDataProductos = {
+      labels: ['Producto 1', 'Producto 2', 'Producto 3', 'Producto 4', 'Producto 5'],
+      datasets: [{
+        data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()],
+        backgroundColor: [COLOR_RED_TRANSPARENT_7, COLOR_ORANGE_TRANSPARENT_7, COLOR_SILVER_TRANSPARENT_7, COLOR_GREY_TRANSPARENT_7, COLOR_BLACK_TRANSPARENT_7],
+        borderColor: [COLOR_RED, COLOR_ORANGE, COLOR_SILVER_DARKER, COLOR_GREY, COLOR_BLACK],
+        borderWidth: 2,
+        label: 'My dataset'
+      }]
+    };
 
-    App.init();
-    Highlight.init();
-    ChartJs.init();
-    handleDatepicker();
-
-    $('.input-daterange.compras').on('changeDate', function() {
-      var barChartDataCompras = {
-          labels: ['Enero', 'Febreo', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
-          datasets: [{
-              label: 'Compras',
-              borderWidth: 2,
-              borderColor: [COLOR_RED],
-              backgroundColor: [COLOR_RED_TRANSPARENT_2],
-              data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
-          }]
-      };
-      var ctx3 = document.getElementById('chart-compras').getContext('2d');
-      var Chart3 = new Chart(ctx3, {
-          type: 'bar',
-          data: barChartDataCompras,
-          options: {
-            maintainAspectRatio: false,
-          }
-      });
+    var ctx4 = document.getElementById('chart-ventas-productos').getContext('2d');
+    var Chart4 = new Chart(ctx4, {
+      type: 'pie',
+      data: pieChartDataProductos,
+      options: {
+        maintainAspectRatio: false,
+      }
     });
-
-    $('.input-daterange.ventas-productos').on('changeDate', function() {
-      var pieChartDataProductos = {
-          labels: ['Producto 1', 'Producto 2', 'Producto 3', 'Producto 4', 'Producto 5'],
-          datasets: [{
-              data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()],
-              backgroundColor: [COLOR_RED_TRANSPARENT_7, COLOR_ORANGE_TRANSPARENT_7, COLOR_SILVER_TRANSPARENT_7, COLOR_GREY_TRANSPARENT_7, COLOR_BLACK_TRANSPARENT_7],
-              borderColor: [COLOR_RED, COLOR_ORANGE, COLOR_SILVER_DARKER, COLOR_GREY, COLOR_BLACK],
-              borderWidth: 2,
-              label: 'My dataset'
-          }]
-      };
-
-      var ctx4 = document.getElementById('chart-ventas-productos').getContext('2d');
-      var Chart4 = new Chart(ctx4, {
-          type: 'pie',
-          data: pieChartDataProductos,
-          options: {
-            maintainAspectRatio: false,
-          }
-      });
-    });
-
   });
+
+
+  Uwigo.init();
+});
 </script>
 <style>
 
@@ -946,6 +1012,14 @@
 
 .height-300{
   max-height: 300px;
+}
+
+.height-250{
+  max-height: 250px;
+}
+
+.height-200{
+  max-height: 200px;
 }
 
 .input-group-addon, .input-group-text {

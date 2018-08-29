@@ -400,3 +400,8 @@ select.form-control:not([size]):not([multiple]) {
 .table {
   margin-bottom: 0.2rem !important;
 }
+
+
+.dropdown-toggle::after {
+  margin-left: .5em !important;
+}

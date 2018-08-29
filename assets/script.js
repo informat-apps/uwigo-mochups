@@ -8,7 +8,7 @@ var dataChartBancos = {
   datasets: [
     {
       type: 'line',
-      label: 'Saldo del Banco',
+      label: 'Saldo',
       borderColor: COLOR_BLUE,
       borderWidth: 2,
       fill: false,
@@ -36,7 +36,7 @@ var dataChartBancos = {
 			randomScalingFactor(),
     ]
   }, {
-    label: 'Facturas emitidas por cobrar',
+    label: 'Facturas por cobrar',
     borderWidth: 2,
     borderColor: COLOR_GREEN,
     backgroundColor: COLOR_GREEN_TRANSPARENT_7,
@@ -64,7 +64,7 @@ var dataChartBancos = {
 			randomScalingFactor(),
     ]
   },{
-    label: 'Facturas recibidas por pagar',
+    label: 'Facturas por pagar',
     borderWidth: 2,
     borderColor: COLOR_RED,
     backgroundColor: COLOR_RED_TRANSPARENT_2,

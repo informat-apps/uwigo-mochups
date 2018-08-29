@@ -6,7 +6,7 @@
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
 
   <!-- ================== BEGIN BASE CSS STYLE ================== -->
-  
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
   <link href="https://informat-apps.github.io/uwigo-mochups/assets/plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
   <link href="https://informat-apps.github.io/uwigo-mochups/assets/plugins/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://informat-apps.github.io/uwigo-mochups/assets/plugins/font-awesome/5.0/css/fontawesome-all.min.css" rel="stylesheet" />
@@ -54,14 +54,14 @@
 
         <li class="dropdown navbar-user">
           <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
-            <img src="../assets/img/user/user-13.jpg" alt="">
+            <img src="https://informat-apps.github.io/uwigo-mochups/assets/img/user/user-13.jpg" alt="">
             <span class="d-none d-md-inline">Nombre Usuario</span> <b class="caret"></b>
           </a>
           <div class="dropdown-menu dropdown-menu-right">
-            <a href="javascript:;" class="dropdown-item">Editar Perfil</a>
+            <a href="perfil-usuario.html" class="dropdown-item">Editar Perfil</a>
             <a href="login.html" class="dropdown-item">Salir</a>
             <div class="dropdown-divider"></div>
-            <a href="login.html" class="dropdown-item"><i class="far fa-star"></i> Cambiar Contraseña</a>
+            <a href="#m-cambiar-contrasena" class="dropdown-item" data-toggle="modal"><i class="far fa-star"></i> Cambiar Contraseña</a>
           </div>
         </li>
 
@@ -73,7 +73,7 @@
             <a href="empresa-lista.html" class="dropdown-item">Empresas</a>
             <a href="usuarios.html" class="dropdown-item">Usuarios</a>
             <div class="dropdown-divider"></div>
-            <a href="#m-change-empresa" class="dropdown-item" data-toggle="modal"><i class="far fa-star"></i> Cambiar de Empresa</a>
+            <a href="#m-cambiar-empresa" class="dropdown-item" data-toggle="modal"><i class="far fa-star"></i> Cambiar de Empresa</a>
           </div>
         </li>
       </ul>
@@ -85,49 +85,37 @@
     <div id="top-menu" class="top-menu">
       <!-- begin top-menu nav -->
       <ul class="nav">
-
         <li class="active">
-          <a href="../index.html">
+          <a href="dashboard.html">
             <i class="fa fa-th-large"></i>
             <span>Dashboard</span>
           </a>
         </li>
-
         <li class="has-sub">
           <a href="javascript:;">
             <b class="caret"></b>
             <span>Cuentas</span>
           </a>
-
           <ul class="sub-menu">
-            <li><a href="cuentas-bancos.html">Bancos</a></li>
-            <!-- <li class="divider"></li> -->
-            <li><a href="cuentas-ventas.html">Ventas</a></li>
-            <!-- <li class="divider"></li> -->
-            <li><a href="cuentas-compras.html">Compras</a></li>
-            <!-- <li class="divider"></li> -->
-            <li><a href="cuentas-remuneraciones.html">Remuneraciones</a></li>
-            <!-- <li class="divider"></li> -->
-            <li><a href="cuentas-inventario.html">Inventarios</a></li>
-            <!-- <li class="divider"></li> -->
-            <li><a href="cuentas-gastos.html">Gastos</a></li>
-            <!-- <li class="divider"></li> -->
+            <li><a href="bancos.html">Bancos</a></li>
+            <li><a href="ventas.html">Ventas</a></li>
+            <li><a href="compras.html">Compras</a></li>
+            <li><a href="remuneraciones-lista.html">Remuneraciones</a></li>
+            <li><a href="inventario.html">Inventario</a></li>
+            <li><a href="gastos.html">Gastos</a></li>
             <li><a href="activos-fijos.html">Activo Fijo</a></li>
           </ul>
         </li>
-
         <li class="has-sub">
           <a href="javascript:;">
             <b class="caret"></b>
             <span>Reportes</span>
           </a>
-
           <ul class="sub-menu">
-            <li><a href="reporte-1.html">Reporte 1</a></li>
-            <li><a href="reporte-2.html">Reporte 2</a></li>
+            <li><a href="reporte.html">Reporte 1</a></li>
+            <li><a href="reporte.html">Reporte 2</a></li>
           </ul>
         </li>
-
         <li class="has-sub">
           <a href="javascript:;">
             <b class="caret"></b>
@@ -135,24 +123,15 @@
           </a>
           <ul class="sub-menu">
             <li><a href="contactos.html">Todos los contactos</a></li>
-
             <div class="dropdown-divider"></div>
-            <li><a href="#m-contacto" data-toggle="modal"><i class="far fa-star"></i> Proveedores</a></li>
-            <li><a href="#m-contacto" data-toggle="modal"><i class="far fa-star"></i> Clientes</a></li>
+            <li><a href="proveedores-lista.html"><i class="far fa-star"></i> Proveedores</a></li>
+            <li><a href="clientes-lista.html"><i class="far fa-star"></i> Clientes</a></li>
           </ul>
         </li>
-
         <li class="has-sub">
           <a href="configuracion.html">
             <span>Configuración</span>
           </a>
-        </li>
-
-        <li class="menu-control menu-control-left">
-          <a href="javascript:;" data-click="prev-menu"><i class="fa fa-angle-left"></i></a>
-        </li>
-        <li class="menu-control menu-control-right">
-          <a href="javascript:;" data-click="next-menu"><i class="fa fa-angle-right"></i></a>
         </li>
       </ul>
       <!-- end top-menu nav -->
@@ -161,22 +140,18 @@
 
     <!-- begin #breadcrumb -->
     <div class="section-breadcrumb">
-      <div class="pull-right mt-2">
-        <div class="widget-list-action">
-          <a href="#" data-toggle="dropdown" class="text-muted pull-right" aria-expanded="false"><i class="fa fa-question-circle f-s-18 text-teal"></i></a>
-          <ul class="dropdown-menu dropdown-menu-right" x-placement="bottom-end">
-            <li><a href="#m-video" data-toggle="modal">Video</a></li>
-            <li><a href="#">Tour</a></li>
-          </ul>
+      <div class="pull-right">
+        <div class="mt-2">
+          <a href="#m-video" class="btn btn-primary btn-icon btn-circle btn-sm" data-toggle="modal"><i class="fa fa-video"></i></a>
+          <a class="btn btn-primary btn-icon btn-circle btn-sm" href="javascript:void(0);" onclick="javascript:introJs().start();"><i class="fa fa-comment-dots"></i></a>
         </div>
       </div>
 
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="javascript:;">Cuentas</a></li>
-        <li class="breadcrumb-item active"><a href="javascript:;">Bancos</a></li>
+        <li class="breadcrumb-item"><a href="documentos.html">Documentos</a></li>
+        <li class="breadcrumb-item active"><a href="javascript:;">Lista</a></li>
       </ol>
     </div>
-    <!-- end #breadcrumb -->
 
     <!-- begin #content -->
     <div id="content" class="content">
@@ -184,8 +159,7 @@
       <div class="row m-b-30">
         <div class="col-12">
           <div class="btn-group">
-            <a href="javascript:;" class="btn btn-white btn-sm">Nuevo Documento</a>
-            <a href="javascript:;" data-toggle="dropdown" class="btn btn-white btn-sm dropdown-toggle" aria-expanded="false"></a>
+            <a href="javascript:;" class="btn btn-white btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Nuevo Documento</a>
             <ul class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(86px, 34px, 0px);">
               <li><a href="documento-nuevo.html">Factura de Compra</a></li>
               <li><a href="documento-nuevo.html">Orden de Compra</a></li>
@@ -201,7 +175,6 @@
         </div>
       </div>
 
-
       <div class="panel panel-default">
 
         <div class="panel-body">
@@ -213,8 +186,8 @@
                 <a href="javascript:;" class="btn btn-white btn-sm">Exportar</a>
                 <a href="javascript:;" data-toggle="dropdown" class="btn btn-white btn-sm dropdown-toggle" aria-expanded="false"></a>
                 <ul class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(86px, 34px, 0px);">
-                  <li><a href="assets/download/file.xls" download>EXCEL</a></li>
-                  <li><a href="assets/download/file.csv" download>CSV</a></li>
+                  <li><a href="https://informat-apps.github.io/uwigo-mochups/assets/download/file.xls" download>EXCEL</a></li>
+                  <li><a href="https://informat-apps.github.io/uwigo-mochups/assets/download/file.csv" download>CSV</a></li>
                 </ul>
               </div>
               <a href="javascript:;" class="btn btn-white btn-sm pull-right ml-2" data-toggle="modal" data-target="#m-subir-archivo">Importar</a>
