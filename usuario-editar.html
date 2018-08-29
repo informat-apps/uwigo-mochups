@@ -67,7 +67,7 @@
           </a>
           <div class="dropdown-menu dropdown-menu-right">
             <a href="perfil-usuario.html" class="dropdown-item">Editar Perfil</a>
-            <a href="login.html" class="dropdown-item">Salir</a>
+            <a href="index.html" class="dropdown-item">Salir</a>
             <div class="dropdown-divider"></div>
             <a href="#m-cambiar-contrasena" class="dropdown-item" data-toggle="modal"><i class="far fa-star"></i> Cambiar Contraseña</a>
           </div>
@@ -78,7 +78,7 @@
             <i class="fa fa-cogs"></i><b class="caret"></b>
           </a>
           <div class="dropdown-menu dropdown-menu-right">
-            <a href="empresa-lista.html" class="dropdown-item">Empresas</a>
+            <a href="empresas.html" class="dropdown-item">Empresas</a>
             <a href="usuarios.html" class="dropdown-item">Usuarios</a>
             <div class="dropdown-divider"></div>
             <a href="#m-cambiar-empresa" class="dropdown-item" data-toggle="modal"><i class="far fa-star"></i> Cambiar de Empresa</a>
@@ -132,8 +132,8 @@
           <ul class="sub-menu">
             <li><a href="contactos.html">Todos los contactos</a></li>
             <div class="dropdown-divider"></div>
-            <li><a href="proveedores-lista.html"><i class="far fa-star"></i> Proveedores</a></li>
-            <li><a href="clientes-lista.html"><i class="far fa-star"></i> Clientes</a></li>
+            <li><a href="#m-contactos" data-toggle="modal"><i class="far fa-star"></i> Proveedores</a></li>
+            <li><a href="#m-contactos" data-toggle="modal"><i class="far fa-star"></i> Clientes</a></li>
           </ul>
         </li>
         <li class="has-sub">
@@ -906,6 +906,151 @@
               </div>
             </div>
           </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-sm btn-white" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-sm btn-primary" data-dismiss="modal">Aceptar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="m-contactos" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Nueva contacto</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+          <fieldset class="mb-4">
+
+            <div class="row">
+
+              <div class="form-group col-md-2">
+                <label for="">P.Juridica</label>
+                <input type="checkbox" class="form-control">
+              </div>
+
+              <div class="form-group col-md-2">
+                <label for="">P.Extranjera</label>
+                <input type="checkbox" class="form-control">
+              </div>
+
+              <div class="form-group col-md-3">
+                <label for="">R.U.T. (*)</label>
+                <input type="text" class="form-control form-control-sm" placeholder="XX.XXX.XXX-X">
+              </div>
+
+              <div class="form-group col-md-5">
+                <label for="">Razon Social (*)</label>
+                <input type="text" class="form-control form-control-sm" placeholder="Nombre Usuario">
+              </div>
+
+              <div class="form-group col-md-4">
+                <label for="">Nombre (*)</label>
+                <input type="text" class="form-control form-control-sm" placeholder="Nombre Usuario">
+              </div>
+
+              <div class="form-group col-md-4">
+                <label for="">Giro (*)</label>
+                <select class="form-control form-control-sm">
+                  <option> seleccionar</option>
+                  <option>Giro 1</option>
+                  <option>Giro 2</option>
+                  <option>Giro 3</option>
+                  <option>Giro 4</option>
+                  <option>Giro 5</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-4">
+                <label for="">Email (*)</label>
+                <input type="text" class="form-control form-control-sm" placeholder="usuario@email.com">
+              </div>
+
+              <div class="form-group col-md-6">
+                <label for="">Dirección</label>
+                <input type="text" class="form-control form-control-sm" placeholder="Dirección Usuario">
+              </div>
+
+              <div class="form-group col-md-3">
+                <label for="">Teléfono</label>
+                <input type="text" class="form-control form-control-sm" placeholder="XX-XX-XXXX-XXXX">
+              </div>
+
+              <div class="form-group col-md-3">
+                <label for="">País (*)</label>
+                <select class="form-control form-control-sm">
+                  <option> seleccionar</option>
+                  <option>País 1</option>
+                  <option>País 2</option>
+                  <option>País 3</option>
+                  <option>País 4</option>
+                  <option>País 5</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-3">
+                <label for="">Región (*)</label>
+                <select class="form-control form-control-sm">
+                  <option> seleccionar</option>
+                  <option>Región 1</option>
+                  <option>Región 2</option>
+                  <option>Región 3</option>
+                  <option>Región 4</option>
+                  <option>Región 5</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-3">
+                <label for="">Ciudad (*)</label>
+                <select class="form-control form-control-sm">
+                  <option> seleccionar</option>
+                  <option>Ciudad 1</option>
+                  <option>Ciudad 2</option>
+                  <option>Ciudad 3</option>
+                  <option>Ciudad 4</option>
+                  <option>Ciudad 5</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-3">
+                <label for="">Comuna (*)</label>
+                <select class="form-control form-control-sm">
+                  <option> seleccionar</option>
+                  <option>Comuna 1</option>
+                  <option>Comuna 2</option>
+                  <option>Comuna 3</option>
+                  <option>Comuna 4</option>
+                  <option>Comuna 5</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-2">
+                <label for="">Tipo (*)</label>
+                <select class="form-control form-control-sm">
+                  <option> seleccionar</option>
+                  <option>Tipo 1</option>
+                  <option>Tipo 2</option>
+                  <option>Tipo 3</option>
+                  <option>Tipo 4</option>
+                  <option>Tipo 5</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-1">
+                <label for="">Estado</label>
+                <input type="checkbox" class="form-control">
+              </div>
+
+            </div>
+
+          </fieldset>
+
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-sm btn-white" data-dismiss="modal">Cerrar</button>
