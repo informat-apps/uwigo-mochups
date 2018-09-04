@@ -2,7 +2,6 @@ var randomScalingFactor = function() {
     return Math.round(Math.random()*10000000)
 };
 
-
 var dataChartBancos = {
   labels: ['Periodo #1', 'Periodo #2', 'Periodo #3', 'Periodo #4', 'Periodo #5', 'Periodo #6'],
   datasets: [
@@ -209,35 +208,111 @@ var handleSweetNotification = function() {
 
 var handleChartJs = function() {
 
-    var charts = document.getElementsByClassName('chart-bancos');
+  var charts = document.getElementsByClassName('chart-bancos');
 
-		for (var i = 0; i <charts.length; i++) {
-
-			var Chart_1 = new Chart(charts[i].getContext('2d'), {
-	        type: 'bar',
-	        data: dataChartBancos,
-	        options: {
-	          maintainAspectRatio: false,
-						tooltips: {
-							mode: 'index',
-							intersect: false
-						},
-						responsive: true,
-						scales: {
-							xAxes: [{
-								stacked: true,
-							}],
-							yAxes: [{
-								stacked: true
-							}]
-						}
-					}
-				});
-		}
-
-
+	for (var i = 0; i <charts.length; i++) {
+		var Chart_1 = new Chart(charts[i].getContext('2d'), {
+      type: 'bar',
+      data: dataChartBancos,
+      options: {
+        maintainAspectRatio: false,
+				tooltips: {
+					mode: 'index',
+					intersect: false
+				},
+				responsive: true,
+				scales: {
+					xAxes: [{
+						stacked: true,
+					}],
+					yAxes: [{
+						stacked: true
+					}]
+				}
+			}
+		});
+	}
 };
 
+var handleDataTable = function() {
+
+  var table_language = {
+    "decimal": "-",
+    "thousands": ".",
+    'emptyTable': 'Sin Datos',
+    'info': 'mostranto _END_ de _TOTAL_ registros',
+    'infoEmpty': '0-0 de 0',
+    'infoFiltered': '',
+    'infoPostFix': '',
+    'lengthMenu': '_MENU_',
+    'loadingRecords': 'Cargando...',
+    'processing': 'Procesando...',
+    'search': '',
+    'searchPlaceholder': 'Buscar',
+    'zeroRecords': 'No se encontraron registros',
+    'paginate': {
+      'first': 'Primero',
+      'last': 'Último',
+      'next': 'Próximo',
+      'previous': 'Anterior'
+    }
+  };
+
+  if ($('.table-default').length !== 0) {
+    $('.table-default').DataTable({
+      "dom": '<"top"lBf>rt<"bottom"ip><"clear">',
+      language: table_language,
+      order: [[0, 'asc']],
+      responsive: true,
+      buttons: [
+          { text: 'CSV', extend: 'csv', className: 'btn-sm' },
+          { text: 'EXCEL', extend: 'excel', className: 'btn-sm' },
+          { text: 'PDF', extend: 'pdf', className: 'btn-sm' },
+          { text: 'Copiar', extend: 'copy', className: 'btn-sm' },
+          { text: 'Imprimir', extend: 'print', className: 'btn-sm' }
+      ],
+    });
+
+    $('#c-search').change(function() {
+      $('#collapseOne').collapse('toggle')
+    })
+  }
+};
+
+var handleSwitcher = function() {
+    if ($('[data-render=switchery]').length !== 0) {
+        $('[data-render=switchery]').each(function() {
+            var themeColor = COLOR_GREEN;
+            if ($(this).attr('data-theme')) {
+                switch ($(this).attr('data-theme')) {
+                    case 'red':
+                        themeColor = COLOR_RED;
+                        break;
+                    case 'blue':
+                        themeColor = COLOR_BLUE;
+                        break;
+                    case 'purple':
+                        themeColor = COLOR_PURPLE;
+                        break;
+                    case 'orange':
+                        themeColor = COLOR_ORANGE;
+                        break;
+                    case 'black':
+                        themeColor = COLOR_BLACK;
+                        break;
+                }
+            }
+            var option = {};
+                option.color = themeColor;
+                option.secondaryColor = ($(this).attr('data-secondary-color')) ? $(this).attr('data-secondary-color') : '#dfdfdf';
+                option.className = ($(this).attr('data-classname')) ? $(this).attr('data-classname') : 'switchery';
+                option.disabled = ($(this).attr('data-disabled')) ? true : false;
+                option.disabledOpacity = ($(this).attr('data-disabled-opacity')) ? parseFloat($(this).attr('data-disabled-opacity')) : 0.5;
+                option.speed = ($(this).attr('data-speed')) ? $(this).attr('data-speed') : '0.5s';
+            var switchery = new Switchery(this, option);
+        });
+    }
+};
 
 var Uwigo = function () {
 	"use strict";
@@ -245,7 +320,9 @@ var Uwigo = function () {
         //main function
         init: function () {
             handleSweetNotification();
-						handleChartJs()
+						handleChartJs();
+            handleDataTable();
+            handleSwitcher()
         }
     };
 }();

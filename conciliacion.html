@@ -22,6 +22,7 @@
   <!-- ================== END BASE JS ================== -->
 
   <!-- ================== BEGIN PAGE CSS ================== -->
+  <link href="assets/plugins/gritter/css/jquery.gritter.css" rel="stylesheet" />
   <link href="https://informat-apps.github.io/uwigo-mochups/assets/plugins/nvd3/build/nv.d3.css" rel="stylesheet" />
   <!-- ================== END PAGE CSS ================== -->
 </head>
@@ -51,7 +52,7 @@
 
         <li class="dropdown navbar-user">
           <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
-            <img src="https://informat-apps.github.io/uwigo-mochups/assets/img/user/user-13.jpg" alt="">
+            <img src="assets/img/user/user-13.jpg" alt="">
             <span class="d-none d-md-inline">Nombre Usuario</span> <b class="caret"></b>
           </a>
           <div class="dropdown-menu dropdown-menu-right">
@@ -97,7 +98,7 @@
             <li><a href="bancos.html">Bancos</a></li>
             <li><a href="ventas.html">Ventas</a></li>
             <li><a href="compras.html">Compras</a></li>
-            <li><a href="remuneraciones-lista.html">Remuneraciones</a></li>
+            <li><a href="remuneraciones.html">Remuneraciones</a></li>
             <li><a href="inventario.html">Inventario</a></li>
             <li><a href="gastos.html">Gastos</a></li>
             <li><a href="activos-fijos.html">Activo Fijo</a></li>
@@ -121,8 +122,8 @@
           <ul class="sub-menu">
             <li><a href="contactos.html">Todos los contactos</a></li>
             <div class="dropdown-divider"></div>
-            <li><a href="#m-contactos" data-toggle="modal"><i class="far fa-star"></i> Proveedores</a></li>
-            <li><a href="#m-contactos" data-toggle="modal"><i class="far fa-star"></i> Clientes</a></li>
+            <li><a href="contactos-html"><i class="far fa-star"></i> Proveedores</a></li>
+            <li><a href="contactos-html"><i class="far fa-star"></i> Clientes</a></li>
           </ul>
         </li>
         <li class="has-sub">
@@ -165,7 +166,7 @@
         <div class="panel-heading">Conciliación</div>
         <div class="panel-body">
 
-          <div class="row mt-1 mb-1">
+          <div class="row mt-1 mb-1 c-conciliacion">
             <div class="col">
               <div class="table-responsive">
                 <table class="table table-bordered table-striped">
@@ -189,7 +190,7 @@
               </div>
             </div>
             <div class="col-md-1 text-center">
-              <a href="#filtrar" class="btn btn-white btn-sm" data-toggle="modal"><i class="fa fa-sync-alt"></i> Conciliar</a>
+              <a id="add-without-image" href="#filtrar" class="btn-conciliar btn btn-white btn-sm" data-toggle="modal"><i class="fa fa-sync-alt"></i> Conciliar</a>
             </div>
             <div class="col">
 
@@ -362,7 +363,7 @@
           <div class="dropdown-divider"></div>
 
 
-          <div class="row mt-1 mb-1">
+          <div class="row mt-1 mb-1 c-conciliacion ">
             <div class="col">
               <div class="table-responsive">
                 <table class="table table-bordered table-striped">
@@ -386,7 +387,7 @@
               </div>
             </div>
             <div class="col-md-1 text-center">
-              <a href="#filtrar" class="btn btn-white btn-sm" data-toggle="modal"><i class="fa fa-sync-alt"></i> Conciliar</a>
+              <a id="add-without-image" href="#filtrar" class="btn-conciliar btn btn-white btn-sm" data-toggle="modal"><i class="fa fa-sync-alt"></i> Conciliar</a>
             </div>
             <div class="col">
 
@@ -896,7 +897,7 @@
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Nuevo Cuenta Corriente</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Seleccionar Documento</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -1135,18 +1136,29 @@
   <script src="https://informat-apps.github.io/uwigo-mochups/assets/js/theme/default.min.js"></script>
   <script src="https://informat-apps.github.io/uwigo-mochups/assets/js/apps.min.js"></script>
   <script src="https://informat-apps.github.io/uwigo-mochups/assets/script.js"></script>
+  <script src="assets/plugins/gritter/js/jquery.gritter.js"></script>
   <!-- ================== END BASE JS ================== -->
 
   <!-- ================== BEGIN PAGE LEVEL JS ================== -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.2/d3.min.js"></script>
   <script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/nvd3/build/nv.d3.js"></script>
   <script src="https://informat-apps.github.io/uwigo-mochups/assets/js/demo/chart-d3.demo.min.js"></script>
+  <script src="assets/js/demo/ui-modal-notification.demo.js"></script>
   <!-- ================== END PAGE LEVEL JS ================== -->
 
   <script>
   $(document).ready(function() {
     App.init();
     ChartNvd3.init();
+    $('.btn-conciliar').on('click', function() {
+      $(this).closest('.c-conciliacion').toggle()
+
+      $.gritter.add({
+  			title: 'Procesos de Conciliación',
+  			text: 'exitosa !'
+  		});
+
+    })
   });
   </script>
 
