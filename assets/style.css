@@ -405,3 +405,14 @@ select.form-control:not([size]):not([multiple]) {
 .dropdown-toggle::after {
   margin-left: .5em !important;
 }
+
+
+
+.form-control-sm, .input-group-sm>.form-control, .input-group-sm>.input-group-append>.btn, .input-group-sm>.input-group-append>.input-group-text, .input-group-sm>.input-group-prepend>.btn, .input-group-sm>.input-group-prepend>.input-group-text, select.form-control-sm:not([size]):not([multiple]){
+  height: 28px !important;
+}
+
+
+legend {
+  font-size: .9rem;
+}

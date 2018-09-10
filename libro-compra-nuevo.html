@@ -60,6 +60,7 @@
 
       <!-- begin header navigation right -->
       <ul class="navbar-nav navbar-right">
+
         <li class="dropdown navbar-user">
           <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
             <img src="https://informat-apps.github.io/uwigo-mochups/assets/img/user/user-13.jpg" alt="">
@@ -72,6 +73,7 @@
             <a href="#m-cambiar-contrasena" class="dropdown-item" data-toggle="modal"><i class="far fa-star"></i> Cambiar Contraseña</a>
           </div>
         </li>
+
         <li class="dropdown">
           <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
             <i class="fa fa-cogs"></i><b class="caret"></b>
@@ -155,195 +157,192 @@
       </div>
 
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="javascript:;">Gastos</a></li>
-        <li class="breadcrumb-item active"><a href="javascript:;">Lista</a></li>
+        <li class="breadcrumb-item"><a href="compras.html">Compras</a></li>
+        <li class="breadcrumb-item"><a href="libros-compras.html">Libro</a></li>
+        <li class="breadcrumb-item active"><a href="javascript:;">Nuevo</a></li>
       </ol>
     </div>
     <!-- end #breadcrumb -->
 
     <!-- begin #content -->
     <div id="content" class="content">
-
-      <div class="row mb-3">
-        <div class="col-12">
-          <a href="gasto-nuevo.html" class="btn btn-white btn-sm"><i class="fa fa-plus"></i> Nuevo Gasto</a>
-        </div>
-      </div>
-
-      <div class="panel panel-default">
+      <div class="panel panel-default" data-sortable-id="index-1">
         <div class="panel-body">
 
-          <div class="row">
-            <div class="col-8">
-              <div class="form-inline">
-                <span class="mr-2">Busqueda Avanzada</span>
-                <input id="c-search" type="checkbox" data-render="switchery" data-theme="blue" />
+          <fieldset class="mb-4">
+
+            <legend class="m-b-15">Información General</legend>
+
+            <div class="row">
+
+              <div class="form-group col-md-2">
+                <label for="">Periodo (*)</label>
+                <input type="text" class="form-control form-control-sm" placeholder="XX/XX/XXXX">
+              </div>
+
+              <div class="form-group col-md-1">
+                <label for="">Rectificatoria</label>
+                <input type="checkbox">
+              </div>
+
+              <div class="form-group col-md-2">
+                <label for="">Cod. Rectificatoria (*)</label>
+                <input type="number" class="form-control form-control-sm" placeholder="Nombre Usuario">
+              </div>
+
+              <div class="form-group col-md-1">
+                <label for="">Notificación</label>
+                <input type="checkbox">
+              </div>
+
+              <div class="form-group col-md-2">
+                <label for="">Cod. Notificación (*)</label>
+                <input type="number" class="form-control form-control-sm" placeholder="Nombre Usuario">
               </div>
             </div>
-            <div class="col-4">
-              <a href="#m-subir-archivo" data-toggle="modal" class="btn btn-white btn-sm pull-right"><i class="fa fa-upload"></i> Importar</a>
-            </div>
-          </div>
 
-          <div class="row mb-3">
-            <div class="col-md-12">
-              <div id="collapseOne" class="collapse pt-2" data-parent="#accordion">
-                  <div class="dropdown-divider"></div>
-                  <div class="row mt-3">
-                    <div class="form-group col-md-2">
-                      <select class="form-control form-control-sm">
-                        <option>Seleccionar Campo</option>
-                        <option>Campo #1</option>
-                        <option>Campo #2</option>
-                        <option>Campo #3</option>
-                        <option>Campo #4</option>
-                        <option>Campo #5</option>
-                      </select>
-                    </div>
-                    <div class="form-group col-md-2">
-                      <input type="text" class="form-control form-control-sm" placeholder="Campo #1">
-                    </div>
-                    <div class="form-group col-md-2">
-                      <input type="text" class="form-control form-control-sm" placeholder="Campo #1">
-                    </div>
-                    <div class="form-group col-md-2">
-                      <input type="text" class="form-control form-control-sm" placeholder="Campo #1">
-                    </div>
-                  </div>
-              </div>
-            </div>
-          </div>
 
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="table-responsive">
-                <table class="table table-default table-striped table-bordered">
-                  <thead>
-                    <tr>
-                      <th>Recibo de</th>
-                      <th>F.Recepción</th>
-                      <th>F.Ingresada</th>
-                      <th>Artículos</th>
-                      <th>Estado</th>
-                      <th>Cantidad</th>
-                      <th class="text-center">opciones</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Cliente #1</td>
-                      <td class="text-right">xx/xx/xxxx</td>
-                      <td class="text-right">xx/xx/xxxx</td>
-                      <td>#1</td>
-                      <td class="text-center">Borrador</td>
-                      <td>$xxx.xxx.xxx</td>
-                      <td class="text-center">
-                        <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
-        								<ul class="dropdown-menu dropdown-menu-right">
-        									<li><a href="gasto-nuevo.html">Editar</a></li>
-        									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
-        								</ul>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Cliente #2</td>
-                      <td class="text-right">xx/xx/xxxx</td>
-                      <td class="text-right">xx/xx/xxxx</td>
-                      <td>#1</td>
-                      <td class="text-center">Borrador</td>
-                      <td>$xxx.xxx.xxx</td>
-                      <td class="text-center">
-                        <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
-        								<ul class="dropdown-menu dropdown-menu-right">
-        									<li><a href="gasto-nuevo.html">Editar</a></li>
-        									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
-        								</ul>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Cliente #3</td>
-                      <td class="text-right">xx/xx/xxxx</td>
-                      <td class="text-right">xx/xx/xxxx</td>
-                      <td>#1</td>
-                      <td class="text-center">Borrador</td>
-                      <td>$xxx.xxx.xxx</td>
-                      <td class="text-center">
-                        <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
-        								<ul class="dropdown-menu dropdown-menu-right">
-        									<li><a href="gasto-nuevo.html">Editar</a></li>
-        									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
-        								</ul>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Cliente #4</td>
-                      <td class="text-right">xx/xx/xxxx</td>
-                      <td class="text-right">xx/xx/xxxx</td>
-                      <td>#1</td>
-                      <td class="text-center">Borrador</td>
-                      <td>$xxx.xxx.xxx</td>
-                      <td class="text-center">
-                        <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
-        								<ul class="dropdown-menu dropdown-menu-right">
-        									<li><a href="gasto-nuevo.html">Editar</a></li>
-        									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
-        								</ul>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Cliente #5</td>
-                      <td class="text-right">xx/xx/xxxx</td>
-                      <td class="text-right">xx/xx/xxxx</td>
-                      <td>#1</td>
-                      <td class="text-center">Borrador</td>
-                      <td>$xxx.xxx.xxx</td>
-                      <td class="text-center">
-                        <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
-        								<ul class="dropdown-menu dropdown-menu-right">
-        									<li><a href="gasto-nuevo.html">Editar</a></li>
-        									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
-        								</ul>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Cliente #6</td>
-                      <td class="text-right">xx/xx/xxxx</td>
-                      <td class="text-right">xx/xx/xxxx</td>
-                      <td>#1</td>
-                      <td class="text-center">Borrador</td>
-                      <td>$xxx.xxx.xxx</td>
-                      <td class="text-center">
-                        <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
-        								<ul class="dropdown-menu dropdown-menu-right">
-        									<li><a href="gasto-nuevo.html">Editar</a></li>
-        									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
-        								</ul>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Cliente #7</td>
-                      <td class="text-right">xx/xx/xxxx</td>
-                      <td class="text-right">xx/xx/xxxx</td>
-                      <td>#1</td>
-                      <td class="text-center">Borrador</td>
-                      <td>$xxx.xxx.xxx</td>
-                      <td class="text-center">
-                        <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
-        								<ul class="dropdown-menu dropdown-menu-right">
-        									<li><a href="gasto-nuevo.html">Editar</a></li>
-        									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
-        								</ul>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="table-responsive">
+                  <table class="table table-default table-striped table-bordered">
+                    <thead>
+                      <tr>
+                        <th class="text-center" data-orderable="false">
+                          <input type="checkbox">
+                        </th>
+                        <th>Folio</th>
+                        <th>Tipo Documento</th>
+                        <th>Estado</th>
+                        <th>Fecha Documento</th>
+                        <th>Cliente</th>
+                        <th>Nombre</th>
+                        <th>Comprobante</th>
+                        <th>Tipo</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="text-center">
+                          <input type="checkbox">
+                        </td>
+                        <td>13</td>
+                        <td>Boleta de Servicios Elect Pendiente</td>
+                        <td class="text-center">
+                          <span class="label label-primary">PENDIENTE</span>
+                        </td>
+                        <td class="text-right">20/12/2017</td>
+                        <td>17.409.714-3</td>
+                        <td>Nombre Cliente #1</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td class="text-center">
+                          <input type="checkbox">
+                        </td>
+                        <td>14</td>
+                        <td>Boleta de Servicios Elect Pendiente</td>
+                        <td class="text-center">
+                          <span class="label label-primary">PENDIENTE</span>
+                        </td>
+                        <td class="text-right">20/12/2017</td>
+                        <td>17.409.714-3</td>
+                        <td>Nombre Cliente #2</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td class="text-center">
+                          <input type="checkbox">
+                        </td>
+                        <td>15</td>
+                        <td>Boleta de Servicios Elect Pendiente</td>
+                        <td class="text-center">
+                          <span class="label label-primary">PENDIENTE</span>
+                        </td>
+                        <td class="text-right">20/12/2017</td>
+                        <td>17.409.714-3</td>
+                        <td>Nombre Cliente #3</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td class="text-center">
+                          <input type="checkbox">
+                        </td>
+                        <td>16</td>
+                        <td>Boleta de Servicios Elect Pendiente</td>
+                        <td class="text-center">
+                          <span class="label label-primary">PENDIENTE</span>
+                        </td>
+                        <td class="text-right">20/12/2017</td>
+                        <td>17.409.714-3</td>
+                        <td>Nombre Cliente #4</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td class="text-center">
+                          <input type="checkbox">
+                        </td>
+                        <td>17</td>
+                        <td>Boleta de Servicios Elect Pendiente</td>
+                        <td class="text-center">
+                          <span class="label label-primary">PENDIENTE</span>
+                        </td>
+                        <td class="text-right">20/12/2017</td>
+                        <td>17.409.714-3</td>
+                        <td>Nombre Cliente #5</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td class="text-center">
+                          <input type="checkbox">
+                        </td>
+                        <td>18</td>
+                        <td>Boleta de Servicios Elect Pendiente</td>
+                        <td class="text-center">
+                          <span class="label label-primary">PENDIENTE</span>
+                        </td>
+                        <td class="text-right">20/12/2017</td>
+                        <td>17.409.714-3</td>
+                        <td>Nombre Cliente #6</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td class="text-center">
+                          <input type="checkbox">
+                        </td>
+                        <td>19</td>
+                        <td>Boleta de Servicios Elect Pendiente</td>
+                        <td class="text-center">
+                          <span class="label label-primary">PENDIENTE</span>
+                        </td>
+                        <td class="text-right">20/12/2017</td>
+                        <td>17.409.714-3</td>
+                        <td>Nombre Cliente #7</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
 
             </div>
+
+          </fieldset>
+
+          <div class="pull-right">
+            <a href="libros-ventas.html" class="btn btn-sm btn-white m-r-5">Cancelar</a>
+            <a href="libros-ventas.html" class="btn btn-sm btn-primary">Aceptar</a>
           </div>
         </div>
-      </div>
 
+      </div>
     </div>
     <!-- end #content -->
 
@@ -1530,6 +1529,7 @@
   <script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/bootstrap-sweetalert/sweetalert.min.js"></script>
   <script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/jstree/dist/jstree.min.js"></script>
   <script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/bootstrap-select/bootstrap-select.min.js"></script>
+  <script src="https://unpkg.com/vue"></script>
   <script src="https://informat-apps.github.io/uwigo-mochups/assets/js/demo/table-manage-default.demo.js"></script>
   <script src="https://informat-apps.github.io/uwigo-mochups/assets/js/demo/chart-d3.demo.min.js"></script>
   <script src="https://informat-apps.github.io/uwigo-mochups/assets/js/demo/chart-js.demo.js"></script>
@@ -1537,15 +1537,6 @@
   <script src="https://informat-apps.github.io/uwigo-mochups/assets/js/demo/form-slider-switcher.demo.min.js"></script>
   <script src="https://informat-apps.github.io/uwigo-mochups/assets/js/demo/ui-tree.demo.js"></script>
   <script src="https://informat-apps.github.io/uwigo-mochups/assets/js/demo/ui-modal-notification.demo.js"></script>
-  <script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/DataTables/extensions/Buttons/js/dataTables.buttons.min.js"></script>
-	<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/DataTables/extensions/Buttons/js/buttons.bootstrap.min.js"></script>
-	<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/DataTables/extensions/Buttons/js/buttons.flash.min.js"></script>
-	<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/DataTables/extensions/Buttons/js/jszip.min.js"></script>
-	<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/DataTables/extensions/Buttons/js/pdfmake.min.js"></script>
-	<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/DataTables/extensions/Buttons/js/vfs_fonts.min.js"></script>
-	<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/DataTables/extensions/Buttons/js/buttons.html5.min.js"></script>
-	<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/DataTables/extensions/Buttons/js/buttons.print.min.js"></script>
-  <script src="https://unpkg.com/vue"></script>
   <script src="https://unpkg.com/vue-chartjs/dist/vue-chartjs.min.js"></script>
   <script src="https://informat-apps.github.io/uwigo-mochups/assets/script.js"></script>
   <!-- ================== END PAGE LEVEL JS ================== -->

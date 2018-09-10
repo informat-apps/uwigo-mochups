@@ -60,6 +60,7 @@
 
       <!-- begin header navigation right -->
       <ul class="navbar-nav navbar-right">
+
         <li class="dropdown navbar-user">
           <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
             <img src="https://informat-apps.github.io/uwigo-mochups/assets/img/user/user-13.jpg" alt="">
@@ -72,6 +73,7 @@
             <a href="#m-cambiar-contrasena" class="dropdown-item" data-toggle="modal"><i class="far fa-star"></i> Cambiar Contraseña</a>
           </div>
         </li>
+
         <li class="dropdown">
           <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
             <i class="fa fa-cogs"></i><b class="caret"></b>
@@ -155,8 +157,8 @@
       </div>
 
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="javascript:;">Gastos</a></li>
-        <li class="breadcrumb-item active"><a href="javascript:;">Lista</a></li>
+        <li class="breadcrumb-item"><a href="compras.html">Compras</a></li>
+        <li class="breadcrumb-item active"><a href="javascript:;">Libros</a></li>
       </ol>
     </div>
     <!-- end #breadcrumb -->
@@ -166,7 +168,7 @@
 
       <div class="row mb-3">
         <div class="col-12">
-          <a href="gasto-nuevo.html" class="btn btn-white btn-sm"><i class="fa fa-plus"></i> Nuevo Gasto</a>
+          <a href="libro-compra-nuevo.html" class="btn btn-white btn-sm"><i class="fa fa-plus"></i> Nuevo Libro</a>
         </div>
       </div>
 
@@ -217,120 +219,149 @@
           <div class="row">
             <div class="col-lg-12">
               <div class="table-responsive">
-                <table class="table table-default table-striped table-bordered">
+                <table class="table table-default table-striped table-bordered data-table-default">
                   <thead>
                     <tr>
-                      <th>Recibo de</th>
-                      <th>F.Recepción</th>
-                      <th>F.Ingresada</th>
-                      <th>Artículos</th>
-                      <th>Estado</th>
-                      <th>Cantidad</th>
+                      <th>Periodo</th>
+                      <th>Rectificatoria</th>
+                      <th>Notificación</th>
+                      <th>Estado SII</th>
+                      <th>F.Envio SII</th>
+                      <th>F.Registro</th>
+                      <th>Estado Libro</th>
                       <th class="text-center">opciones</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td>Cliente #1</td>
-                      <td class="text-right">xx/xx/xxxx</td>
-                      <td class="text-right">xx/xx/xxxx</td>
-                      <td>#1</td>
-                      <td class="text-center">Borrador</td>
-                      <td>$xxx.xxx.xxx</td>
+                      <td class="text-right">XX/XX/XXXX</td>
+                      <td>XXX</td>
+                      <td>XXX</td>
+                      <td class="text-center"><span class="label label-info">PENDIENTE ENVIO</span></td>
+                      <td class="text-right">XX/XX/XXXX</td>
+                      <td class="text-right">XX/XX/XXXX</td>
+                      <td class="text-center"><span class="label label-info">PENDIENTE PROCESAR</span></td>
                       <td class="text-center">
                         <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
         								<ul class="dropdown-menu dropdown-menu-right">
-        									<li><a href="gasto-nuevo.html">Editar</a></li>
+                          <li><a href="javascript:;">Enviar SII</a></li>
+                          <div class="dropdown-divider"></div>
+                          <li><a href="libro-venta-nuevo.html">Ver</a></li>
+        									<li><a href="libro-venta-nuevo.html">Editar</a></li>
         									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
         								</ul>
                       </td>
                     </tr>
                     <tr>
-                      <td>Cliente #2</td>
-                      <td class="text-right">xx/xx/xxxx</td>
-                      <td class="text-right">xx/xx/xxxx</td>
-                      <td>#1</td>
-                      <td class="text-center">Borrador</td>
-                      <td>$xxx.xxx.xxx</td>
+                      <td class="text-right">XX/XX/XXXX</td>
+                      <td>XXX</td>
+                      <td>XXX</td>
+                      <td class="text-center"><span class="label label-info">PENDIENTE ENVIO</span></td>
+                      <td class="text-right">XX/XX/XXXX</td>
+                      <td class="text-right">XX/XX/XXXX</td>
+                      <td class="text-center"><span class="label label-info">PENDIENTE PROCESAR</span></td>
                       <td class="text-center">
                         <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
         								<ul class="dropdown-menu dropdown-menu-right">
-        									<li><a href="gasto-nuevo.html">Editar</a></li>
+                          <li><a href="javascript:;">Enviar SII</a></li>
+                          <div class="dropdown-divider"></div>
+                          <li><a href="libro-venta-nuevo.html">Ver</a></li>
+        									<li><a href="libro-venta-nuevo.html">Editar</a></li>
         									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
         								</ul>
                       </td>
                     </tr>
                     <tr>
-                      <td>Cliente #3</td>
-                      <td class="text-right">xx/xx/xxxx</td>
-                      <td class="text-right">xx/xx/xxxx</td>
-                      <td>#1</td>
-                      <td class="text-center">Borrador</td>
-                      <td>$xxx.xxx.xxx</td>
+                      <td class="text-right">XX/XX/XXXX</td>
+                      <td>XXX</td>
+                      <td>XXX</td>
+                      <td class="text-center"><span class="label label-info">PENDIENTE ENVIO</span></td>
+                      <td class="text-right">XX/XX/XXXX</td>
+                      <td class="text-right">XX/XX/XXXX</td>
+                      <td class="text-center"><span class="label label-info">PENDIENTE PROCESAR</span></td>
                       <td class="text-center">
                         <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
         								<ul class="dropdown-menu dropdown-menu-right">
-        									<li><a href="gasto-nuevo.html">Editar</a></li>
+                          <li><a href="javascript:;">Enviar SII</a></li>
+                          <div class="dropdown-divider"></div>
+                          <li><a href="libro-venta-nuevo.html">Ver</a></li>
+        									<li><a href="libro-venta-nuevo.html">Editar</a></li>
         									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
         								</ul>
                       </td>
                     </tr>
                     <tr>
-                      <td>Cliente #4</td>
-                      <td class="text-right">xx/xx/xxxx</td>
-                      <td class="text-right">xx/xx/xxxx</td>
-                      <td>#1</td>
-                      <td class="text-center">Borrador</td>
-                      <td>$xxx.xxx.xxx</td>
+                      <td class="text-right">XX/XX/XXXX</td>
+                      <td>XXX</td>
+                      <td>XXX</td>
+                      <td class="text-center"><span class="label label-info">PENDIENTE ENVIO</span></td>
+                      <td class="text-right">XX/XX/XXXX</td>
+                      <td class="text-right">XX/XX/XXXX</td>
+                      <td class="text-center"><span class="label label-info">PENDIENTE PROCESAR</span></td>
                       <td class="text-center">
                         <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
         								<ul class="dropdown-menu dropdown-menu-right">
-        									<li><a href="gasto-nuevo.html">Editar</a></li>
+                          <li><a href="javascript:;">Enviar SII</a></li>
+                          <div class="dropdown-divider"></div>
+                          <li><a href="libro-venta-nuevo.html">Ver</a></li>
+        									<li><a href="libro-venta-nuevo.html">Editar</a></li>
         									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
         								</ul>
                       </td>
                     </tr>
                     <tr>
-                      <td>Cliente #5</td>
-                      <td class="text-right">xx/xx/xxxx</td>
-                      <td class="text-right">xx/xx/xxxx</td>
-                      <td>#1</td>
-                      <td class="text-center">Borrador</td>
-                      <td>$xxx.xxx.xxx</td>
+                      <td class="text-right">XX/XX/XXXX</td>
+                      <td>XXX</td>
+                      <td>XXX</td>
+                      <td class="text-center"><span class="label label-info">PENDIENTE ENVIO</span></td>
+                      <td class="text-right">XX/XX/XXXX</td>
+                      <td class="text-right">XX/XX/XXXX</td>
+                      <td class="text-center"><span class="label label-info">PENDIENTE PROCESAR</span></td>
                       <td class="text-center">
                         <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
         								<ul class="dropdown-menu dropdown-menu-right">
-        									<li><a href="gasto-nuevo.html">Editar</a></li>
+                          <li><a href="javascript:;">Enviar SII</a></li>
+                          <div class="dropdown-divider"></div>
+                          <li><a href="libro-venta-nuevo.html">Ver</a></li>
+        									<li><a href="libro-venta-nuevo.html">Editar</a></li>
         									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
         								</ul>
                       </td>
                     </tr>
                     <tr>
-                      <td>Cliente #6</td>
-                      <td class="text-right">xx/xx/xxxx</td>
-                      <td class="text-right">xx/xx/xxxx</td>
-                      <td>#1</td>
-                      <td class="text-center">Borrador</td>
-                      <td>$xxx.xxx.xxx</td>
+                      <td class="text-right">XX/XX/XXXX</td>
+                      <td>XXX</td>
+                      <td>XXX</td>
+                      <td class="text-center"><span class="label label-info">PENDIENTE ENVIO</span></td>
+                      <td class="text-right">XX/XX/XXXX</td>
+                      <td class="text-right">XX/XX/XXXX</td>
+                      <td class="text-center"><span class="label label-info">PENDIENTE PROCESAR</span></td>
                       <td class="text-center">
                         <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
         								<ul class="dropdown-menu dropdown-menu-right">
-        									<li><a href="gasto-nuevo.html">Editar</a></li>
+                          <li><a href="javascript:;">Enviar SII</a></li>
+                          <div class="dropdown-divider"></div>
+                          <li><a href="libro-venta-nuevo.html">Ver</a></li>
+        									<li><a href="libro-venta-nuevo.html">Editar</a></li>
         									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
         								</ul>
                       </td>
                     </tr>
                     <tr>
-                      <td>Cliente #7</td>
-                      <td class="text-right">xx/xx/xxxx</td>
-                      <td class="text-right">xx/xx/xxxx</td>
-                      <td>#1</td>
-                      <td class="text-center">Borrador</td>
-                      <td>$xxx.xxx.xxx</td>
+                      <td class="text-right">XX/XX/XXXX</td>
+                      <td>XXX</td>
+                      <td>XXX</td>
+                      <td class="text-center"><span class="label label-info">PENDIENTE ENVIO</span></td>
+                      <td class="text-right">XX/XX/XXXX</td>
+                      <td class="text-right">XX/XX/XXXX</td>
+                      <td class="text-center"><span class="label label-info">PENDIENTE PROCESAR</span></td>
                       <td class="text-center">
                         <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
         								<ul class="dropdown-menu dropdown-menu-right">
-        									<li><a href="gasto-nuevo.html">Editar</a></li>
+                          <li><a href="javascript:;">Enviar SII</a></li>
+                          <div class="dropdown-divider"></div>
+                          <li><a href="libro-venta-nuevo.html">Ver</a></li>
+        									<li><a href="libro-venta-nuevo.html">Editar</a></li>
         									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
         								</ul>
                       </td>
@@ -338,7 +369,6 @@
                   </tbody>
                 </table>
               </div>
-
             </div>
           </div>
         </div>
@@ -1556,6 +1586,18 @@
   });
 </script>
 <style>
+.widget-stats .stats-title {
+  font-size: 13px;
+}
+
+.widget-stats .stats-number {
+  margin-bottom: 4px;
+}
+
+.widget-stats .stats-link a {
+  margin: 8px -15px -15px;
+  padding: 5px 15px;
+}
 </style>
 </body>
 </html>

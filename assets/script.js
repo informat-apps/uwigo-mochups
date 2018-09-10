@@ -262,7 +262,7 @@ var handleDataTable = function() {
     $('.table-default').DataTable({
       "dom": '<"top"lBf>rt<"bottom"ip><"clear">',
       language: table_language,
-      order: [[0, 'asc']],
+      order: [[1, 'asc']],
       responsive: true,
       buttons: [
           { text: 'CSV', extend: 'csv', className: 'btn-sm' },
