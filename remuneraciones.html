@@ -157,7 +157,7 @@
       </div>
 
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="javascript:;">Remuneraciones</a></li>
+        <li class="breadcrumb-item"><a href="remuneraciones.html">Remuneraciones</a></li>
         <li class="breadcrumb-item active"><a href="javascript:;">Lista</a></li>
       </ol>
     </div>
@@ -165,11 +165,236 @@
 
     <!-- begin #content -->
     <div id="content" class="content">
-      <div class="row">
-        <div class="col">
-          <h1>Remuneraciones</h1>
+
+      <div class="row mb-3">
+        <div class="col-12">
+          <a href="javascript:;" class="btn btn-white btn-sm m-r-5"><i class="fa fa-plus"></i> Nueva Remuneración</a>
+          <span>
+            <a href="javascript:;" data-toggle="dropdown" class="btn btn-white btn-sm"><i class="fa fa-ellipsis-h"></i></a>
+            <ul class="dropdown-menu dropdown-menu-left">
+              <li><a href="personal.html"><i class="fa fa-list"></i> Personal</a></li>
+              <li><a href="contratos.html"><i class="fa fa-list"></i> Contratos</a></li>
+              <li><a href="liquidaciones.html"> <i class="fa fa-list"></i> Liquidaciones</a></li>
+              <li><a href="finiqutos.html"><i class="fa fa-list"></i> Finiqutos</a></li>
+            </ul>
+          </span>
         </div>
       </div>
+
+      <div class="row mb-3">
+        <!-- begin col-3 -->
+        <div class="col-md-2">
+          <div class="widget widget-stats bg-teal-darker">
+            <div class="stats-icon stats-icon-lg"><i class="fa fa-cogs fa-fw"></i></div>
+            <div class="stats-content">
+              <div class="stats-title">COTIZACIONES A PAGAR</div>
+              <div class="stats-number">$XXX.XXX.XXX</div>
+              <div class="stats-link">
+  							<a href="javascript:;">Ver Detalle <i class="fa fa-arrow-alt-circle-right"></i></a>
+  						</div>
+            </div>
+          </div>
+        </div>
+        <!-- end col-3 -->
+
+        <!-- begin col-3 -->
+        <div class="col-md-2">
+          <div class="widget widget-stats bg-teal-darker">
+            <div class="stats-icon stats-icon-lg"><i class="fa fa-cogs fa-fw"></i></div>
+            <div class="stats-content">
+              <div class="stats-title">CONTRATOS ACTIVOS</div>
+              <div class="stats-number">XXX</div>
+              <div class="stats-link">
+  							<a href="javascript:;">Ver Detalle <i class="fa fa-arrow-alt-circle-right"></i></a>
+  						</div>
+            </div>
+          </div>
+        </div>
+        <!-- end col-3 -->
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-body">
+
+          <div class="row">
+            <div class="col-8">
+              <div class="form-inline">
+                <span class="mr-2">Busqueda Avanzada</span>
+                <input id="c-search" type="checkbox" data-render="switchery" data-theme="blue" />
+              </div>
+            </div>
+            <div class="col-4">
+              <a href="#m-subir-archivo" data-toggle="modal" class="btn btn-white btn-sm pull-right"><i class="fa fa-upload"></i> Importar</a>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <div class="col-md-12">
+              <div id="collapseOne" class="collapse pt-2" data-parent="#accordion">
+                  <div class="dropdown-divider"></div>
+                  <div class="row mt-3">
+                    <div class="form-group col-md-2">
+                      <select class="form-control form-control-sm">
+                        <option>Seleccionar Campo</option>
+                        <option>Campo #1</option>
+                        <option>Campo #2</option>
+                        <option>Campo #3</option>
+                        <option>Campo #4</option>
+                        <option>Campo #5</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-2">
+                      <input type="text" class="form-control form-control-sm" placeholder="Campo #1">
+                    </div>
+                    <div class="form-group col-md-2">
+                      <input type="text" class="form-control form-control-sm" placeholder="Campo #1">
+                    </div>
+                    <div class="form-group col-md-2">
+                      <input type="text" class="form-control form-control-sm" placeholder="Campo #1">
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="table-responsive">
+                <table class="table table-default table-striped table-bordered data-table-default">
+                  <thead>
+                    <tr>
+                      <th>Código</th>
+                      <th>Nombre</th>
+                      <th>Unidad de Medida</th>
+                      <th>Precio Compra</th>
+                      <th>Precio Venta</th>
+                      <th class="text-center">Estado</th>
+                      <th>Cantidad</th>
+                      <th class="text-center">opciones</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Código #1</td>
+                      <td>Nombre Producto #1</td>
+                      <td>UNI</td>
+                      <td class="text-right">$XXX.XXX.XXX</td>
+                      <td class="text-right">$XXX.XXX.XXX</td>
+                      <td class="text-center"><span class="label label-primary">ACTIVO</span></td>
+                      <td class="text-right">XXX</td>
+                      <td class="text-center">
+                        <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
+        								<ul class="dropdown-menu dropdown-menu-right">
+        									<li><a href="javascript:;" data-toggle="modal" data-target="#m-articulo">Editar</a></li>
+        									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
+        								</ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Código #2</td>
+                      <td>Nombre Producto #2</td>
+                      <td>UNI</td>
+                      <td class="text-right">$XXX.XXX.XXX</td>
+                      <td class="text-right">$XXX.XXX.XXX</td>
+                      <td class="text-center"><span class="label label-primary">ACTIVO</span></td>
+                      <td class="text-right">XXX</td>
+                      <td class="text-center">
+                        <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
+        								<ul class="dropdown-menu dropdown-menu-right">
+        									<li><a href="javascript:;" data-toggle="modal" data-target="#m-articulo">Editar</a></li>
+        									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
+        								</ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Código #3</td>
+                      <td>Nombre Producto #3</td>
+                      <td>UNI</td>
+                      <td class="text-right">$XXX.XXX.XXX</td>
+                      <td class="text-right">$XXX.XXX.XXX</td>
+                      <td class="text-center"><span class="label label-primary">ACTIVO</span></td>
+                      <td class="text-right">XXX</td>
+                      <td class="text-center">
+                        <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
+        								<ul class="dropdown-menu dropdown-menu-right">
+        									<li><a href="javascript:;" data-toggle="modal" data-target="#m-articulo">Editar</a></li>
+        									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
+        								</ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Código #4</td>
+                      <td>Nombre Producto #4</td>
+                      <td>UNI</td>
+                      <td class="text-right">$XXX.XXX.XXX</td>
+                      <td class="text-right">$XXX.XXX.XXX</td>
+                      <td class="text-center"><span class="label label-primary">ACTIVO</span></td>
+                      <td class="text-right">XXX</td>
+                      <td class="text-center">
+                        <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
+        								<ul class="dropdown-menu dropdown-menu-right">
+        									<li><a href="javascript:;" data-toggle="modal" data-target="#m-articulo">Editar</a></li>
+        									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
+        								</ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Código #5</td>
+                      <td>Nombre Producto #5</td>
+                      <td>UNI</td>
+                      <td class="text-right">$XXX.XXX.XXX</td>
+                      <td class="text-right">$XXX.XXX.XXX</td>
+                      <td class="text-center"><span class="label label-primary">ACTIVO</span></td>
+                      <td class="text-right">XXX</td>
+                      <td class="text-center">
+                        <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
+        								<ul class="dropdown-menu dropdown-menu-right">
+        									<li><a href="javascript:;" data-toggle="modal" data-target="#m-articulo">Editar</a></li>
+        									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
+        								</ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Código #6</td>
+                      <td>Nombre Producto #6</td>
+                      <td>UNI</td>
+                      <td class="text-right">$XXX.XXX.XXX</td>
+                      <td class="text-right">$XXX.XXX.XXX</td>
+                      <td class="text-center"><span class="label label-primary">ACTIVO</span></td>
+                      <td class="text-right">XXX</td>
+                      <td class="text-center">
+                        <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
+        								<ul class="dropdown-menu dropdown-menu-right">
+        									<li><a href="javascript:;" data-toggle="modal" data-target="#m-articulo">Editar</a></li>
+        									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
+        								</ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Código #7</td>
+                      <td>Nombre Producto #7</td>
+                      <td>UNI</td>
+                      <td class="text-right">$XXX.XXX.XXX</td>
+                      <td class="text-right">$XXX.XXX.XXX</td>
+                      <td class="text-center"><span class="label label-primary">ACTIVO</span></td>
+                      <td class="text-right">XXX</td>
+                      <td class="text-center">
+                        <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
+        								<ul class="dropdown-menu dropdown-menu-right">
+        									<li><a href="javascript:;" data-toggle="modal" data-target="#m-articulo">Editar</a></li>
+        									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
+        								</ul>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
     <!-- end #content -->
 

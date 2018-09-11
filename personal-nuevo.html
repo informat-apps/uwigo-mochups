@@ -157,8 +157,8 @@
       </div>
 
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="ventas.html">Ventas</a></li>
-        <li class="breadcrumb-item active"><a href="javascript:;">Libros</a></li>
+        <li class="breadcrumb-item"><a href="personal.html">Personal</a></li>
+        <li class="breadcrumb-item active"><a href="javascript:;">Nuevo</a></li>
       </ol>
     </div>
     <!-- end #breadcrumb -->
@@ -166,246 +166,567 @@
     <!-- begin #content -->
     <div id="content" class="content">
 
-      <div class="row mb-3">
-        <div class="col-12">
-          <a href="libro-venta-nuevo.html" class="btn btn-white btn-sm"><i class="fa fa-plus"></i> Nuevo Libro</a>
-        </div>
-      </div>
-
-      <div class="row mb-3">
-        <!-- begin col-3 -->
-        <div class="col-md-2">
-          <div class="widget widget-stats bg-teal-darker">
-            <div class="stats-icon stats-icon-lg"><i class="fa fa-cogs fa-fw"></i></div>
-            <div class="stats-content">
-              <div class="stats-title">POR AUTORIZAR</div>
-              <div class="stats-number">XXX</div>
-              <div class="stats-link">
-  							<a href="libro-venta-nuevo.html">Ver Detalle <i class="fa fa-arrow-alt-circle-right"></i></a>
-  						</div>
-            </div>
-          </div>
-        </div>
-        <!-- end col-3 -->
-
-        <!-- begin col-3 -->
-        <div class="col-md-2">
-          <div class="widget widget-stats bg-teal-darker">
-            <div class="stats-icon stats-icon-lg"><i class="fa fa-cogs fa-fw"></i></div>
-            <div class="stats-content">
-              <div class="stats-title">ENVIADOS</div>
-              <div class="stats-number">XXX</div>
-              <div class="stats-link">
-  							<a href="libro-venta-nuevo.html">Ver Detalle <i class="fa fa-arrow-alt-circle-right"></i></a>
-  						</div>
-            </div>
-          </div>
-        </div>
-        <!-- end col-3 -->
-      </div>
-
       <div class="panel panel-default">
         <div class="panel-body">
 
-          <div class="row">
-            <div class="col-8">
-              <div class="form-inline">
-                <span class="mr-2">Busqueda Avanzada</span>
-                <input id="c-search" type="checkbox" data-render="switchery" data-theme="blue" />
-              </div>
-            </div>
-            <div class="col-4">
-              <a href="#m-subir-archivo" data-toggle="modal" class="btn btn-white btn-sm pull-right"><i class="fa fa-upload"></i> Importar</a>
-            </div>
-          </div>
+          <div class="col-lg-12">
+            <!-- begin nav-pills -->
+            <ul class="nav nav-pills">
+              <li class="nav-items">
+                <a href="#nav-tab-1" data-toggle="tab" class="nav-link active">
+                  <span class="d-sm-none">Inf.</span>
+                  <span class="d-sm-block d-none">Información General</span>
+                </a>
+              </li>
+              <li class="nav-items">
+                <a href="#nav-tab-2" data-toggle="tab" class="nav-link">
+                  <span class="d-sm-none">Liq.</span>
+                  <span class="d-sm-block d-none">Liquidaciones</span>
+                </a>
+              </li>
+              <li class="nav-items">
+                <a href="#nav-tab-3" data-toggle="tab" class="nav-link">
+                  <span class="d-sm-none">Vac.</span>
+                  <span class="d-sm-block d-none">Vacaciones</span>
+                </a>
+              </li>
+              <li class="nav-items">
+                <a href="#nav-tab-4" data-toggle="tab" class="nav-link">
+                  <span class="d-sm-none">Lic.</span>
+                  <span class="d-sm-block d-none">Licencias</span>
+                </a>
+              </li>
+              <li class="nav-items">
+                <a href="#nav-tab-5" data-toggle="tab" class="nav-link">
+                  <span class="d-sm-none">Aus.</span>
+                  <span class="d-sm-block d-none">Ausencias</span>
+                </a>
+              </li>
+            </ul>
+            <!-- end nav-pills -->
+            <!-- begin tab-content -->
+            <div class="tab-content">
+              <!-- begin tab-pane -->
+              <div class="tab-pane fade active show" id="nav-tab-1">
 
-          <div class="row mb-3">
-            <div class="col-md-12">
-              <div id="collapseOne" class="collapse pt-2" data-parent="#accordion">
-                  <div class="dropdown-divider"></div>
-                  <div class="row mt-3">
+                <fieldset class=" mt-4 mb-4">
+
+                  <div class="row">
+
                     <div class="form-group col-md-2">
-                      <select class="form-control form-control-sm">
-                        <option>Seleccionar Campo</option>
-                        <option>Campo #1</option>
-                        <option>Campo #2</option>
-                        <option>Campo #3</option>
-                        <option>Campo #4</option>
-                        <option>Campo #5</option>
-                      </select>
+                      <label for="">R.U.T. (*)</label>
+                      <input type="text" class="form-control form-control-sm" placeholder="XX.XXX.XXX-X">
                     </div>
+
                     <div class="form-group col-md-2">
-                      <input type="text" class="form-control form-control-sm" placeholder="Campo #1">
+                      <label for="">Nombres (*)</label>
+                      <input type="text" class="form-control form-control-sm" placeholder="Nombres">
                     </div>
+
                     <div class="form-group col-md-2">
-                      <input type="text" class="form-control form-control-sm" placeholder="Campo #1">
+                      <label for="">Apellido Paterno (*)</label>
+                      <input type="text" class="form-control form-control-sm" placeholder="Apellido Paterno">
                     </div>
+
                     <div class="form-group col-md-2">
-                      <input type="text" class="form-control form-control-sm" placeholder="Campo #1">
+                      <label for="">Apellido Materno (*)</label>
+                      <input type="text" class="form-control form-control-sm" placeholder="Apellido Materno">
                     </div>
+
+                    <div class="form-group col-md-2">
+                      <label for="">Cargo (*)</label>
+                      <input type="text" class="form-control form-control-sm" placeholder="Cargo">
+                    </div>
+
+                    <div class="form-group col-md-2">
+                      <label for="">Teléfono (*)</label>
+                      <input type="text" class="form-control form-control-sm" placeholder="XX-XX-XXXX-XXXX">
+                    </div>
+
+                    <div class="form-group col-md-2">
+                      <label for="">Email (*)</label>
+                      <input type="text" class="form-control form-control-sm" placeholder="usuario@email.com">
+                    </div>
+
+                    <div class="form-group col-md-2">
+                      <label for="">Activo (*)</label>
+                      <input type="checkbox" class="form-control form-control-sm">
+                    </div>
+
                   </div>
+
+                </fieldset>
+
               </div>
+              <!-- end tab-pane -->
+              <!-- begin tab-pane -->
+              <div class="tab-pane fade" id="nav-tab-2">
+
+                <a href="#m-liquidacion" class="btn btn-white btn-sm mt-3 mb-3" data-toggle="modal"><i class="fa fa-plus"></i> Nueva Liquidación</a>
+
+                <div class="table-responsive">
+                  <table class="table table-default table-striped table-bordered data-table-default">
+                    <thead>
+                      <tr>
+                        <th>R.U.T.</th>
+                        <th>Nombre</th>
+                        <th>Apellidos</th>
+                        <th>Cargo</th>
+                        <th>Estado</th>
+                        <th class="text-center">opciones</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>XX.XX.XX-X</td>
+                        <td>Nombre Personal</td>
+                        <td>Apellidos Personal</td>
+                        <td>Cargo Personal</td>
+                        <td class="text-center"><span class="label label-primary">ACTIVO</span></td>
+                        <td class="text-center">
+                          <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
+          								<ul class="dropdown-menu dropdown-menu-right">
+          									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
+          								</ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>XX.XX.XX-X</td>
+                        <td>Nombre Personal</td>
+                        <td>Apellidos Personal</td>
+                        <td>Cargo Personal</td>
+                        <td class="text-center"><span class="label label-primary">ACTIVO</span></td>
+                        <td class="text-center">
+                          <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
+          								<ul class="dropdown-menu dropdown-menu-right">
+          									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
+          								</ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>XX.XX.XX-X</td>
+                        <td>Nombre Personal</td>
+                        <td>Apellidos Personal</td>
+                        <td>Cargo Personal</td>
+                        <td class="text-center"><span class="label label-primary">ACTIVO</span></td>
+                        <td class="text-center">
+                          <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
+          								<ul class="dropdown-menu dropdown-menu-right">
+          									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
+          								</ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>XX.XX.XX-X</td>
+                        <td>Nombre Personal</td>
+                        <td>Apellidos Personal</td>
+                        <td>Cargo Personal</td>
+                        <td class="text-center"><span class="label label-primary">ACTIVO</span></td>
+                        <td class="text-center">
+                          <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
+          								<ul class="dropdown-menu dropdown-menu-right">
+          									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
+          								</ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>XX.XX.XX-X</td>
+                        <td>Nombre Personal</td>
+                        <td>Apellidos Personal</td>
+                        <td>Cargo Personal</td>
+                        <td class="text-center"><span class="label label-primary">ACTIVO</span></td>
+                        <td class="text-center">
+                          <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
+          								<ul class="dropdown-menu dropdown-menu-right">
+          									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
+          								</ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>XX.XX.XX-X</td>
+                        <td>Nombre Personal</td>
+                        <td>Apellidos Personal</td>
+                        <td>Cargo Personal</td>
+                        <td class="text-center"><span class="label label-primary">ACTIVO</span></td>
+                        <td class="text-center">
+                          <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
+          								<ul class="dropdown-menu dropdown-menu-right">
+          									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
+          								</ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>XX.XX.XX-X</td>
+                        <td>Nombre Personal</td>
+                        <td>Apellidos Personal</td>
+                        <td>Cargo Personal</td>
+                        <td class="text-center"><span class="label label-primary">ACTIVO</span></td>
+                        <td class="text-center">
+                          <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
+          								<ul class="dropdown-menu dropdown-menu-right">
+          									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
+          								</ul>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!-- end tab-pane -->
+              <!-- begin tab-pane -->
+              <div class="tab-pane fade" id="nav-tab-3">
+
+                <a href="#m-vacacion" class="btn btn-white btn-sm mt-3 mb-3" data-toggle="modal"><i class="fa fa-plus"></i> Nueva Vacación</a>
+
+                <div class="table-responsive">
+                  <table class="table table-default table-striped table-bordered data-table-default">
+                    <thead>
+                      <tr>
+                        <th>R.U.T.</th>
+                        <th>Nombre</th>
+                        <th>Apellidos</th>
+                        <th>Cargo</th>
+                        <th>Estado</th>
+                        <th class="text-center">opciones</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>XX.XX.XX-X</td>
+                        <td>Nombre Personal</td>
+                        <td>Apellidos Personal</td>
+                        <td>Cargo Personal</td>
+                        <td class="text-center"><span class="label label-primary">ACTIVO</span></td>
+                        <td class="text-center">
+                          <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
+          								<ul class="dropdown-menu dropdown-menu-right">
+          									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
+          								</ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>XX.XX.XX-X</td>
+                        <td>Nombre Personal</td>
+                        <td>Apellidos Personal</td>
+                        <td>Cargo Personal</td>
+                        <td class="text-center"><span class="label label-primary">ACTIVO</span></td>
+                        <td class="text-center">
+                          <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
+          								<ul class="dropdown-menu dropdown-menu-right">
+          									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
+          								</ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>XX.XX.XX-X</td>
+                        <td>Nombre Personal</td>
+                        <td>Apellidos Personal</td>
+                        <td>Cargo Personal</td>
+                        <td class="text-center"><span class="label label-primary">ACTIVO</span></td>
+                        <td class="text-center">
+                          <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
+          								<ul class="dropdown-menu dropdown-menu-right">
+          									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
+          								</ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>XX.XX.XX-X</td>
+                        <td>Nombre Personal</td>
+                        <td>Apellidos Personal</td>
+                        <td>Cargo Personal</td>
+                        <td class="text-center"><span class="label label-primary">ACTIVO</span></td>
+                        <td class="text-center">
+                          <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
+          								<ul class="dropdown-menu dropdown-menu-right">
+          									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
+          								</ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>XX.XX.XX-X</td>
+                        <td>Nombre Personal</td>
+                        <td>Apellidos Personal</td>
+                        <td>Cargo Personal</td>
+                        <td class="text-center"><span class="label label-primary">ACTIVO</span></td>
+                        <td class="text-center">
+                          <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
+          								<ul class="dropdown-menu dropdown-menu-right">
+          									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
+          								</ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>XX.XX.XX-X</td>
+                        <td>Nombre Personal</td>
+                        <td>Apellidos Personal</td>
+                        <td>Cargo Personal</td>
+                        <td class="text-center"><span class="label label-primary">ACTIVO</span></td>
+                        <td class="text-center">
+                          <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
+          								<ul class="dropdown-menu dropdown-menu-right">
+          									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
+          								</ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>XX.XX.XX-X</td>
+                        <td>Nombre Personal</td>
+                        <td>Apellidos Personal</td>
+                        <td>Cargo Personal</td>
+                        <td class="text-center"><span class="label label-primary">ACTIVO</span></td>
+                        <td class="text-center">
+                          <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
+          								<ul class="dropdown-menu dropdown-menu-right">
+          									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
+          								</ul>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!-- end tab-pane -->
+
+              <!-- begin tab-pane -->
+              <div class="tab-pane fade" id="nav-tab-4">
+
+                <a href="#m-licencia" class="btn btn-white btn-sm mt-3 mb-3" data-toggle="modal"><i class="fa fa-plus"></i> Nueva Licencia</a>
+
+                <div class="table-responsive">
+                  <table class="table table-default table-striped table-bordered data-table-default">
+                    <thead>
+                      <tr>
+                        <th>R.U.T.</th>
+                        <th>Nombre</th>
+                        <th>Apellidos</th>
+                        <th>Cargo</th>
+                        <th>Estado</th>
+                        <th class="text-center">opciones</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>XX.XX.XX-X</td>
+                        <td>Nombre Personal</td>
+                        <td>Apellidos Personal</td>
+                        <td>Cargo Personal</td>
+                        <td class="text-center"><span class="label label-primary">ACTIVO</span></td>
+                        <td class="text-center">
+                          <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
+          								<ul class="dropdown-menu dropdown-menu-right">
+          									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
+          								</ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>XX.XX.XX-X</td>
+                        <td>Nombre Personal</td>
+                        <td>Apellidos Personal</td>
+                        <td>Cargo Personal</td>
+                        <td class="text-center"><span class="label label-primary">ACTIVO</span></td>
+                        <td class="text-center">
+                          <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
+          								<ul class="dropdown-menu dropdown-menu-right">
+          									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
+          								</ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>XX.XX.XX-X</td>
+                        <td>Nombre Personal</td>
+                        <td>Apellidos Personal</td>
+                        <td>Cargo Personal</td>
+                        <td class="text-center"><span class="label label-primary">ACTIVO</span></td>
+                        <td class="text-center">
+                          <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
+          								<ul class="dropdown-menu dropdown-menu-right">
+          									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
+          								</ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>XX.XX.XX-X</td>
+                        <td>Nombre Personal</td>
+                        <td>Apellidos Personal</td>
+                        <td>Cargo Personal</td>
+                        <td class="text-center"><span class="label label-primary">ACTIVO</span></td>
+                        <td class="text-center">
+                          <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
+          								<ul class="dropdown-menu dropdown-menu-right">
+          									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
+          								</ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>XX.XX.XX-X</td>
+                        <td>Nombre Personal</td>
+                        <td>Apellidos Personal</td>
+                        <td>Cargo Personal</td>
+                        <td class="text-center"><span class="label label-primary">ACTIVO</span></td>
+                        <td class="text-center">
+                          <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
+          								<ul class="dropdown-menu dropdown-menu-right">
+          									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
+          								</ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>XX.XX.XX-X</td>
+                        <td>Nombre Personal</td>
+                        <td>Apellidos Personal</td>
+                        <td>Cargo Personal</td>
+                        <td class="text-center"><span class="label label-primary">ACTIVO</span></td>
+                        <td class="text-center">
+                          <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
+          								<ul class="dropdown-menu dropdown-menu-right">
+          									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
+          								</ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>XX.XX.XX-X</td>
+                        <td>Nombre Personal</td>
+                        <td>Apellidos Personal</td>
+                        <td>Cargo Personal</td>
+                        <td class="text-center"><span class="label label-primary">ACTIVO</span></td>
+                        <td class="text-center">
+                          <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
+          								<ul class="dropdown-menu dropdown-menu-right">
+          									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
+          								</ul>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!-- end tab-pane -->
+              <!-- begin tab-pane -->
+              <div class="tab-pane fade" id="nav-tab-5">
+
+                <a href="#m-ausencia" class="btn btn-white btn-sm mt-3 mb-3" data-toggle="modal"><i class="fa fa-plus"></i> Nueva Ausencia</a>
+
+                <div class="table-responsive">
+                  <table class="table table-default table-striped table-bordered data-table-default">
+                    <thead>
+                      <tr>
+                        <th>R.U.T.</th>
+                        <th>Nombre</th>
+                        <th>Apellidos</th>
+                        <th>Cargo</th>
+                        <th>Estado</th>
+                        <th class="text-center">opciones</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>XX.XX.XX-X</td>
+                        <td>Nombre Personal</td>
+                        <td>Apellidos Personal</td>
+                        <td>Cargo Personal</td>
+                        <td class="text-center"><span class="label label-primary">ACTIVO</span></td>
+                        <td class="text-center">
+                          <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
+          								<ul class="dropdown-menu dropdown-menu-right">
+          									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
+          								</ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>XX.XX.XX-X</td>
+                        <td>Nombre Personal</td>
+                        <td>Apellidos Personal</td>
+                        <td>Cargo Personal</td>
+                        <td class="text-center"><span class="label label-primary">ACTIVO</span></td>
+                        <td class="text-center">
+                          <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
+          								<ul class="dropdown-menu dropdown-menu-right">
+          									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
+          								</ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>XX.XX.XX-X</td>
+                        <td>Nombre Personal</td>
+                        <td>Apellidos Personal</td>
+                        <td>Cargo Personal</td>
+                        <td class="text-center"><span class="label label-primary">ACTIVO</span></td>
+                        <td class="text-center">
+                          <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
+          								<ul class="dropdown-menu dropdown-menu-right">
+          									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
+          								</ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>XX.XX.XX-X</td>
+                        <td>Nombre Personal</td>
+                        <td>Apellidos Personal</td>
+                        <td>Cargo Personal</td>
+                        <td class="text-center"><span class="label label-primary">ACTIVO</span></td>
+                        <td class="text-center">
+                          <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
+          								<ul class="dropdown-menu dropdown-menu-right">
+          									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
+          								</ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>XX.XX.XX-X</td>
+                        <td>Nombre Personal</td>
+                        <td>Apellidos Personal</td>
+                        <td>Cargo Personal</td>
+                        <td class="text-center"><span class="label label-primary">ACTIVO</span></td>
+                        <td class="text-center">
+                          <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
+          								<ul class="dropdown-menu dropdown-menu-right">
+          									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
+          								</ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>XX.XX.XX-X</td>
+                        <td>Nombre Personal</td>
+                        <td>Apellidos Personal</td>
+                        <td>Cargo Personal</td>
+                        <td class="text-center"><span class="label label-primary">ACTIVO</span></td>
+                        <td class="text-center">
+                          <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
+          								<ul class="dropdown-menu dropdown-menu-right">
+          									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
+          								</ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>XX.XX.XX-X</td>
+                        <td>Nombre Personal</td>
+                        <td>Apellidos Personal</td>
+                        <td>Cargo Personal</td>
+                        <td class="text-center"><span class="label label-primary">ACTIVO</span></td>
+                        <td class="text-center">
+                          <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
+          								<ul class="dropdown-menu dropdown-menu-right">
+          									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
+          								</ul>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!-- end tab-pane -->
             </div>
+            <!-- end tab-content -->
           </div>
 
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="table-responsive">
-                <table class="table table-default table-striped table-bordered data-table-default">
-                  <thead>
-                    <tr>
-                      <th>Periodo</th>
-                      <th>Rectificatoria</th>
-                      <th>Notificación</th>
-                      <th>Estado SII</th>
-                      <th>F.Envio SII</th>
-                      <th>F.Registro</th>
-                      <th>Estado Libro</th>
-                      <th class="text-center">opciones</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td class="text-right">XX/XX/XXXX</td>
-                      <td>XXX</td>
-                      <td>XXX</td>
-                      <td class="text-center"><span class="label label-info">PENDIENTE ENVIO</span></td>
-                      <td class="text-right">XX/XX/XXXX</td>
-                      <td class="text-right">XX/XX/XXXX</td>
-                      <td class="text-center"><span class="label label-info">PENDIENTE PROCESAR</span></td>
-                      <td class="text-center">
-                        <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
-        								<ul class="dropdown-menu dropdown-menu-right">
-                          <li><a href="javascript:;">Enviar SII</a></li>
-                          <div class="dropdown-divider"></div>
-                          <li><a href="libro-venta-nuevo.html">Ver</a></li>
-        									<li><a href="libro-venta-nuevo.html">Editar</a></li>
-        									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
-        								</ul>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="text-right">XX/XX/XXXX</td>
-                      <td>XXX</td>
-                      <td>XXX</td>
-                      <td class="text-center"><span class="label label-info">PENDIENTE ENVIO</span></td>
-                      <td class="text-right">XX/XX/XXXX</td>
-                      <td class="text-right">XX/XX/XXXX</td>
-                      <td class="text-center"><span class="label label-info">PENDIENTE PROCESAR</span></td>
-                      <td class="text-center">
-                        <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
-        								<ul class="dropdown-menu dropdown-menu-right">
-                          <li><a href="javascript:;">Enviar SII</a></li>
-                          <div class="dropdown-divider"></div>
-                          <li><a href="libro-venta-nuevo.html">Ver</a></li>
-        									<li><a href="libro-venta-nuevo.html">Editar</a></li>
-        									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
-        								</ul>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="text-right">XX/XX/XXXX</td>
-                      <td>XXX</td>
-                      <td>XXX</td>
-                      <td class="text-center"><span class="label label-info">PENDIENTE ENVIO</span></td>
-                      <td class="text-right">XX/XX/XXXX</td>
-                      <td class="text-right">XX/XX/XXXX</td>
-                      <td class="text-center"><span class="label label-info">PENDIENTE PROCESAR</span></td>
-                      <td class="text-center">
-                        <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
-        								<ul class="dropdown-menu dropdown-menu-right">
-                          <li><a href="javascript:;">Enviar SII</a></li>
-                          <div class="dropdown-divider"></div>
-                          <li><a href="libro-venta-nuevo.html">Ver</a></li>
-        									<li><a href="libro-venta-nuevo.html">Editar</a></li>
-        									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
-        								</ul>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="text-right">XX/XX/XXXX</td>
-                      <td>XXX</td>
-                      <td>XXX</td>
-                      <td class="text-center"><span class="label label-info">PENDIENTE ENVIO</span></td>
-                      <td class="text-right">XX/XX/XXXX</td>
-                      <td class="text-right">XX/XX/XXXX</td>
-                      <td class="text-center"><span class="label label-info">PENDIENTE PROCESAR</span></td>
-                      <td class="text-center">
-                        <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
-        								<ul class="dropdown-menu dropdown-menu-right">
-                          <li><a href="javascript:;">Enviar SII</a></li>
-                          <div class="dropdown-divider"></div>
-                          <li><a href="libro-venta-nuevo.html">Ver</a></li>
-        									<li><a href="libro-venta-nuevo.html">Editar</a></li>
-        									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
-        								</ul>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="text-right">XX/XX/XXXX</td>
-                      <td>XXX</td>
-                      <td>XXX</td>
-                      <td class="text-center"><span class="label label-info">PENDIENTE ENVIO</span></td>
-                      <td class="text-right">XX/XX/XXXX</td>
-                      <td class="text-right">XX/XX/XXXX</td>
-                      <td class="text-center"><span class="label label-info">PENDIENTE PROCESAR</span></td>
-                      <td class="text-center">
-                        <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
-        								<ul class="dropdown-menu dropdown-menu-right">
-                          <li><a href="javascript:;">Enviar SII</a></li>
-                          <div class="dropdown-divider"></div>
-                          <li><a href="libro-venta-nuevo.html">Ver</a></li>
-        									<li><a href="libro-venta-nuevo.html">Editar</a></li>
-        									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
-        								</ul>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="text-right">XX/XX/XXXX</td>
-                      <td>XXX</td>
-                      <td>XXX</td>
-                      <td class="text-center"><span class="label label-info">PENDIENTE ENVIO</span></td>
-                      <td class="text-right">XX/XX/XXXX</td>
-                      <td class="text-right">XX/XX/XXXX</td>
-                      <td class="text-center"><span class="label label-info">PENDIENTE PROCESAR</span></td>
-                      <td class="text-center">
-                        <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
-        								<ul class="dropdown-menu dropdown-menu-right">
-                          <li><a href="javascript:;">Enviar SII</a></li>
-                          <div class="dropdown-divider"></div>
-                          <li><a href="libro-venta-nuevo.html">Ver</a></li>
-        									<li><a href="libro-venta-nuevo.html">Editar</a></li>
-        									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
-        								</ul>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="text-right">XX/XX/XXXX</td>
-                      <td>XXX</td>
-                      <td>XXX</td>
-                      <td class="text-center"><span class="label label-info">PENDIENTE ENVIO</span></td>
-                      <td class="text-right">XX/XX/XXXX</td>
-                      <td class="text-right">XX/XX/XXXX</td>
-                      <td class="text-center"><span class="label label-info">PENDIENTE PROCESAR</span></td>
-                      <td class="text-center">
-                        <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
-        								<ul class="dropdown-menu dropdown-menu-right">
-                          <li><a href="javascript:;">Enviar SII</a></li>
-                          <div class="dropdown-divider"></div>
-                          <li><a href="libro-venta-nuevo.html">Ver</a></li>
-        									<li><a href="libro-venta-nuevo.html">Editar</a></li>
-        									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
-        								</ul>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
+          <div class="pull-right">
+            <a href="personal.html" class="btn btn-sm btn-white m-r-5">Cancelar</a>
+            <a href="personal.html" class="btn btn-sm btn-primary">Aceptar</a>
           </div>
+
         </div>
       </div>
-
     </div>
     <!-- end #content -->
 
@@ -1618,7 +1939,6 @@
   });
 </script>
 <style>
-
 </style>
 </body>
 </html>

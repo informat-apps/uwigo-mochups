@@ -157,8 +157,8 @@
       </div>
 
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="ventas.html">Ventas</a></li>
-        <li class="breadcrumb-item active"><a href="javascript:;">Libros</a></li>
+        <li class="breadcrumb-item"><a href="compras.html">Compras</a></li>
+        <li class="breadcrumb-item active"><a href="javascript:;">DTE Recibidos SII</a></li>
       </ol>
     </div>
     <!-- end #breadcrumb -->
@@ -168,44 +168,26 @@
 
       <div class="row mb-3">
         <div class="col-12">
-          <a href="libro-venta-nuevo.html" class="btn btn-white btn-sm"><i class="fa fa-plus"></i> Nuevo Libro</a>
+          <a href="#m-subir-archivo" class="btn btn-white btn-sm" data-toggle="modal"><i class="fa fa-plus"></i> Cargar</a>
         </div>
-      </div>
-
-      <div class="row mb-3">
-        <!-- begin col-3 -->
-        <div class="col-md-2">
-          <div class="widget widget-stats bg-teal-darker">
-            <div class="stats-icon stats-icon-lg"><i class="fa fa-cogs fa-fw"></i></div>
-            <div class="stats-content">
-              <div class="stats-title">POR AUTORIZAR</div>
-              <div class="stats-number">XXX</div>
-              <div class="stats-link">
-  							<a href="libro-venta-nuevo.html">Ver Detalle <i class="fa fa-arrow-alt-circle-right"></i></a>
-  						</div>
-            </div>
-          </div>
-        </div>
-        <!-- end col-3 -->
-
-        <!-- begin col-3 -->
-        <div class="col-md-2">
-          <div class="widget widget-stats bg-teal-darker">
-            <div class="stats-icon stats-icon-lg"><i class="fa fa-cogs fa-fw"></i></div>
-            <div class="stats-content">
-              <div class="stats-title">ENVIADOS</div>
-              <div class="stats-number">XXX</div>
-              <div class="stats-link">
-  							<a href="libro-venta-nuevo.html">Ver Detalle <i class="fa fa-arrow-alt-circle-right"></i></a>
-  						</div>
-            </div>
-          </div>
-        </div>
-        <!-- end col-3 -->
       </div>
 
       <div class="panel panel-default">
         <div class="panel-body">
+          <div class="row mb-3">
+            <div class="col-12">
+              <a href="javascript:;" class="btn btn-white btn-sm">Aceptar</a>
+              <a href="javascript:;" class="btn btn-white btn-sm">Otorga Recibo</a>
+              <span>
+                <a href="javascript:;" data-toggle="dropdown" class="btn btn-white btn-sm">Reclamo</a>
+                <ul class="dropdown-menu dropdown-menu-left">
+                  <li><a href="javascript:;">Contenido del Documento</a></li>
+                  <li><a href="javascript:;">Falta Parcial de Mercancia</a></li>
+                  <li><a href="javascript:;">Falta Total de Mercancia</a></li>
+                </ul>
+              </span>
+            </div>
+          </div>
 
           <div class="row">
             <div class="col-8">
@@ -213,9 +195,6 @@
                 <span class="mr-2">Busqueda Avanzada</span>
                 <input id="c-search" type="checkbox" data-render="switchery" data-theme="blue" />
               </div>
-            </div>
-            <div class="col-4">
-              <a href="#m-subir-archivo" data-toggle="modal" class="btn btn-white btn-sm pull-right"><i class="fa fa-upload"></i> Importar</a>
             </div>
           </div>
 
@@ -251,150 +230,88 @@
           <div class="row">
             <div class="col-lg-12">
               <div class="table-responsive">
-                <table class="table table-default table-striped table-bordered data-table-default">
+                <table class="table table-default table-striped table-bordered">
                   <thead>
                     <tr>
-                      <th>Periodo</th>
-                      <th>Rectificatoria</th>
-                      <th>Notificación</th>
-                      <th>Estado SII</th>
-                      <th>F.Envio SII</th>
-                      <th>F.Registro</th>
-                      <th>Estado Libro</th>
+                      <th></th>
+                      <th>Folio</th>
+                      <th>RUT Emisor</th>
+                      <th>Razón Social</th>
+                      <th>Tipo Documento</th>
+                      <th>F.Emisión</th>
+                      <th>Monto</th>
+                      <th>F.Recepción</th>
+                      <th>Tack SII</th>
                       <th class="text-center">opciones</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
+                      <td class="text-center">
+                        <input type="checkbox" class="">
+                      </td>
+                      <td>XXX.XXX</td>
+                      <td>XX.XXX.XXX-X</td>
+                      <td>Razón Social Emisor</td>
+                      <td>FACTURA ELECTRONICA</td>
                       <td class="text-right">XX/XX/XXXX</td>
-                      <td>XXX</td>
-                      <td>XXX</td>
-                      <td class="text-center"><span class="label label-info">PENDIENTE ENVIO</span></td>
+                      <td class="text-right">$XXX.XXX.XXX</td>
                       <td class="text-right">XX/XX/XXXX</td>
-                      <td class="text-right">XX/XX/XXXX</td>
-                      <td class="text-center"><span class="label label-info">PENDIENTE PROCESAR</span></td>
+                      <td>XXXXXXXXXXXXXX</td>
                       <td class="text-center">
                         <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
         								<ul class="dropdown-menu dropdown-menu-right">
-                          <li><a href="javascript:;">Enviar SII</a></li>
-                          <div class="dropdown-divider"></div>
-                          <li><a href="libro-venta-nuevo.html">Ver</a></li>
-        									<li><a href="libro-venta-nuevo.html">Editar</a></li>
-        									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
+        									<li><a href="javascript:;">Aceptar</a></li>
+                          <li><a href="javascript:;">Otorga Recibo</a></li>
+                          <li><a href="javascript:;">Reclamo al Contenido del Documento</a></li>
+                          <li><a href="javascript:;">Reclamo por falta Parcial de Mercancia</a></li>
+                          <li><a href="javascript:;">Reclamo por falta Total de Mercancia</a></li>
         								</ul>
                       </td>
                     </tr>
                     <tr>
+                      <td class="text-center">
+                        <input type="checkbox" class="">
+                      </td>
+                      <td>XXX.XXX</td>
+                      <td>XX.XXX.XXX-X</td>
+                      <td>Razón Social Emisor</td>
+                      <td>FACTURA ELECTRONICA</td>
                       <td class="text-right">XX/XX/XXXX</td>
-                      <td>XXX</td>
-                      <td>XXX</td>
-                      <td class="text-center"><span class="label label-info">PENDIENTE ENVIO</span></td>
+                      <td class="text-right">$XXX.XXX.XXX</td>
                       <td class="text-right">XX/XX/XXXX</td>
-                      <td class="text-right">XX/XX/XXXX</td>
-                      <td class="text-center"><span class="label label-info">PENDIENTE PROCESAR</span></td>
+                      <td>XXXXXXXXXXXXXX</td>
                       <td class="text-center">
                         <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
         								<ul class="dropdown-menu dropdown-menu-right">
-                          <li><a href="javascript:;">Enviar SII</a></li>
-                          <div class="dropdown-divider"></div>
-                          <li><a href="libro-venta-nuevo.html">Ver</a></li>
-        									<li><a href="libro-venta-nuevo.html">Editar</a></li>
-        									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
+        									<li><a href="javascript:;">Aceptar</a></li>
+                          <li><a href="javascript:;">Otorga Recibo</a></li>
+                          <li><a href="javascript:;">Reclamo al Contenido del Documento</a></li>
+                          <li><a href="javascript:;">Reclamo por falta Parcial de Mercancia</a></li>
+                          <li><a href="javascript:;">Reclamo por falta Total de Mercancia</a></li>
         								</ul>
                       </td>
                     </tr>
                     <tr>
-                      <td class="text-right">XX/XX/XXXX</td>
-                      <td>XXX</td>
-                      <td>XXX</td>
-                      <td class="text-center"><span class="label label-info">PENDIENTE ENVIO</span></td>
-                      <td class="text-right">XX/XX/XXXX</td>
-                      <td class="text-right">XX/XX/XXXX</td>
-                      <td class="text-center"><span class="label label-info">PENDIENTE PROCESAR</span></td>
                       <td class="text-center">
-                        <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
-        								<ul class="dropdown-menu dropdown-menu-right">
-                          <li><a href="javascript:;">Enviar SII</a></li>
-                          <div class="dropdown-divider"></div>
-                          <li><a href="libro-venta-nuevo.html">Ver</a></li>
-        									<li><a href="libro-venta-nuevo.html">Editar</a></li>
-        									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
-        								</ul>
+                        <input type="checkbox" class="">
                       </td>
-                    </tr>
-                    <tr>
+                      <td>XXX.XXX</td>
+                      <td>XX.XXX.XXX-X</td>
+                      <td>Razón Social Emisor</td>
+                      <td>FACTURA ELECTRONICA</td>
                       <td class="text-right">XX/XX/XXXX</td>
-                      <td>XXX</td>
-                      <td>XXX</td>
-                      <td class="text-center"><span class="label label-info">PENDIENTE ENVIO</span></td>
+                      <td class="text-right">$XXX.XXX.XXX</td>
                       <td class="text-right">XX/XX/XXXX</td>
-                      <td class="text-right">XX/XX/XXXX</td>
-                      <td class="text-center"><span class="label label-info">PENDIENTE PROCESAR</span></td>
+                      <td>XXXXXXXXXXXXXX</td>
                       <td class="text-center">
                         <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
         								<ul class="dropdown-menu dropdown-menu-right">
-                          <li><a href="javascript:;">Enviar SII</a></li>
-                          <div class="dropdown-divider"></div>
-                          <li><a href="libro-venta-nuevo.html">Ver</a></li>
-        									<li><a href="libro-venta-nuevo.html">Editar</a></li>
-        									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
-        								</ul>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="text-right">XX/XX/XXXX</td>
-                      <td>XXX</td>
-                      <td>XXX</td>
-                      <td class="text-center"><span class="label label-info">PENDIENTE ENVIO</span></td>
-                      <td class="text-right">XX/XX/XXXX</td>
-                      <td class="text-right">XX/XX/XXXX</td>
-                      <td class="text-center"><span class="label label-info">PENDIENTE PROCESAR</span></td>
-                      <td class="text-center">
-                        <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
-        								<ul class="dropdown-menu dropdown-menu-right">
-                          <li><a href="javascript:;">Enviar SII</a></li>
-                          <div class="dropdown-divider"></div>
-                          <li><a href="libro-venta-nuevo.html">Ver</a></li>
-        									<li><a href="libro-venta-nuevo.html">Editar</a></li>
-        									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
-        								</ul>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="text-right">XX/XX/XXXX</td>
-                      <td>XXX</td>
-                      <td>XXX</td>
-                      <td class="text-center"><span class="label label-info">PENDIENTE ENVIO</span></td>
-                      <td class="text-right">XX/XX/XXXX</td>
-                      <td class="text-right">XX/XX/XXXX</td>
-                      <td class="text-center"><span class="label label-info">PENDIENTE PROCESAR</span></td>
-                      <td class="text-center">
-                        <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
-        								<ul class="dropdown-menu dropdown-menu-right">
-                          <li><a href="javascript:;">Enviar SII</a></li>
-                          <div class="dropdown-divider"></div>
-                          <li><a href="libro-venta-nuevo.html">Ver</a></li>
-        									<li><a href="libro-venta-nuevo.html">Editar</a></li>
-        									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
-        								</ul>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="text-right">XX/XX/XXXX</td>
-                      <td>XXX</td>
-                      <td>XXX</td>
-                      <td class="text-center"><span class="label label-info">PENDIENTE ENVIO</span></td>
-                      <td class="text-right">XX/XX/XXXX</td>
-                      <td class="text-right">XX/XX/XXXX</td>
-                      <td class="text-center"><span class="label label-info">PENDIENTE PROCESAR</span></td>
-                      <td class="text-center">
-                        <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
-        								<ul class="dropdown-menu dropdown-menu-right">
-                          <li><a href="javascript:;">Enviar SII</a></li>
-                          <div class="dropdown-divider"></div>
-                          <li><a href="libro-venta-nuevo.html">Ver</a></li>
-        									<li><a href="libro-venta-nuevo.html">Editar</a></li>
-        									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
+        									<li><a href="javascript:;">Aceptar</a></li>
+                          <li><a href="javascript:;">Otorga Recibo</a></li>
+                          <li><a href="javascript:;">Reclamo al Contenido del Documento</a></li>
+                          <li><a href="javascript:;">Reclamo por falta Parcial de Mercancia</a></li>
+                          <li><a href="javascript:;">Reclamo por falta Total de Mercancia</a></li>
         								</ul>
                       </td>
                     </tr>
@@ -1618,7 +1535,6 @@
   });
 </script>
 <style>
-
 </style>
 </body>
 </html>
