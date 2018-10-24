@@ -24,7 +24,7 @@
   <!-- ================== BEGIN PAGE CSS ================== -->
   <link href="https://informat-apps.github.io/uwigo-mochups/assets/plugins/nvd3/build/nv.d3.css" rel="stylesheet" />
   <link href="https://informat-apps.github.io/uwigo-mochups/assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker.css" rel="stylesheet" />
-	<link href="https://informat-apps.github.io/uwigo-mochups/assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.css" rel="stylesheet" />
+  <link href="https://informat-apps.github.io/uwigo-mochups/assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.css" rel="stylesheet" />
   <link href="https://informat-apps.github.io/uwigo-mochups/assets/plugins/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet" />
   <link href="https://informat-apps.github.io/uwigo-mochups/assets/plugins/DataTables/media/css/dataTables.bootstrap.min.css" rel="stylesheet" />
   <link href="https://informat-apps.github.io/uwigo-mochups/assets/plugins/DataTables/extensions/Responsive/css/responsive.bootstrap.min.css" rel="stylesheet" />
@@ -33,6 +33,8 @@
   <link href="https://informat-apps.github.io/uwigo-mochups/assets/plugins/powerange/powerange.min.css" rel="stylesheet" />
   <link href="https://informat-apps.github.io/uwigo-mochups/assets/plugins/select2/dist/css/select2.min.css" rel="stylesheet" />
   <link href="https://informat-apps.github.io/uwigo-mochups/assets/plugins/jstree/dist/themes/default/style.min.css" rel="stylesheet" />
+  <link href="https://informat-apps.github.io/uwigo-mochups/assets/plugins/bootstrap-select/bootstrap-select.min.css" rel="stylesheet" />
+  <link href="https://informat-apps.github.io/uwigo-mochups/assets/plugins/jquery-smart-wizard/src/css/smart_wizard.css" rel="stylesheet" />
   <!-- ================== END PAGE CSS ================== -->
 </head>
 <body>
@@ -155,8 +157,8 @@
       </div>
 
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="javascript:;">Módulo</a></li>
-        <li class="breadcrumb-item active"><a href="javascript:;">Sub-Módulo</a></li>
+        <li class="breadcrumb-item"><a href="javascript:;">Empresa</a></li>
+        <li class="breadcrumb-item active"><a href="javascript:;">Nueva</a></li>
       </ol>
     </div>
     <!-- end #breadcrumb -->
@@ -167,322 +169,368 @@
         <div class="panel-body">
 
           <form action="/" method="POST" class="form-control-with-bg">
+
             <!-- begin wizard -->
-            <div id="wizard">
-              <!-- begin wizard-step -->
-              <ul>
-                <li class="col-md-3 col-sm-4 col-6">
-                  <a href="#step-1">
-                    <span class="number">1</span>
-                    <span class="info text-ellipsis">
-                      Información General
-                      <!-- <small class="text-ellipsis">Name, Address, IC No and DOB</small> -->
-                    </span>
-                  </a>
-                </li>
-                <li class="col-md-3 col-sm-4 col-6">
-                  <a href="#step-2">
-                    <span class="number">2</span>
-                    <span class="info text-ellipsis">
-                      Representantes
-                      <!-- <small class="text-ellipsis">Email and phone no. is required</small> -->
-                    </span>
-                  </a>
-                </li>
-                <li class="col-md-3 col-sm-4 col-6">
-                  <a href="#step-3">
-                    <span class="number">3</span>
-                    <span class="info text-ellipsis">
-                      Contactos
-                      <!-- <small class="text-ellipsis">Enter your username and password</small> -->
-                    </span>
-                  </a>
-                </li>
-                <li class="col-md-3 col-sm-4 col-6">
-                  <a href="#step-4">
-                    <span class="number">4</span>
-                    <span class="info text-ellipsis">
-                      Finalizar
-                      <!-- <small class="text-ellipsis">Complete Registration</small> -->
-                    </span>
-                  </a>
-                </li>
-              </ul>
-              <!-- end wizard-step -->
-              <!-- begin wizard-content -->
-              <div>
-                <!-- begin step-1 -->
-                <div id="step-1">
-                  <!-- begin fieldset -->
-                  <fieldset>
+          <div id="wizard">
+            <!-- begin wizard-step -->
+            <ul>
+              <li class="col-md-3 col-sm-4 col-6">
+                <a href="#step-1">
+                  <span class="number">1</span>
+                  <span class="info text-ellipsis">
+                    Información General
+                    <!-- <small class="text-ellipsis">Name, Address, IC No and DOB</small> -->
+                  </span>
+                </a>
+              </li>
+              <li class="col-md-3 col-sm-4 col-6">
+                <a href="#step-2">
+                  <span class="number">2</span>
+                  <span class="info text-ellipsis">
+                    Contactos
+                  </span>
+                </a>
+              </li>
+              <li class="col-md-3 col-sm-4 col-6">
+                <a href="#step-3">
+                  <span class="number">3</span>
+                  <span class="info text-ellipsis">
+                    Credenciales
+                    <!-- <small class="text-ellipsis">Enter your username and password</small> -->
+                  </span>
+                </a>
+              </li>
+              <li class="col-md-3 col-sm-4 col-6">
+                <a href="#step-4">
+                  <span class="number">4</span>
+                  <span class="info text-ellipsis">
+                    Complete
+                    <!-- <small class="text-ellipsis">Complete Registration</small> -->
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <!-- end wizard-step -->
+            <!-- begin wizard-content -->
+            <div>
+              <!-- begin step-1 -->
+              <div id="step-1">
+                <!-- begin fieldset -->
+                <fieldset>
+                  <!-- begin row -->
+                  <div class="row">
 
-                    <div class="row">
-
-                      <div class="form-group col-md-2">
-                        <label for="">R.U.T. (*)</label>
-                        <input type="text" class="form-control form-control-sm" placeholder="XX.XXX.XXX-X">
-                      </div>
-
-                      <div class="form-group col-md-4">
-                        <label for="">Razon Social (*)</label>
-                        <input type="text" class="form-control form-control-sm" placeholder="Razon Social">
-                      </div>
-
-                      <div class="form-group col-md-4">
-                        <label for="">Nombre Fanstasia (*)</label>
-                        <input type="text" class="form-control form-control-sm" placeholder="Nombre Fanstasia">
-                      </div>
-
-                      <div class="form-group col-md-2">
-                        <label for="">Teléfono (*)</label>
-                        <input type="text" class="form-control form-control-sm" placeholder="XX-XX-XXXX-XXXX">
-                      </div>
-
-                      <div class="form-group col-md-4">
-                        <label for="">Dirección</label>
-                        <input type="text" class="form-control form-control-sm" placeholder="Dirección">
-                      </div>
-
-                      <div class="form-group col-md-2">
-                        <label for="">Región</label>
-                        <select class="form-control form-control-sm">
-                          <option> seleccionar</option>
-                          <option>Región 1</option>
-                          <option>Región 2</option>
-                          <option>Región 3</option>
-                          <option>Región 4</option>
-                          <option>Región 5</option>
-                        </select>
-                      </div>
-
-                      <div class="form-group col-md-2">
-                        <label for="">Ciudad</label>
-                        <select class="form-control form-control-sm">
-                          <option> seleccionar</option>
-                          <option>Ciudad 1</option>
-                          <option>Ciudad 2</option>
-                          <option>Ciudad 3</option>
-                          <option>Ciudad 4</option>
-                          <option>Ciudad 5</option>
-                        </select>
-                      </div>
-
-                      <div class="form-group col-md-2">
-                        <label for="">Comuna</label>
-                        <select class="form-control form-control-sm">
-                          <option> seleccionar</option>
-                          <option>Comuna 1</option>
-                          <option>Comuna 2</option>
-                          <option>Comuna 3</option>
-                          <option>Comuna 4</option>
-                          <option>Comuna 5</option>
-                        </select>
-                      </div>
-
-                      <div class="form-group col-md-2">
-                        <label for="">Giro</label>
-                        <select class="form-control form-control-sm">
-                          <option> seleccionar</option>
-                          <option>Giro 1</option>
-                          <option>Giro 2</option>
-                          <option>Giro 3</option>
-                          <option>Giro 4</option>
-                          <option>Giro 5</option>
-                        </select>
-                      </div>
-
-                      <div class="form-group col-md-2">
-                        <label for="">Email (*)</label>
-                        <input type="email" class="form-control form-control-sm" placeholder="email@empresa.com">
-                      </div>
-
-                      <div class="form-group col-md-2">
-                        <label for="">Mes de Inicio (*)</label>
-                        <select class="form-control form-control-sm">
-                          <option> seleccionar</option>
-                          <option>Giro 1</option>
-                          <option>Giro 2</option>
-                          <option>Giro 3</option>
-                          <option>Giro 4</option>
-                          <option>Giro 5</option>
-                        </select>
-                      </div>
-
-                      <div class="form-group col-md-2">
-                        <label for="">Año de Inicio (*)</label>
-                        <input type="number" class="form-control form-control-sm" placeholder="email@empresa.com">
-                      </div>
-
+                    <div class="form-group col-md-2">
+                      <label for="">R.U.T. (*)</label>
+                      <input type="text" class="form-control form-control-sm" placeholder="XX.XXX.XXX-X">
                     </div>
 
-                  </fieldset>
-                  <!-- end fieldset -->
-                </div>
-                <!-- end step-1 -->
-                <!-- begin step-2 -->
-                <div id="step-2">
-                  <!-- begin fieldset -->
-                  <fieldset>
-                    <!-- begin row -->
-                    <div class="row">
-                      <!-- begin col-8 -->
-                      <div class="col-md-12">
-
-                        <table class="table table-bordered">
-                          <thead>
-                            <tr>
-                              <th>R.U.T.</th>
-                              <th>Nombre</th>
-                              <th>Título</th>
-                              <th>Teléfono</th>
-                              <th>Email</th>
-                              <th class="text-center"></th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td>
-                                <input type="text" class="form-control form-control-sm" placeholder="XX.XXX.XXX-X">
-                              </td>
-                              <td>
-                                <input type="text" class="form-control form-control-sm" placeholder="Nombre Representante">
-                              </td>
-                              <td>
-                                <input type="text" class="form-control form-control-sm" placeholder="Título">
-                              </td>
-                              <td>
-                                <input type="text" class="form-control form-control-sm" placeholder="XX-XX-XXXX-XXXX">
-                              </td>
-                              <td>
-                                <input type="text" class="form-control form-control-sm" placeholder="email@representante.com">
-                              </td>
-                              <td class="text-center">
-                                <a href="javascript:;" class="btn btn-white btn-xs text-black-lighter" data-click="swal-danger"><i class="fa fa-trash-alt"></i></a>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <input type="text" class="form-control form-control-sm" placeholder="XX.XXX.XXX-X">
-                              </td>
-                              <td>
-                                <input type="text" class="form-control form-control-sm" placeholder="Nombre Representante">
-                              </td>
-                              <td>
-                                <input type="text" class="form-control form-control-sm" placeholder="Título">
-                              </td>
-                              <td>
-                                <input type="text" class="form-control form-control-sm" placeholder="XX-XX-XXXX-XXXX">
-                              </td>
-                              <td>
-                                <input type="text" class="form-control form-control-sm" placeholder="email@representante.com">
-                              </td>
-                              <td class="text-center">
-                                <a href="javascript:;" class="btn btn-white btn-xs text-black-lighter" data-click="swal-danger"><i class="fa fa-trash-alt"></i></a>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-
-                      </div>
-                      <!-- end col-8 -->
+                    <div class="form-group col-md-4">
+                      <label for="">Razon Social (*)</label>
+                      <input type="text" class="form-control form-control-sm" placeholder="Razon Social">
                     </div>
-                    <!-- end row -->
-                  </fieldset>
-                  <!-- end fieldset -->
-                </div>
-                <!-- end step-2 -->
-                <!-- begin step-3 -->
-                <div id="step-3">
-                  <!-- begin fieldset -->
-                  <fieldset>
-                    <!-- begin row -->
-                    <div class="row">
-                      <!-- begin col-8 -->
-                      <div class="col-md-12">
 
-                        <table class="table table-bordered">
-                          <thead>
-                            <tr>
-                              <th>Tipo</th>
-                              <th>Nombre</th>
-                              <th>Cargo</th>
-                              <th>Teléfono</th>
-                              <th>Email</th>
-                              <th class="text-center"></th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td>
-                                <select class="form-control form-control-sm">
-                                  <option> seleccionar</option>
-                                  <option>Tipo 1</option>
-                                  <option>Tipo 2</option>
-                                  <option>Tipo 3</option>
-                                  <option>Tipo 4</option>
-                                  <option>Tipo 5</option>
-                                </select>
-                              </td>
-                              <td>
-                                <input type="text" class="form-control form-control-sm" placeholder="Nombre Contacto">
-                              </td>
-                              <td>
-                                <input type="text" class="form-control form-control-sm" placeholder="Cargo">
-                              </td>
-                              <td>
-                                <input type="text" class="form-control form-control-sm" placeholder="XX-XX-XXXX-XXXX">
-                              </td>
-                              <td>
-                                <input type="text" class="form-control form-control-sm" placeholder="email@contacto.com">
-                              </td>
-                              <td class="text-center">
-                                <a href="javascript:;" class="btn btn-white btn-xs text-black-lighter" data-click="swal-danger"><i class="fa fa-trash-alt"></i></a>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <input type="text" class="form-control form-control-sm" placeholder="XX.XXX.XXX-X">
-                              </td>
-                              <td>
-                                <input type="text" class="form-control form-control-sm" placeholder="Nombre Representante">
-                              </td>
-                              <td>
-                                <input type="text" class="form-control form-control-sm" placeholder="Título">
-                              </td>
-                              <td>
-                                <input type="text" class="form-control form-control-sm" placeholder="XX-XX-XXXX-XXXX">
-                              </td>
-                              <td>
-                                <input type="text" class="form-control form-control-sm" placeholder="email@representante.com">
-                              </td>
-                              <td class="text-center">
-                                <a href="javascript:;" class="btn btn-white btn-xs text-black-lighter" data-click="swal-danger"><i class="fa fa-trash-alt"></i></a>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-
-                      </div>
-                      <!-- end col-8 -->
+                    <div class="form-group col-md-4">
+                      <label for="">Nombre Fanstasia (*)</label>
+                      <input type="text" class="form-control form-control-sm" placeholder="Nombre Fanstasia">
                     </div>
-                    <!-- end row -->
-                  </fieldset>
-                  <!-- end fieldset -->
-                </div>
-                <!-- end step-3 -->
-                <!-- begin step-4 -->
-                <div id="step-4">
-                  <div class="jumbotron m-b-0 text-center">
-                    <h2 class="text-inverse mb-5">Finalizar Registro</h2>
-                    <!-- <p class="m-b-30 f-s-16">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consequat commodo porttitor. <br />Vivamus eleifend, arcu in tincidunt semper, lorem odio molestie lacus, sed malesuada est lacus ac ligula. Aliquam bibendum felis id purus ullamcorper, quis luctus leo sollicitudin. </p> -->
-                    <p><a href="empresa-lista.html" class="btn btn-primary btn-md">Guardar Empresa</a></p>
+
+                    <div class="form-group col-md-2">
+                      <label for="">Teléfono (*)</label>
+                      <input type="text" class="form-control form-control-sm" placeholder="XX-XX-XXXX-XXXX">
+                    </div>
+
+                    <div class="form-group col-md-4">
+                      <label for="">Dirección</label>
+                      <input type="text" class="form-control form-control-sm" placeholder="Dirección">
+                    </div>
+
+                    <div class="form-group col-md-2">
+                      <label for="">Región</label>
+                      <select class="form-control form-control-sm">
+                        <option> seleccionar</option>
+                        <option>Región 1</option>
+                        <option>Región 2</option>
+                        <option>Región 3</option>
+                        <option>Región 4</option>
+                        <option>Región 5</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group col-md-2">
+                      <label for="">Ciudad</label>
+                      <select class="form-control form-control-sm">
+                        <option> seleccionar</option>
+                        <option>Ciudad 1</option>
+                        <option>Ciudad 2</option>
+                        <option>Ciudad 3</option>
+                        <option>Ciudad 4</option>
+                        <option>Ciudad 5</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group col-md-2">
+                      <label for="">Comuna</label>
+                      <select class="form-control form-control-sm">
+                        <option> seleccionar</option>
+                        <option>Comuna 1</option>
+                        <option>Comuna 2</option>
+                        <option>Comuna 3</option>
+                        <option>Comuna 4</option>
+                        <option>Comuna 5</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group col-md-2">
+                      <label for="">Giro</label>
+                      <select class="form-control form-control-sm">
+                        <option> seleccionar</option>
+                        <option>Giro 1</option>
+                        <option>Giro 2</option>
+                        <option>Giro 3</option>
+                        <option>Giro 4</option>
+                        <option>Giro 5</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group col-md-2">
+                      <label for="">Email (*)</label>
+                      <input type="email" class="form-control form-control-sm" placeholder="email@empresa.com">
+                    </div>
+
+                    <!-- <div class="form-group col-md-2">
+                      <label for="">Mes de Inicio (*)</label>
+                      <select class="form-control form-control-sm">
+                        <option> seleccionar</option>
+                        <option>Giro 1</option>
+                        <option>Giro 2</option>
+                        <option>Giro 3</option>
+                        <option>Giro 4</option>
+                        <option>Giro 5</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group col-md-2">
+                      <label for="">Año de Inicio (*)</label>
+                      <input type="number" class="form-control form-control-sm" placeholder="email@empresa.com">
+                    </div> -->
+
                   </div>
-                </div>
-                <!-- end step-4 -->
+                  <!-- end row -->
+                </fieldset>
+                <!-- end fieldset -->
               </div>
-              <!-- end wizard-content -->
+              <!-- end step-1 -->
+              <!-- begin step-2 -->
+              <div id="step-2">
+                <!-- begin fieldset -->
+                <fieldset>
+                  <!-- begin row -->
+                  <div class="row">
+                    <!-- begin col-8 -->
+                    <div class="col-md-12">
+
+                      <table class="table table-bordered">
+                        <thead>
+                          <tr>
+                            <th>RUT</th>
+                            <th>Nombre</th>
+                            <th>Cargo</th>
+                            <th>Teléfono</th>
+                            <th>Email</th>
+                            <th>Representante</th>
+                            <th>Contacto</th>
+                            <th class="text-center"></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <input type="text" class="form-control form-control-sm" placeholder="XXX.XXX.XXX-X">
+                            </td>
+                            <td>
+                              <input type="text" class="form-control form-control-sm" placeholder="Nombre">
+                            </td>
+                            <td>
+                              <input type="text" class="form-control form-control-sm" placeholder="Cargo">
+                            </td>
+                            <td>
+                              <input type="text" class="form-control form-control-sm" placeholder="XX-XX-XXXX-XXXX">
+                            </td>
+                            <td>
+                              <input type="text" class="form-control form-control-sm" placeholder="email@contacto.com">
+                            </td>
+                            <td class="text-center">
+                              <input type="checkbox">
+                            </td>
+                            <td class="text-center">
+                              <input type="checkbox">
+                            </td>
+                            <td class="text-center">
+                              <a href="javascript:;" class="btn btn-white btn-xs text-black-lighter" data-click="swal-danger"><i class="fa fa-trash-alt"></i></a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input type="text" class="form-control form-control-sm" placeholder="XXX.XXX.XXX-X">
+                            </td>
+                            <td>
+                              <input type="text" class="form-control form-control-sm" placeholder="Nombre">
+                            </td>
+                            <td>
+                              <input type="text" class="form-control form-control-sm" placeholder="Cargo">
+                            </td>
+                            <td>
+                              <input type="text" class="form-control form-control-sm" placeholder="XX-XX-XXXX-XXXX">
+                            </td>
+                            <td>
+                              <input type="text" class="form-control form-control-sm" placeholder="email@contacto.com">
+                            </td>
+                            <td class="text-center">
+                              <input type="checkbox">
+                            </td>
+                            <td class="text-center">
+                              <input type="checkbox">
+                            </td>
+                            <td class="text-center">
+                              <a href="javascript:;" class="btn btn-white btn-xs text-black-lighter" data-click="swal-danger"><i class="fa fa-trash-alt"></i></a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                    </div>
+                    <!-- end col-8 -->
+                  </div>
+                  <!-- end row -->
+                </fieldset>
+                <!-- end fieldset -->
+              </div>
+              <!-- end step-2 -->
+              <!-- begin step-3 -->
+              <div id="step-3">
+
+
+                <fieldset>
+                  <!-- begin row -->
+
+                  <h4>Credenciales SII</h4>
+                  <br>
+                  <div class="row">
+
+                    <div class="form-group col-md-1">
+                      <label for="">Facturador</label>
+                      <input type="checkbox" class="form-control form-control-sm">
+                    </div>
+
+                    <div class="form-group col-md-3">
+                      <label for="">Usuario</label>
+                      <input type="text" class="form-control form-control-sm" placeholder="Nombre de Usuario">
+                    </div>
+
+                    <div class="form-group col-md-3">
+                      <label for="">Contraseña</label>
+                      <input type="text" class="form-control form-control-sm" placeholder="Contraseña">
+                    </div>
+                  </div>
+                  <!-- end row -->
+                </fieldset>
+
+                <br>
+                <br>
+
+                <h4>Credenciales Bancarias</h4>
+                <br>
+                <div class="row">
+                  <div class="col-md-12">
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th>Banco</th>
+                          <th>Nº Cuenta</th>
+                          <th>Usuario</th>
+                          <th>Contraseña</th>
+                          <th>Código</th>
+                          <th class="text-center"></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <select class="form-control form-control-sm">
+                              <option> seleccionar</option>
+                              <option>Banco 1</option>
+                              <option>Banco 2</option>
+                              <option>Banco 3</option>
+                              <option>Banco 4</option>
+                              <option>Banco 5</option>
+                            </select>
+                          </td>
+                          <td>
+                            <input type="number" class="form-control form-control-sm" placeholder="XXXXXXXXXXX">
+                          </td>
+                          <td class="text-center">
+                            <input type="text" class="form-control form-control-sm" placeholder="Nombre Usuario">
+                          </td>
+                          <td class="text-center">
+                            <input type="text" class="form-control form-control-sm" placeholder="Contraseña">
+                          </td>
+                          <td>
+                            <input type="number" class="form-control form-control-sm" placeholder="XXXXXXXXXXX">
+                          </td>
+                          <td class="text-center">
+                            <a href="javascript:;" class="btn btn-white btn-xs text-black-lighter" data-click="swal-danger"><i class="fa fa-trash-alt"></i></a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <select class="form-control form-control-sm">
+                              <option> seleccionar</option>
+                              <option>Banco 1</option>
+                              <option>Banco 2</option>
+                              <option>Banco 3</option>
+                              <option>Banco 4</option>
+                              <option>Banco 5</option>
+                            </select>
+                          </td>
+                          <td>
+                            <input type="number" class="form-control form-control-sm" placeholder="XXXXXXXXXXX">
+                          </td>
+                          <td class="text-center">
+                            <input type="text" class="form-control form-control-sm" placeholder="Nombre Usuario">
+                          </td>
+                          <td class="text-center">
+                            <input type="text" class="form-control form-control-sm" placeholder="Contraseña">
+                          </td>
+                          <td>
+                            <input type="number" class="form-control form-control-sm" placeholder="XXXXXXXXXXX">
+                          </td>
+                          <td class="text-center">
+                            <a href="javascript:;" class="btn btn-white btn-xs text-black-lighter" data-click="swal-danger"><i class="fa fa-trash-alt"></i></a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- end step-3 -->
+              <!-- begin step-4 -->
+              <div id="step-4">
+                <div class="jumbotron m-b-0 text-center">
+                  <h2 class="text-inverse">Finalizar Registro</h2>
+                  <!-- <p class="m-b-30 f-s-16">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consequat commodo porttitor. <br />Vivamus eleifend, arcu in tincidunt semper, lorem odio molestie lacus, sed malesuada est lacus ac ligula. Aliquam bibendum felis id purus ullamcorper, quis luctus leo sollicitudin. </p>
+                  <p><a href="javascript:;" class="btn btn-primary btn-lg">Proceed to User Profile</a></p> -->
+                </div>
+              </div>
+              <!-- end step-4 -->
             </div>
-            <!-- end wizard -->
+            <!-- end wizard-content -->
+          </div>
+          <!-- end wizard -->
+
           </form>
 
         </div>
@@ -1203,7 +1251,7 @@
   <script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/select2/dist/js/select2.min.js"></script>
   <script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/bootstrap-sweetalert/sweetalert.min.js"></script>
   <script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/jstree/dist/jstree.min.js"></script>
-  <script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/jquery-smart-wizard/src/js/jquery.smartWizard.js"></script>
+  <script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/bootstrap-select/bootstrap-select.min.js"></script>
   <script src="https://informat-apps.github.io/uwigo-mochups/assets/js/demo/table-manage-default.demo.js"></script>
   <script src="https://informat-apps.github.io/uwigo-mochups/assets/js/demo/chart-d3.demo.min.js"></script>
   <script src="https://informat-apps.github.io/uwigo-mochups/assets/js/demo/chart-js.demo.js"></script>
@@ -1211,208 +1259,28 @@
   <script src="https://informat-apps.github.io/uwigo-mochups/assets/js/demo/form-slider-switcher.demo.min.js"></script>
   <script src="https://informat-apps.github.io/uwigo-mochups/assets/js/demo/ui-tree.demo.js"></script>
   <script src="https://informat-apps.github.io/uwigo-mochups/assets/js/demo/ui-modal-notification.demo.js"></script>
-  <script src="https://informat-apps.github.io/uwigo-mochups/assets/js/demo/form-wizards.demo.min.js"></script>
+  <script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/DataTables/extensions/Buttons/js/dataTables.buttons.min.js"></script>
+	<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/DataTables/extensions/Buttons/js/buttons.bootstrap.min.js"></script>
+	<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/DataTables/extensions/Buttons/js/buttons.flash.min.js"></script>
+	<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/DataTables/extensions/Buttons/js/jszip.min.js"></script>
+	<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/DataTables/extensions/Buttons/js/pdfmake.min.js"></script>
+	<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/DataTables/extensions/Buttons/js/vfs_fonts.min.js"></script>
+	<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/DataTables/extensions/Buttons/js/buttons.html5.min.js"></script>
+	<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/DataTables/extensions/Buttons/js/buttons.print.min.js"></script>
+  <script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/jquery-smart-wizard/src/js/jquery.smartWizard.js"></script>
+  <script src="https://unpkg.com/vue"></script>
+  <script src="https://unpkg.com/vue-chartjs/dist/vue-chartjs.min.js"></script>
+  <script src="https://informat-apps.github.io/uwigo-mochups/assets/script.js"></script>
   <!-- ================== END PAGE LEVEL JS ================== -->
 
   <script>
   $(document).ready(function() {
     App.init();
-    TableManageDefault.init();
-    Highlight.init();
-    FormSliderSwitcher.init();
-    TreeView.init();
-    FormWizard.init();
-
-    $(function () {
-
-      $('[data-toggle="tooltip"]').tooltip()
-
-      $('.btn-permission').click(function(){
-        if ($(this).hasClass("btn-primary")){
-          $(this).removeClass("btn-primary")
-          $(this).addClass("btn-grey")
-        } else{
-          $(this).addClass("btn-primary")
-          $(this).removeClass("btn-grey")
-        }
-      })
-
-      $('.check-permission').click(function(){
-        if($(this).is(':checked')){
-          $(this).parent().find('.btn-permission').addClass("btn-primary")
-          $(this).parent().find('.btn-permission').removeClass("btn-grey")
-        } else{
-          $(this).parent().find('.btn-permission').removeClass("btn-primary")
-          $(this).parent().find('.btn-permission').addClass("btn-grey")
-        }
-      })
-    })
-
-
-    $(".multiple-select2").select2({});
-
-    $('#c-change').change(function() {
-      $('#collapseOne').collapse('toggle')
-      $('#collapseTwo').collapse('toggle')
-    })
-
-    var table_language = {
-      "decimal": "-",
-      "thousands": ".",
-      'emptyTable': 'Sin Datos',
-      'info': 'mostranto _END_ de _TOTAL_ registros',
-      'infoEmpty': '0-0 de 0',
-      'infoFiltered': '',
-      'infoPostFix': '',
-      'lengthMenu': '_MENU_',
-      'loadingRecords': 'Cargando...',
-      'processing': 'Procesando...',
-      'search': '',
-      'searchPlaceholder': 'Buscar',
-      'zeroRecords': 'No se encontraron registros',
-      'paginate': {
-        'first': 'Primero',
-        'last': 'Último',
-        'next': 'Próximo',
-        'previous': 'Anterior'
-      }
-    };
-
-    $('#s-modulo').on("change", function (e) {
-      $('#t-permisos tbody tr').addClass('hide')
-      var modulos = $('#s-modulo').val()
-      for (var i = 0; i < modulos.length; i++) {
-        $('#t-permisos tbody tr.modulo-'+modulos[i]).removeClass('hide')
-      }
-    });
-
-    $('#s-perfil').on("change", function (e) {
-      $('#t-permisos tbody tr').addClass('hide')
-      $('#t-permisos tbody tr.modulo-1').removeClass('hide')
-      $('#t-permisos tbody tr.modulo-4').removeClass('hide')
-      $('#t-permisos tbody tr.modulo-6').removeClass('hide')
-    });
-
-    if ($('#t-default').length !== 0) {
-      $('#t-default').DataTable({
-        language: table_language,
-        order: [[1, 'asc']],
-        columns: [
-          {
-            'data': 'avatar',
-            'orderable': false,
-          },
-          {
-            'data': 'nombre',
-            'title': 'Nombre',
-          },
-          {
-            'data': 'correo',
-            'title': 'Correo',
-          },
-          {
-            'data': 'telefono',
-            'title': 'Telífono',
-          },
-          {
-            'data': 'cargo',
-            'title': 'Cargo',
-          },
-          {
-            'data': 'empresas',
-            'title': 'Empresas',
-            'orderable': false,
-          },
-          {
-            'data': 'opciones',
-            'title': 'opciones',
-            'class': 'text-center',
-            'orderable': false,
-          }
-        ],
-        responsive: true,
-        searching: false,
-        bLengthChange: false,
-      });
-    }
-
-    if ($('#t-permisos').length !== 0) {
-      $('#t-permisos').DataTable({
-        language: table_language,
-        order: [[0, 'asc']],
-        columns: [
-          {
-            'data': 'modulo',
-            'title': 'Módulo',
-          },
-          {
-            'data': 'submodulo',
-            'title': 'Sub-Módulo',
-          },
-          {
-            'data': 'permisos_basicos',
-            'title': 'Permisos Básicos',
-            'orderable': false,
-          },
-          {
-            'data': 'permisos_extra',
-            'title': 'Permisos Extras',
-            'orderable': false,
-          }
-        ],
-        responsive: true,
-        searching: false,
-        bLengthChange: false,
-        paginate: false,
-        bInfo: false,
-      });
-    }
-
+    Uwigo.init();
   });
 </script>
 
 <style>
-
-.widget-icon.widget-icon-sm, .widget-icon.widget-icon-sm i{
-  width: 26px;
-  height: 26px;
-  line-height: 27px;
-}
-
-.widget-img.widget-img-sm{
-  width: 26px;
-  height: 26px;
-  line-height: 26px;
-}
-
-.select2-container .select2-selection--multiple{
-  min-height: 30px !important;
-}
-
-.select2-container .select2-selection--single, .select2-container--default .select2-selection--multiple{
-  min-height: 30px!important;
-}
-
-.select2-container .select2-search--inline .select2-search__field{
-  margin-top: 2px;
-}
-
-.select2-container--default .select2-selection--single .select2-selection__rendered {
-  color: #444;
-  line-height: 28px;
-}
-.select2-container .select2-selection--single .select2-selection__rendered {
-  display: block;
-  padding-left: 8px;
-  padding-right: 20px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-.select2-container--default .select2-selection--single .select2-selection__rendered {
-  line-height: 28px!important;
-}
-
 </style>
 </body>
 </html>
