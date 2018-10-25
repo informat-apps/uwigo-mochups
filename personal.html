@@ -33,8 +33,8 @@
   <link href="https://informat-apps.github.io/uwigo-mochups/assets/plugins/powerange/powerange.min.css" rel="stylesheet" />
   <link href="https://informat-apps.github.io/uwigo-mochups/assets/plugins/select2/dist/css/select2.min.css" rel="stylesheet" />
   <link href="https://informat-apps.github.io/uwigo-mochups/assets/plugins/jstree/dist/themes/default/style.min.css" rel="stylesheet" />
-  <link href="https://informat-apps.github.io/uwigo-mochups/assets/plugins/jquery-smart-wizard/src/css/smart_wizard.css" rel="stylesheet" />
   <link href="https://informat-apps.github.io/uwigo-mochups/assets/plugins/bootstrap-select/bootstrap-select.min.css" rel="stylesheet" />
+  <link href="https://informat-apps.github.io/uwigo-mochups/assets/plugins/jquery-smart-wizard/src/css/smart_wizard.css" rel="stylesheet" />
   <!-- ================== END PAGE CSS ================== -->
 </head>
 <body>
@@ -1526,6 +1526,348 @@
       </div>
     </div>
   </div>
+
+  <div class="modal fade" id="m-personal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Nueva personal</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+
+          <!-- begin wizard -->
+				<div id="wizard">
+					<!-- begin wizard-step -->
+					<ul>
+						<li class="col-md-3 col-sm-4 col-6">
+							<a href="#step-1">
+								<span class="number">1</span>
+								<span class="info text-ellipsis">
+									Información General
+									<!-- <small class="text-ellipsis">Name, Address, IC No and DOB</small> -->
+								</span>
+							</a>
+						</li>
+						<li class="col-md-3 col-sm-4 col-6">
+							<a href="#step-2">
+								<span class="number">2</span>
+								<span class="info text-ellipsis">
+									Detalle
+								</span>
+							</a>
+						</li>
+						<li class="col-md-3 col-sm-4 col-6">
+							<a href="#step-3">
+								<span class="number">3</span>
+								<span class="info text-ellipsis">
+									Imposiciones
+									<!-- <small class="text-ellipsis">Enter your username and password</small> -->
+								</span>
+							</a>
+						</li>
+						<li class="col-md-3 col-sm-4 col-6">
+							<a href="#step-4">
+								<span class="number">4</span>
+								<span class="info text-ellipsis">
+									Complete
+									<!-- <small class="text-ellipsis">Complete Registration</small> -->
+								</span>
+							</a>
+						</li>
+					</ul>
+					<!-- end wizard-step -->
+					<!-- begin wizard-content -->
+					<div>
+						<!-- begin step-1 -->
+						<div id="step-1">
+							<!-- begin fieldset -->
+							<fieldset>
+								<!-- begin row -->
+								<div class="row">
+									<!-- begin col-8 -->
+									<div class="col-md-8 offset-md-2">
+										<!-- <legend class="no-border f-w-700 p-b-0 m-t-0 m-b-20 f-s-16 text-inverse">Personal info about yourself</legend> -->
+										<!-- begin form-group row -->
+										<div class="form-group row m-b-10">
+											<label class="col-md-3 text-md-right col-form-label">Nombre</label>
+											<div class="col-md-6">
+												<input type="text" name="firstname" class="form-control" />
+											</div>
+										</div>
+										<!-- end form-group row -->
+										<!-- begin form-group row -->
+										<div class="form-group row m-b-10">
+											<label class="col-md-3 text-md-right col-form-label">Apellido</label>
+											<div class="col-md-6">
+												<input type="text" name="lastname" class="form-control" />
+											</div>
+										</div>
+										<!-- end form-group row -->
+										<!-- begin form-group row -->
+										<div class="form-group row m-b-10">
+											<label class="col-md-3 text-md-right col-form-label">Fecha de Nacimiento</label>
+											<div class="col-md-6">
+												<div class="row row-space-6">
+													<div class="col-4">
+														<select class="form-control" name="year">
+															<option>-- Día --</option>
+														</select>
+													</div>
+													<div class="col-4">
+														<select class="form-control" name="month">
+															<option>-- Mes --</option>
+														</select>
+													</div>
+													<div class="col-4">
+														<select class="form-control" name="day">
+															<option>-- Año --</option>
+														</select>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- end form-group row -->
+										<!-- begin form-group row -->
+										<div class="form-group row m-b-10">
+											<label class="col-md-3 text-md-right col-form-label">R.U.T.</label>
+											<div class="col-md-6">
+												<input type="text" name="ic" placeholder="" class="form-control" />
+											</div>
+										</div>
+										<!-- end form-group row -->
+										<!-- begin form-group row -->
+										<div class="form-group row m-b-10">
+											<label class="col-md-3 text-md-right col-form-label">Direcciones</label>
+											<div class="col-md-9">
+												<input type="text" name="address1" placeholder="" class="form-control m-b-10" />
+												<input type="text" name="address2" placeholder="" class="form-control" />
+											</div>
+										</div>
+										<!-- end form-group row -->
+									</div>
+									<!-- end col-8 -->
+								</div>
+								<!-- end row -->
+							</fieldset>
+							<!-- end fieldset -->
+						</div>
+						<!-- end step-1 -->
+						<!-- begin step-2 -->
+						<div id="step-2">
+							<!-- begin fieldset -->
+							<fieldset>
+								<!-- begin row -->
+								<div class="row">
+									<!-- begin col-8 -->
+									<div class="col-md-8 offset-md-2">
+										<legend class="no-border f-w-700 p-b-0 m-t-0 m-b-20 f-s-16 text-inverse">You contact info, so that we can easily reach you</legend>
+										<!-- begin form-group row -->
+										<div class="form-group row m-b-10">
+											<label class="col-md-3 text-md-right col-form-label">Teléfono</label>
+											<div class="col-md-6">
+												<input type="number" name="phone" class="form-control" />
+											</div>
+										</div>
+										<!-- end form-group row -->
+										<!-- begin form-group row -->
+										<div class="form-group row m-b-10">
+											<label class="col-md-3 text-md-right col-form-label">Email</label>
+											<div class="col-md-6">
+												<input type="email" name="email" placeholder="" class="form-control" />
+											</div>
+										</div>
+										<!-- end form-group row -->
+									</div>
+									<!-- end col-8 -->
+								</div>
+								<!-- end row -->
+							</fieldset>
+							<!-- end fieldset -->
+						</div>
+						<!-- end step-2 -->
+						<!-- begin step-3 -->
+						<div id="step-3">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="table-responsive">
+                    <table class="table table-striped table-bordered data-table-default">
+                      <thead>
+                        <tr>
+                          <th>Tipo</th>
+                          <th>Imposiciones</th>
+                          <th>Monto</th>
+                          <th class="text-center">opciones</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>XX.XX.XX-X</td>
+                          <td>Nombre Personal</td>
+                          <td>Apellidos Personal</td>
+                          <td>Cargo Personal</td>
+                          <td class="text-center"><span class="label label-primary">ACTIVO</span></td>
+                          <td class="text-center">
+                            <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
+            								<ul class="dropdown-menu dropdown-menu-right">
+            									<li><a href="personal-nuevo.html">Editar</a></li>
+            									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
+                              <div class="dropdown-divider"></div>
+                              <li><a href="personal-nuevo.html">Liquidaciones</a></li>
+                              <li><a href="personal-nuevo.html">Vacaciones</a></li>
+                              <li><a href="personal-nuevo.html">Ausencias</a></li>
+                              <li><a href="personal-nuevo.html">Licencias</a></li>
+            								</ul>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>XX.XX.XX-X</td>
+                          <td>Nombre Personal</td>
+                          <td>Apellidos Personal</td>
+                          <td>Cargo Personal</td>
+                          <td class="text-center"><span class="label label-primary">ACTIVO</span></td>
+                          <td class="text-center">
+                            <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
+            								<ul class="dropdown-menu dropdown-menu-right">
+            									<li><a href="personal-nuevo.html">Editar</a></li>
+            									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
+                              <div class="dropdown-divider"></div>
+                              <li><a href="personal-nuevo.html">Liquidaciones</a></li>
+                              <li><a href="personal-nuevo.html">Vacaciones</a></li>
+                              <li><a href="personal-nuevo.html">Ausencias</a></li>
+                              <li><a href="personal-nuevo.html">Licencias</a></li>
+            								</ul>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>XX.XX.XX-X</td>
+                          <td>Nombre Personal</td>
+                          <td>Apellidos Personal</td>
+                          <td>Cargo Personal</td>
+                          <td class="text-center"><span class="label label-primary">ACTIVO</span></td>
+                          <td class="text-center">
+                            <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
+            								<ul class="dropdown-menu dropdown-menu-right">
+            									<li><a href="personal-nuevo.html">Editar</a></li>
+            									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
+                              <div class="dropdown-divider"></div>
+                              <li><a href="personal-nuevo.html">Liquidaciones</a></li>
+                              <li><a href="personal-nuevo.html">Vacaciones</a></li>
+                              <li><a href="personal-nuevo.html">Ausencias</a></li>
+                              <li><a href="personal-nuevo.html">Licencias</a></li>
+            								</ul>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>XX.XX.XX-X</td>
+                          <td>Nombre Personal</td>
+                          <td>Apellidos Personal</td>
+                          <td>Cargo Personal</td>
+                          <td class="text-center"><span class="label label-primary">ACTIVO</span></td>
+                          <td class="text-center">
+                            <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
+            								<ul class="dropdown-menu dropdown-menu-right">
+            									<li><a href="personal-nuevo.html">Editar</a></li>
+            									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
+                              <div class="dropdown-divider"></div>
+                              <li><a href="personal-nuevo.html">Liquidaciones</a></li>
+                              <li><a href="personal-nuevo.html">Vacaciones</a></li>
+                              <li><a href="personal-nuevo.html">Ausencias</a></li>
+                              <li><a href="personal-nuevo.html">Licencias</a></li>
+            								</ul>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>XX.XX.XX-X</td>
+                          <td>Nombre Personal</td>
+                          <td>Apellidos Personal</td>
+                          <td>Cargo Personal</td>
+                          <td class="text-center"><span class="label label-primary">ACTIVO</span></td>
+                          <td class="text-center">
+                            <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
+            								<ul class="dropdown-menu dropdown-menu-right">
+            									<li><a href="personal-nuevo.html">Editar</a></li>
+            									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
+                              <div class="dropdown-divider"></div>
+                              <li><a href="personal-nuevo.html">Liquidaciones</a></li>
+                              <li><a href="personal-nuevo.html">Vacaciones</a></li>
+                              <li><a href="personal-nuevo.html">Ausencias</a></li>
+                              <li><a href="personal-nuevo.html">Licencias</a></li>
+            								</ul>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>XX.XX.XX-X</td>
+                          <td>Nombre Personal</td>
+                          <td>Apellidos Personal</td>
+                          <td>Cargo Personal</td>
+                          <td class="text-center"><span class="label label-primary">ACTIVO</span></td>
+                          <td class="text-center">
+                            <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
+            								<ul class="dropdown-menu dropdown-menu-right">
+            									<li><a href="personal-nuevo.html">Editar</a></li>
+            									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
+                              <div class="dropdown-divider"></div>
+                              <li><a href="personal-nuevo.html">Liquidaciones</a></li>
+                              <li><a href="personal-nuevo.html">Vacaciones</a></li>
+                              <li><a href="personal-nuevo.html">Ausencias</a></li>
+                              <li><a href="personal-nuevo.html">Licencias</a></li>
+            								</ul>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>XX.XX.XX-X</td>
+                          <td>Nombre Personal</td>
+                          <td>Apellidos Personal</td>
+                          <td>Cargo Personal</td>
+                          <td class="text-center"><span class="label label-primary">ACTIVO</span></td>
+                          <td class="text-center">
+                            <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-ellipsis-h f-s-14"></i></a>
+            								<ul class="dropdown-menu dropdown-menu-right">
+            									<li><a href="personal-nuevo.html">Editar</a></li>
+            									<li><a href="javascript:;" data-click="swal-danger">Eliminar</a></li>
+                              <div class="dropdown-divider"></div>
+                              <li><a href="personal-nuevo.html">Liquidaciones</a></li>
+                              <li><a href="personal-nuevo.html">Vacaciones</a></li>
+                              <li><a href="personal-nuevo.html">Ausencias</a></li>
+                              <li><a href="personal-nuevo.html">Licencias</a></li>
+            								</ul>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+
+						</div>
+						<!-- end step-3 -->
+						<!-- begin step-4 -->
+						<div id="step-4">
+							<div class="jumbotron m-b-0 text-center">
+								<h2 class="text-inverse">Register Successfully</h2>
+								<p class="m-b-30 f-s-16">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consequat commodo porttitor. <br />Vivamus eleifend, arcu in tincidunt semper, lorem odio molestie lacus, sed malesuada est lacus ac ligula. Aliquam bibendum felis id purus ullamcorper, quis luctus leo sollicitudin. </p>
+								<p><a href="javascript:;" class="btn btn-primary btn-lg">Proceed to User Profile</a></p>
+							</div>
+						</div>
+						<!-- end step-4 -->
+					</div>
+					<!-- end wizard-content -->
+				</div>
+				<!-- end wizard -->
+
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-sm btn-white" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-sm btn-primary" data-dismiss="modal">Aceptar</button>
+        </div> -->
+      </div>
+    </div>
+  </div>
   <!-- end modal -->
 
   <!-- ================== BEGIN BASE JS ================== -->
@@ -1572,6 +1914,7 @@
 	<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/DataTables/extensions/Buttons/js/vfs_fonts.min.js"></script>
 	<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/DataTables/extensions/Buttons/js/buttons.html5.min.js"></script>
 	<script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/DataTables/extensions/Buttons/js/buttons.print.min.js"></script>
+  <script src="https://informat-apps.github.io/uwigo-mochups/assets/plugins/jquery-smart-wizard/src/js/jquery.smartWizard.js"></script>
   <script src="https://unpkg.com/vue"></script>
   <script src="https://unpkg.com/vue-chartjs/dist/vue-chartjs.min.js"></script>
   <script src="https://informat-apps.github.io/uwigo-mochups/assets/script.js"></script>
